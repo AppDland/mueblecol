@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Ropero Grande 2m x 1m MDF Color Marrón",
+        "price": 300000,
+        "image": "ropero.png",
+        "colors": [
+            "white",
+            "brown"
+        ]
+    },
+    {
+        "name": "Ropero Cuatro Cuerpos 2m x 3m",
+        "price": 735000,
+        "image": "ropero2.png",
+        "colors": [
+            "brown"
+        ]
+    },
+    {
+        "name": "Mesa Recibidor Moderno Melamina Color Blanco",
+        "price": 345000,
+        "image": "ropero3.jpg",
+        "colors": [
+            "white"
+        ]
+    },
+    {
+        "name": "Sillon + Mesa | Blancos",
+        "price": 245000,
+        "image": "sillon.webp",
+        "colors": [
+            "white"
+        ]
+    }
+]
