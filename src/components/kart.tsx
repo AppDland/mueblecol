@@ -25,23 +25,26 @@ const Kart: React.FC = () => {
     const total = cart.reduce((sum, product) => sum + product.price * product.quantity, 0);
 
     return (
-        <div className="flex border border-black ">
-            <div className='flex flex-col w-11/12 border border-black'>
-                <h2>Tu Carrito</h2>
-                <ul>
-                    {cart.map(product => (
-                        <li key={product.id}>
-                            {product.name} - ${product.price} x {product.quantity}
-                            <button onClick={() => handleIncrement(product.id)}>+</button>
-                            <button onClick={() => handleRemove(product.id)}>-</button>
-                        </li>
-                    ))}
-                </ul>
-                <h3>Total: ${total}</h3>
-                <div className='justify-center border-t-2 my-8 border border-black'>
+        <div className="flex  w-11/12 justify-center h-full">
+            <div className='flex flex-col w-full  my-5 mx-5 items-center'>
+                <h2 className='text-red-500 text-3xl font-bold mt-4 mb-4'>Tu Carrito</h2>
+                <div className='border-2 shadow-lg w-11/12 h-96 rounded-xl'>
+                    <ul>
+                        {cart.map(product => (
+                            <li key={product.id} className="border-b-2 border-gray-300 py-2 flex justify-between items-center w-9/12">
+                                {product.name} - ${product.price} x {product.quantity}
+                                <button onClick={() => handleIncrement(product.id)}>+</button>
+                                <button onClick={() => handleRemove(product.id)}>-</button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className='flex text-3xl my-4 text-green-600 space-x-56  align-text-bottom' > <p>Total</p> <p>$ {total}</p> </div>
+                <div className='flex border-t-2 w-11/12 border-gray-300 justify-center'>
                     <Button
-                        text='Confimar compra'
-                        className='bg-red-950 text-white min-w-56 h-8 px-4 rounded-md justify-center mt-4 '
+
+                        text='Confimar Compra'
+                        className='bg-red-800 text-white min-w-56 h-8 px-4 rounded-md justify-center mt-6 mb-4 '
 
                     />
                 </div>
@@ -51,3 +54,5 @@ const Kart: React.FC = () => {
 };
 
 export default Kart;
+
+// border border-black

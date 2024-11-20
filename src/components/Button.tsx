@@ -8,6 +8,11 @@ interface ButtonProps {
     iconPosition?: 'left' | 'right';
     onClick?: () => void;
     className?: string;
+    width?: string;
+    height?: string;
+    iconWidth?: number;
+    iconHeight?: number;
+    iconColor?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -17,19 +22,42 @@ const Button: React.FC<ButtonProps> = ({
     iconPosition = 'left',
     onClick,
     className = '',
+    width,
+    height,
+    iconWidth = 20,
+    iconHeight = 20,
+    iconColor = 'currentColor',
 }) => {
     const handleClick = () => {
         if (onClick) onClick();
     };
 
     return (
-        <button onClick={handleClick} className={`flex items-center ${className}`}>
+        <button
+            onClick={handleClick}
+            className={`flex items-center ${className}`}
+            style={{ width, height }}
+        >
             {iconSrc && iconPosition === 'left' && (
-                <Image src={iconSrc} alt={iconAlt} width={20} height={20} className="mr-2" />
+                <Image
+                    src={iconSrc}
+                    alt={iconAlt}
+                    width={iconWidth}
+                    height={iconHeight}
+                    className="mr-2"
+                    style={{ filter: `invert(${iconColor})` }}
+                />
             )}
             <span>{text}</span>
             {iconSrc && iconPosition === 'right' && (
-                <Image src={iconSrc} alt={iconAlt} width={20} height={20} className="ml-2" />
+                <Image
+                    src={iconSrc}
+                    alt={iconAlt}
+                    width={iconWidth}
+                    height={iconHeight}
+                    className="ml-2"
+                    style={{ filter: `invert(${iconColor})` }}
+                />
             )}
         </button>
     );
