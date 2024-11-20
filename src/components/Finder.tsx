@@ -64,7 +64,7 @@ const Finder = ({ value, setValue, onFind }: FinderInt) => {
                 right-0
                 top-0
                 z-0
-                duration-100
+                duration-150
             `}
             />
         </div>

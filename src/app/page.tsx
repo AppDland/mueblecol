@@ -3,6 +3,7 @@
 import Card, { ItemInt } from "@/components/Card";
 import Finder from "@/components/Finder";
 import Items from "@/data/items.json";
+import Intro from "@/modules/Intro";
 import { useState } from "react";
 
 export default function Home() {
@@ -15,13 +16,16 @@ export default function Home() {
     }
 
     return (
-        <div className="flex flex-wrap">
-            <Finder value={text} setValue={setText} onFind={handleFind} />
-            {
-                found.map((item, index) => (
-                    <Card item={item} key={index} />
-                ))
-            }
-        </div>
+        <>
+            <Intro />
+            <div className="flex flex-wrap">
+                <Finder value={text} setValue={setText} onFind={handleFind} />
+                {
+                    found.map((item, index) => (
+                        <Card item={item} key={index} />
+                    ))
+                }
+            </div>
+        </>
     );
 }
