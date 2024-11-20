@@ -14,7 +14,7 @@ const Card = ({ item }: { item: ItemInt }) => {
             {/* <img
                 src={`/${item.image}`}
                 alt={item.name}
-                className="h-56 aspect-square place-self-center rounded-md my-5 mx-5 object-contain"
+                className="h-56 aspect-square place-self-center rounded-md m-5 object-contain"
             /> */}
             <div className="border my-8 mx-3" />
             <p className="font-bold text-3xl text-center mb-2">{money(item.price)}</p>

@@ -1,4 +1,5 @@
 'use client';
+import Image from "next/image";
 import { useState } from "react";
 
 interface FinderInt {
@@ -47,11 +48,14 @@ const Finder = ({ value, setValue, onFind }: FinderInt) => {
                 onBlur={handleBlur}
                 onKeyUp={handleKeyUp}
             />
-            {/* <img
+            <Image
+                alt="Buscar"
                 src="/Lupa.svg"
+                width={20}
+                height={20}
                 className="relative z-10 w-7 mx-2 cursor-pointer"
                 onClick={onFind}
-            /> */}
+            />
             <div className={`
                 bg-[#A30000]
                 ${isFocused ? "w-11" : "w-full"}
