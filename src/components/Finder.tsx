@@ -47,11 +47,11 @@ const Finder = ({ value, setValue, onFind }: FinderInt) => {
                 onBlur={handleBlur}
                 onKeyUp={handleKeyUp}
             />
-            <img
+            {/* <img
                 src="/Lupa.svg"
                 className="relative z-10 w-7 mx-2 cursor-pointer"
                 onClick={onFind}
-            />
+            /> */}
             <div className={`
                 bg-[#A30000]
                 ${isFocused ? "w-11" : "w-full"}
