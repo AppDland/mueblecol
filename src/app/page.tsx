@@ -4,6 +4,7 @@ import Card, { ItemInt } from "@/components/Card";
 import Finder from "@/components/Finder";
 import Kart from "@/components/kart";
 import Items from "@/data/items.json";
+import Intro from "@/modules/Intro";
 import { useState } from "react";
 
 export default function Home() {
@@ -16,16 +17,19 @@ export default function Home() {
     }
 
     return (
-        <div className="flex flex-wrap flex-col">
-            <Finder value={text} setValue={setText} onFind={handleFind} />
-            {
-                found.map((item, index) => (
-                    <Card item={item} key={index} />
-                ))
-            }
-            <div className="mt-24 ">
-                <Kart/>
+        <>
+            <Intro />
+            <div className="flex flex-wrap">
+                <Finder value={text} setValue={setText} onFind={handleFind} />
+                {
+                    found.map((item, index) => (
+                        <Card item={item} key={index} />
+                    ))
+                }
             </div>
-        </div>
+            <div className="mt-24 ">
+                <Kart />
+            </div>
+        </>
     );
 }
