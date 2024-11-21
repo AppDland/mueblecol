@@ -9,6 +9,16 @@
         "colors": [
             "white",
             "brown"
+        ],
+        "detail": "Amplio ropero de MDF con acabado premium, ideal para dormitorios espaciosos. Incluye barras para colgar ropa, estantes ajustables y cajones inferiores. Excelente organización del espacio.",
+        "synonyms": [
+            "armario", "placard", "closet", "guardarropa",
+            "grande", "amplio", "espacioso",
+            "marrón", "café", "chocolate",
+            "blanco", "ivory", "hueso",
+            "mueble", "mobiliario",
+            "dos metros", "200cm", "200 centímetros",
+            "un metro", "100cm", "100 centímetros"
         ]
     },
     {
@@ -17,6 +27,15 @@
         "images": [],
         "colors": [
             "brown"
+        ],
+        "detail": "Ropero de gran capacidad con cuatro compartimentos independientes. Perfecto para familias numerosas. Incluye espejo de cuerpo completo y organizadores internos.",
+        "synonyms": [
+            "armario", "placard", "closet", "guardarropa",
+            "familiar", "grande", "amplio",
+            "marrón", "café", "chocolate",
+            "cuatro secciones", "4 puertas",
+            "dos metros", "200cm",
+            "tres metros", "300cm"
         ]
     },
     {
@@ -25,6 +44,14 @@
         "images": [],
         "colors": [
             "white"
+        ],
+        "detail": "Mesa de recibidor con diseño moderno y minimalista. Perfecta para entrada o pasillo. Incluye cajón organizador y acabado en melamina de alta resistencia.",
+        "synonyms": [
+            "consola", "mesa de entrada", "mesa de hall",
+            "moderno", "contemporáneo", "actual",
+            "blanco", "ivory", "hueso",
+            "melamina", "melanina",
+            "recibidor", "entrada", "hall"
         ]
     },
     {
@@ -33,6 +60,14 @@
         "images": [],
         "colors": [
             "white"
+        ],
+        "detail": "Conjunto de sala moderno que incluye sillón confortable y mesa de centro a juego. Ideal para espacios pequeños o salas de estar.",
+        "synonyms": [
+            "sofá", "butaca", "asiento",
+            "mesa de centro", "mesa ratona", "mesa de café",
+            "blanco", "ivory", "hueso",
+            "juego", "set", "conjunto",
+            "living", "sala", "estar"
         ]
     }
 ]
