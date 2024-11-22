@@ -3,27 +3,53 @@ import { money } from '../functions/money';
 import Link from 'next/link';
 
 export interface ItemInt {
+    id: string;
     name: string;
     price: number;
     images: string[];
-    colors: string[];
+    specifications: {
+        material?: string;
+        height?: number;
+        width?: number;
+        depth?: number;
+        colors: string[];
+        features: string[];
+        pieces?: string[];
+    };
+    detail: string;
+    specificSynonyms?: {
+        size?: string[];
+        features?: string[];
+        type?: string[];
+        style?: string[];
+        pieces?: string[];
+    };
 }
 const Card = ({ item }: { item: ItemInt }) => {
 
     return (
         <Link href={`/${item.name.replaceAll(' ', '-')}`}>
-            <div className="flex flex-col max-w-72 w-full bg-white border border-[#535353] rounded-xl overflow-hidden select-none cursor-pointer hover:opacity-80 m-5">
-                <h2 className="text-center bg-[#535353] text-white p-4 mb-5 overflow-hidden text-nowrap text-ellipsis">{item.name}</h2>
-                <Image
-                    src={item.images[0]}
-                    alt={item.name}
-                    width={300}
-                    height={600}
-                    className='h-56 aspect-square place-self-center rounded-md m-5 object-contain'
-                />
-                <div className="border my-8 mx-3" />
-                <p className="font-bold text-3xl text-center mb-2">{money(item.price)}</p>
-                <p className='text-center mb-6 text-gray-500'>{item.colors.length} {item.colors.length > 1 ? "colores disponibles" : "color disponible"} </p>
+            <div className="flex flex-col bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <h2 className="text-center bg-[#535353] text-white py-3 px-4 text-sm overflow-hidden text-ellipsis whitespace-nowrap">
+                    {item.name}
+                </h2>
+                <div className="p-4">
+                    <Image
+                        src={item.images[0]}
+                        alt={item.name}
+                        width={300}
+                        height={300}
+                        className='w-full aspect-square object-contain'
+                    />
+                    <div className="border-t my-4" />
+                    <p className="font-bold text-2xl text-center mb-2">
+                        {money(item.price)}
+                    </p>
+                    <p className='text-center text-sm text-gray-500'>
+                        {item.specifications.colors.length} 
+                        {item.specifications.colors.length > 1 ? " colores disponibles" : " color disponible"}
+                    </p>
+                </div>
             </div>
         </Link>
     )
