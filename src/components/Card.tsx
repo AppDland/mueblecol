@@ -1,13 +1,8 @@
 import Image from 'next/image';
 import { money } from '../functions/money';
 import Link from 'next/link';
+import { ItemInt } from '@/interfaces/item';
 
-export interface ItemInt {
-    name: string;
-    price: number;
-    images: string[];
-    colors: string[];
-}
 const Card = ({ item }: { item: ItemInt }) => {
 
     return (

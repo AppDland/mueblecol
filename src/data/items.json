@@ -14,7 +14,10 @@
     {
         "name": "Ropero Cuatro Cuerpos 2m x 3m",
         "price": 735000,
-        "images": [],
+        "images": [
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
+        ],
         "colors": [
             "brown"
         ]
@@ -22,7 +25,10 @@
     {
         "name": "Mesa Recibidor Moderno Melamina Color Blanco",
         "price": 345000,
-        "images": [],
+        "images": [
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
+        ],
         "colors": [
             "white"
         ]
@@ -30,7 +36,10 @@
     {
         "name": "Sillon + Mesa | Blancos",
         "price": 245000,
-        "images": [],
+        "images": [
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
+        ],
         "colors": [
             "white"
         ]
