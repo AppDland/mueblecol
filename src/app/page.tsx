@@ -19,7 +19,34 @@ export default function Home() {
 
     return (
         <>
-            <Intro />
+            <Intro
+                headerTitle="MuebleCol"
+                title="Bienvenido a MuebleCol"
+                imageAlt="sillon"
+                imageSrc="/ropero.png"
+                subtitle="Encuentra los mejores muebles a los mejores precios"
+                bgColor="bg-[#2E9896]"
+                headerBgColor="bg-[#005353]"
+                className=""
+                headerButtons={[
+                    <Button
+                        className="mx-3"
+                        text="Inicio"
+                    />,
+                    <Button
+                        className="mx-5"
+                        text="Contacto"
+                    />,
+                    <Button
+                        iconSrc="kart.svg"
+                        width="30px"
+                        height="30px"
+                        iconHeight={50}
+                        iconWidth={50}
+                        iconColor="white"
+                    />
+                ]}
+            />
             <div className="flex flex-wrap relative">
                 <Finder value={text} setValue={setText} onFind={handleFind} />
                 {
@@ -27,19 +54,20 @@ export default function Home() {
                         <Card item={item} key={index} />
                     ))
                 }
-                <Button 
-                className="absolute right-5 mt-4 "
-                iconSrc="kart.svg"
-                width="60px"
-                height="60px"
-                iconHeight={50}
-                iconWidth={50}
-                iconColor="red-500"
+                <Button
+                    className="absolute right-5 mt-4 "
+                    iconSrc="kart.svg"
+                    width="60px"
+                    height="60px"
+                    iconHeight={50}
+                    iconWidth={50}
+                    iconColor="red-500"
                 />
             </div>
             <div className="mt-24 ">
                 <Kart />
             </div>
+
         </>
     );
 }
