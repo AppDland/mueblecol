@@ -4,6 +4,8 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 import Finder from "@/components/Finder";
 import Kart from "@/components/kart";
+import ModernCard from "@/components/ModernCard";
+import SimpleCard from "@/components/SimpleCard";
 import Items from "@/data/items.json";
 import { ItemInt } from "@/interfaces/item";
 import Filter from "@/modules/Filter/Filter";
@@ -16,7 +18,6 @@ export default function Home() {
     const [filteredItems, setFilteredItems] = useState<ItemInt[]>([]);
 
     const handleFind = () => {
-        console.log(Items.filter(({ name }) => name.includes(text)));
         const tempFound = Items.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase()));
         setFound(tempFound);
         setFilteredItems(tempFound);
@@ -52,6 +53,13 @@ export default function Home() {
             <div className="mt-24 ">
                 <Kart />
             </div>
+            <ModernCard title="Facilidad de pago" description="Ofrecemos la oportunidad de que puedas comprar en cuotas" />
+            <SimpleCard
+                title={Items[0].name}
+                color={Items[0].colors[0].name}
+                image={Items[0].images[0]}
+                price={Items[0].price}
+            />
         </>
     );
 }

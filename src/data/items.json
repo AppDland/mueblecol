@@ -7,8 +7,10 @@
             "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
         ],
         "colors": [
-            "white",
-            "brown"
+            {
+                "name": "Marron",
+                "hex": "#8B4513"
+            }
         ]
     },
     {
@@ -19,7 +21,10 @@
             "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
         ],
         "colors": [
-            "brown"
+            {
+                "name": "Marron",
+                "hex": "#8B4513"
+            }
         ]
     },
     {
@@ -30,7 +35,10 @@
             "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
         ],
         "colors": [
-            "white"
+            {
+                "name": "Blanco",
+                "hex": "#FFFFFF"
+            }
         ]
     },
     {
@@ -41,7 +49,10 @@
             "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
         ],
         "colors": [
-            "white"
+            {
+                "name": "Blanco",
+                "hex": "#FFFFFF"
+            }
         ]
     }
 ]
