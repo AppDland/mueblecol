@@ -23,6 +23,8 @@ const ModernCard = ({ title, description }: ModernCardInt) => {
             to-[#173636]
             p-5
             select-none
+            m-10
+            overflow-hidden
             border"
         >
             <div className="
