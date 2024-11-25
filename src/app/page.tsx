@@ -1,11 +1,11 @@
 'use client';
-
 import Button from "@/components/Button";
-import Card, { ItemInt } from "@/components/Card";
 import Finder from "@/components/Finder";
-import Kart from "@/components/kart";
 import Items from "@/data/items.json";
+import { ItemInt } from "@/interfaces/item";
+import Imperdible from "@/modules/Imperdible";
 import Intro from "@/modules/Intro";
+import Offers from "@/modules/Offers";
 import { useState } from "react";
 
 export default function Home() {
@@ -13,33 +13,27 @@ export default function Home() {
     const [found, setFound] = useState<ItemInt[]>([]);
 
     const handleFind = () => {
-        console.log(Items.filter(({ name }) => name.includes(text)))
-        setFound(Items.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase())));
+        const tempFound = Items.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase()));
+        setFound(tempFound);
     }
 
     return (
-        <>
+        <div className="flex flex-col w-full box-border">
             <Intro />
             <div className="flex flex-wrap relative">
                 <Finder value={text} setValue={setText} onFind={handleFind} />
-                {
-                    found.map((item, index) => (
-                        <Card item={item} key={index} />
-                    ))
-                }
-                <Button 
-                className="absolute right-5 mt-4 "
-                iconSrc="kart.svg"
-                width="60px"
-                height="60px"
-                iconHeight={50}
-                iconWidth={50}
-                iconColor="red-500"
+                <Button
+                    className="absolute right-5 mt-4 "
+                    iconSrc="kart.svg"
+                    width="60px"
+                    height="60px"
+                    iconHeight={50}
+                    iconWidth={50}
+                    iconColor="red-500"
                 />
             </div>
-            <div className="mt-24 ">
-                <Kart />
-            </div>
-        </>
+            <Offers />
+            <Imperdible /> 
+        </div>
     );
 }

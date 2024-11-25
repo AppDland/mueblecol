@@ -2,37 +2,61 @@
     {
         "name": "Ropero Grande 2m x 1m MDF Color Marron",
         "price": 300000,
+        "offer": 250000,
         "images": [
             "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
             "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
         ],
         "colors": [
-            "white",
-            "brown"
+            {
+                "name": "Marron",
+                "hex": "#8B4513"
+            }
         ]
     },
     {
         "name": "Ropero Cuatro Cuerpos 2m x 3m",
         "price": 735000,
-        "images": [],
+        "offer": 250000,
+        "images": [
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
+        ],
         "colors": [
-            "brown"
+            {
+                "name": "Marron",
+                "hex": "#8B4513"
+            }
         ]
     },
     {
         "name": "Mesa Recibidor Moderno Melamina Color Blanco",
         "price": 345000,
-        "images": [],
+        "offer": 250000,
+        "images": [
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
+        ],
         "colors": [
-            "white"
+            {
+                "name": "Blanco",
+                "hex": "#FFFFFF"
+            }
         ]
     },
     {
         "name": "Sillon + Mesa | Blancos",
         "price": 245000,
-        "images": [],
+        "offer": 250000,
+        "images": [
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
+            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
+        ],
         "colors": [
-            "white"
+            {
+                "name": "Blanco",
+                "hex": "#FFFFFF"
+            }
         ]
     }
 ]
