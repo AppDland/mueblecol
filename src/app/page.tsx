@@ -20,30 +20,32 @@ export default function Home() {
     return (
         <>
             <Intro
-                headerTitle="MuebleCol"
-                title="Bienvenido a MuebleCol"
-                imageAlt="sillon"
-                imageSrc="/ropero.png"
-                subtitle="Encuentra los mejores muebles a los mejores precios"
+                headerTitle={["Mueble", "Col"]}
+                headerTitleColors={['text-[#177675]', 'text-[#2E9896]']}
+                title="Muebles Para El Hogar"
+                subtitle="!Gran Variedad!"
+                title2="Envio Gratis"
+                title2Color="text-[#005353]"
+                subtitle2="Llevamos A La Puerta De Tu Casa"
+                subtitle2Color="text-[#005353]"
                 bgColor="bg-[#2E9896]"
                 headerBgColor="bg-[#005353]"
-                className=""
                 headerButtons={[
                     <Button
-                        className="mx-3"
+                        className="mx-4 mt-1"
                         text="Inicio"
                     />,
                     <Button
-                        className="mx-5"
+                        className="mx-4 mt-1"
                         text="Contacto"
                     />,
                     <Button
+                        className="mx-4"
                         iconSrc="kart.svg"
                         width="30px"
                         height="30px"
                         iconHeight={50}
                         iconWidth={50}
-                        iconColor="white"
                     />
                 ]}
             />
