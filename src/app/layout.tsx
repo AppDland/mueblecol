@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+'use client';
+import { useEffect } from 'react';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -13,18 +14,13 @@ const geistMono = localFont({
     weight: "100 900",
 });
 
-export const metadata: Metadata = {
-    title: "Isamoblado",
-    description: "desccripcion",
-};
-
 export default function RootLayout({
     children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+}: {
+    children: React.ReactNode
+}) {
     return (
-        <html lang="es">
+        <html lang="en" data-theme="mytheme" suppressHydrationWarning>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >

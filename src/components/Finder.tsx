@@ -1,74 +1,42 @@
 'use client';
-import Image from "next/image";
-import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { searchItems } from '@/functions/search';
 
-interface FinderInt {
-    value: string;
-    setValue: (param: string) => void;
-    onFind: () => void;
+interface FinderProps {
+    defaultValue?: string;
 }
 
-const Finder = ({ value, setValue, onFind }: FinderInt) => {
+const Finder: React.FC<FinderProps> = ({ defaultValue = '' }) => {
+    const [searchTerm, setSearchTerm] = useState(defaultValue);
+    const router = useRouter();
 
-    const [isFocused, setIsfocused] = useState(false);
-
-    const handleBlur = () => {
-        if (value.length === 0) {
-            setIsfocused(false)
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (searchTerm.trim()) {
+            router.push(`/search/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`);
         }
-    }
-
-    const handleKeyUp = (event: any) => {
-        if (event.code === "Enter" || event.key === "Enter" || event.keyCode === 13) {
-            onFind();
-        }
-    }
+    };
 
     return (
-        <div className="relative w-80 h-12 m-5 overflow-hidden rounded-lg flex items-center justify-center border border-[#A30000]">
-            <input
-                className={`
-                relative 
-                bg-transparent 
-                z-10 
-                w-full 
-                h-full 
-                px-4 
-                placeholder:text-center 
-                text-xl
-                placeholder:text-[#E8E8E8] 
-                box-content
-                outline-none
-                ${isFocused ? 'cursor-auto' : 'cursor-pointer'}
-                `}
-                type="text"
-                placeholder="¿Qué deseas buscar?"
-                onChange={({ target }) => setValue(target.value)}
-                onFocus={() => setIsfocused(true)}
-                onBlur={handleBlur}
-                onKeyUp={handleKeyUp}
-            />
-            <Image
-                alt="Buscar"
-                src="/Lupa.svg"
-                width={20}
-                height={20}
-                className="relative z-10 w-7 mx-2 cursor-pointer"
-                onClick={onFind}
-            />
-            <div className={`
-                bg-[#A30000]
-                ${isFocused ? "w-11" : "w-full"}
-                h-full
-                absolute
-                right-0
-                top-0
-                z-0
-                duration-150
-            `}
-            />
-        </div>
-    )
-}
+        <form onSubmit={handleSearch} className="w-full max-w-2xl mx-auto my-4">
+            <div className="relative">
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="¿Qué deseas buscar?"
+                    className="w-full px-4 py-2 border rounded-lg"
+                />
+                <button
+                    type="submit"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary text-white px-4 py-1 rounded"
+                >
+                    Buscar
+                </button>
+            </div>
+        </form>
+    );
+};
 
 export default Finder;

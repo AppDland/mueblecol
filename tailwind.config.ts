@@ -10,10 +10,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+        primary: '#2E9896',
+        secondary: '#005353',
+        accent: '#177675',
+        neutral: '#272727',
+      }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          "primary": "#2E9896",
+          "secondary": "#005353",
+          "accent": "#177675",
+          "neutral": "#272727",
+          "base-100": "#ffffff",
+        },
+      },
+    ],
+  },
 } satisfies Config;

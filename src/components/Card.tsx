@@ -8,21 +8,19 @@ export interface ItemInt {
     price: number;
     images: string[];
     specifications: {
-        material?: string;
-        height?: number;
-        width?: number;
-        depth?: number;
+        material: string;
+        height: number;
+        width: number;
+        depth: number;
         colors: string[];
         features: string[];
-        pieces?: string[];
     };
     detail: string;
     specificSynonyms?: {
-        size?: string[];
-        features?: string[];
         type?: string[];
         style?: string[];
-        pieces?: string[];
+        features?: string[];
+        size?: string[];
     };
 }
 const Card = ({ item }: { item: ItemInt }) => {
@@ -35,7 +33,7 @@ const Card = ({ item }: { item: ItemInt }) => {
                 </h2>
                 <div className="p-4">
                     <Image
-                        src={item.images[0]}
+                        src={item.images?.[0] || '/no-image.png'}
                         alt={item.name}
                         width={300}
                         height={300}
