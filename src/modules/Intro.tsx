@@ -62,8 +62,7 @@ const Intro: React.FC<IntroProps> = ({
                 </div>
             </header>
             <div className="flex flex-col md:flex-row justify-evenly items-center w-full flex-grow relative overflow-hidden z-40">
-
-                <div className='flex w-full max-w-screen-2xl h-full justify-center py-32 border border-black'>
+                <div className='flex w-full max-w-screen-2xl h-full justify-center py-32'>
                     <div className="text-center w-full md:w-1/2 mt-4 md:mt-0 m-5">
                         <h1 className={`text-2xl md:text-4xl font-bold ${titleColor}`}>{title}</h1>
                         <p className={`mt-2 md:mt-4 ${subtitleColor}`}>{subtitle}</p>
@@ -84,4 +83,4 @@ const Intro: React.FC<IntroProps> = ({
 
 export default Intro;
 
-// border border - black`
+// border border-black`

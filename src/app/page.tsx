@@ -2,6 +2,8 @@
 
 import Button from "@/components/Button";
 import Card, { ItemInt } from "@/components/Card";
+import CategoryButton from "@/components/CategoryButton";
+import CategoryPage from "@/components/CategoryPage";
 import Finder from "@/components/Finder";
 import Kart from "@/components/kart";
 import Items from "@/data/items.json";
@@ -11,6 +13,8 @@ import { useState } from "react";
 export default function Home() {
     const [text, setText] = useState('');
     const [found, setFound] = useState<ItemInt[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
 
     const handleFind = () => {
         console.log(Items.filter(({ name }) => name.includes(text)))
@@ -56,6 +60,27 @@ export default function Home() {
                         <Card item={item} key={index} />
                     ))
                 }
+                <div className="p-4">
+                    {!selectedCategory ? (
+                        <div>
+                            <h1 className="text-3xl font-bold mb-4">Select a Category</h1>
+                            <div className="flex space-x-4">
+                                <CategoryButton
+                                    imageUrl="https://example.com/image1.jpg"
+                                    category="White"
+                                    onClick={setSelectedCategory}
+                                />
+                                <CategoryButton
+                                    imageUrl="https://example.com/image2.jpg"
+                                    category="Brown"
+                                    onClick={setSelectedCategory}
+                                />
+                            </div>
+                        </div>
+                    ) : (
+                        <CategoryPage category={selectedCategory} />
+                    )}
+                </div>
                 <Button
                     className="absolute right-5 mt-4 "
                     iconSrc="kart.svg"
@@ -69,6 +94,7 @@ export default function Home() {
             <div className="mt-24 ">
                 <Kart />
             </div>
+
 
         </>
     );
