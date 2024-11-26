@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import ThemeToggle from '@/components/ThemeToggle';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -19,11 +20,17 @@ export default function RootLayout({
 }: {
     children: React.ReactNode
 }) {
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }, []);
+
     return (
-        <html lang="en" data-theme="mytheme" suppressHydrationWarning>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+        <html lang="es" suppressHydrationWarning>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-base-100 text-base-content`}>
+                <div className="fixed top-4 right-4 z-50">
+                    <ThemeToggle />
+                </div>
                 {children}
             </body>
         </html>

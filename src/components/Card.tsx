@@ -8,12 +8,13 @@ export interface ItemInt {
     price: number;
     images: string[];
     specifications: {
-        material: string;
-        height: number;
-        width: number;
-        depth: number;
+        material?: string;
+        height?: number;
+        width?: number;
+        depth?: number;
         colors: string[];
         features: string[];
+        pieces?: string[];
     };
     detail: string;
     specificSynonyms?: {
@@ -21,6 +22,7 @@ export interface ItemInt {
         style?: string[];
         features?: string[];
         size?: string[];
+        pieces?: string[];
     };
 }
 const Card = ({ item }: { item: ItemInt }) => {
