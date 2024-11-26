@@ -3,11 +3,11 @@ import { useParams } from 'next/navigation';
 import Items from '@/data/items.json';
 import ImageViewer from '@/components/ImageViewer';
 import { money } from '@/functions/money';
-import { ItemInt } from '@/components/Card';
 import AmountSelector from '@/components/AmountSelector';
 import { useState } from 'react';
 import { findSimilarItems } from '@/functions/search';
 import Card from '@/components/Card';
+import { ItemInt } from '@/interfaces/item';
 
 const Item = () => {
     const params = useParams();

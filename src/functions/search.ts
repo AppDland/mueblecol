@@ -1,5 +1,5 @@
 import Items from '@/data/items.json';
-import { ItemInt } from '@/components/Card';
+import { ItemInt } from '@/interfaces/item';
 
 interface Category {
     categoryName: string;

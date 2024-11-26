@@ -3,7 +3,8 @@
 import Intro from '@/modules/Intro';
 import Finder from '@/components/Finder';
 import Items from '@/data/items.json';
-import Card, { ItemInt } from '@/components/Card';
+import Card from '@/components/Card';
+import { ItemInt } from '@/interfaces/item';
 
 export default function Home() {
     const allItems = Object.values(Items.categories)

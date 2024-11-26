@@ -3,9 +3,9 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Card from '@/components/Card';
 import Finder from '@/components/Finder';
-import { ItemInt } from '@/components/Card';
 import { searchItems } from '@/functions/search';
 import Filters, { FilterOptions } from '@/components/Filters';
+import { ItemInt } from '@/interfaces/item';
 
 const ITEMS_PER_PAGE = 6;
 
