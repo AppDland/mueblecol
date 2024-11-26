@@ -1,39 +1,29 @@
 'use client';
-import Button from "@/components/Button";
-import Finder from "@/components/Finder";
-import Items from "@/data/items.json";
-import { ItemInt } from "@/interfaces/item";
-import Imperdible from "@/modules/Imperdible";
-import Intro from "@/modules/Intro";
-import Offers from "@/modules/Offers";
-import { useState } from "react";
+
+import Intro from '@/modules/Intro';
+import Finder from '@/components/Finder';
+import Items from '@/data/items.json';
+import Card, { ItemInt } from '@/components/Card';
 
 export default function Home() {
-    const [text, setText] = useState('');
-    const [found, setFound] = useState<ItemInt[]>([]);
-
-    const handleFind = () => {
-        const tempFound = Items.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase()));
-        setFound(tempFound);
-    }
+    const allItems = Object.values(Items.categories)
+        .flatMap(category => category.items as ItemInt[])
+        .slice(0, 6);
 
     return (
-        <div className="flex flex-col w-full box-border">
+        <main>
             <Intro />
-            <div className="flex flex-wrap relative">
-                <Finder value={text} setValue={setText} onFind={handleFind} />
-                <Button
-                    className="absolute right-5 mt-4 "
-                    iconSrc="kart.svg"
-                    width="60px"
-                    height="60px"
-                    iconHeight={50}
-                    iconWidth={50}
-                    iconColor="red-500"
-                />
+            <div className="flex flex-col relative w-full max-w-7xl mx-auto px-4">
+                <Finder />
+                
+                <h2 className="text-2xl font-bold my-4">Productos Destacados</h2>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {allItems.map((item, index) => (
+                        <Card item={item} key={index} />
+                    ))}
+                </div>
             </div>
-            <Offers />
-            <Imperdible /> 
-        </div>
+        </main>
     );
 }

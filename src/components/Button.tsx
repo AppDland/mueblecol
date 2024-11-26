@@ -55,7 +55,7 @@ const Button: React.FC<ButtonProps> = ({
                     alt={iconAlt}
                     width={iconWidth}
                     height={iconHeight}
-                    className="ml-2"
+                    className="ml-4"
                     style={{ filter: `invert(${iconColor})` }}
                 />
             )}

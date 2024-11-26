@@ -2,36 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
-}
+@layer base {
+  :root {
+    --background: theme('colors.white');
+    --foreground: theme('colors.gray.900');
+  }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+  [data-theme='dark'] {
+    --background: theme('colors.gray.900');
+    --foreground: theme('colors.gray.100');
+  }
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans);
 }
 
 img {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-white transition-colors;
+  }
+  
+  .card {
+    @apply bg-base-100 border border-base-300 rounded-lg shadow-sm hover:shadow-md transition-shadow;
+  }
 }

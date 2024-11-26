@@ -1,62 +1,264 @@
-[
-    {
-        "name": "Ropero Grande 2m x 1m MDF Color Marron",
-        "price": 300000,
-        "offer": 250000,
-        "images": [
-            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
-        ],
-        "colors": [
-            {
-                "name": "Marron",
-                "hex": "#8B4513"
-            }
-        ]
+{
+    "categories": {
+        "armarios": {
+            "categoryName": "Armarios y Roperos",
+            "generalSynonyms": [
+                "armario", "placard", "closet", "guardarropa", "ropero",
+                "mueble de dormitorio", "mobiliario dormitorio", "perchero"
+            ],
+            "items": [
+                {
+                    "id": "rop-001",
+                    "name": "Ropero Grande 2m x 1m MDF Color Marron",
+                    "price": 300000,
+                    "images": [
+                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
+                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
+                    ],
+                    "specifications": {
+                        "material": "MDF",
+                        "height": 200,
+                        "width": 100,
+                        "depth": 60,
+                        "colors": ["brown", "white"],
+                        "features": ["cajones", "barras", "estantes"]
+                    },
+                    "detail": "Amplio ropero de MDF con acabado premium, ideal para dormitorios espaciosos. Incluye barras para colgar ropa, estantes ajustables y cajones inferiores. Excelente organización del espacio.",
+                    "specificSynonyms": {
+                        "size": ["grande", "amplio", "espacioso", "2 metros", "200cm", "1 metro", "100cm"],
+                        "features": ["con cajones", "con estantes", "con barras", "con perchas"]
+                    }
+                },
+                {
+                    "id": "rop-002",
+                    "name": "Ropero Cuatro Cuerpos 2m x 3m",
+                    "price": 735000,
+                    "images": [],
+                    "specifications": {
+                        "material": "MDF",
+                        "height": 200,
+                        "width": 300,
+                        "depth": 60,
+                        "colors": ["brown"],
+                        "features": ["espejo", "4 puertas", "organizadores"]
+                    },
+                    "detail": "Ropero de gran capacidad con cuatro compartimentos independientes. Perfecto para familias numerosas. Incluye espejo de cuerpo completo y organizadores internos.",
+                    "specificSynonyms": {
+                        "size": ["familiar", "grande", "4 cuerpos", "cuatro puertas", "3 metros", "300cm"],
+                        "features": ["con espejo", "con organizadores", "4 compartimentos"]
+                    }
+                },
+                {
+                    "id": "rop-003",
+                    "name": "Ropero Infantil con Diseños Disney",
+                    "price": 280000,
+                    "images": [],
+                    "specifications": {
+                        "material": "MDF",
+                        "height": 180,
+                        "width": 120,
+                        "depth": 50,
+                        "colors": ["white"],
+                        "features": ["diseños infantiles", "estantes", "barras"]
+                    },
+                    "detail": "Ropero infantil con diseños de personajes Disney. Ideal para habitaciones de niños.",
+                    "specificSynonyms": {
+                        "size": ["mediano", "infantil", "niños"],
+                        "features": ["con dibujos", "con personajes", "colorido"]
+                    }
+                },
+                {
+                    "id": "rop-004",
+                    "name": "Placard Empotrado Premium",
+                    "price": 890000,
+                    "images": [],
+                    "specifications": {
+                        "material": "MDF",
+                        "height": 240,
+                        "width": 280,
+                        "depth": 60,
+                        "colors": ["brown", "white"],
+                        "features": ["puertas corredizas", "luces LED", "zapatera"]
+                    },
+                    "detail": "Placard empotrado de lujo con iluminación LED y sistema de puertas corredizas.",
+                    "specificSynonyms": {
+                        "size": ["grande", "empotrado", "premium"],
+                        "features": ["con luz", "corredizo", "con zapatera"]
+                    }
+                }
+            ]
+        },
+        "mesas": {
+            "categoryName": "Mesas",
+            "generalSynonyms": [
+                "mesa", "mesita", "mueble", "mobiliario"
+            ],
+            "items": [
+                {
+                    "id": "mes-001",
+                    "name": "Mesa Recibidor Moderno Melamina Color Blanco",
+                    "price": 345000,
+                    "images": [],
+                    "specifications": {
+                        "material": "Melamina",
+                        "height": 80,
+                        "width": 120,
+                        "depth": 40,
+                        "colors": ["white"],
+                        "features": ["cajón", "diseño moderno"]
+                    },
+                    "detail": "Mesa de recibidor con diseño moderno y minimalista. Perfecta para entrada o pasillo. Incluye cajón organizador y acabado en melamina de alta resistencia.",
+                    "specificSynonyms": {
+                        "type": ["recibidor", "entrada", "hall", "consola"],
+                        "style": ["moderno", "minimalista", "contemporáneo"],
+                        "features": ["con cajón", "organizador"]
+                    }
+                },
+                {
+                    "id": "mes-002",
+                    "name": "Mesa Comedor Extensible 6-8 Personas",
+                    "price": 520000,
+                    "images": [],
+                    "specifications": {
+                        "material": "Melamina",
+                        "height": 75,
+                        "width": 160,
+                        "depth": 90,
+                        "colors": ["brown"],
+                        "features": ["extensible", "moderna"]
+                    },
+                    "detail": "Mesa de comedor extensible moderna. Perfecta para familias y reuniones.",
+                    "specificSynonyms": {
+                        "type": ["comedor", "extensible", "familiar"],
+                        "features": ["ampliable", "grande"]
+                    }
+                },
+                {
+                    "id": "mes-003",
+                    "name": "Mesa Ratona Minimalista",
+                    "price": 180000,
+                    "images": [],
+                    "specifications": {
+                        "material": "Melamina",
+                        "height": 45,
+                        "width": 90,
+                        "depth": 50,
+                        "colors": ["white"],
+                        "features": ["minimalista", "moderna"]
+                    },
+                    "detail": "Mesa ratona con diseño minimalista para living moderno.",
+                    "specificSynonyms": {
+                        "type": ["ratona", "centro", "living"],
+                        "style": ["minimalista", "moderno"]
+                    }
+                },
+                {
+                    "id": "mes-004",
+                    "name": "Mesa de Escritorio con Cajones",
+                    "price": 295000,
+                    "images": [],
+                    "specifications": {
+                        "material": "MDF",
+                        "height": 75,
+                        "width": 120,
+                        "depth": 60,
+                        "colors": ["white", "brown"],
+                        "features": ["cajones", "organizador"]
+                    },
+                    "detail": "Escritorio moderno con cajones y organizador de cables.",
+                    "specificSynonyms": {
+                        "type": ["escritorio", "oficina", "estudio"],
+                        "features": ["con cajones", "organizador"]
+                    }
+                }
+            ]
+        },
+        "conjuntos": {
+            "categoryName": "Conjuntos y Sets",
+            "generalSynonyms": [
+                "conjunto", "set", "juego", "combo"
+            ],
+            "items": [
+                {
+                    "id": "con-001",
+                    "name": "Sillon + Mesa | Blancos",
+                    "price": 245000,
+                    "images": [],
+                    "specifications": {
+                        "pieces": ["sillón", "mesa de centro"],
+                        "colors": ["white"],
+                        "features": ["tapizado", "mesa a juego"]
+                    },
+                    "detail": "Conjunto de sala moderno que incluye sillón confortable y mesa de centro a juego. Ideal para espacios pequeños o salas de estar.",
+                    "specificSynonyms": {
+                        "type": ["living", "sala", "estar"],
+                        "pieces": ["sillón", "sofá", "butaca", "mesa ratona", "mesa de café"]
+                    }
+                },
+                {
+                    "id": "con-002",
+                    "name": "Comedor Completo 6 Sillas",
+                    "price": 780000,
+                    "images": [],
+                    "specifications": {
+                        "pieces": ["mesa", "6 sillas"],
+                        "colors": ["brown"],
+                        "features": ["tapizado premium", "extensible"]
+                    },
+                    "detail": "Conjunto de comedor completo con mesa extensible y 6 sillas tapizadas.",
+                    "specificSynonyms": {
+                        "type": ["comedor", "juego", "conjunto"],
+                        "pieces": ["mesa", "sillas", "conjunto completo"]
+                    }
+                },
+                {
+                    "id": "con-003",
+                    "name": "Set Dormitorio Matrimonial Completo",
+                    "price": 1250000,
+                    "images": [],
+                    "specifications": {
+                        "pieces": ["cama", "2 mesas de luz", "cómoda", "espejo"],
+                        "colors": ["brown", "white"],
+                        "features": ["diseño moderno", "completo"]
+                    },
+                    "detail": "Conjunto completo para dormitorio matrimonial con todos los muebles necesarios.",
+                    "specificSynonyms": {
+                        "type": ["dormitorio", "habitación", "matrimonial"],
+                        "pieces": ["cama", "mesas de luz", "cómoda"]
+                    }
+                }
+            ]
+        }
     },
-    {
-        "name": "Ropero Cuatro Cuerpos 2m x 3m",
-        "price": 735000,
-        "offer": 250000,
-        "images": [
-            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
-        ],
-        "colors": [
-            {
-                "name": "Marron",
-                "hex": "#8B4513"
-            }
-        ]
-    },
-    {
-        "name": "Mesa Recibidor Moderno Melamina Color Blanco",
-        "price": 345000,
-        "offer": 250000,
-        "images": [
-            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
-        ],
-        "colors": [
-            {
+    "globalAttributes": {
+        "colors": {
+            "white": {
                 "name": "Blanco",
-                "hex": "#FFFFFF"
+                "synonyms": ["blanco", "ivory", "hueso", "crema", "blanquecino"]
+            },
+            "brown": {
+                "name": "Marrón",
+                "synonyms": ["marrón", "café", "chocolate", "nogal", "caoba", "castaño"]
             }
-        ]
-    },
-    {
-        "name": "Sillon + Mesa | Blancos",
-        "price": 245000,
-        "offer": 250000,
-        "images": [
-            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-            "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
-        ],
-        "colors": [
-            {
-                "name": "Blanco",
-                "hex": "#FFFFFF"
+        },
+        "materials": {
+            "MDF": {
+                "name": "MDF",
+                "synonyms": ["MDF", "fibra", "madera", "aglomerado"]
+            },
+            "melamina": {
+                "name": "Melamina",
+                "synonyms": ["melamina", "melanina", "laminado"]
             }
-        ]
+        },
+        "measurements": {
+            "synonyms": {
+                "metros": ["m", "metro", "metros"],
+                "centimetros": ["cm", "centímetro", "centímetros"],
+                "altura": ["alto", "altura", "h"],
+                "ancho": ["ancho", "anchura", "w", "width"],
+                "profundidad": ["profundidad", "profundo", "fondo", "d", "depth"]
+            }
+        }
     }
-]
+}
