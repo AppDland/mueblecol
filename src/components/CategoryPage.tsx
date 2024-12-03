@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card, { ItemInt } from './Card';
+import items from '@/data/items.json';
 
 interface CategoryPageProps {
     category: string;
@@ -23,16 +24,17 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
     backButtonHoverColor = 'hover:bg-gray-700',
     backButtonHoverTextColor = 'hover:text-white',
     backButtonPadding = 'p-2',
-    backButtonRounded = 'rounded-full', 
+    backButtonRounded = 'rounded-full',
     backButtonPosition = 'top-left',
 }) => {
-    const [items, setItems] = useState<ItemInt[]>([]);
+    const [filteredItems, setFilteredItems] = useState<ItemInt[]>([]);
+    const [searchCount, setSearchCount] = useState(0);
 
     useEffect(() => {
-        const fetchItems = async () => {
-            const response = await fetch(`/api/items?category=${category}`);
-            const data = await response.json();
-            setItems(data);
+        const fetchItems = () => {
+            const filteredItems = items.filter(item => item.category.toLowerCase() === category.toLowerCase());
+            setFilteredItems(filteredItems);
+            setSearchCount(prevCount => prevCount + 1);
         };
 
         fetchItems();
@@ -46,24 +48,18 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
     };
 
     return (
-        <div className="relative">
-            <button
-                onClick={onBackClick}
-                className={`absolute ${positionClasses[backButtonPosition]} ${backButtonColor} ${backButtonTextColor} ${backButtonHoverColor} ${backButtonHoverTextColor} ${backButtonPadding} ${backButtonRounded}`}
-                aria-label="Go back"
-            >
-                {backButtonText}
-            </button>
-            <div className="flex justify-between items-center mb-4">
-                <h1 className="text-2xl font-bold">Items for {category}</h1>
+        <div className="relative flex flex-col h-screen">
+            <div className="flex justify-center items-center mt-8">
+                <h1 className="text-4xl font-bold">Relacionados A {category}</h1>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {items.map((item) => (
-                    <Card key={item.name} item={item} />
+            <div className=" relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-20 w-full h-screen">
+            <p className="absolute text-center -mt-10 right-10">Cantidad Encontrada: {searchCount}</p>
+                {filteredItems.map((item) => (
+                    <Card key={item.name} item={item}/>
                 ))}
             </div>
         </div>
-    );
+    );                                                  
 };
 
 export default CategoryPage;

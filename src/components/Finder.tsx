@@ -25,7 +25,7 @@ const Finder = ({ value, setValue, onFind }: FinderInt) => {
     }
 
     return (
-        <div className="relative w-80 h-12 m-5 overflow-hidden rounded-lg flex items-center justify-center border border-[#A30000]">
+        <div className="relative w-80 h-12 m-5 overflow-hidden rounded-lg flex items-center justify-center border border-[#2E9896]">
             <input
                 className={`
                 relative 
@@ -57,7 +57,7 @@ const Finder = ({ value, setValue, onFind }: FinderInt) => {
                 onClick={onFind}
             />
             <div className={`
-                bg-[#A30000]
+                bg-[#2E9896]
                 ${isFocused ? "w-11" : "w-full"}
                 h-full
                 absolute

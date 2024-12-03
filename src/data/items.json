@@ -9,7 +9,8 @@
         "colors": [
             "white",
             "brown"
-        ]
+        ],
+        "category": "dormitorio"
     },
     {
         "name": "Ropero Cuatro Cuerpos 2m x 3m",
@@ -17,7 +18,26 @@
         "images": [],
         "colors": [
             "brown"
-        ]
+        ],
+        "category": "dormitorio"
+    },
+    {
+        "name": "Ropero Cuatro Cuerpos 2m x 3m",
+        "price": 735000,
+        "images": [],
+        "colors": [
+            "brown"
+        ],
+        "category": "dormitorio"
+    },
+    {
+        "name": "Ropero Cuatro Cuerpos 2m x 3m",
+        "price": 735000,
+        "images": [],
+        "colors": [
+            "brown"
+        ],
+        "category": "dormitorio"
     },
     {
         "name": "Mesa Recibidor Moderno Melamina Color Blanco",
@@ -25,7 +45,8 @@
         "images": [],
         "colors": [
             "white"
-        ]
+        ],
+        "category": "cocina"
     },
     {
         "name": "Sillon + Mesa | Blancos",
@@ -33,6 +54,7 @@
         "images": [],
         "colors": [
             "white"
-        ]
+        ],
+        "category": "sala"
     }
 ]

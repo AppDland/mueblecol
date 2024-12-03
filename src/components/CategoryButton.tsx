@@ -20,7 +20,7 @@ interface CategoryButtonProps {
 
 const CategoryButton: React.FC<CategoryButtonProps> = ({
     imageUrl,
-    category, 
+    category,
     onClick,
     width = 'w-48',
     height = 'h-48',
@@ -44,7 +44,7 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
         <div className="relative">
             <div
                 onClick={handleClick}
-                className={`border border-black flex justify-center items-center cursor-pointer select-none ${width} ${height} ${hoverEffect} ${titleRounded}`}
+                className={`flex justify-center   items-center cursor-pointer select-none ${width} ${height} ${hoverEffect} ${titleRounded}`}
                 role="button"
                 aria-label={`Select ${category} category`}
             >
@@ -60,6 +60,7 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
                 </h3>
             </div>
         </div>
+
     );
 };
 

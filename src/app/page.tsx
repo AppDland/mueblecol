@@ -43,11 +43,11 @@ const Home = () => {
                 backgroundImage="/images/Frame1.png"
                 headerButtons={[
                     <Button
-                        className="mx-2iokgvhb mt-1"
+                        className="mx-2 mt-1"
                         text="Inicio"
                     />,
                     <Button
-                        className="mx-2iokgvhb mt-1"
+                        className="mx-2 mt-1"
                         text="Contacto"
                     />,
                     <Button
@@ -65,8 +65,8 @@ const Home = () => {
                 {found.map((item, index) => (
                     <Card item={item} key={index} />
                 ))}
-                <div className="overflow-y-auto max-h-96 w-full">
-                    <div className="flex flex-wrap justify-center space-x-4">
+                <div className="overflow-x-auto max-h-96 w-full scrollbar-hide">
+                    <div className="flex flex-nowrap justify-center space-x-4">
                         {categories.map((cat, index) => (
                             <CategoryButton
                                 key={index}
