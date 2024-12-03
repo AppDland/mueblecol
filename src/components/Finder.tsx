@@ -50,7 +50,7 @@ const Finder = ({ value, setValue, onFind }: FinderInt) => {
             />
             <Image
                 alt="Buscar"
-                src="/Lupa.svg"
+                src="/images/Lupa.svg"
                 width={20}
                 height={20}
                 className="relative z-10 w-7 mx-2 cursor-pointer"

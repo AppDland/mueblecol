@@ -19,6 +19,7 @@ interface IntroProps {
     headerTitleColors?: string[];
     headerButtons?: React.ReactNode[];
     headerBgColor?: string;
+    backgroundImage?: string; // Nueva propiedad para la imagen de fondo
 }
 
 const Intro: React.FC<IntroProps> = ({
@@ -38,9 +39,18 @@ const Intro: React.FC<IntroProps> = ({
     headerTitleColors = [],
     headerButtons = [],
     headerBgColor = 'bg-transparent',
+    backgroundImage, // Nueva propiedad para la imagen de fondo
 }) => {
     return (
-        <div className={classNames('w-full flex flex-col items-center select-none', bgColor, textColor, className)} style={{ height: containerHeight }}>
+        <div
+            className={classNames('w-full flex flex-col items-center select-none', bgColor, textColor, className)}
+            style={{
+                height: containerHeight,
+                backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+        >
             <header className={classNames('w-full flex justify-between items-center p-4', headerBgColor)}>
                 <div className="text-2xl font-bold flex">
                     {headerTitle.map((part, index) => (
@@ -59,20 +69,14 @@ const Intro: React.FC<IntroProps> = ({
                     </ul>
                 </nav>
             </header>
-            <div className="flex flex-col md:flex-row justify-evenly items-center w-full flex-grow relative overflow-hidden z-40">
-                <div className="flex w-full max-w-screen-2xl h-full justify-center py-32">
-                    <div className="text-center w-full md:w-1/2 mt-4 md:mt-0 m-5">
-                        <h1 className={classNames('text-2xl md:text-4xl font-bold', titleColor)}>{title}</h1>
-                        <p className={classNames('mt-2 md:mt-4', subtitleColor)}>{subtitle}</p>
-                    </div>
-                    <div className="text-center w-full md:w-1/2 mt-4 md:mt-0 m-5">
-                        <h1 className={classNames('text-2xl md:text-4xl font-bold', title2Color)}>{title2}</h1>
-                        <p className={classNames('mt-2 md:mt-4', subtitle2Color)}>{subtitle2}</p>
-                        <div
-                            className="relative right-0 -top-96 -translate-y-40 translate-x-56 bg-gradient-to-tr from-[#1E5D5D] to-transparent rotate-45 opacity-10"
-                            style={{ width: '1000px', height: '1000px' }}
-                        ></div>
-                    </div>
+            <div className="flex items-center justify-evenly flex-grow w-full">
+                <div className='flex flex-col items-center justify-center'>
+                    <h1 className={classNames('text-4xl font-bold', titleColor)}>{title}</h1>
+                    <p className={classNames('text-xl', subtitleColor)}>{subtitle}</p>
+                </div>
+                <div className='flex flex-col items-center justify-center'>
+                    <h2 className={classNames('text-3xl font-bold mt-4', title2Color)}>{title2}</h2>
+                    <p className={classNames('text-lg', subtitle2Color)}>{subtitle2}</p>
                 </div>
             </div>
         </div>

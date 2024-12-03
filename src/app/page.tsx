@@ -12,6 +12,7 @@ import Intro from "@/modules/Intro";
 const Home = () => {
     const [text, setText] = useState('');
     const [found, setFound] = useState<ItemInt[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const handleFind = () => {
         console.log(Items.filter(({ name }) => name.includes(text)));
@@ -19,18 +20,17 @@ const Home = () => {
     };
 
     const categories = [
-        { imageUrl: '', category: 'Sala' },
-        { imageUrl: '', category: 'Dormitorio' },
-        { imageUrl: '', category: 'Cocina' },
-        { imageUrl: '', category: 'Baño' },
-        { imageUrl: '', category: 'Oficina' },
-        { imageUrl: '', category: 'Jardín' },
+        { imageUrl: '/images/categories/sala.jpg', category: 'Sala' },
+        { imageUrl: '/images/categories/dormitorio.png', category: 'Dormitorio' },
+        { imageUrl: '/images/categories/cocina.jpeg', category: 'Cocina' },
+        { imageUrl: '/images/categories/baño.jpg', category: 'Baño' },
         // Agrega más categorías según sea necesario
     ];
 
     return (
         <>
             <Intro
+                className='flex flex-col items-center w-full'
                 headerTitle={["Mueble", "Col"]}
                 headerTitleColors={['text-[#177675]', 'text-[#2E9896]']}
                 title="Muebles Para El Hogar"
@@ -39,20 +39,20 @@ const Home = () => {
                 subtitle2="Llevamos A La Puerta De Tu Casa"
                 title2Color="text-[#005353]"
                 subtitle2Color="text-[#005353]"
-                bgColor="bg-[#2E9896]"
                 headerBgColor="bg-[#005353]"
+                backgroundImage="/images/Frame1.png"
                 headerButtons={[
                     <Button
-                        className="mx-4 mt-1"
+                        className="mx-2iokgvhb mt-1"
                         text="Inicio"
                     />,
                     <Button
-                        className="mx-4 mt-1"
+                        className="mx-2iokgvhb mt-1"
                         text="Contacto"
                     />,
                     <Button
-                        className="mx-4"
-                        iconSrc="kart.svg"
+                        className="mx-2"
+                        iconSrc="/images/kart.svg"
                         width="30px"
                         height="30px"
                         iconHeight={50}
@@ -65,24 +65,24 @@ const Home = () => {
                 {found.map((item, index) => (
                     <Card item={item} key={index} />
                 ))}
-                <div className="overflow-x-auto">
-                    <div className="flex space-x-4">
+                <div className="overflow-y-auto max-h-96 w-full">
+                    <div className="flex flex-wrap justify-center space-x-4">
                         {categories.map((cat, index) => (
                             <CategoryButton
                                 key={index}
                                 imageUrl={cat.imageUrl}
                                 category={cat.category}
-                                onClick={() => {}}
+                                onClick={setSelectedCategory}
                                 width="w-32 sm:w-40 md:w-48 lg:w-56"
                                 height="h-32 sm:h-40 md:h-48 lg:h-56"
                                 hoverEffect="hover:opacity-80"
-                                titleColor="text-yellow-500"
-                                titleBgColor="bg-blue-500"
+                                titleColor="text-black-500"
+                                titleBgColor="bg-transparent"
                                 titleBgOpacity="bg-opacity-75"
                                 titlePadding="p-4"
                                 titleRounded="rounded-full"
-                                titleFontSize="text-sm sm:text-base md:text-lg lg:text-xl"
-                                titleFontWeight="font-semibold"
+                                titleFontSize="text-xl"
+                                titleFontWeight="font-bold"
                             />
                         ))}
                     </div>

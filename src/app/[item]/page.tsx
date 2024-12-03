@@ -20,7 +20,7 @@ const Item = () => {
     }
 
 
-    return (
+    return ( 
         <div className='flex'>
             <ImageViewer images={currentItem.images} />
             <ItemInfo item={currentItem} />

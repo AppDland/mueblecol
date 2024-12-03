@@ -20,7 +20,7 @@ interface CategoryButtonProps {
 
 const CategoryButton: React.FC<CategoryButtonProps> = ({
     imageUrl,
-    category,
+    category, 
     onClick,
     width = 'w-48',
     height = 'h-48',
