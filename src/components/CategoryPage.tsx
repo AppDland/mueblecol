@@ -52,14 +52,14 @@ const CategoryPage: React.FC<CategoryPageProps> = ({
             <div className="flex justify-center items-center mt-8">
                 <h1 className="text-4xl font-bold">Relacionados A {category}</h1>
             </div>
-            <div className=" relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-20 w-full h-screen">
-            <p className="absolute text-center -mt-10 right-10">Cantidad Encontrada: {searchCount}</p>
+            <div className="absolute grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-36 w-full h-screen border border-black">
+            <p className="absolute text-center -mt-10 right-10">Cantidad Encontrada:{searchCount}</p>
                 {filteredItems.map((item) => (
                     <Card key={item.name} item={item}/>
                 ))}
             </div>
         </div>
-    );                                                  
+    );
 };
 
 export default CategoryPage;
