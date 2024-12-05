@@ -3,9 +3,10 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Card from '@/components/Card';
 import Finder from '@/components/Finder';
-import { searchItems } from '@/functions/search';
-import Filters, { FilterOptions } from '@/components/Filters';
 import { ItemInt } from '@/interfaces/item';
+import { searchItems } from '@/functions/search';
+import Filters from '@/components/filters/Filters';
+import { FilterOptions } from '@/interfaces/filter';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -17,7 +18,8 @@ export default function SearchResults() {
     const [filters, setFilters] = useState<FilterOptions>({
         sort: 'destacados',
         colors: [],
-        materials: []
+        materials: [],
+        zones: []
     });
 
     useEffect(() => {
@@ -33,14 +35,22 @@ export default function SearchResults() {
         }
         if (filters.colors.length > 0) {
             filteredResults = filteredResults.filter(item => 
-                item.specifications.colors.some(color => 
-                    filters.colors.includes(color)
+                item.media.some(media => 
+                    filters.colors.includes(media.colorName)
                 )
             );
         }
         if (filters.materials.length > 0) {
             filteredResults = filteredResults.filter(item => 
-                filters.materials.includes(item.specifications.material?.toLowerCase() || '')
+                item.attributes.some(attr => 
+                    attr.attributeId === 1 &&
+                    filters.materials.includes(attr.value.toLowerCase())
+                )
+            );
+        }
+        if (filters.zones && filters.zones.length > 0) {
+            filteredResults = filteredResults.filter(item =>
+                item.zones.some(zone => filters.zones?.includes(zone))
             );
         }
 
@@ -51,6 +61,9 @@ export default function SearchResults() {
                 break;
             case 'precio-desc':
                 filteredResults.sort((a, b) => b.price - a.price);
+                break;
+            case 'oferta':
+                filteredResults.sort((a, b) => (b.offer || b.price) - (a.offer || a.price));
                 break;
         }
 
@@ -79,8 +92,8 @@ export default function SearchResults() {
                         </h2>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                            {paginatedResults.map((item: ItemInt, index: number) => (
-                                <Card item={item} key={index} />
+                            {paginatedResults.map((item: ItemInt) => (
+                                <Card item={item} key={item.id} />
                             ))}
                         </div>
 
@@ -112,4 +125,4 @@ export default function SearchResults() {
             </div>
         </main>
     );
-} 
+}

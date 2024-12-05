@@ -1,23 +1,41 @@
+export interface ItemMedia {
+    id: number;
+    colorName: string;
+    colorHex: string;
+    photos: string[];
+}
+
+export interface AttributeValue {
+    id: number;
+    attributeId: number;
+    value: string;
+}
+
 export interface ItemInt {
-    id: string;
+    id: number;
     name: string;
+    publicName: string;
     price: number;
-    images: string[];
-    specifications: {
-        material?: string;
-        height?: number;
-        width?: number;
-        depth?: number;
-        colors: string[];
-        features: string[];
-        pieces?: string[];
-    };
-    detail: string;
-    specificSynonyms?: {
-        type?: string[];
-        style?: string[];
-        features?: string[];
-        size?: string[];
-        pieces?: string[];
-    };
+    offer: number | null;
+    stock: number;
+    description: string;
+    media: ItemMedia[];
+    attributes: AttributeValue[];
+    synonyms: string[];
+    zones: string[];
+}
+
+export interface Attribute {
+    id: number;
+    name: string;
+    type: string;
+}
+
+export interface ItemsData {
+    items: ItemInt[];
+    attributes: Attribute[];
+    zones: {
+        id: number;
+        name: string;
+    }[];
 }
