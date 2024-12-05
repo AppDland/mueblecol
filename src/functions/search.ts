@@ -1,27 +1,5 @@
+import { ItemInt, ItemsData } from '@/interfaces/item';
 import Items from '@/data/items.json';
-import { ItemInt } from '@/components/Card';
-
-interface Category {
-    categoryName: string;
-    generalSynonyms: string[];
-    items: ItemInt[];
-}
-
-interface ItemsData {
-    categories: {
-        [key: string]: Category;
-    };
-    globalAttributes: {
-        colors: { [key: string]: { synonyms: string[] } };
-        materials: { [key: string]: { synonyms: string[] } };
-        measurements: {
-            synonyms: {
-                metros: string[];
-                centimetros: string[];
-            };
-        };
-    };
-}
 
 const getLevenshteinDistance = (str1: string, str2: string): number => {
     const matrix = Array(str2.length + 1).fill(null).map(() => 
@@ -51,123 +29,62 @@ const areSimilarWords = (word1: string, word2: string): boolean => {
     return distance <= maxDistance;
 };
 
-const checkSynonyms = (searchWord: string, synonymsArrays: string[][]): boolean => {
-    return synonymsArrays.some(synonymArray => 
-        synonymArray.some(synonym =>
-            synonym.toLowerCase().includes(searchWord) || 
-            searchWord.includes(synonym.toLowerCase()) ||
-            areSimilarWords(synonym.toLowerCase(), searchWord)
-        )
-    );
-};
-
-const getAllItemSynonyms = (category: Category, item: ItemInt): string[][] => {
-    const itemsData = Items as ItemsData;
-    
-    const colorSynonyms = item.specifications.colors
-        .map(color => itemsData.globalAttributes.colors[color]?.synonyms || []);
-    
-    const materialSynonym = item.specifications.material
-        ? itemsData.globalAttributes.materials[item.specifications.material]?.synonyms || []
-        : [];
-
-    const synonymArrays: string[][] = [
-        category.generalSynonyms,
-        item.specificSynonyms?.type || [],
-        item.specificSynonyms?.style || [],
-        item.specificSynonyms?.features || [],
-        item.specificSynonyms?.size || [],
-        ...colorSynonyms,
-        materialSynonym,
-        itemsData.globalAttributes.measurements.synonyms.metros,
-        itemsData.globalAttributes.measurements.synonyms.centimetros
-    ];
-
-    return synonymArrays.filter(arr => arr && arr.length > 0);
-};
-
 export const searchItems = (searchTerm: string): ItemInt[] => {
-    const searchWords = searchTerm.toLowerCase().trim().split(' ');
-    let results: ItemInt[] = [];
+    const searchTermLower = searchTerm.toLowerCase();
+    const results: ItemInt[] = [];
+    const typedItems = Items as unknown as ItemsData;
 
-    Object.values((Items as ItemsData).categories).forEach(category => {
-        const categoryResults = category.items.filter(item => {
-            const itemName = item.name.toLowerCase();
-            const itemDetail = item.detail.toLowerCase();
-            const allSynonyms = getAllItemSynonyms(category, item);
+    Object.values(typedItems.rooms).forEach(room => {
+        const roomMatchesSearch = room.generalSynonyms.some(
+            (synonym: string) => synonym.toLowerCase().includes(searchTermLower)
+        );
 
-            // Verificar coincidencias en nombre
-            const nameMatches = searchWords.some(searchWord => {
-                const nameWords = itemName.split(' ');
-                return nameWords.some(nameWord => 
-                    nameWord.includes(searchWord) || 
-                    searchWord.includes(nameWord) || 
-                    areSimilarWords(nameWord, searchWord) ||
-                    checkSynonyms(searchWord, allSynonyms)
-                );
-            });
+        room.items.forEach(item => {
+            const nameMatches = item.name.toLowerCase().includes(searchTermLower);
+            const detailMatches = item.detail?.toLowerCase().includes(searchTermLower) || false;
+            
+            const synonymMatches = item.specificSynonyms 
+                ? Object.values(item.specificSynonyms).some(
+                    synonymArray => synonymArray?.some(
+                        (synonym: string) => synonym.toLowerCase().includes(searchTermLower)
+                    )
+                ) 
+                : false;
 
-            if (nameMatches) return true;
-
-            // Verificar coincidencias en descripción
-            return searchWords.some(searchWord => {
-                const detailWords = itemDetail.split(' ');
-                return detailWords.some(detailWord => 
-                    detailWord.includes(searchWord) || 
-                    searchWord.includes(detailWord) || 
-                    areSimilarWords(detailWord, searchWord) ||
-                    checkSynonyms(searchWord, allSynonyms)
-                );
-            });
+            if (nameMatches || detailMatches || synonymMatches || roomMatchesSearch) {
+                results.push(item);
+            }
         });
-
-        results = [...results, ...categoryResults];
     });
 
-    // Ordenar resultados
-    return results.sort((a, b) => {
-        const aNameMatch = a.name.toLowerCase().includes(searchTerm);
-        const bNameMatch = b.name.toLowerCase().includes(searchTerm);
-        
-        if (aNameMatch && !bNameMatch) return -1;
-        if (!aNameMatch && bNameMatch) return 1;
-
-        // Ordenar por categoría si ambos coinciden igual
-        const aCategory = Object.values((Items as ItemsData).categories).find(cat => 
-            cat.items.includes(a)
-        )?.categoryName;
-        const bCategory = Object.values((Items as ItemsData).categories).find(cat => 
-            cat.items.includes(b)
-        )?.categoryName;
-
-        return (aCategory || '').localeCompare(bCategory || '');
-    });
+    return results;
 };
 
 export const findSimilarItems = (item: ItemInt): ItemInt[] => {
-    const allItems = Object.values((Items as ItemsData).categories)
-        .flatMap(category => category.items as ItemInt[]);
+    const typedItems = Items as unknown as ItemsData;
+    const allItems = Object.values(typedItems.rooms)
+        .flatMap(room => room.items);
     
     const similarItems = allItems.filter(otherItem => {
         if (otherItem.id === item.id) return false;
 
         // Comparar características similares
-        const sameCategory = Object.values((Items as ItemsData).categories).some(category =>
-            category.items.some(i => i.id === item.id) &&
-            category.items.some(i => i.id === otherItem.id)
+        const sameRoom = Object.values(typedItems.rooms).some(room =>
+            room.items.some(i => i.id === item.id) &&
+            room.items.some(i => i.id === otherItem.id)
         );
 
-        const sharedColors = item.specifications.colors.some(color =>
+        const sharedColors = item.specifications.colors.some((color: string) =>
             otherItem.specifications.colors.includes(color)
         );
 
         const sameMaterial = item.specifications.material === otherItem.specifications.material;
 
-        const sharedFeatures = item.specifications.features.some(feature =>
+        const sharedFeatures = item.specifications.features.some((feature: string) =>
             otherItem.specifications.features.includes(feature)
         );
 
-        return (sameCategory && (sharedColors || sameMaterial || sharedFeatures));
+        return (sameRoom && (sharedColors || sameMaterial || sharedFeatures));
     });
 
     return similarItems.slice(0, 3);

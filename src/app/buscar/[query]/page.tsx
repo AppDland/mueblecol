@@ -3,9 +3,10 @@ import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Card from '@/components/Card';
 import Finder from '@/components/Finder';
-import { ItemInt } from '@/components/Card';
+import { ItemInt } from '@/interfaces/item';
 import { searchItems } from '@/functions/search';
-import Filters, { FilterOptions } from '@/components/Filters';
+import Filters from '@/components/filters/Filters';
+import { FilterOptions } from '@/components/filters/types';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -17,7 +18,8 @@ export default function SearchResults() {
     const [filters, setFilters] = useState<FilterOptions>({
         sort: 'destacados',
         colors: [],
-        materials: []
+        materials: [],
+        rooms: []
     });
 
     useEffect(() => {
@@ -33,7 +35,7 @@ export default function SearchResults() {
         }
         if (filters.colors.length > 0) {
             filteredResults = filteredResults.filter(item => 
-                item.specifications.colors.some(color => 
+                item.specifications.colors.some((color: string) => 
                     filters.colors.includes(color)
                 )
             );

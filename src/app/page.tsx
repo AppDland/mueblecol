@@ -3,18 +3,19 @@
 import Intro from '@/modules/Intro';
 import Finder from '@/components/Finder';
 import Items from '@/data/items.json';
-import Card, { ItemInt } from '@/components/Card';
+import Card from '@/components/Card';
+import { ItemInt } from '@/interfaces/item';
 
 export default function Home() {
-    const allItems = Object.values(Items.categories)
-        .flatMap(category => category.items as ItemInt[])
+    const allItems = Object.values(Items.rooms)
+        .flatMap(room => room.items as ItemInt[])
         .slice(0, 6);
 
     return (
         <main>
             <Intro />
             <div className="flex flex-col relative w-full max-w-7xl mx-auto px-4">
-                <Finder />
+                <Finder isDark={true} />
                 
                 <h2 className="text-2xl font-bold my-4">Productos Destacados</h2>
                 
