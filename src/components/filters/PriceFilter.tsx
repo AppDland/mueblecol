@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterProps } from './types';
+import { FilterProps } from '../../interfaces/filter';
 
 const PriceFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) => {
     const [localMin, setLocalMin] = React.useState(currentFilters.minPrice?.toString() || '');

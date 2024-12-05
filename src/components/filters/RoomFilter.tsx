@@ -1,8 +1,8 @@
 import React from 'react';
-import { FilterProps } from './types';
+import { FilterProps } from '../../interfaces/filter';
 
 const RoomFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) => {
-    const rooms = [
+    const zones = [
         { id: 'sala', label: 'Sala' },
         { id: 'cocina', label: 'Cocina' },
         { id: 'dormitorio', label: 'Dormitorio' },
@@ -15,23 +15,23 @@ const RoomFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) =
         <div className="mb-6">
             <h3 className="font-bold mb-2">Ubicación</h3>
             <div className="flex flex-col gap-2">
-                {rooms.map(room => (
-                    <label key={room.id} className="flex items-center">
+                {zones.map(zone => (
+                    <label key={zone.id} className="flex items-center">
                         <input
                             type="checkbox"
-                            checked={currentFilters.rooms?.includes(room.id) || false}
+                            checked={currentFilters.zones?.includes(zone.id) || false}
                             onChange={(e) => {
-                                const updatedRooms = e.target.checked
-                                    ? [...(currentFilters.rooms || []), room.id]
-                                    : (currentFilters.rooms || []).filter(r => r !== room.id);
+                                const updatedZones = e.target.checked
+                                    ? [...(currentFilters.zones || []), zone.id]
+                                    : (currentFilters.zones || []).filter((z: string) => z !== zone.id);
                                 onFilterChange({
                                     ...currentFilters,
-                                    rooms: updatedRooms
+                                    zones: updatedZones
                                 });
                             }}
                             className="mr-2"
                         />
-                        {room.label}
+                        {zone.label}
                     </label>
                 ))}
             </div>

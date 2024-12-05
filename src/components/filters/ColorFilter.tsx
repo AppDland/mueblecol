@@ -1,30 +1,36 @@
 import React from 'react';
-import { FilterProps, colorMap, availableColors } from './types';
+import { colorMap, FilterProps } from '../../interfaces/filter';
+import ColorPicker from '../ColorPicker';
+import { ItemMedia } from '@/interfaces/item';
 
 const ColorFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) => {
-    const handleColorToggle = (color: string) => {
-        const newColors = currentFilters.colors.includes(color)
-            ? currentFilters.colors.filter(c => c !== color)
-            : [...currentFilters.colors, color];
-        onFilterChange({ ...currentFilters, colors: newColors });
+    const colorOptions: ItemMedia[] = Object.entries(colorMap).map(([_, value], index) => ({
+        id: index + 1,
+        colorName: value.name,
+        colorHex: value.hex,
+        photos: [] // No necesitamos fotos para el filtro
+    }));
+
+    const handleColorSelect = (color: ItemMedia) => {
+        const isSelected = currentFilters.colors.includes(color.colorName);
+        const updatedColors = isSelected
+            ? currentFilters.colors.filter(c => c !== color.colorName)
+            : [...currentFilters.colors, color.colorName];
+        
+        onFilterChange({
+            ...currentFilters,
+            colors: updatedColors
+        });
     };
 
     return (
         <div className="mb-6">
-            <h3 className="font-bold mb-2">Color</h3>
-            <div className="space-y-2">
-                {availableColors.map(color => (
-                    <label key={color} className="flex items-center">
-                        <input
-                            type="checkbox"
-                            checked={currentFilters.colors.includes(color)}
-                            onChange={() => handleColorToggle(color)}
-                            className="mr-2"
-                        />
-                        {colorMap[color]}
-                    </label>
-                ))}
-            </div>
+            <h3 className="font-bold mb-2">Colores</h3>
+            <ColorPicker
+                colors={colorOptions}
+                onColorSelect={handleColorSelect}
+                selectedColor={undefined}
+            />
         </div>
     );
 };

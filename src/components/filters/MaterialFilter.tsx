@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterProps } from './types';
+import { FilterProps } from '../../interfaces/filter';
 
 const MaterialFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) => {
     const handleMaterialToggle = (material: string) => {

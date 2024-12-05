@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterOptions } from './types';
+import { FilterOptions } from '../../interfaces/filter';
 import SortFilter from './SortFilter';
 import PriceFilter from './PriceFilter';
 import ColorFilter from './ColorFilter';
