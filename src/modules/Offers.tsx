@@ -10,7 +10,7 @@ const Offers = () => {
 
     useEffect(() => {
         // Filtrar los artículos en oferta
-        const itemsOnOffer = Items.filter((item) => item.price !== item.offer);
+        const itemsOnOffer = Items.items.filter((item) => item.price !== item.offer);
 
         // Desordenar aleatoriamente los artículos
         const shuffledItems = itemsOnOffer.sort(() => 0.5 - Math.random());
@@ -28,8 +28,8 @@ const Offers = () => {
                         <SimpleCard
                             key={index}
                             title={item.name}
-                            color={item.colors[0].name}
-                            image={item.images[0]}
+                            color={item.media[0].colorName}
+                            image={item.media[0].photos[0]}
                             price={item.price}
                             offer={item.offer}
                         />

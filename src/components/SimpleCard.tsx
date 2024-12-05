@@ -9,14 +9,14 @@ interface SimpleCardProps {
     title: string;
     color: string;
     price: number;
-    offer?: number;
+    offer?: number | null;
 }
 
 const SimpleCard = ({ image, title, color, price, offer }: SimpleCardProps) => {
-    
+
     const [realTitle, setRealTitle] = useState('');
 
-    useEffect(() => {    
+    useEffect(() => {
         const [first, second, third] = title.split(" ");
         const real = `${first} ${second.length > 1 ? second : second} ${second.length > 1 ? '' : third}`;
         setRealTitle(real);

@@ -5,7 +5,7 @@ import ImageViewer from '@/components/ImageViewer';
 import { money } from '@/functions/money';
 import { ItemInt, ItemMedia } from '@/interfaces/item';
 import AmountSelector from '@/components/AmountSelector';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { findSimilarItems } from '@/functions/search';
 import Card from '@/components/Card';
 import ColorPicker from '@/components/ColorPicker';
@@ -13,19 +13,26 @@ import ColorPicker from '@/components/ColorPicker';
 const Item = () => {
     const params = useParams();
     const { item } = params;
-    
+
+    const [selectedColor, setSelectedColor] = useState<ItemMedia>();
     const typedItems = Items as unknown as { items: ItemInt[] };
     const currentItem = item && typeof item === "string"
         ? typedItems.items.find(i => i.name.replaceAll(' ', '-') === item)
         : undefined;
+
+    useEffect(() => {
+        if (currentItem) {
+            setSelectedColor(currentItem.media[0]);
+        }
+    }, [currentItem]);
 
     if (!currentItem) {
         return <p>No se ha encontrado el artículo</p>;
     }
 
     const similarItems = findSimilarItems(currentItem);
-    const [selectedColor, setSelectedColor] = useState(currentItem.media[0]);
     const photos = selectedColor?.photos.filter(photo => photo.startsWith('https://'));
+
 
     return (
         <div className='flex flex-col max-w-7xl mx-auto px-4 py-8'>
@@ -36,11 +43,15 @@ const Item = () => {
                     )}
                 </div>
                 <div className='w-1/3'>
-                    <ItemInfo 
-                        item={currentItem} 
-                        selectedColor={selectedColor}
-                        onColorSelect={setSelectedColor}
-                    />
+                    {
+                        selectedColor && (
+                            <ItemInfo
+                                item={currentItem}
+                                selectedColor={selectedColor}
+                                onColorSelect={setSelectedColor}
+                            />
+                        )
+                    }
                 </div>
             </div>
 
@@ -65,7 +76,7 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
         <div className='space-y-4'>
             <h1 className='text-2xl font-bold'>{item.publicName}</h1>
             <p className='text-3xl font-bold text-primary'>{money(item.price)}</p>
-            
+
             {item.media.length > 1 && (
                 <div className='py-4'>
                     <p className='text-gray-600 mb-2'>Color:</p>
@@ -76,7 +87,7 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
                     />
                 </div>
             )}
-            
+
             <div className='py-4'>
                 <p className='text-gray-600 mb-2'>Cantidad:</p>
                 <AmountSelector
