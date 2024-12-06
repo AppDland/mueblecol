@@ -27,19 +27,17 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="¿Qué deseas buscar?"
-                    className={`w-full px-4 py-2 text-center rounded-lg pr-12 ${
-                        isDark 
-                            ? 'bg-neutral-900 text-white placeholder:text-neutral-400' 
+                    className={`w-full px-4 py-2 text-center rounded-lg pr-12 ${isDark
+                            ? 'bg-neutral-900 text-white placeholder:text-neutral-400'
                             : 'bg-white text-neutral-900 border-2 border-neutral-200 placeholder:text-neutral-500'
-                    } focus:outline-none`}
+                        } focus:outline-none`}
                 />
                 <button
                     type="submit"
-                    className={`absolute right-0 p-3 h-full rounded-r-lg ${
-                        isDark 
-                            ? 'text-white' 
+                    className={`absolute right-0 p-3 h-full rounded-r-lg ${isDark
+                            ? 'text-white'
                             : 'bg-neutral-900 text-white'
-                    }`}
+                        }`}
                     aria-label="Buscar"
                 >
                     <MagnifyingGlassIcon className="w-5 h-5" />

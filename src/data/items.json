@@ -13,13 +13,19 @@
                     "id": 1,
                     "colorName": "Marrón",
                     "colorHex": "#8B4513",
-                    "photos": ["sofa-marron-1.jpg", "sofa-marron-2.jpg"]
+                    "photos": [
+                        "sofa-marron-1.jpg",
+                        "sofa-marron-2.jpg"
+                    ]
                 },
                 {
                     "id": 2,
                     "colorName": "Blanco",
                     "colorHex": "#FFFFFF",
-                    "photos": ["sofa-blanco-1.jpg", "sofa-blanco-2.jpg"]
+                    "photos": [
+                        "sofa-blanco-1.jpg",
+                        "sofa-blanco-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -39,7 +45,10 @@
                 "sillón",
                 "mueble sala"
             ],
-            "zones": ["sala", "living"]
+            "zones": [
+                "sala",
+                "living"
+            ]
         },
         {
             "id": 2,
@@ -54,7 +63,10 @@
                     "id": 3,
                     "colorName": "Marrón",
                     "colorHex": "#8B4513",
-                    "photos": ["https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png", "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"]
+                    "photos": [
+                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
+                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
+                    ]
                 }
             ],
             "attributes": [
@@ -79,7 +91,10 @@
                 "closet",
                 "guardarropa"
             ],
-            "zones": ["dormitorio", "habitación"]
+            "zones": [
+                "dormitorio",
+                "habitación"
+            ]
         },
         {
             "id": 3,
@@ -94,7 +109,9 @@
                     "id": 4,
                     "colorName": "Marrón",
                     "colorHex": "#8B4513",
-                    "photos": ["mesa-comedor-extensible.jpg"]
+                    "photos": [
+                        "mesa-comedor-extensible.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -119,7 +136,9 @@
                 "comedor grande",
                 "mesa para familias"
             ],
-            "zones": ["comedor"]
+            "zones": [
+                "comedor"
+            ]
         },
         {
             "id": 4,
@@ -134,13 +153,17 @@
                     "id": 5,
                     "colorName": "Marrón",
                     "colorHex": "#8B4513",
-                    "photos": ["placard-premium.jpg"]
+                    "photos": [
+                        "placard-premium.jpg"
+                    ]
                 },
                 {
                     "id": 6,
                     "colorName": "Blanco",
                     "colorHex": "#FFFFFF",
-                    "photos": ["placard-premium-blanco.jpg"]
+                    "photos": [
+                        "placard-premium-blanco.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -165,7 +188,9 @@
                 "closet empotrado",
                 "mueble con luz"
             ],
-            "zones": ["dormitorio"]
+            "zones": [
+                "dormitorio"
+            ]
         },
         {
             "id": 5,
@@ -180,7 +205,10 @@
                     "id": 7,
                     "colorName": "Marrón",
                     "colorHex": "#8B4513",
-                    "photos": ["set-matrimonial-1.jpg", "set-matrimonial-2.jpg"]
+                    "photos": [
+                        "set-matrimonial-1.jpg",
+                        "set-matrimonial-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -195,7 +223,9 @@
                 "mueble para pareja",
                 "set completo"
             ],
-            "zones": ["dormitorio"]
+            "zones": [
+                "dormitorio"
+            ]
         },
         {
             "id": 6,
@@ -210,7 +240,9 @@
                     "id": 8,
                     "colorName": "Blanco",
                     "colorHex": "#FFFFFF",
-                    "photos": ["mesa-ratona-blanca.jpg"]
+                    "photos": [
+                        "mesa-ratona-blanca.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -235,7 +267,10 @@
                 "mesa centro",
                 "mesa living"
             ],
-            "zones": ["living", "sala"]
+            "zones": [
+                "living",
+                "sala"
+            ]
         },
         {
             "id": 9,
@@ -250,7 +285,10 @@
                     "id": 4,
                     "colorName": "Marrón",
                     "colorHex": "#8B4513",
-                    "photos": ["mesa-extensible-1.jpg", "mesa-extensible-2.jpg"]
+                    "photos": [
+                        "mesa-extensible-1.jpg",
+                        "mesa-extensible-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -270,8 +308,14 @@
                     "value": "90"
                 }
             ],
-            "synonyms": ["mesa comedor", "mesa grande", "mesa extensible"],
-            "zones": ["comedor"]
+            "synonyms": [
+                "mesa comedor",
+                "mesa grande",
+                "mesa extensible"
+            ],
+            "zones": [
+                "comedor"
+            ]
         },
         {
             "id": 10,
@@ -286,7 +330,10 @@
                     "id": 5,
                     "colorName": "Blanco",
                     "colorHex": "#FFFFFF",
-                    "photos": ["placard-led-1.jpg", "placard-led-2.jpg"]
+                    "photos": [
+                        "placard-led-1.jpg",
+                        "placard-led-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -306,8 +353,14 @@
                     "value": "280"
                 }
             ],
-            "synonyms": ["placard", "armario empotrado", "guardarropa"],
-            "zones": ["dormitorio"]
+            "synonyms": [
+                "placard",
+                "armario empotrado",
+                "guardarropa"
+            ],
+            "zones": [
+                "dormitorio"
+            ]
         },
         {
             "id": 11,
@@ -322,7 +375,10 @@
                     "id": 6,
                     "colorName": "Negro",
                     "colorHex": "#000000",
-                    "photos": ["silla-oficina-1.jpg", "silla-oficina-2.jpg"]
+                    "photos": [
+                        "silla-oficina-1.jpg",
+                        "silla-oficina-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -342,8 +398,15 @@
                     "value": "60"
                 }
             ],
-            "synonyms": ["silla de oficina", "silla ergonómica", "silla trabajo"],
-            "zones": ["oficina", "estudio"]
+            "synonyms": [
+                "silla de oficina",
+                "silla ergonómica",
+                "silla trabajo"
+            ],
+            "zones": [
+                "oficina",
+                "estudio"
+            ]
         },
         {
             "id": 12,
@@ -358,7 +421,10 @@
                     "id": 7,
                     "colorName": "Blanco",
                     "colorHex": "#FFFFFF",
-                    "photos": ["lampara-mesa-1.jpg", "lampara-mesa-2.jpg"]
+                    "photos": [
+                        "lampara-mesa-1.jpg",
+                        "lampara-mesa-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -378,8 +444,15 @@
                     "value": "20"
                 }
             ],
-            "synonyms": ["lámpara de mesa", "decorativa", "luz cálida"],
-            "zones": ["sala", "habitación"]
+            "synonyms": [
+                "lámpara de mesa",
+                "decorativa",
+                "luz cálida"
+            ],
+            "zones": [
+                "sala",
+                "habitación"
+            ]
         },
         {
             "id": 13,
@@ -394,7 +467,10 @@
                     "id": 8,
                     "colorName": "Roble Claro",
                     "colorHex": "#D2B48C",
-                    "photos": ["escritorio-esquinero-1.jpg", "escritorio-esquinero-2.jpg"]
+                    "photos": [
+                        "escritorio-esquinero-1.jpg",
+                        "escritorio-esquinero-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -414,8 +490,15 @@
                     "value": "90"
                 }
             ],
-            "synonyms": ["escritorio", "esquinero", "compacto"],
-            "zones": ["oficina", "estudio"]
+            "synonyms": [
+                "escritorio",
+                "esquinero",
+                "compacto"
+            ],
+            "zones": [
+                "oficina",
+                "estudio"
+            ]
         },
         {
             "id": 14,
@@ -430,7 +513,10 @@
                     "id": 9,
                     "colorName": "Gris",
                     "colorHex": "#808080",
-                    "photos": ["alfombra-gris-1.jpg", "alfombra-gris-2.jpg"]
+                    "photos": [
+                        "alfombra-gris-1.jpg",
+                        "alfombra-gris-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -450,8 +536,15 @@
                     "value": "150"
                 }
             ],
-            "synonyms": ["alfombra", "peluche", "tapete"],
-            "zones": ["sala", "dormitorio"]
+            "synonyms": [
+                "alfombra",
+                "peluche",
+                "tapete"
+            ],
+            "zones": [
+                "sala",
+                "dormitorio"
+            ]
         },
         {
             "id": 15,
@@ -466,7 +559,10 @@
                     "id": 10,
                     "colorName": "Negro",
                     "colorHex": "#000000",
-                    "photos": ["reloj-pared-1.jpg", "reloj-pared-2.jpg"]
+                    "photos": [
+                        "reloj-pared-1.jpg",
+                        "reloj-pared-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -486,8 +582,15 @@
                     "value": "40"
                 }
             ],
-            "synonyms": ["reloj pared", "minimalista", "decoración"],
-            "zones": ["sala", "oficina"]
+            "synonyms": [
+                "reloj pared",
+                "minimalista",
+                "decoración"
+            ],
+            "zones": [
+                "sala",
+                "oficina"
+            ]
         },
         {
             "id": 16,
@@ -502,7 +605,10 @@
                     "id": 11,
                     "colorName": "Natural",
                     "colorHex": "#C2A376",
-                    "photos": ["perchero-madera-1.jpg", "perchero-madera-2.jpg"]
+                    "photos": [
+                        "perchero-madera-1.jpg",
+                        "perchero-madera-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -522,8 +628,15 @@
                     "value": "45"
                 }
             ],
-            "synonyms": ["perchero", "organizador", "madera"],
-            "zones": ["sala", "entrada"]
+            "synonyms": [
+                "perchero",
+                "organizador",
+                "madera"
+            ],
+            "zones": [
+                "sala",
+                "entrada"
+            ]
         },
         {
             "id": 17,
@@ -538,7 +651,10 @@
                     "id": 13,
                     "colorName": "Negro",
                     "colorHex": "#000000",
-                    "photos": ["silla-ergonomica-1.jpg", "silla-ergonomica-2.jpg"]
+                    "photos": [
+                        "silla-ergonomica-1.jpg",
+                        "silla-ergonomica-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -558,8 +674,15 @@
                     "value": "60"
                 }
             ],
-            "synonyms": ["silla oficina", "ergonómica", "trabajo"],
-            "zones": ["oficina", "estudio"]
+            "synonyms": [
+                "silla oficina",
+                "ergonómica",
+                "trabajo"
+            ],
+            "zones": [
+                "oficina",
+                "estudio"
+            ]
         },
         {
             "id": 18,
@@ -574,7 +697,10 @@
                     "id": 14,
                     "colorName": "Nogal",
                     "colorHex": "#A0522D",
-                    "photos": ["mesa-redonda-1.jpg", "mesa-redonda-2.jpg"]
+                    "photos": [
+                        "mesa-redonda-1.jpg",
+                        "mesa-redonda-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -594,8 +720,14 @@
                     "value": "100"
                 }
             ],
-            "synonyms": ["mesa comedor", "redonda", "elegante"],
-            "zones": ["comedor"]
+            "synonyms": [
+                "mesa comedor",
+                "redonda",
+                "elegante"
+            ],
+            "zones": [
+                "comedor"
+            ]
         },
         {
             "id": 19,
@@ -610,7 +742,10 @@
                     "id": 15,
                     "colorName": "Blanco y Cromo",
                     "colorHex": "#F5F5F5",
-                    "photos": ["lampara-pie-1.jpg", "lampara-pie-2.jpg"]
+                    "photos": [
+                        "lampara-pie-1.jpg",
+                        "lampara-pie-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -630,8 +765,15 @@
                     "value": "50"
                 }
             ],
-            "synonyms": ["lámpara pie", "moderna", "iluminación"],
-            "zones": ["sala", "dormitorio"]
+            "synonyms": [
+                "lámpara pie",
+                "moderna",
+                "iluminación"
+            ],
+            "zones": [
+                "sala",
+                "dormitorio"
+            ]
         },
         {
             "id": 20,
@@ -646,7 +788,10 @@
                     "id": 16,
                     "colorName": "Natural",
                     "colorHex": "#D2B48C",
-                    "photos": ["cama-doble-1.jpg", "cama-doble-2.jpg"]
+                    "photos": [
+                        "cama-doble-1.jpg",
+                        "cama-doble-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -666,8 +811,14 @@
                     "value": "160"
                 }
             ],
-            "synonyms": ["cama doble", "madera", "natural"],
-            "zones": ["dormitorio"]
+            "synonyms": [
+                "cama doble",
+                "madera",
+                "natural"
+            ],
+            "zones": [
+                "dormitorio"
+            ]
         },
         {
             "id": 21,
@@ -682,7 +833,10 @@
                     "id": 17,
                     "colorName": "Gris Oscuro",
                     "colorHex": "#4B4B4B",
-                    "photos": ["sofa-reclinable-1.jpg", "sofa-reclinable-2.jpg"]
+                    "photos": [
+                        "sofa-reclinable-1.jpg",
+                        "sofa-reclinable-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -702,8 +856,14 @@
                     "value": "200"
                 }
             ],
-            "synonyms": ["sofá", "reclinable", "confort"],
-            "zones": ["sala"]
+            "synonyms": [
+                "sofá",
+                "reclinable",
+                "confort"
+            ],
+            "zones": [
+                "sala"
+            ]
         },
         {
             "id": 22,
@@ -718,7 +878,10 @@
                     "id": 18,
                     "colorName": "Blanco Mate",
                     "colorHex": "#FFFFFF",
-                    "photos": ["armario-1.jpg", "armario-2.jpg"]
+                    "photos": [
+                        "armario-1.jpg",
+                        "armario-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -738,8 +901,15 @@
                     "value": "120"
                 }
             ],
-            "synonyms": ["armario", "organizador", "multifuncional"],
-            "zones": ["dormitorio", "oficina"]
+            "synonyms": [
+                "armario",
+                "organizador",
+                "multifuncional"
+            ],
+            "zones": [
+                "dormitorio",
+                "oficina"
+            ]
         },
         {
             "id": 23,
@@ -754,7 +924,10 @@
                     "id": 19,
                     "colorName": "Cromo y Transparente",
                     "colorHex": "#E8E8E8",
-                    "photos": ["mesa-centro-1.jpg", "mesa-centro-2.jpg"]
+                    "photos": [
+                        "mesa-centro-1.jpg",
+                        "mesa-centro-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -774,8 +947,14 @@
                     "value": "100"
                 }
             ],
-            "synonyms": ["mesa centro", "moderna", "cristal"],
-            "zones": ["sala"]
+            "synonyms": [
+                "mesa centro",
+                "moderna",
+                "cristal"
+            ],
+            "zones": [
+                "sala"
+            ]
         },
         {
             "id": 24,
@@ -790,7 +969,10 @@
                     "id": 20,
                     "colorName": "Roble Oscuro",
                     "colorHex": "#8B4513",
-                    "photos": ["estanteria-moderna-1.jpg", "estanteria-moderna-2.jpg"]
+                    "photos": [
+                        "estanteria-moderna-1.jpg",
+                        "estanteria-moderna-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -810,8 +992,15 @@
                     "value": "80"
                 }
             ],
-            "synonyms": ["estantería", "moderna", "elegante"],
-            "zones": ["oficina", "sala"]
+            "synonyms": [
+                "estantería",
+                "moderna",
+                "elegante"
+            ],
+            "zones": [
+                "oficina",
+                "sala"
+            ]
         },
         {
             "id": 25,
@@ -826,7 +1015,10 @@
                     "id": 21,
                     "colorName": "Negro Mate",
                     "colorHex": "#333333",
-                    "photos": ["taburete-industrial-1.jpg", "taburete-industrial-2.jpg"]
+                    "photos": [
+                        "taburete-industrial-1.jpg",
+                        "taburete-industrial-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -846,8 +1038,15 @@
                     "value": "40"
                 }
             ],
-            "synonyms": ["taburete", "industrial", "barra"],
-            "zones": ["cocina", "bar"]
+            "synonyms": [
+                "taburete",
+                "industrial",
+                "barra"
+            ],
+            "zones": [
+                "cocina",
+                "bar"
+            ]
         },
         {
             "id": 26,
@@ -862,7 +1061,10 @@
                     "id": 12,
                     "colorName": "Blanco",
                     "colorHex": "#FFFFFF",
-                    "photos": ["repisa-blanca-1.jpg", "repisa-blanca-2.jpg"]
+                    "photos": [
+                        "repisa-blanca-1.jpg",
+                        "repisa-blanca-2.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -882,8 +1084,15 @@
                     "value": "60"
                 }
             ],
-            "synonyms": ["repisa", "flotante", "almacenamiento"],
-            "zones": ["sala", "baño"]
+            "synonyms": [
+                "repisa",
+                "flotante",
+                "almacenamiento"
+            ],
+            "zones": [
+                "sala",
+                "baño"
+            ]
         }
     ],
     "attributes": [

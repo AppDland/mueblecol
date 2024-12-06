@@ -11,11 +11,11 @@ const Card: React.FC<CardProps> = ({ item }) => {
     const itemSlug = item.name.replaceAll(' ', '-');
     const mainImage = item.media[0]?.photos[0];
     const isS3Image = mainImage?.startsWith('https://');
-    
+
     if (!mainImage) return null;
 
     return (
-        <Link 
+        <Link
             href={`/${itemSlug}`}
             className="block bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
         >
