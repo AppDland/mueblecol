@@ -1,74 +1,50 @@
 'use client';
-import Image from "next/image";
-import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
-interface FinderInt {
-    value: string;
-    setValue: (param: string) => void;
-    onFind: () => void;
+interface FinderProps {
+    defaultValue?: string;
+    isDark?: boolean;
 }
 
-const Finder = ({ value, setValue, onFind }: FinderInt) => {
+const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) => {
+    const [searchTerm, setSearchTerm] = useState(defaultValue);
+    const router = useRouter();
 
-    const [isFocused, setIsfocused] = useState(false);
-
-    const handleBlur = () => {
-        if (value.length === 0) {
-            setIsfocused(false)
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (searchTerm.trim()) {
+            router.push(`/buscar/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`);
         }
-    }
-
-    const handleKeyUp = (event: any) => {
-        if (event.code === "Enter" || event.key === "Enter" || event.keyCode === 13) {
-            onFind();
-        }
-    }
+    };
 
     return (
-        <div className="relative w-80 h-12 m-5 overflow-hidden rounded-lg flex items-center justify-center border border-[#2E9896]">
-            <input
-                className={`
-                relative 
-                bg-transparent 
-                z-10 
-                w-full 
-                h-full 
-                px-4 
-                placeholder:text-center 
-                text-xl
-                placeholder:text-[#E8E8E8] 
-                box-content
-                outline-none
-                ${isFocused ? 'cursor-auto' : 'cursor-pointer'}
-                `}
-                type="text"
-                placeholder="¿Qué deseas buscar?"
-                onChange={({ target }) => setValue(target.value)}
-                onFocus={() => setIsfocused(true)}
-                onBlur={handleBlur}
-                onKeyUp={handleKeyUp}
-            />
-            <Image
-                alt="Buscar"
-                src="/images/Lupa.svg"
-                width={20}
-                height={20}
-                className="relative z-10 w-7 mx-2 cursor-pointer"
-                onClick={onFind}
-            />
-            <div className={`
-                bg-[#2E9896]
-                ${isFocused ? "w-11" : "w-full"}
-                h-full
-                absolute
-                right-0
-                top-0
-                z-0
-                duration-150
-            `}
-            />
-        </div>
-    )
-}
+        <form onSubmit={handleSearch} className="w-full max-w-xs mx-auto my-3">
+            <div className="relative flex items-center">
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="¿Qué deseas buscar?"
+                    className={`w-full px-4 py-2 text-center rounded-lg pr-12 ${isDark
+                            ? 'bg-neutral-900 text-white placeholder:text-neutral-400'
+                            : 'bg-white text-neutral-900 border-2 border-neutral-200 placeholder:text-neutral-500'
+                        } focus:outline-none`}
+                />
+                <button
+                    type="submit"
+                    className={`absolute right-0 p-3 h-full rounded-r-lg ${isDark
+                            ? 'text-white'
+                            : 'bg-neutral-900 text-white'
+                        }`}
+                    aria-label="Buscar"
+                >
+                    <MagnifyingGlassIcon className="w-5 h-5" />
+                </button>
+            </div>
+        </form>
+    );
+};
 
 export default Finder;

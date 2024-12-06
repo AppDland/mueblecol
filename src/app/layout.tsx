@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+'use client';
+import { useEffect } from 'react';
+import ThemeToggle from '@/components/ThemeToggle';
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -13,24 +15,22 @@ const geistMono = localFont({
     weight: "100 900",
 });
 
-export const metadata: Metadata = {
-    title: "Mueblecol",
-    description: "desccripcion",
-};
-
 export default function RootLayout({
     children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+}: {
+    children: React.ReactNode
+}) {
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }, []);
+
     return (
-        <html lang="es">
-            <head>
-                <link rel="icon" href="/favicon.ico" />
-            </head>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+        <html lang="es" suppressHydrationWarning>
+            <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-base-100 text-base-content`}>
+                <div className="fixed top-4 right-4 z-50">
+                    <ThemeToggle />
+                </div>
                 {children}
             </body>
         </html>

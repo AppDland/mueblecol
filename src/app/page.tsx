@@ -10,14 +10,9 @@ import Items from "@/data/items.json";
 import Intro from "@/modules/Intro";
 
 const Home = () => {
-    const [text, setText] = useState('');
-    const [found, setFound] = useState<ItemInt[]>([]);
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-    const handleFind = () => {
-        console.log(Items.filter(({ name }) => name.includes(text)));
-        setFound(Items.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase())));
-    };
+    const typedItems = Items as unknown as { items: ItemInt[] };
+    const allItems = typedItems.items.slice(0, 6);
 
     const categories = [
         { imageUrl: '/images/categories/sala.jpg', category: 'Sala' },
@@ -60,11 +55,15 @@ const Home = () => {
                     />
                 ]}
             />
-            <div className="flex flex-col relative items-center justify-center mt-0">
-                <Finder value={text} setValue={setText} onFind={handleFind} />
-                {found.map((item, index) => (
-                    <Card item={item} key={index} />
-                ))}
+            <div className="flex flex-col relative w-full max-w-7xl mx-auto px-4">
+                <Finder isDark={true} />
+                <h2 className="text-2xl font-bold my-4">Productos Destacados</h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {allItems.map((item) => (
+                        <Card item={item} key={item.id} />
+                    ))}
+                </div>
                 <div className="overflow-x-auto max-h-96 w-full scrollbar-hide">
                     <div className="flex flex-nowrap justify-center space-x-4">
                         {categories.map((cat, index) => (

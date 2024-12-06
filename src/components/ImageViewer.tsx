@@ -8,25 +8,41 @@ interface ImageViewerProps {
 
 const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
     const [selectedImage, setSelectedImage] = useState(images[0]);
+    const isS3Image = selectedImage?.startsWith('https://');
+
+    if (!isS3Image || !selectedImage) return null;
 
     return (
         <div>
-            <div>
-                <Image src={selectedImage} alt="Selected" width={800} height={600} style={{ width: '100%', height: 'auto' }} />
+            <div className="relative aspect-video w-full">
+                <Image
+                    src={selectedImage}
+                    alt="Imagen principal"
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority
+                />
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                {images.map((image, index) => (
-                    <Image
-                        key={index}
-                        src={image}
-                        alt={`Thumbnail ${index}`}
-                        width={100}
-                        height={100}
-                        style={{ margin: '0 5px', cursor: 'pointer' }}
-                        onClick={() => setSelectedImage(image)}
-                    />
-                ))}
-            </div>
+            {images.length > 1 && (
+                <div className="flex justify-center gap-4 mt-4">
+                    {images.map((image, index) => (
+                        <div 
+                            key={index}
+                            className={`relative w-24 h-24 cursor-pointer ${selectedImage === image ? 'border-2 border-primary' : ''}`}
+                            onClick={() => setSelectedImage(image)}
+                        >
+                            <Image
+                                src={image}
+                                alt={`Vista previa ${index + 1}`}
+                                fill
+                                className="object-cover"
+                                sizes="96px"
+                            />
+                        </div>
+                    ))}
+                </div>
+            )}
         </div>
     );
 };
