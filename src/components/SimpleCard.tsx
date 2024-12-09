@@ -9,10 +9,11 @@ interface SimpleCardProps {
     title: string;
     color: string;
     price: number;
+    url: string;
     offer?: number | null;
 }
 
-const SimpleCard = ({ image, title, color, price, offer }: SimpleCardProps) => {
+const SimpleCard = ({ image, title, color, price, url, offer }: SimpleCardProps) => {
 
     const [realTitle, setRealTitle] = useState('');
 
@@ -23,7 +24,7 @@ const SimpleCard = ({ image, title, color, price, offer }: SimpleCardProps) => {
     }, []);
 
     return (
-        <Link href={`/${title.replaceAll(' ', '-')}`}>
+        <Link href={`/articulos/${url}`}>
             <div className="cursor-pointer relative border-2 border-[#272727] p-4 rounded-2xl rounded-tl-none w-52 mx-8 my-6 group">
                 <h2 className="absolute -left-6 bg-[#272727] rounded-lg rounded-tr-none py-2 px-4 text-white">
                     {realTitle}

@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
 
     return (
         <Link
-            href={`/${itemSlug}`}
+            href={`/articulos/${itemSlug}`}
             className="block bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
         >
             <div className="relative pb-[100%]">

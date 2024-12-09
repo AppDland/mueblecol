@@ -5,9 +5,10 @@ import CategoryPage from '@/components/CategoryPage';
 import Finder from '@/components/Finder';
 import { useState } from 'react';
 import Items from "@/data/items.json";
-import Card, { ItemInt } from '@/components/Card';
-import Header from '@/components/Headres';
+import Card from '@/components/Card';
+import Header from '@/components/Header';
 import Button from '@/components/Button';
+import { ItemInt } from '@/interfaces/item';
 
 const Category = () => {
     const router = useRouter();
@@ -17,8 +18,7 @@ const Category = () => {
     const [found, setFound] = useState<ItemInt[]>([]);
 
     const handleFind = () => {
-        console.log(Items.filter(({ name }) => name.includes(text)));
-        setFound(Items.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase())));
+        setFound(Items.items.filter(({ name }) => name.toLowerCase().includes(text.toLowerCase())));
     };
 
     const handleBackClick = () => {
@@ -28,8 +28,6 @@ const Category = () => {
     return (
         <>
             <Header
-                headerTitle={["Mueble", "Col"]}
-                headerTitleColors={['text-[#177675]', 'text-[#2E9896]']}
                 headerButtons={[
                     <Button
                         className="mx-2 mt-1"
@@ -51,12 +49,12 @@ const Category = () => {
                 ]}
                 headerBgColor="bg-[#005353]"
             />
-            <div className='absolute flex right-10'>
+            {/* <div className='absolute flex right-10'>
                 <Finder value={text} setValue={setText} onFind={handleFind} />
                 {found.map((item, index) => (
                     <Card item={item} key={index} />
                 ))}
-            </div>
+            </div> */}
 
             <CategoryPage
                 category={category as string}
