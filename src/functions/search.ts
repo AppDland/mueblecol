@@ -8,7 +8,7 @@ import Items from '@/data/items.json';
  */
 const getLevenshteinDistance = (str1: string, str2: string): number => {
     // Creamos una matriz para almacenar las distancias parciales
-    const matrix = Array(str2.length + 1).fill(null).map(() => 
+    const matrix = Array(str2.length + 1).fill(null).map(() =>
         Array(str1.length + 1).fill(null)
     );
 
@@ -47,7 +47,7 @@ export const searchItems = (searchTerm: string): ItemInt[] => {
     // Separamos los términos de búsqueda y los convertimos a minúsculas
     const searchWords = searchTerm.toLowerCase().trim().split(' ');
     const typedItems = Items as unknown as ItemsData;
-    let results: ItemInt[] = [];
+    const results: ItemInt[] = [];
 
     typedItems.items.forEach(item => {
         // Creamos un array con todas las palabras relevantes del item
@@ -65,8 +65,8 @@ export const searchItems = (searchTerm: string): ItemInt[] => {
             return allWords.some(word => {
                 const wordLower = word.toLowerCase();
                 return wordLower.includes(searchWord) || // La palabra contiene el término de búsqueda
-                       searchWord.includes(wordLower) || // El término de búsqueda contiene la palabra
-                       areSimilarWords(wordLower, searchWord); // Las palabras son similares
+                    searchWord.includes(wordLower) || // El término de búsqueda contiene la palabra
+                    areSimilarWords(wordLower, searchWord); // Las palabras son similares
             });
         });
 
@@ -80,17 +80,17 @@ export const searchItems = (searchTerm: string): ItemInt[] => {
         // Primero los que coinciden exactamente con el nombre
         const aNameMatch = a.publicName.toLowerCase().includes(searchTerm.toLowerCase());
         const bNameMatch = b.publicName.toLowerCase().includes(searchTerm.toLowerCase());
-        
+
         if (aNameMatch && !bNameMatch) return -1;
         if (!aNameMatch && bNameMatch) return 1;
 
         // Luego por relevancia de sinónimos
-        const aRelevance = a.synonyms.some(syn => 
+        const aRelevance = a.synonyms.some(syn =>
             syn.toLowerCase().includes(searchTerm.toLowerCase()) ||
             searchTerm.toLowerCase().includes(syn.toLowerCase()) ||
             areSimilarWords(syn.toLowerCase(), searchTerm.toLowerCase())
         );
-        const bRelevance = b.synonyms.some(syn => 
+        const bRelevance = b.synonyms.some(syn =>
             syn.toLowerCase().includes(searchTerm.toLowerCase()) ||
             searchTerm.toLowerCase().includes(syn.toLowerCase()) ||
             areSimilarWords(syn.toLowerCase(), searchTerm.toLowerCase())
@@ -109,24 +109,24 @@ export const searchItems = (searchTerm: string): ItemInt[] => {
 export const findSimilarItems = (item: ItemInt): ItemInt[] => {
     const typedItems = Items as unknown as ItemsData;
     const allItems = typedItems.items;
-    
+
     const similarItems = allItems.filter(otherItem => {
         if (otherItem.id === item.id) return false;
 
         // Un item es similar si comparte zona y además comparte color o material
-        const sameZone = item.zones.some(zone => 
+        const sameZone = item.zones.some(zone =>
             otherItem.zones.includes(zone)
         );
 
-        const sharedColors = item.media.some(media => 
-            otherItem.media.some(otherMedia => 
+        const sharedColors = item.media.some(media =>
+            otherItem.media.some(otherMedia =>
                 media.colorHex === otherMedia.colorHex
             )
         );
 
-        const sameMaterial = item.attributes.some(attr => 
-            otherItem.attributes.some(otherAttr => 
-                attr.attributeId === otherAttr.attributeId && 
+        const sameMaterial = item.attributes.some(attr =>
+            otherItem.attributes.some(otherAttr =>
+                attr.attributeId === otherAttr.attributeId &&
                 attr.value === otherAttr.value
             )
         );

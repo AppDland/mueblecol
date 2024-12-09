@@ -1,86 +1,49 @@
-import Image from 'next/image';
-import React from 'react';
-import classNames from 'classnames';
 
-interface IntroProps {
-    title: string;
-    subtitle: string;
-    titleColor?: string;
-    subtitleColor?: string;
-    bgColor?: string;
-    textColor?: string;
-    title2: string;
-    subtitle2: string;
-    title2Color?: string;
-    subtitle2Color?: string;
-    containerHeight?: string;
-    className?: string;
-    headerTitle?: string[];
-    headerTitleColors?: string[];
-    headerButtons?: React.ReactNode[];
-    headerBgColor?: string;
-    backgroundImage?: string; // Nueva propiedad para la imagen de fondo
-}
-
-const Intro: React.FC<IntroProps> = ({
-    title,
-    subtitle,
-    titleColor = 'text-white',
-    subtitleColor = 'text-white',
-    bgColor = 'bg-[#A30000]',
-    textColor = 'text-white',
-    title2,
-    subtitle2,
-    title2Color = 'text-white',
-    subtitle2Color = 'text-white',
-    containerHeight = '35vh',
-    className = '',
-    headerTitle = [],
-    headerTitleColors = [],
-    headerButtons = [],
-    headerBgColor = 'bg-transparent',
-    backgroundImage, // Nueva propiedad para la imagen de fondo
-}) => {
+const Intro = () => {
     return (
-        <div
-            className={classNames('w-full flex flex-col items-center select-none', bgColor, textColor, className)}
-            style={{
-                height: containerHeight,
-                backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-            }}
-        >
-            <header className={classNames('w-full flex justify-between items-center p-4', headerBgColor)}>
-                <div className="text-2xl font-bold flex">
-                    {headerTitle.map((part, index) => (
-                        <span key={index} className={headerTitleColors[index]}>
-                            {part}
-                        </span>
-                    ))}
-                </div>
-                <nav>
-                    <ul className="flex space-x-4">
-                        {headerButtons.map((button, index) => (
-                            <li key={index}>
-                                {button}
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-            </header>
-            <div className="flex items-center justify-evenly flex-grow w-full">
-                <div className='flex flex-col items-center justify-center'>
-                    <h1 className={classNames('text-4xl font-bold', titleColor)}>{title}</h1>
-                    <p className={classNames('text-xl', subtitleColor)}>{subtitle}</p>
-                </div>
-                <div className='flex flex-col items-center justify-center'>
-                    <h2 className={classNames('text-3xl font-bold mt-4', title2Color)}>{title2}</h2>
-                    <p className={classNames('text-lg', subtitle2Color)}>{subtitle2}</p>
+        <Background>
+            <div
+                className={'relative flex items-center justify-center w-full select-none bg-primary justify-self-center overflow-hidden'}
+                style={{
+                    height: '30vh',
+                    maxWidth: '1450px'
+                }}
+            >
+                <Decoration />
+                <div className="w-full flex justify-between max-w-5xl z-10">
+                    <div className='flex flex-col items-center justify-center'>
+                        <h1 className={'text-3xl text-white'}>Muebles Para El Hogar</h1>
+                        <p className={'text-lg text-white'}>¡Gran Variedad!</p>
+                    </div>
+                    <div className='flex flex-col items-center justify-center'>
+                        <h2 className={'text-2xl font-bold mt-4 text-secondary'}>Envío Gratis</h2>
+                        <p className={'text-lg text-secondary'}>Llevamos a la puerta de tu casa</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Background>
     );
 };
+
+const Decoration = () => (
+    <>
+        <div
+            className='absolute rotate-45 aspect-square bg-third'
+            style={{ width: '30vh', left: 'calc(50% + 5vh)' }}
+        />
+        <div
+            className="absolute bg-third w-1/3 right-0"
+            style={{ height: '30vh' }}
+        />
+    </>
+)
+
+const Background = ({ children }: { children: React.ReactNode }) => (
+    <div className="relative w-full">
+        <div className="absolute bg-primary w-1/2 h-full left-0 top-0" />
+        <div className="absolute bg-third w-1/2 h-full right-0 top-0" />
+        {children}
+    </div>
+)
 
 export default Intro;

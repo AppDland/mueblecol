@@ -1,7 +1,9 @@
 'use client';
+import classNames from 'classnames';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+// import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 interface FinderProps {
     defaultValue?: string;
@@ -10,6 +12,7 @@ interface FinderProps {
 
 const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) => {
     const [searchTerm, setSearchTerm] = useState(defaultValue);
+    const [active, setActive] = useState(false);
     const router = useRouter();
 
     const handleSearch = (e: React.FormEvent) => {
@@ -19,32 +22,50 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
         }
     };
 
+    const handleActive = (focus: boolean) => {
+        setActive(focus ? focus : searchTerm.length > 0);
+    }
+
     return (
-        <form onSubmit={handleSearch} className="w-full max-w-xs mx-auto my-3">
-            <div className="relative flex items-center">
-                <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="¿Qué deseas buscar?"
-                    className={`w-full px-4 py-2 text-center rounded-lg pr-12 ${isDark
-                            ? 'bg-neutral-900 text-white placeholder:text-neutral-400'
-                            : 'bg-white text-neutral-900 border-2 border-neutral-200 placeholder:text-neutral-500'
-                        } focus:outline-none`}
+        <form onSubmit={handleSearch} className={
+            `w-full max-w-xs mx-auto relative flex items-center py-1 border border-neutral-900 rounded-lg overflow-hidden
+            ${isDark ? 'bg-white' : 'bg-white'}`
+
+        }>
+            {/* <div className="relative flex items-center"> */}
+            <Slider active={active} />
+            <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onFocus={() => handleActive(true)}
+                onBlur={() => handleActive(false)}
+                placeholder="¿Qué deseas buscar?"
+                className={`z-20 w-full px-4 py-2 text-center rounded-lg pr-12 bg-transparent focus:outline-none`}
+            />
+            <button
+                type="submit"
+                className={`z-20 absolute right-0 p-3 h-full rounded-r-lg ${isDark
+                    ? 'text-white'
+                    : 'bg-neutral-900 text-white'
+                    }`}
+                aria-label="Buscar"
+            >
+                <Image
+                    alt='Buscar'
+                    src='/images/lupa.svg'
+                    width={16}
+                    height={16}
                 />
-                <button
-                    type="submit"
-                    className={`absolute right-0 p-3 h-full rounded-r-lg ${isDark
-                            ? 'text-white'
-                            : 'bg-neutral-900 text-white'
-                        }`}
-                    aria-label="Buscar"
-                >
-                    <MagnifyingGlassIcon className="w-5 h-5" />
-                </button>
-            </div>
+                {/* <MagnifyingGlassIcon className="w-5 h-5" /> */}
+            </button>
+            {/* </div> */}
         </form>
     );
 };
+
+const Slider = ({ active }: { active: boolean }) => (
+    <div className={classNames('absolute bg-neutral-900 h-full z-10 duration-100 right-0', active ? 'w-10' : 'w-full')} />
+)
 
 export default Finder;
