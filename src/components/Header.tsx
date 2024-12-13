@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 const Header = () => {
     return (
-        <header className={'w-full flex justify-between items-center p-4 bg-[#005353] select-none'}>
+        <header className={'w-full flex justify-between items-center p-4 bg-secondary select-none'}>
             <div className="text-2xl font-bold flex">
                 {
-                    [{ title: "Mueble", color: "text-[#177675]" }, { title: "col", color: "text-[#2E9896]" }].map(({ title, color }, index) => (
+                    [{ title: "Mueble", color: "text-accent" }, { title: "col", color: "text-primary" }].map(({ title, color }, index) => (
                         <span key={index} className={color}>
                             {title}
                         </span>

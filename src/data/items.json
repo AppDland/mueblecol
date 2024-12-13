@@ -1,1120 +1,505 @@
 {
     "items": [
         {
-            "id": 1,
-            "name": "sofa-moderno-3-cuerpos",
-            "publicName": "Sofá Moderno 3 Cuerpos",
-            "price": 450000,
-            "offer": 399900,
-            "stock": 5,
-            "description": "Sofá moderno y confortable ideal para salas de estar.",
+            "name": "closet-grande-maletero-espejo",
+            "publicName": "Closet Grande Maletero y Espejo",
+            "price": 462000,
+            "offer": 0,
+            "description": "Closet grande con maletero y espejo. Ideal para guardar ropa y accesorios. Las puertas del maletero son deslisables. Cuenta con 4 gabetas y 4 puertas, una de las puertas tiene espejo y cerradura para mayor seguridad.",
             "media": [
                 {
-                    "id": 1,
-                    "colorName": "Marrón",
-                    "colorHex": "#8B4513",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                },
-                {
-                    "id": 2,
-                    "colorName": "Blanco",
-                    "colorHex": "#FFFFFF",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
                 }
             ],
             "attributes": [
                 {
-                    "id": 1,
-                    "attributeId": 1,
-                    "value": "Tapizado"
-                },
-                {
-                    "id": 2,
-                    "attributeId": 2,
-                    "value": "3"
-                }
-            ],
-            "synonyms": [
-                "sofá reclinable",
-                "sillón",
-                "mueble sala"
-            ],
-            "zones": [
-                "sala",
-                "living"
-            ]
-        },
-        {
-            "id": 2,
-            "name": "ropero-grande-mdf-marron",
-            "publicName": "Ropero Grande 2m x 1m MDF Color Marrón",
-            "price": 300000,
-            "offer": null,
-            "stock": 3,
-            "description": "Ropero espacioso con cajones y barras para colgar ropa.",
-            "media": [
-                {
-                    "id": 3,
-                    "colorName": "Marrón",
-                    "colorHex": "#8B4513",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/ropero.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 3,
-                    "attributeId": 1,
-                    "value": "MDF"
-                },
-                {
-                    "id": 4,
-                    "attributeId": 3,
-                    "value": "200"
-                },
-                {
-                    "id": 5,
-                    "attributeId": 4,
-                    "value": "100"
-                }
-            ],
-            "synonyms": [
-                "armario",
-                "closet",
-                "guardarropa"
-            ],
-            "zones": [
-                "dormitorio",
-                "habitación"
-            ]
-        },
-        {
-            "id": 3,
-            "name": "mesa-comedor-extensible-6-8-personas",
-            "publicName": "Mesa Comedor Extensible 6-8 Personas",
-            "price": 520000,
-            "offer": 480000,
-            "stock": 10,
-            "description": "Mesa de comedor extensible moderna. Perfecta para familias y reuniones.",
-            "media": [
-                {
-                    "id": 4,
-                    "colorName": "Marrón",
-                    "colorHex": "#8B4513",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 6,
-                    "attributeId": 1,
-                    "value": "Melamina"
-                },
-                {
-                    "id": 7,
-                    "attributeId": 3,
-                    "value": "75"
-                },
-                {
-                    "id": 8,
-                    "attributeId": 4,
-                    "value": "160"
-                }
-            ],
-            "synonyms": [
-                "mesa extensible",
-                "comedor grande",
-                "mesa para familias"
-            ],
-            "zones": [
-                "comedor"
-            ]
-        },
-        {
-            "id": 4,
-            "name": "placard-empotrado-premium",
-            "publicName": "Placard Empotrado Premium",
-            "price": 890000,
-            "offer": null,
-            "stock": 4,
-            "description": "Placard empotrado de lujo con iluminación LED y sistema de puertas corredizas.",
-            "media": [
-                {
-                    "id": 5,
-                    "colorName": "Marrón",
-                    "colorHex": "#8B4513",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                },
-                {
-                    "id": 6,
-                    "colorName": "Blanco",
-                    "colorHex": "#FFFFFF",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 9,
-                    "attributeId": 1,
-                    "value": "MDF"
-                },
-                {
-                    "id": 10,
-                    "attributeId": 3,
-                    "value": "240"
-                },
-                {
-                    "id": 11,
-                    "attributeId": 4,
-                    "value": "280"
-                }
-            ],
-            "synonyms": [
-                "guardarropa premium",
-                "closet empotrado",
-                "mueble con luz"
-            ],
-            "zones": [
-                "dormitorio"
-            ]
-        },
-        {
-            "id": 5,
-            "name": "set-dormitorio-matrimonial-completo",
-            "publicName": "Set Dormitorio Matrimonial Completo",
-            "price": 1250000,
-            "offer": null,
-            "stock": 2,
-            "description": "Conjunto completo para dormitorio matrimonial con todos los muebles necesarios.",
-            "media": [
-                {
-                    "id": 7,
-                    "colorName": "Marrón",
-                    "colorHex": "#8B4513",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 12,
                     "attributeId": 1,
                     "value": "MDF"
                 }
             ],
             "synonyms": [
-                "dormitorio matrimonial",
-                "mueble para pareja",
-                "set completo"
-            ],
-            "zones": [
-                "dormitorio"
-            ]
-        },
-        {
-            "id": 6,
-            "name": "mesa-ratona-minimalista",
-            "publicName": "Mesa Ratona Minimalista",
-            "price": 180000,
-            "offer": 150000,
-            "stock": 7,
-            "description": "Mesa ratona con diseño minimalista para living moderno.",
-            "media": [
-                {
-                    "id": 8,
-                    "colorName": "Blanco",
-                    "colorHex": "#FFFFFF",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 13,
-                    "attributeId": 1,
-                    "value": "Melamina"
-                },
-                {
-                    "id": 14,
-                    "attributeId": 3,
-                    "value": "45"
-                },
-                {
-                    "id": 15,
-                    "attributeId": 4,
-                    "value": "90"
-                }
-            ],
-            "synonyms": [
-                "mesa ratona",
-                "mesa centro",
-                "mesa living"
-            ],
-            "zones": [
-                "living",
-                "sala"
-            ]
-        },
-        {
-            "id": 9,
-            "name": "mesa-comedor-extensible",
-            "publicName": "Mesa de Comedor Extensible",
-            "price": 520000,
-            "offer": null,
-            "stock": 2,
-            "description": "Mesa extensible ideal para reuniones familiares.",
-            "media": [
-                {
-                    "id": 4,
-                    "colorName": "Marrón",
-                    "colorHex": "#8B4513",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 6,
-                    "attributeId": 1,
-                    "value": "Madera"
-                },
-                {
-                    "id": 7,
-                    "attributeId": 3,
-                    "value": "160"
-                },
-                {
-                    "id": 8,
-                    "attributeId": 4,
-                    "value": "90"
-                }
-            ],
-            "synonyms": [
-                "mesa comedor",
-                "mesa grande",
-                "mesa extensible"
-            ],
-            "zones": [
-                "comedor"
-            ]
-        },
-        {
-            "id": 10,
-            "name": "placard-premium-luces-led",
-            "publicName": "Placard Premium con Luces LED",
-            "price": 890000,
-            "offer": 850000,
-            "stock": 4,
-            "description": "Placard de lujo con puertas corredizas y luces LED.",
-            "media": [
-                {
-                    "id": 5,
-                    "colorName": "Blanco",
-                    "colorHex": "#FFFFFF",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 9,
-                    "attributeId": 1,
-                    "value": "MDF"
-                },
-                {
-                    "id": 10,
-                    "attributeId": 3,
-                    "value": "240"
-                },
-                {
-                    "id": 11,
-                    "attributeId": 4,
-                    "value": "280"
-                }
-            ],
-            "synonyms": [
+                "ropero",
+                "maletero",
                 "placard",
-                "armario empotrado",
-                "guardarropa"
-            ],
-            "zones": [
-                "dormitorio"
-            ]
-        },
-        {
-            "id": 11,
-            "name": "silla-oficina-ergonomica",
-            "publicName": "Silla de Oficina Ergonómica",
-            "price": 250000,
-            "offer": 199900,
-            "stock": 15,
-            "description": "Silla ajustable y cómoda para largas jornadas de trabajo.",
-            "media": [
-                {
-                    "id": 6,
-                    "colorName": "Negro",
-                    "colorHex": "#000000",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 12,
-                    "attributeId": 1,
-                    "value": "Poliéster"
-                },
-                {
-                    "id": 13,
-                    "attributeId": 3,
-                    "value": "120"
-                },
-                {
-                    "id": 14,
-                    "attributeId": 4,
-                    "value": "60"
-                }
-            ],
-            "synonyms": [
-                "silla de oficina",
-                "silla ergonómica",
-                "silla trabajo"
-            ],
-            "zones": [
-                "oficina",
-                "estudio"
-            ]
-        },
-        {
-            "id": 12,
-            "name": "lampara-decorativa-de-mesa",
-            "publicName": "Lámpara Decorativa de Mesa",
-            "price": 120000,
-            "offer": 99000,
-            "stock": 10,
-            "description": "Lámpara de diseño moderno con luz cálida.",
-            "media": [
-                {
-                    "id": 7,
-                    "colorName": "Blanco",
-                    "colorHex": "#FFFFFF",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 15,
-                    "attributeId": 1,
-                    "value": "Cerámica"
-                },
-                {
-                    "id": 16,
-                    "attributeId": 3,
-                    "value": "40"
-                },
-                {
-                    "id": 17,
-                    "attributeId": 4,
-                    "value": "20"
-                }
-            ],
-            "synonyms": [
-                "lámpara de mesa",
-                "decorativa",
-                "luz cálida"
-            ],
-            "zones": [
-                "sala",
-                "habitación"
-            ]
-        },
-        {
-            "id": 13,
-            "name": "escritorio-esquinero-compacto",
-            "publicName": "Escritorio Esquinero Compacto",
-            "price": 320000,
-            "offer": null,
-            "stock": 8,
-            "description": "Escritorio compacto ideal para maximizar espacios reducidos.",
-            "media": [
-                {
-                    "id": 8,
-                    "colorName": "Roble Claro",
-                    "colorHex": "#D2B48C",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 18,
-                    "attributeId": 1,
-                    "value": "Madera"
-                },
-                {
-                    "id": 19,
-                    "attributeId": 3,
-                    "value": "75"
-                },
-                {
-                    "id": 20,
-                    "attributeId": 4,
-                    "value": "90"
-                }
-            ],
-            "synonyms": [
-                "escritorio",
-                "esquinero",
-                "compacto"
-            ],
-            "zones": [
-                "oficina",
-                "estudio"
-            ]
-        },
-        {
-            "id": 14,
-            "name": "alfombra-peluche-200x150",
-            "publicName": "Alfombra de Peluche 200x150 cm",
-            "price": 150000,
-            "offer": 120000,
-            "stock": 20,
-            "description": "Alfombra suave y cómoda para cualquier espacio.",
-            "media": [
-                {
-                    "id": 9,
-                    "colorName": "Gris",
-                    "colorHex": "#808080",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 21,
-                    "attributeId": 1,
-                    "value": "Poliéster"
-                },
-                {
-                    "id": 22,
-                    "attributeId": 3,
-                    "value": "200"
-                },
-                {
-                    "id": 23,
-                    "attributeId": 4,
-                    "value": "150"
-                }
-            ],
-            "synonyms": [
-                "alfombra",
-                "peluche",
-                "tapete"
-            ],
-            "zones": [
-                "sala",
-                "dormitorio"
-            ]
-        },
-        {
-            "id": 15,
-            "name": "reloj-pared-minimalista",
-            "publicName": "Reloj de Pared Minimalista",
-            "price": 80000,
-            "offer": 69900,
-            "stock": 12,
-            "description": "Reloj moderno y elegante para decorar tus paredes.",
-            "media": [
-                {
-                    "id": 10,
-                    "colorName": "Negro",
-                    "colorHex": "#000000",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 24,
-                    "attributeId": 1,
-                    "value": "Metal"
-                },
-                {
-                    "id": 25,
-                    "attributeId": 3,
-                    "value": "40"
-                },
-                {
-                    "id": 26,
-                    "attributeId": 4,
-                    "value": "40"
-                }
-            ],
-            "synonyms": [
-                "reloj pared",
-                "minimalista",
-                "decoración"
-            ],
-            "zones": [
-                "sala",
-                "oficina"
-            ]
-        },
-        {
-            "id": 16,
-            "name": "perchero-de-pie-madera",
-            "publicName": "Perchero de Pie en Madera",
-            "price": 110000,
-            "offer": 99000,
-            "stock": 25,
-            "description": "Práctico perchero para organizar abrigos y sombreros.",
-            "media": [
-                {
-                    "id": 11,
-                    "colorName": "Natural",
-                    "colorHex": "#C2A376",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 27,
-                    "attributeId": 1,
-                    "value": "Madera"
-                },
-                {
-                    "id": 28,
-                    "attributeId": 3,
-                    "value": "180"
-                },
-                {
-                    "id": 29,
-                    "attributeId": 4,
-                    "value": "45"
-                }
-            ],
-            "synonyms": [
-                "perchero",
-                "organizador",
-                "madera"
-            ],
-            "zones": [
-                "sala",
-                "entrada"
-            ]
-        },
-        {
-            "id": 17,
-            "name": "silla-oficina-ergonomica",
-            "publicName": "Silla de Oficina Ergonómica",
-            "price": 450000,
-            "offer": 399000,
-            "stock": 15,
-            "description": "Silla ergonómica ajustable, ideal para largas horas de trabajo.",
-            "media": [
-                {
-                    "id": 13,
-                    "colorName": "Negro",
-                    "colorHex": "#000000",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 33,
-                    "attributeId": 1,
-                    "value": "Malla y Aluminio"
-                },
-                {
-                    "id": 34,
-                    "attributeId": 3,
-                    "value": "120"
-                },
-                {
-                    "id": 35,
-                    "attributeId": 4,
-                    "value": "60"
-                }
-            ],
-            "synonyms": [
-                "silla oficina",
-                "ergonómica",
-                "trabajo"
-            ],
-            "zones": [
-                "oficina",
-                "estudio"
-            ]
-        },
-        {
-            "id": 18,
-            "name": "mesa-comedor-redonda",
-            "publicName": "Mesa de Comedor Redonda",
-            "price": 550000,
-            "offer": 499000,
-            "stock": 10,
-            "description": "Mesa redonda con diseño elegante para cuatro personas.",
-            "media": [
-                {
-                    "id": 14,
-                    "colorName": "Nogal",
-                    "colorHex": "#A0522D",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 36,
-                    "attributeId": 1,
-                    "value": "Madera Maciza"
-                },
-                {
-                    "id": 37,
-                    "attributeId": 3,
-                    "value": "75"
-                },
-                {
-                    "id": 38,
-                    "attributeId": 4,
-                    "value": "100"
-                }
-            ],
-            "synonyms": [
-                "mesa comedor",
-                "redonda",
-                "elegante"
-            ],
-            "zones": [
-                "comedor"
-            ]
-        },
-        {
-            "id": 19,
-            "name": "lampara-pie-moderna",
-            "publicName": "Lámpara de Pie Moderna",
-            "price": 220000,
-            "offer": null,
-            "stock": 18,
-            "description": "Lámpara de pie con diseño contemporáneo y luz ajustable.",
-            "media": [
-                {
-                    "id": 15,
-                    "colorName": "Blanco y Cromo",
-                    "colorHex": "#F5F5F5",
-                    "photos": [
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png",
-                        "https://appdland-bucket.s3.us-east-2.amazonaws.com/Ropero-Grande-2m-x-1m-MDF-Color-Marron/thumbnail.png"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 39,
-                    "attributeId": 1,
-                    "value": "Metal"
-                },
-                {
-                    "id": 40,
-                    "attributeId": 3,
-                    "value": "150"
-                },
-                {
-                    "id": 41,
-                    "attributeId": 4,
-                    "value": "50"
-                }
-            ],
-            "synonyms": [
-                "lámpara pie",
-                "moderna",
-                "iluminación"
-            ],
-            "zones": [
-                "sala",
-                "dormitorio"
-            ]
-        },
-        {
-            "id": 20,
-            "name": "cama-doble-madera",
-            "publicName": "Cama Doble de Madera",
-            "price": 850000,
-            "offer": 799000,
-            "stock": 5,
-            "description": "Cama doble robusta con acabado natural y elegante.",
-            "media": [
-                {
-                    "id": 16,
-                    "colorName": "Natural",
-                    "colorHex": "#D2B48C",
-                    "photos": [
-                        "cama-doble-1.jpg",
-                        "cama-doble-2.jpg"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 42,
-                    "attributeId": 1,
-                    "value": "Madera Maciza"
-                },
-                {
-                    "id": 43,
-                    "attributeId": 3,
-                    "value": "200"
-                },
-                {
-                    "id": 44,
-                    "attributeId": 4,
-                    "value": "160"
-                }
-            ],
-            "synonyms": [
-                "cama doble",
-                "madera",
-                "natural"
-            ],
-            "zones": [
-                "dormitorio"
-            ]
-        },
-        {
-            "id": 21,
-            "name": "sofa-reclinable",
-            "publicName": "Sofá Reclinable",
-            "price": 1200000,
-            "offer": 1100000,
-            "stock": 6,
-            "description": "Sofá reclinable con tapizado premium y soporte lumbar.",
-            "media": [
-                {
-                    "id": 17,
-                    "colorName": "Gris Oscuro",
-                    "colorHex": "#4B4B4B",
-                    "photos": [
-                        "sofa-reclinable-1.jpg",
-                        "sofa-reclinable-2.jpg"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 45,
-                    "attributeId": 1,
-                    "value": "Tela y Madera"
-                },
-                {
-                    "id": 46,
-                    "attributeId": 3,
-                    "value": "100"
-                },
-                {
-                    "id": 47,
-                    "attributeId": 4,
-                    "value": "200"
-                }
-            ],
-            "synonyms": [
-                "sofá",
-                "reclinable",
-                "confort"
-            ],
-            "zones": [
-                "sala"
-            ]
-        },
-        {
-            "id": 22,
-            "name": "armario-multifuncional",
-            "publicName": "Armario Multifuncional",
-            "price": 450000,
-            "offer": null,
-            "stock": 9,
-            "description": "Armario versátil con múltiples compartimentos para organizar.",
-            "media": [
-                {
-                    "id": 18,
-                    "colorName": "Blanco Mate",
-                    "colorHex": "#FFFFFF",
-                    "photos": [
-                        "armario-1.jpg",
-                        "armario-2.jpg"
-                    ]
-                }
-            ],
-            "attributes": [
-                {
-                    "id": 48,
-                    "attributeId": 1,
-                    "value": "MDF"
-                },
-                {
-                    "id": 49,
-                    "attributeId": 3,
-                    "value": "180"
-                },
-                {
-                    "id": 50,
-                    "attributeId": 4,
-                    "value": "120"
-                }
-            ],
-            "synonyms": [
-                "armario",
-                "organizador",
-                "multifuncional"
+                "closet",
+                "grande",
+                "espejo",
+                "ropa",
+                "cajones",
+                "gabetas",
+                "candado"
             ],
             "zones": [
                 "dormitorio",
-                "oficina"
+                "closet"
             ]
         },
         {
-            "id": 23,
-            "name": "mesa-centro-con-cristal",
-            "publicName": "Mesa de Centro con Cristal",
-            "price": 300000,
-            "offer": 279000,
-            "stock": 7,
-            "description": "Mesa de centro moderna con cristal templado y base robusta.",
+            "name": "living-completo",
+            "publicName": "Juego de Living Completo con Mesa ratona y Puff",
+            "price": 510000,
+            "offer": 0,
+            "description": "Sofá de 2 cuerpos, 2 puff y una mesa ratona. El material es en tela e inlcuye almohadones grandes y pequeños",
             "media": [
                 {
-                    "id": 19,
-                    "colorName": "Cromo y Transparente",
-                    "colorHex": "#E8E8E8",
-                    "photos": [
-                        "mesa-centro-1.jpg",
-                        "mesa-centro-2.jpg"
-                    ]
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
                 }
             ],
             "attributes": [
                 {
-                    "id": 51,
                     "attributeId": 1,
-                    "value": "Metal y Cristal"
-                },
-                {
-                    "id": 52,
-                    "attributeId": 3,
-                    "value": "50"
-                },
-                {
-                    "id": 53,
-                    "attributeId": 4,
-                    "value": "100"
+                    "value": "Tela"
                 }
             ],
             "synonyms": [
-                "mesa centro",
-                "moderna",
-                "cristal"
+                "sofa",
+                "sillon",
+                "puff",
+                "mesa",
+                "ratonera",
+                "living",
+                "almohadones",
+                "almohadas",
+                "tela"
             ],
             "zones": [
-                "sala"
+                "sala",
+                "dormitorio"
             ]
         },
         {
-            "id": 24,
-            "name": "estanteria-moderna",
-            "publicName": "Estantería Moderna",
-            "price": 330000,
-            "offer": 310000,
-            "stock": 12,
-            "description": "Estantería abierta de diseño minimalista y elegante.",
+            "name": "modular-tv-modulo-superior",
+            "publicName": "Modular TV con Modulo Superior para TV de 50 pulgadas",
+            "price": 252000,
+            "offer": 0,
+            "description": "Mesa/Rack para TV con estantes en la parte superior y varios espacios de almacenamiento.",
             "media": [
                 {
-                    "id": 20,
-                    "colorName": "Roble Oscuro",
-                    "colorHex": "#8B4513",
-                    "photos": [
-                        "estanteria-moderna-1.jpg",
-                        "estanteria-moderna-2.jpg"
-                    ]
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
                 }
             ],
             "attributes": [
                 {
-                    "id": 54,
                     "attributeId": 1,
-                    "value": "Madera"
-                },
-                {
-                    "id": 55,
-                    "attributeId": 3,
-                    "value": "180"
-                },
-                {
-                    "id": 56,
-                    "attributeId": 4,
-                    "value": "80"
+                    "value": "MDF"
                 }
             ],
             "synonyms": [
-                "estantería",
-                "moderna",
-                "elegante"
+                "rack",
+                "tv",
+                "modular",
+                "mueble",
+                "almacenamiento",
+                "estantes"
             ],
             "zones": [
-                "oficina",
-                "sala"
+                "sala",
+                "dormitorio"
             ]
         },
         {
-            "id": 25,
-            "name": "taburete-industrial",
-            "publicName": "Taburete Industrial",
-            "price": 120000,
-            "offer": 105000,
-            "stock": 20,
-            "description": "Taburete de diseño industrial, ideal para barras y mesas altas.",
+            "name": "sillon-peque",
+            "publicName": "Sillon Pequeño",
+            "price": 75000,
+            "offer": 0,
+            "description": "Silloncitos con tematicas para los mas peques de tu casa",
             "media": [
                 {
-                    "id": 21,
-                    "colorName": "Negro Mate",
-                    "colorHex": "#333333",
-                    "photos": [
-                        "taburete-industrial-1.jpg",
-                        "taburete-industrial-2.jpg"
-                    ]
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
                 }
             ],
             "attributes": [
                 {
-                    "id": 57,
                     "attributeId": 1,
-                    "value": "Metal"
-                },
-                {
-                    "id": 58,
-                    "attributeId": 3,
-                    "value": "75"
-                },
-                {
-                    "id": 59,
-                    "attributeId": 4,
-                    "value": "40"
+                    "value": "Cuerina"
                 }
             ],
             "synonyms": [
-                "taburete",
-                "industrial",
-                "barra"
+                "sillon",
+                "sillita",
+                "peques",
+                "niños",
+                "infantil",
+                "silloncito",
+                "cuerina"
             ],
             "zones": [
-                "cocina",
-                "bar"
+                "sala",
+                "dormitorio"
             ]
         },
         {
-            "id": 26,
-            "name": "repisa-flotante-blanca",
-            "publicName": "Repisa Flotante Blanca",
+            "name": "silleta",
+            "publicName": "Silleta Plegable Resistente",
             "price": 50000,
-            "offer": null,
-            "stock": 30,
-            "description": "Repisa funcional para decoración y almacenamiento.",
+            "offer": 0,
+            "description": "Silleta tejida con tiras de nylon, resistente y plegable. Ideal para camping, playa, pesca, etc. Apoya brazos de madera.",
             "media": [
                 {
-                    "id": 12,
-                    "colorName": "Blanco",
-                    "colorHex": "#FFFFFF",
-                    "photos": [
-                        "repisa-blanca-1.jpg",
-                        "repisa-blanca-2.jpg"
-                    ]
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
+                }
+            ],
+            "synonyms": [
+                "reposeras",
+                "silla",
+                "silleta",
+                "playa",
+                "pesca",
+                "camping",
+                "plegable",
+                "resistente",
+                "nylon",
+                "madera",
+                "tejida"
+            ],
+            "zones": [
+                "exteriores",
+                "sala"
+            ]
+        },
+        {
+            "name": "mostrador-vidrio",
+            "publicName": "Mostrador con Vidrio",
+            "price": 244000,
+            "offer": 0,
+            "description": "Mostrador/Exhibidor con estantes de vidrio. Ideal para exhibir productos. Cuenta con almacenamiento oculto en la parte posterior, medidas 94cm de alto x 116cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
                 }
             ],
             "attributes": [
                 {
-                    "id": 30,
                     "attributeId": 1,
                     "value": "MDF"
                 },
                 {
-                    "id": 31,
-                    "attributeId": 3,
-                    "value": "20"
+                    "attributeId": 2,
+                    "value": "94cm"
                 },
                 {
-                    "id": 32,
+                    "attributeId": 3,
+                    "value": "116cm"
+                },
+                {
                     "attributeId": 4,
-                    "value": "60"
+                    "value": "36cm"
                 }
             ],
             "synonyms": [
-                "repisa",
-                "flotante",
-                "almacenamiento"
+                "mostrador",
+                "exhibidor",
+                "vidrio",
+                "estantes",
+                "estanteria",
+                "negocio",
+                "kiosco",
+                "tienda",
+                "productos",
+                "recepcion"
             ],
             "zones": [
-                "sala",
-                "baño"
+                "sala"
             ]
+        },
+        {
+            "name": "camilla-masajes-completa",
+            "publicName": "Camilla de Masajes con Mesa de Apoyo y Escalera",
+            "price": 322000,
+            "offer": 0,
+            "description": "Camilla para hacer masajes con mesa de apoyo y escalera. Ideal para spa, centro de masajes, esteticas, etc. Medidas 80cm alto x 64cm ancho x 176cm largo.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 2,
+                    "value": "80cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "64cm"
+                },
+                {
+                    "attributeId": 5,
+                    "value": "176cm"
+                }
+            ],
+            "synonyms": [
+                "camilla",
+                "masajes",
+                "corporal",
+                "estetica",
+                "spa",
+                "escalera"
+            ],
+            "zones": [
+                "sala"
+            ]
+        },
+        {
+            "name": "peinadora-peque",
+            "publicName": "Peinadora Hollywood Pequeña con Luces",
+            "price": 336000,
+            "offer": 0,
+            "description": "Peinadora con focos led, luz blanca, estantes y cajones. Ideal para maquillaje y peinado. Medidas 166cm de alto x 93cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "166cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "93cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "peinadora",
+                "peinador",
+                "maquillaje",
+                "peinado",
+                "luces",
+                "focos",
+                "led",
+                "blanca",
+                "estantes",
+                "cajones"
+            ],
+            "zones": [
+                "dormitorio",
+                "closet"
+            ]
+        },
+        {
+            "name": "closet-peque-maletero-espejo",
+            "publicName": "Closet pequeño con Maletero y Espejo",
+            "price": 336000,
+            "offer": 0,
+            "description": "Closet pequeño con maletero y espejo. Ideal para guardar ropa y accesorios. Las puertas del maletero son deslisables. Cuenta con 4 gabetas y 4 puertas, una de las puertas tiene espejo. Medidas 190cm de alto x 130cm de ancho x 45cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "190cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "130cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "45cm"
+                }
+            ],
+            "synonyms": [
+                "ropero",
+                "maletero",
+                "placard",
+                "closet",
+                "grande",
+                "espejo",
+                "ropa",
+                "cajones",
+                "gabetas"
+            ],
+            "zones": [
+                "dormitorio",
+                "closet"
+            ]
+        },
+        {
+            "name": "zapatero-espejo",
+            "publicName": "Zapatero con Espejo",
+            "price": 244000,
+            "offer": 0,
+            "description": "Mueble zapatero con espejo vertical, cuenta con 12 espacios para almacenar zapatos. Medidas 179cm de alto x 75cm de ancho x 32cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "179cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "75cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "32cm"
+                }
+            ],
+            "synonyms": [
+                "zapatero",
+                "zapatera",
+                "zapatos",
+                "espejo",
+                "almacenamiento",
+                "vertical",
+                "mueble",
+                "calzado"
+            ],
+            "zones": [
+                "closet",
+                "dormitorio"
+            ]
+        },
+        {
+            "name": "peinadora-puerta-corrediza",
+            "publicName": "Peinadora con Puerta Corrediza, Espejo y Focos LED",
+            "price": 400000,
+            "offer": 0,
+            "description": "Peinadora/Tocadora con puerta corrediza, espejo y cajones. Cuenta con focos LED en la puerta, Ideal para maquillaje y peinado. Medidas 173cm de alto x 88cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "173cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "88cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "tocadora",
+                "peinadora",
+                "peinador",
+                "tocador",
+                "espejo",
+                "maquillaje",
+                "peinado",
+                "focos",
+                "LED",
+                "almacenamiento",
+                "cajones",
+                "gabetas",
+                "puertas"
+            ],
+            "zones": [
+                "dormitorio",
+                "closet"
+            ]
+        },
+        {
+            "name": "",
+            "publicName": "",
+            "price": 0,
+            "offer": 0,
+            "description": "",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": []
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "190cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "130cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "45cm"
+                }
+            ],
+            "synonyms": [],
+            "zones": []
         }
     ],
     "attributes": [
         {
             "id": 1,
-            "name": "Material",
-            "type": "string"
+            "name": "Material"
         },
         {
             "id": 2,
-            "name": "Cuerpos",
-            "type": "number"
+            "name": "Alto"
         },
         {
             "id": 3,
-            "name": "Alto",
-            "type": "number"
+            "name": "Ancho"
         },
         {
             "id": 4,
-            "name": "Ancho",
-            "type": "number"
+            "name": "Profundidad"
+        },
+        {
+            "id": 5,
+            "name": "Largo"
         }
     ],
     "zones": [
@@ -1129,6 +514,14 @@
         {
             "id": 3,
             "name": "comedor"
+        },
+        {
+            "id": 4,
+            "name": "closet"
+        },
+        {
+            "id": 5,
+            "name": "exteriores"
         }
     ]
 }
