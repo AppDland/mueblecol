@@ -29,8 +29,9 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        // const savedTheme = localStorage.getItem('theme') || 'light';
+        // document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('data-theme', 'light');
     }, []);
 
     return (
