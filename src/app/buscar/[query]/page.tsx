@@ -34,15 +34,15 @@ export default function SearchResults() {
             filteredResults = filteredResults.filter(item => item.price <= filters.maxPrice!);
         }
         if (filters.colors.length > 0) {
-            filteredResults = filteredResults.filter(item => 
-                item.media.some(media => 
+            filteredResults = filteredResults.filter(item =>
+                item.media.some(media =>
                     filters.colors.includes(media.colorName)
                 )
             );
         }
         if (filters.materials.length > 0) {
-            filteredResults = filteredResults.filter(item => 
-                item.attributes.some(attr => 
+            filteredResults = filteredResults.filter(item =>
+                item.attributes.some(attr =>
                     attr.attributeId === 1 &&
                     filters.materials.includes(attr.value.toLowerCase())
                 )
@@ -78,14 +78,12 @@ export default function SearchResults() {
     return (
         <main className="min-h-screen">
             <div className="flex flex-col relative w-full max-w-7xl mx-auto px-4">
-                <Finder defaultValue={query.replaceAll('-', ' ')} />
-
                 <div className="flex gap-8">
-                    <Filters 
+                    <Filters
                         onFilterChange={setFilters}
                         currentFilters={filters}
                     />
-                    
+
                     <div className="flex-1">
                         <h2 className="text-2xl font-bold mb-4">
                             Resultados para: {query.replaceAll('-', ' ')}
@@ -109,11 +107,10 @@ export default function SearchResults() {
                                     <button
                                         key={page}
                                         onClick={() => setCurrentPage(page)}
-                                        className={`px-4 py-2 rounded ${
-                                            currentPage === page 
-                                                ? 'bg-primary text-white' 
+                                        className={`px-4 py-2 rounded ${currentPage === page
+                                                ? 'bg-primary text-white'
                                                 : 'bg-gray-200 hover:bg-gray-300'
-                                        }`}
+                                            }`}
                                     >
                                         {page}
                                     </button>

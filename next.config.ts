@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'appdland-bucket.s3.us-east-2.amazonaws.com',
+        hostname: 'mueblecol.s3.us-east-2.amazonaws.com',
         port: '',
         pathname: '/**',
       },

@@ -8,9 +8,11 @@
             "description": "Closet grande con maletero y espejo. Ideal para guardar ropa y accesorios. Las puertas del maletero son deslisables. Cuenta con 4 gabetas y 4 puertas, una de las puertas tiene espejo y cerradura para mayor seguridad.",
             "media": [
                 {
-                    "colorName": "",
-                    "colorHex": "",
-                    "photos": []
+                    "colorName": "Blanco y Negro",
+                    "colorHex": "#000000",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/closet-grande-maletero-espejo/IMG-20240307-WA0047.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -46,7 +48,14 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/living-completo/IMG-20240304-WA0004.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/living-completo/IMG-20240326-WA0006.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/living-completo/IMG-20240326-WA0008.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/living-completo/IMG-20240326-WA0009.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/living-completo/IMG-20240326-WA0010.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/living-completo/IMG-20240326-WA0012.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -79,9 +88,11 @@
             "description": "Mesa/Rack para TV con estantes en la parte superior y varios espacios de almacenamiento.",
             "media": [
                 {
-                    "colorName": "",
-                    "colorHex": "",
-                    "photos": []
+                    "colorName": "Negro",
+                    "colorHex": "#000000",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/modular-tv-modulo-superior/IMG-20240304-WA0001.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -113,7 +124,9 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/sillon-peque/20240408_092920.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -129,7 +142,8 @@
                 "niños",
                 "infantil",
                 "silloncito",
-                "cuerina"
+                "cuerina",
+                "sofa"
             ],
             "zones": [
                 "sala",
@@ -146,7 +160,12 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/silleta/Screenshot_20221129_104323_WhatsApp.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/silleta/Screenshot_20221129_104331_WhatsApp.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/silleta/Screenshot_20230220_114337_WhatsApp.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/silleta/Screenshot_20230318_143809_WhatsApp.jpg"
+                    ]
                 }
             ],
             "synonyms": [
@@ -177,7 +196,10 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/mostrador-vidrio/IMG-20241024-WA0006.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/mostrador-vidrio/Screenshot_20230808_131105_WhatsApp.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -224,7 +246,11 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/camilla-masajes-completa/IMG-20240307-WA0046.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/camilla-masajes-completa/IMG-20240909-WA0074.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/camilla-masajes-completa/IMG-20241126-WA0028.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -263,7 +289,13 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-peque/IMG-20240522-WA0060.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-peque/IMG-20240523-WA0026.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-peque/IMG-20241024-WA0007.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-peque/IMG-20241126-WA0004.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-peque/IMG-20241126-WA0032.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -311,7 +343,12 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/closet-peque-maletero-espejo/20230927_195851.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/closet-peque-maletero-espejo/IMG-20240307-WA0045.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/closet-peque-maletero-espejo/IMG-20241125-WA0022.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/closet-peque-maletero-espejo/IMG-20241126-WA0007.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -358,7 +395,11 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/zapatero-espejo/IMG-20240301-WA0013.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/zapatero-espejo/IMG-20241024-WA0014.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/zapatero-espejo/IMG-20241109-WA0029.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -404,7 +445,10 @@
                 {
                     "colorName": "",
                     "colorHex": "",
-                    "photos": []
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-puerta-corrediza/IMG-20241126-WA0009.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-puerta-corrediza/IMG-20241126-WA0019.jpg"
+                    ]
                 }
             ],
             "attributes": [
@@ -444,40 +488,6 @@
                 "dormitorio",
                 "closet"
             ]
-        },
-        {
-            "name": "",
-            "publicName": "",
-            "price": 0,
-            "offer": 0,
-            "description": "",
-            "media": [
-                {
-                    "colorName": "",
-                    "colorHex": "",
-                    "photos": []
-                }
-            ],
-            "attributes": [
-                {
-                    "attributeId": 1,
-                    "value": "MDF"
-                },
-                {
-                    "attributeId": 2,
-                    "value": "190cm"
-                },
-                {
-                    "attributeId": 3,
-                    "value": "130cm"
-                },
-                {
-                    "attributeId": 4,
-                    "value": "45cm"
-                }
-            ],
-            "synonyms": [],
-            "zones": []
         }
     ],
     "attributes": [

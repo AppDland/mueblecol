@@ -47,18 +47,18 @@ const Card: React.FC<CardProps> = ({ item }) => {
             {/* Price and Colors Section */}
             <div className="p-4 space-y-2">
                 <div className="mt-2">
-                    {item.offer && (
+                    {/* {item.offer && (
                         <p className="text-sm text-[#272727] line-through opacity-70 -mb-1">
                             {money(item.price)}
                         </p>
-                    )}
+                    )} */}
                     <p className="text-2xl text-[#272727]">
                         {money(item.offer ? item.offer : item.price)}
                     </p>
                 </div>
-                <div className="text-sm text-gray-600">
+                {/* <div className="text-sm text-gray-600">
                     {availableColors} {availableColors === 1 ? 'Color Disponible' : 'Colores Disponibles'}
-                </div>
+                </div> */}
             </div>
         </Link>
     );

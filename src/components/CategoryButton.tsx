@@ -22,13 +22,13 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
     };
 
     return (
-        <Link href={`/zonas/${category.categoryURLName}`}>
-            <div
-                onClick={handleClick}
-                className="relative flex justify-center mx-5 items-center cursor-pointer select-none w-28 h-28 hover:opacity-90 rounded-full overflow-hidden group"
-                role="button"
-                aria-label={`Select ${category.categoryName} category`}
-            >
+        <div
+            onClick={handleClick}
+            className="relative flex justify-center md:mx-5 items-center cursor-pointer select-none w-full md:w-28 h-28 hover:opacity-90 md:rounded-full overflow-hidden group"
+            role="button"
+            aria-label={`Select ${category.categoryName} category`}
+        >
+            <Link href={`/zonas/${category.categoryURLName}`}>
                 <Image
                     src={imageUrl}
                     alt={category.categoryName}
@@ -41,8 +41,8 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
                 <h3 className="relative z-10 text-center text-white text-3xl font-cookie font-extralight">
                     {category.categoryName}
                 </h3>
-            </div>
-        </Link>
+            </Link>
+        </div>
     );
 };
 

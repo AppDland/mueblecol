@@ -38,13 +38,6 @@ const Item = () => {
 
     return (
         <div className='flex flex-col max-w-7xl mx-auto px-4 py-8'>
-            {/* Contenedor para el título o encabezado */}
-            <div className='flex justify-end items-center mb-8'>
-                <div>
-                    <Finder />
-                </div>
-            </div>
-    
             {/* Contenido principal */}
             <div className='flex gap-8'>
                 <div className='w-2/3'>
@@ -62,13 +55,13 @@ const Item = () => {
                     )}
                 </div>
             </div>
-    
+
             {/* Descripción del artículo */}
             <div className='my-2 p-2'>
                 <p className='font-bold mb-2'>Acerca de este artículo</p>
                 <p className='text-gray-600'>{currentItem.description}</p>
             </div>
-    
+
             {/* Items similares */}
             {similarItems.length > 0 && (
                 <div className='mt-16'>
@@ -82,7 +75,7 @@ const Item = () => {
             )}
         </div>
     );
-    
+
 };
 
 const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selectedColor: ItemMedia, onColorSelect: (color: ItemMedia) => void }) => {

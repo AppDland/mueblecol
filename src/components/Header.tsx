@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Finder from './Finder';
 
 const Header = () => {
     return (
@@ -12,6 +13,7 @@ const Header = () => {
                     ))
                 }
             </div>
+            <Finder />
             <Nav />
         </header>
     );

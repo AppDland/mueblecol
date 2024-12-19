@@ -45,7 +45,6 @@ export default function RootLayout({
                     <ThemeToggle />
                 </div>
                 {children}
-                <Imperdible />
                 <Footer />
             </body>
         </html>
