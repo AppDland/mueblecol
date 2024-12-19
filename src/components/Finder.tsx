@@ -29,7 +29,7 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
     return (
         <form
             onSubmit={handleSearch}
-            className={"w-full max-w-xs relative flex items-center py-1 border border-neutral-900 rounded-lg overflow-hidden bg-white"}
+            className={"w-full max-w-60 md:max-w-xs relative flex items-center py-1 border border-primary rounded-lg overflow-hidden bg-white"}
         >
             {/* <div className="relative flex items-center"> */}
             <Slider active={active} />
