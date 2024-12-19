@@ -5,18 +5,25 @@ interface ColorPickerProps {
     onColorSelect: (color: ItemMedia) => void;
     selectedColor?: ItemMedia;
     className?: string;
+    layout?: 'horizontal' | 'vertical';
 }
 
 const ColorPicker: React.FC<ColorPickerProps> = ({ 
     colors, 
     onColorSelect, 
     selectedColor,
-    className = ''
+    className = '',
+    layout = 'horizontal'
 }) => {
     return (
-        <div className={`flex flex-wrap gap-2 ${className}`}>
+        <div className={`flex flex-wrap ${layout === 'vertical' ? 'flex-col' : ''} gap-2 ${className}`}>
             {colors.map((color) => (
-                <label key={color.id} className="flex items-center cursor-pointer">
+                <label 
+                    key={color.id} 
+                    className={`flex items-center cursor-pointer ${
+                        layout === 'vertical' ? 'w-full' : ''
+                    }`}
+                >
                     <input
                         type="radio"
                         checked={selectedColor?.id === color.id}
@@ -24,7 +31,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
                         className="sr-only"
                     />
                     <span 
-                        className={`w-6 h-6 rounded-full border-2 ${
+                        className={`w-6 h-6 rounded-full border-2 flex-shrink-0 ${
                             selectedColor?.id === color.id 
                                 ? 'border-primary' 
                                 : 'border-gray-300'
