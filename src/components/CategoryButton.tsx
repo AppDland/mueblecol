@@ -24,7 +24,7 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
     return (
         <div
             onClick={handleClick}
-            className="relative flex justify-center md:mx-5 items-center cursor-pointer select-none w-full md:w-28 h-28 hover:opacity-90 md:rounded-full overflow-hidden group"
+            className="relative border flex justify-center md:mx-5 items-center cursor-pointer select-none w-full md:w-28 h-28 hover:opacity-90 md:rounded-full overflow-hidden group"
             role="button"
             aria-label={`Select ${category.categoryName} category`}
         >
@@ -32,8 +32,8 @@ const CategoryButton: React.FC<CategoryButtonProps> = ({
                 <Image
                     src={imageUrl}
                     alt={category.categoryName}
-                    layout="fill"
                     objectFit="cover"
+                    layout='fill'
                     className="absolute inset-0 duration-200 group-hover:scale-150 "
                     style={{ filter: 'blur(0.5px)' }}
                 />

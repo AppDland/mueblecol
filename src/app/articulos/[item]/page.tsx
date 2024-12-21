@@ -79,10 +79,14 @@ const Item = () => {
 };
 
 const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selectedColor: ItemMedia, onColorSelect: (color: ItemMedia) => void }) => {
-    const [amount, setAmount] = useState(1);
+    // const [amount, setAmount] = useState(1);
     const router = useRouter();
     const handlePurchase = () => {
         router.push('/gracias');
+        //abrir una nueva ventana que dirige a una ruta de whatsapp
+        const Message = `Hola! Quiero comprar ${item.publicName}`;
+        console.log(process.env.WHATSAPP);
+        window.open('https://wa.me/' + process.env.NEXT_PUBLIC_WHATSAPP + '?text=' + Message, '_blank');
     };
 
     return (

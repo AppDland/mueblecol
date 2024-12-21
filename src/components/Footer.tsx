@@ -3,9 +3,9 @@ import Image from "next/image";
 const Footer = () => {
 
     const social = [
-        { icon: "./images/Facebook.svg", url: "https://www.facebook.com", alt: "facebook" },
-        { icon: "./images/Instagram.svg", url: "https://www.instagram.com", alt: "instagram" },
-        { icon: "./images/Whatsapp.svg", url: "https://www.whatsapp.com", alt: "whatsapp" }
+        { icon: "/images/facebook.svg", url: "https://www.facebook.com", alt: "facebook" },
+        { icon: "/images/instagram.svg", url: "https://www.instagram.com", alt: "instagram" },
+        { icon: "/images/whatsapp.svg", url: "https://www.whatsapp.com", alt: "whatsapp" }
     ]
 
     return (
