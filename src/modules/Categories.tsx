@@ -4,7 +4,6 @@ const Categories = () => {
 
     return (
         <div className="w-full my-16">
-            <p className='text-center'>Encuentra el mueble ideal para cada zona de tu hogar</p>
             <div className="flex flex-wrap md:flex-nowrap justify-center my-10">
                 {
                     categories.map((cat, index) => (
@@ -16,6 +15,7 @@ const Categories = () => {
                     ))
                 }
             </div>
+            <p className='text-center'>Encuentra el mueble ideal para cada zona de tu hogar</p>
         </div>
     )
 }

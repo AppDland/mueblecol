@@ -23,11 +23,11 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={'w-full flex justify-between items-center p-4 bg-secondary select-none relative'}>
+        <header className={'w-full flex justify-between items-center p-4 bg-third select-none relative'}>
             <div className="text-2xl font-bold flex">
                 {
                     isLargeScreen &&
-                    [{ title: "Mueble", color: "text-accent" }, { title: "col", color: "text-primary" }].map(({ title, color }, index) => (
+                    [{ title: "Mueble", color: "text-secondary" }, { title: "col", color: "text-primary" }].map(({ title, color }, index) => (
                         <span key={index} className={color}>
                             {title}
                         </span>
