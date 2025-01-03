@@ -44,31 +44,27 @@ const Item = () => {
                     <Finder />
                 </div>
             </div>
-    
+
             {/* Contenido principal */}
-            <div className='flex gap-8'>
-                <div className='w-2/3'>
-                    {photos && photos.length > 0 && (
-                        <ImageViewer images={photos} />
-                    )}
-                </div>
-                <div className='w-1/3'>
-                    {selectedColor && (
-                        <ItemInfo
-                            item={currentItem}
-                            selectedColor={selectedColor}
-                            onColorSelect={setSelectedColor}
-                        />
-                    )}
-                </div>
+            <div className='flex flex-col sm:flex-row h-full'>
+                {photos && photos.length > 0 && (
+                    <ImageViewer images={photos} />
+                )}
+                {selectedColor && (
+                    <ItemInfo
+                        item={currentItem}
+                        selectedColor={selectedColor}
+                        onColorSelect={setSelectedColor}
+                    />
+                )}
             </div>
-    
+
             {/* Descripción del artículo */}
             <div className='my-2 p-2'>
                 <p className='font-bold mb-2'>Acerca de este artículo</p>
                 <p className='text-gray-600'>{currentItem.description}</p>
             </div>
-    
+
             {/* Items similares */}
             {similarItems.length > 0 && (
                 <div className='mt-16'>
@@ -82,7 +78,7 @@ const Item = () => {
             )}
         </div>
     );
-    
+
 };
 
 const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selectedColor: ItemMedia, onColorSelect: (color: ItemMedia) => void }) => {
@@ -93,36 +89,38 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
     };
 
     return (
-        <div className='space-y-4'>
+        <div className='flex flex-col flex-grow justify-between p-4 sm:w-1/2 border border-black'>
             <h1 className='text-2xl font-bold'>{item.publicName}</h1>
-            <p className='text-3xl font-bold text-primary'>{money(item.price)}</p>
+            <div className='flex flex-col w-full space-y-8'>
+                <p className='text-3xl font-bold text-primary'>{money(item.price)}</p>
 
-            {item.media.length > 1 && (
-                <div>
-                    <p className='text-gray-600 mb-2'>Color</p>
-                    <ColorPicker
-                        colors={item.media}
-                        onColorSelect={onColorSelect}
-                        selectedColor={selectedColor}
-                        layout='vertical'
-                    />
-                </div>
-            )}
+                {/* {item.media.length > 1 && (
+                    <div>
+                        <p className='text-gray-600 mb-2'>Color</p>
+                        <ColorPicker
+                            colors={item.media}
+                            onColorSelect={onColorSelect}
+                            selectedColor={selectedColor}
+                            layout='vertical'
+                        />
+                    </div>
+                )} */}
 
-            {/* <div className='py-4'>
+                {/* <div className='py-4'>
                 <p className='text-gray-600 mb-2'>Cantidad:</p>
                 <AmountSelector
                     value={amount}
                     onChange={setAmount}
                 />
             </div> */}
-            <div>
-                <button
-                    onClick={handlePurchase}
-                    className="w-full bg-secondary hover:bg-secondary-focus text-secondary-content font-bold py-4 rounded-lg transition-all duration-200"
-                >
-                    Comprar
-                </button>
+                <div>
+                    <button
+                        onClick={handlePurchase}
+                        className="w-full bg-secondary hover:bg-secondary-focus text-secondary-content font-bold py-4 rounded-lg transition-all duration-200"
+                    >
+                        Comprar
+                    </button>
+                </div>
             </div>
         </div>
     );
