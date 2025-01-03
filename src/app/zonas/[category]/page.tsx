@@ -6,7 +6,7 @@ import CategoryPage from '@/components/CategoryPage';
 // import { useState } from 'react';
 // import Items from "@/data/items.json";
 // import Card from '@/components/Card';
-import Header from '@/components/Header';
+import Header from '@/components/Header/Header';
 // import Button from '@/components/Button';
 // import { ItemInt } from '@/interfaces/item';
 

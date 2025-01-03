@@ -5,6 +5,10 @@
             "publicName": "Closet Grande Maletero y Espejo",
             "price": 462000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Closet grande con maletero y espejo. Ideal para guardar ropa y accesorios. Las puertas del maletero son deslisables. Cuenta con 4 gabetas y 4 puertas, una de las puertas tiene espejo y cerradura para mayor seguridad.",
             "media": [
                 {
@@ -43,6 +47,10 @@
             "publicName": "Juego de Living Completo con Mesa ratona y Puff",
             "price": 510000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Sofá de 2 cuerpos, 2 puff y una mesa ratona. El material es en tela e inlcuye almohadones grandes y pequeños",
             "media": [
                 {
@@ -85,6 +93,10 @@
             "publicName": "Modular TV con Modulo Superior para TV de 50 pulgadas",
             "price": 252000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Mesa/Rack para TV con estantes en la parte superior y varios espacios de almacenamiento.",
             "media": [
                 {
@@ -119,6 +131,10 @@
             "publicName": "Sillon Pequeño",
             "price": 75000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Silloncitos con tematicas para los mas peques de tu casa",
             "media": [
                 {
@@ -155,6 +171,10 @@
             "publicName": "Silleta Plegable Resistente",
             "price": 50000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Silleta tejida con tiras de nylon, resistente y plegable. Ideal para camping, playa, pesca, etc. Apoya brazos de madera.",
             "media": [
                 {
@@ -191,6 +211,10 @@
             "publicName": "Mostrador con Vidrio",
             "price": 244000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Mostrador/Exhibidor con estantes de vidrio. Ideal para exhibir productos. Cuenta con almacenamiento oculto en la parte posterior, medidas 94cm de alto x 116cm de ancho x 36cm de profundidad.",
             "media": [
                 {
@@ -241,6 +265,10 @@
             "publicName": "Camilla de Masajes con Mesa de Apoyo y Escalera",
             "price": 322000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Camilla para hacer masajes con mesa de apoyo y escalera. Ideal para spa, centro de masajes, esteticas, etc. Medidas 80cm alto x 64cm ancho x 176cm largo.",
             "media": [
                 {
@@ -284,6 +312,10 @@
             "publicName": "Peinadora Hollywood Pequeña con Luces",
             "price": 336000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Peinadora con focos led, luz blanca, estantes y cajones. Ideal para maquillaje y peinado. Medidas 166cm de alto x 93cm de ancho x 36cm de profundidad.",
             "media": [
                 {
@@ -338,6 +370,10 @@
             "publicName": "Closet pequeño con Maletero y Espejo",
             "price": 336000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Closet pequeño con maletero y espejo. Ideal para guardar ropa y accesorios. Las puertas del maletero son deslisables. Cuenta con 4 gabetas y 4 puertas, una de las puertas tiene espejo. Medidas 190cm de alto x 130cm de ancho x 45cm de profundidad.",
             "media": [
                 {
@@ -390,6 +426,10 @@
             "publicName": "Zapatero con Espejo",
             "price": 244000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Mueble zapatero con espejo vertical, cuenta con 12 espacios para almacenar zapatos. Medidas 179cm de alto x 75cm de ancho x 32cm de profundidad.",
             "media": [
                 {
@@ -440,6 +480,10 @@
             "publicName": "Peinadora con Puerta Corrediza, Espejo y Focos LED",
             "price": 400000,
             "offer": 0,
+            "finan": {
+                "cuotas": 12,
+                "valor": 46200
+            },
             "description": "Peinadora/Tocadora con puerta corrediza, espejo y cajones. Cuenta con focos LED en la puerta, Ideal para maquillaje y peinado. Medidas 173cm de alto x 88cm de ancho x 36cm de profundidad.",
             "media": [
                 {

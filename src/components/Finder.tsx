@@ -19,6 +19,9 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
         if (searchTerm.trim()) {
             router.push(`/buscar/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`);
         }
+        //ocultar el teclado
+        const input = document.activeElement as HTMLElement;
+        input.blur();
     };
 
     const handleActive = (focus: boolean) => {
@@ -39,7 +42,7 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
                 onFocus={() => handleActive(true)}
                 onBlur={() => handleActive(false)}
                 placeholder="¿Qué deseas buscar?"
-                className={`z-20 w-full px-4 py-2 text-center rounded-lg pr-12 bg-transparent focus:outline-none`}
+                className={`z-20 w-full px-4 py-1 sm:py-2 text-center rounded-lg pr-12 bg-transparent focus:outline-none`}
             />
             <button
                 type="submit"

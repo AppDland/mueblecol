@@ -38,29 +38,4 @@ const SimpleCard = ({ image, title, color, price, url, offer }: SimpleCardProps)
     );
 };
 
-const SimpleCards = ({ image, title, color, price, url, offer }: SimpleCardProps) => {
-
-    return (
-        <div className="cursor-pointer relative border w-40 md:w-52 h-64 md:h-80 m-4 md:m-5 group transition-shadow duration-200 ease-in-out hover:shadow-lg select-none">
-            <Link href={`/articulos/${url}`}>
-                <Image
-                    src={image}
-                    alt={title}
-                    width={400}
-                    height={400}
-                    className="border w-full h-full object-cover object-center transition-transform duration-300 ease-in-out group-hover:scale-105"
-                />
-                <div className="border">
-                    <p className="text-center text-lg md:text-xl text-[#000000]">
-                        {money(price)}
-                    </p>
-                    <h2 className="px-2 mt-2 text-center text-[#000000] text-sm md:text-base w-full truncate whitespace-nowrap">
-                        {title}
-                    </h2>
-                </div>
-            </Link>
-        </div>
-    );
-};
-
 export default SimpleCard;

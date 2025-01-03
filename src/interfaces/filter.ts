@@ -12,6 +12,10 @@ export interface FilterProps {
     onFilterChange: (filters: FilterOptions) => void;
 }
 
+export interface FilterMaterialProps extends FilterProps {
+    materials: string[];
+}
+
 // Mapeo de colores internos a nombres mostrados
 export const colorMap: { [key: string]: { name: string, hex: string } } = {
     'Marrón': { name: 'Marrón', hex: '#8B4513' },
