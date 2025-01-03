@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from '@/components/Header';
+import Imperdible from '@/modules/Imperdible';
+import Footer from '@/components/Footer';
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -14,6 +17,11 @@ const geistMono = localFont({
     variable: "--font-geist-mono",
     weight: "100 900",
 });
+const cookieRegular = localFont({
+    src: "./fonts/Cookie-Regular.ttf",
+    variable: "--font-cookie",
+    weight: "400"
+});
 
 export default function RootLayout({
     children,
@@ -21,17 +29,24 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        // const savedTheme = localStorage.getItem('theme') || 'light';
+        // document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.setAttribute('data-theme', 'light');
     }, []);
 
     return (
         <html lang="es" suppressHydrationWarning>
-            <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-base-100 text-base-content`}>
+            <head>
+                <title>Mueblecol</title>
+            </head>
+            <body className={`${geistSans.variable} ${geistMono.variable} ${cookieRegular.variable} antialiased min-h-screen bg-base-100 text-base-content`}>
+                <Header />
                 <div className="fixed top-4 right-4 z-50">
                     <ThemeToggle />
                 </div>
                 {children}
+                <Imperdible />
+                <Footer />
             </body>
         </html>
     );

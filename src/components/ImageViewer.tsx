@@ -13,7 +13,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
     if (!isS3Image || !selectedImage) return null;
 
     return (
-        <div>
+        <div className='bg-neutral-100 rounded-lg '>
             <div className="relative aspect-video w-full">
                 <Image
                     src={selectedImage}
@@ -25,22 +25,27 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                 />
             </div>
             {images.length > 1 && (
-                <div className="flex justify-center gap-4 mt-4">
-                    {images.map((image, index) => (
-                        <div 
-                            key={index}
-                            className={`relative w-24 h-24 cursor-pointer ${selectedImage === image ? 'border-2 border-primary' : ''}`}
-                            onClick={() => setSelectedImage(image)}
-                        >
-                            <Image
-                                src={image}
-                                alt={`Vista previa ${index + 1}`}
-                                fill
-                                className="object-cover"
-                                sizes="96px"
-                            />
-                        </div>
-                    ))}
+                <div>
+                    <div className='px-8 py-4'>
+                        <div className="w-full border border-[#272727] opacity-5" />
+                    </div>
+                    <div className="flex justify-center gap-4">
+                        {images.map((image, index) => (
+                            <div
+                                key={index}
+                                className={`relative w-24 h-24 cursor-pointer mb-4 ${selectedImage === image ? 'border border-primary' : ''}`}
+                                onClick={() => setSelectedImage(image)}
+                            >
+                                <Image
+                                    src={image}
+                                    alt={`Vista previa ${index + 1}`}
+                                    fill
+                                    className="object-cover"
+                                    sizes="96px"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )}
         </div>
