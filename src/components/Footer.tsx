@@ -5,7 +5,7 @@ const Footer = () => {
     const social = [
         { icon: "/images/facebook.svg", url: "https://www.facebook.com", alt: "facebook" },
         { icon: "/images/instagram.svg", url: "https://www.instagram.com", alt: "instagram" },
-        { icon: "/images/whatsapp.svg", url: "https://www.whatsapp.com", alt: "whatsapp" }
+        { icon: "/images/whatsapp.svg", url: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=Hola!%20Quiero%20realizar%20una%20compra`, alt: "whatsapp" }
     ]
 
     return (

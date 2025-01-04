@@ -53,7 +53,11 @@ const Card: React.FC<CardProps> = ({ item }) => {
                     )} */}
                 {
                     item.finan && (
-                        <p className='text-sm sm:text-base'>{item.finan.cuotas} cuotas de {money(item.finan.valor)}</p>
+                        item.finan.valor ? (
+                            <p className='text-sm sm:text-base'>{item.finan.cuotas} cuotas de {money(item.finan.valor)}</p>
+                        ) : (
+                            <p className='text-sm sm:text-base'>Hasta en {item.finan.cuotas} cuotas</p>
+                        )
                     )
                 }
                 <p className="text-lg sm:text-xl">

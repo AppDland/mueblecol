@@ -6,8 +6,7 @@
             "price": 462000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 8
             },
             "description": "Closet grande con maletero y espejo. Ideal para guardar ropa y accesorios. Las puertas del maletero son deslisables. Cuenta con 4 gabetas y 4 puertas, una de las puertas tiene espejo y cerradura para mayor seguridad.",
             "media": [
@@ -48,8 +47,7 @@
             "price": 510000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 9
             },
             "description": "Sofá de 2 cuerpos, 2 puff y una mesa ratona. El material es en tela e inlcuye almohadones grandes y pequeños",
             "media": [
@@ -94,8 +92,7 @@
             "price": 252000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 8
             },
             "description": "Mesa/Rack para TV con estantes en la parte superior y varios espacios de almacenamiento.",
             "media": [
@@ -132,8 +129,8 @@
             "price": 75000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 5,
+                "valor": 15000
             },
             "description": "Silloncitos con tematicas para los mas peques de tu casa",
             "media": [
@@ -172,8 +169,8 @@
             "price": 50000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 5,
+                "valor": 10000
             },
             "description": "Silleta tejida con tiras de nylon, resistente y plegable. Ideal para camping, playa, pesca, etc. Apoya brazos de madera.",
             "media": [
@@ -212,8 +209,7 @@
             "price": 244000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 8
             },
             "description": "Mostrador/Exhibidor con estantes de vidrio. Ideal para exhibir productos. Cuenta con almacenamiento oculto en la parte posterior, medidas 94cm de alto x 116cm de ancho x 36cm de profundidad.",
             "media": [
@@ -266,8 +262,7 @@
             "price": 322000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 8
             },
             "description": "Camilla para hacer masajes con mesa de apoyo y escalera. Ideal para spa, centro de masajes, esteticas, etc. Medidas 80cm alto x 64cm ancho x 176cm largo.",
             "media": [
@@ -313,8 +308,7 @@
             "price": 336000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 9
             },
             "description": "Peinadora con focos led, luz blanca, estantes y cajones. Ideal para maquillaje y peinado. Medidas 166cm de alto x 93cm de ancho x 36cm de profundidad.",
             "media": [
@@ -371,8 +365,7 @@
             "price": 336000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 9
             },
             "description": "Closet pequeño con maletero y espejo. Ideal para guardar ropa y accesorios. Las puertas del maletero son deslisables. Cuenta con 4 gabetas y 4 puertas, una de las puertas tiene espejo. Medidas 190cm de alto x 130cm de ancho x 45cm de profundidad.",
             "media": [
@@ -427,8 +420,7 @@
             "price": 244000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 8
             },
             "description": "Mueble zapatero con espejo vertical, cuenta con 12 espacios para almacenar zapatos. Medidas 179cm de alto x 75cm de ancho x 32cm de profundidad.",
             "media": [
@@ -481,8 +473,7 @@
             "price": 400000,
             "offer": 0,
             "finan": {
-                "cuotas": 12,
-                "valor": 46200
+                "cuotas": 9
             },
             "description": "Peinadora/Tocadora con puerta corrediza, espejo y cajones. Cuenta con focos LED en la puerta, Ideal para maquillaje y peinado. Medidas 173cm de alto x 88cm de ancho x 36cm de profundidad.",
             "media": [
@@ -532,6 +523,637 @@
                 "dormitorio",
                 "closet"
             ]
+        },
+        {
+            "name": "4-sillas-cuerina",
+            "publicName": "4 sillas con tapizado de cuerina",
+            "price": 192000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 6,
+                "valor": 32000
+            },
+            "description": "Cuatro sillas solas con tapizado de cuerina, ideal para comedor o sala de estar. medidas 100cm de alto x 40cm de ancho x 40cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/4-sillas-cuerina/IMG-20230208-WA0090.jpeg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/4-sillas-cuerina/IMG-20230217-WA0021.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Cuerina"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "100cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "40cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "40cm"
+                }
+            ],
+            "synonyms": [
+                "silla",
+                "sillon",
+                "cuerina",
+                "sillas",
+                "cuatro",
+                "4",
+                "comedor",
+                "tapizado"
+            ],
+            "zones": [
+                "sala",
+                "comedor"
+            ]
+        },
+        {
+            "name": "6-sillas-cuerina",
+            "publicName": "6 sillas con tapizado de cuerina",
+            "price": 285000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 7
+            },
+            "description": "Seis sillas solas con tapizado de cuerina, ideal para comedor o sala de estar. medidas 100cm de alto x 40cm de ancho x 40cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/4-sillas-cuerina/IMG-20230208-WA0090.jpeg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/4-sillas-cuerina/IMG-20230217-WA0021.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Cuerina"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "100cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "40cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "40cm"
+                }
+            ],
+            "synonyms": [
+                "silla",
+                "sillon",
+                "cuerina",
+                "sillas",
+                "cuatro",
+                "4",
+                "comedor",
+                "tapizado"
+            ],
+            "zones": [
+                "sala",
+                "comedor"
+            ]
+        },
+        {
+            "name": "8-sillas-cuerina",
+            "publicName": "8 sillas con tapizado de cuerina",
+            "price": 378000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 9
+            },
+            "description": "Ocho sillas solas con tapizado de cuerina, ideal para comedor o sala de estar. medidas 100cm de alto x 40cm de ancho x 40cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/4-sillas-cuerina/IMG-20230208-WA0090.jpeg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/4-sillas-cuerina/IMG-20230217-WA0021.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Cuerina"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "100cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "40cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "40cm"
+                }
+            ],
+            "synonyms": [
+                "silla",
+                "sillon",
+                "cuerina",
+                "sillas",
+                "cuatro",
+                "4",
+                "comedor",
+                "tapizado"
+            ],
+            "zones": [
+                "sala",
+                "comedor"
+            ]
+        },
+        {
+            "name": "alacena-grande",
+            "publicName": "Alacena iglesia 190cm de Alto",
+            "price": 252000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 8
+            },
+            "description": "Alacena grande de 190cm de alto, ideal para cocina, hogares, oficinas, etc. Cuenta con 3 puertas superiores e inferiores, cuatro gabetas y estantes.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/alacena-grande/20230927_195903.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/alacena-grande/20240408_092911.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/alacena-grande/IMG-20230216-WA0048.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/alacena-grande/Screenshot_20230205_131551_Facebook.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "190cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "128cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "alacena",
+                "grande",
+                "cocina",
+                "puertas",
+                "gabetas",
+                "mdf",
+                "vidrio",
+                "almacenamiento",
+                "estantes",
+                "comida"
+            ],
+            "zones": [
+                "cocina"
+            ]
+        },
+        {
+            "name": "comedor-4-puestos-cuerina",
+            "publicName": "Comedor de 4 puestos con tapizado en cuerina",
+            "price": 238000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 8
+            },
+            "description": "Juego de comedor completo con cuatro sillas tapizadas en cuerina.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-4-puestos-cuerina/20240314_095912.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-4-puestos-cuerina/IMG-20241113-WA0039.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-4-puestos-cuerina/IMG-20241113-WA0041.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-4-puestos-cuerina/IMG-20241114-WA0014.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-4-puestos-cuerina/IMG-20241126-WA0014.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Madera"
+                }
+            ],
+            "synonyms": [
+                "mesa",
+                "comedor",
+                "sillas",
+                "silla",
+                "cuerina",
+                "madera",
+                "tapizado",
+                "cuatro puestos",
+                "4 puestos",
+                "4 sillas",
+                "comida",
+                "almuerzo"
+            ],
+            "zones": [
+                "comedor",
+                "cocina",
+                "sala"
+            ]
+        },
+        {
+            "name": "comedor-6-puestos-cuerina",
+            "publicName": "Comedor de 6 puestos con tapizado en cuerina",
+            "price": 336000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 9
+            },
+            "description": "Juego de comedor completo con seis sillas tapizadas en cuerina.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-6-puestos-cuerina/IMG-20221208-WA0007.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-6-puestos-cuerina/Screenshot_20220510-110217_WhatsApp.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-6-puestos-cuerina/Screenshot_20230412_125929_WhatsApp.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Madera"
+                }
+            ],
+            "synonyms": [
+                "mesa",
+                "comedor",
+                "sillas",
+                "silla",
+                "cuerina",
+                "madera",
+                "tapizado",
+                "seis puestos",
+                "6 puestos",
+                "6 sillas",
+                "comida",
+                "almuerzo"
+            ],
+            "zones": [
+                "comedor",
+                "cocina",
+                "sala"
+            ]
+        },
+        {
+            "name": "comedor-4-puestos-tela",
+            "publicName": "Comedor de 4 puestos con sillas tapizadas en tela",
+            "price": 252000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 8
+            },
+            "description": "Juego de comedor completo con cuatro sillas tapizadas en tela.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-4-puestos-tela/IMG-20241113-WA0037.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Madera"
+                }
+            ],
+            "synonyms": [
+                "mesa",
+                "comedor",
+                "sillas",
+                "silla",
+                "tela",
+                "madera",
+                "tapizado",
+                "cuatro puestos",
+                "4 puestos",
+                "4 sillas",
+                "comida",
+                "almuerzo"
+            ],
+            "zones": [
+                "comedor",
+                "cocina",
+                "sala"
+            ]
+        },
+        {
+            "name": "comedor-6-puestos-tela",
+            "publicName": "Comedor de 6 puestos con sillas tapizadas en tela",
+            "price": 378000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 9
+            },
+            "description": "Juego de comedor completo con seis sillas tapizadas en tela.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-6-puestos-tela/IMG-20241113-WA0040.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-6-puestos-tela/IMG-20241114-WA0013.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Madera"
+                }
+            ],
+            "synonyms": [
+                "mesa",
+                "comedor",
+                "sillas",
+                "silla",
+                "tela",
+                "madera",
+                "tapizado",
+                "seis puestos",
+                "6 puestos",
+                "6 sillas",
+                "comida",
+                "almuerzo"
+            ],
+            "zones": [
+                "comedor",
+                "cocina",
+                "sala"
+            ]
+        },
+        {
+            "name": "cajonera-doble",
+            "publicName": "Cajonera doble con 8 cajones en diferentes colores",
+            "price": 205000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 7
+            },
+            "description": "Cajonera doble con 8 cajones en diferentes colores. Ideal para guardar ropa y accesorios. Medidas 90cm de alto x 110cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/cajonera-doble/IMG-20240226-WA0000.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/cajonera-doble/IMG-20240227-WA0008.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "90cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "110cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "cajonera",
+                "guardar ropa",
+                "8 cajones",
+                "cajones",
+                "mdf",
+                "madera",
+                "semanario",
+                "mueblecito"
+            ],
+            "zones": [
+                "closet",
+                "dormitorio",
+                "sala"
+            ]
+        },
+        {
+            "name": "desayunador",
+            "publicName": "Desayunador completo con 2 sillas",
+            "price": 140000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 7,
+                "valor": 20000
+            },
+            "description": "Desayunar nunca fue tan comodo, desayunador completo con 2 sillas. Medidas 102cm de alto x 90cm de ancho x 35cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/desayunador/IMG-20240307-WA0044.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Madera"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "102cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "90cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "35cm"
+                }
+            ],
+            "synonyms": [
+                "desayunador",
+                "2 sillas",
+                "desayunar",
+                "comedor",
+                "mesa",
+                "sillas"
+            ],
+            "zones": [
+                "cocina",
+                "comedor",
+                "sala"
+            ]
+        },
+        {
+            "name": "espejo-con-puff",
+            "publicName": "Espejo con puff",
+            "price": 176000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 6
+            },
+            "description": "Espejo con puff, ideal para maquillaje y peinado.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/espejo-con-puff/IMG-20240530-WA0010.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/espejo-con-puff/IMG-20240530-WA0013.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/espejo-con-puff/IMG-20240605-WA0085.jpg"
+                    ]
+                }
+            ],
+            "attributes": [],
+            "synonyms": [
+                "espejo",
+                "puff",
+                "maquillaje",
+                "peinado"
+            ],
+            "zones": [
+                "closet",
+                "dormitorio",
+                "sala"
+            ]
+        },
+        {
+            "name": "estante-2-percheros",
+            "publicName": "Mueble ropero estante con 2 percheros",
+            "price": 214000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 7
+            },
+            "description": "Mueble ropero con dos percheros, ideal para guardar ropa y accesorios. Cuenta con multiples estantes. Medidas 190cm de alto x 130cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/estante-2-percheros/IMG-20210821-WA0081.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/estante-2-percheros/IMG-20241107-WA0012.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "190cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "130cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "mueble",
+                "ropero",
+                "perchero",
+                "ropa",
+                "estante",
+                "colgar ropa"
+            ],
+            "zones": [
+                "closet",
+                "dormitorio"
+            ]
+        },
+        {
+            "name": "estante-16-cubos",
+            "publicName": "Mueble estante con 16 cubos de alamacenamiento",
+            "price": 225000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 7
+            },
+            "description": "Mueble con 16 estantes de almacenamiento, ideal para guardar ropa, accesorios, libros, etc. Medidas 190cm de alto x 130cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/estante-16-cubos/IMG-20241126-WA0017.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/estante-16-cubos/Screenshot_20220708-200840_WhatsApp.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/estante-16-cubos/Screenshot_20230204_145611_WhatsApp.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "190cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "130cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "mueble",
+                "estantes",
+                "cubos"
+            ],
+            "zones": [
+                "closet",
+                "dormitorio",
+                "sala"
+            ]
         }
     ],
     "attributes": [
@@ -576,6 +1198,10 @@
         {
             "id": 5,
             "name": "exteriores"
+        },
+        {
+            "id": 6,
+            "name": "cocina"
         }
     ]
 }
