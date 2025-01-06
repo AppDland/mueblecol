@@ -10,7 +10,7 @@ const Destacados = () => {
 
             <div className="flex flex-wrap justify-center">
                 {
-                    Items.items.slice(0, 10).map((item, index) => (
+                    Items.items.slice(0, 15).map((item, index) => (
                         <SimpleCard
                             title={item.publicName}
                             url={item.name}
@@ -18,6 +18,7 @@ const Destacados = () => {
                             image={item.media[0].photos[0]}
                             price={item.price}
                             offer={item.offer}
+                            finan={item.finan}
                             key={index}
                         />
                     ))

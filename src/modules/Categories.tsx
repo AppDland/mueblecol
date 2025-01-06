@@ -15,7 +15,7 @@ const Categories = () => {
                     ))
                 }
             </div>
-            <p className='text-center'>Encuentra el mueble ideal para cada zona de tu hogar</p>
+            <p className='text-center max-w-80 sm:max-w-full place-self-center '>Encuentra el mueble ideal para cada zona de tu hogar</p>
         </div>
     )
 }
