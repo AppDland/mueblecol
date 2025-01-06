@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import Title from "@/components/Title";
 import Items from "@/data/items.json";
-import { ItemInt } from "@/interfaces/item";
-import SimpleCard from "@/components/SimpleCard";
+// import { ItemInt } from "@/interfaces/item";
+// import SimpleCard from "@/components/SimpleCard";
 
 const Offers = () => {
-    const [offerItems, setOfferItems] = useState<ItemInt[]>([]);
+    // const [offerItems, setOfferItems] = useState<ItemInt[]>([]);
 
     useEffect(() => {
         // Filtrar los artículos en oferta
@@ -16,7 +16,7 @@ const Offers = () => {
         const shuffledItems = itemsOnOffer.sort(() => 0.5 - Math.random());
 
         // Guardar un máximo de 10 artículos en el estado
-        setOfferItems(shuffledItems.slice(0, 10));
+        // setOfferItems(shuffledItems.slice(0, 10));
     }, []);
 
     return (
@@ -24,7 +24,7 @@ const Offers = () => {
             <div className="bg-[#F8F8F8] rounded-xl p-5 w-full max-w-7xl box-border">
                 <Title title="Ofertas" />
                 <div className="flex flex-wrap">
-                    {offerItems.map((item, index) => (
+                    {/* {offerItems.map((item, index) => (
                         <SimpleCard
                             key={index}
                             title={item.name}
@@ -33,7 +33,7 @@ const Offers = () => {
                             price={item.price}
                             offer={item.offer}
                         />
-                    ))}
+                    ))} */}
                 </div>
             </div>
         </section>

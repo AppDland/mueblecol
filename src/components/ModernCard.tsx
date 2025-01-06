@@ -11,8 +11,8 @@ const ModernCard = ({ title, description }: ModernCardInt) => {
             flex-col
             justify-center
             items-center
-            w-80
-            h-96
+            w-52
+            h-60
             rounded-xl
             shadow-2xl
             text-white
@@ -23,16 +23,17 @@ const ModernCard = ({ title, description }: ModernCardInt) => {
             to-[#173636]
             p-5
             select-none
-            m-10
+            m-3 md:m-5
             overflow-hidden
-            border"
+            box-border
+            "
         >
             <div className="
-                w-72
+                w-40
                 h-72
                 rotate-45
-                -right-40
-                top-24
+                -right-20
+                top-3
                 bg-white/10
                 absolute"
             />
@@ -46,8 +47,8 @@ const ModernCard = ({ title, description }: ModernCardInt) => {
                 absolute"
             />
             <div>
-                <p className="text-3xl font-bold mb-10">{title}</p>
-                <p>{description}</p>
+                <p className="text-base md:text-lg font-bold mb-10">{title}</p>
+                <p className="text-xs md:text-sm">{description}</p>
             </div>
         </div>
     )

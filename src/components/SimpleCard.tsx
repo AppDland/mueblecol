@@ -1,8 +1,8 @@
-'use client';
+// 'use client';
 import Image from "next/image";
 import { money } from "../functions/money";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 interface SimpleCardProps {
     image: string;
@@ -11,49 +11,52 @@ interface SimpleCardProps {
     price: number;
     url: string;
     offer?: number | null;
+    finan: FinanInt;
 }
 
-const SimpleCard = ({ image, title, color, price, url, offer }: SimpleCardProps) => {
+interface FinanInt {
+    cuotas: number;
+    valor?: number;
+}
 
-    const [realTitle, setRealTitle] = useState('');
-
-    useEffect(() => {
-        const [first, second, third] = title.split(" ");
-        const real = `${first} ${second.length > 1 ? second : second} ${second.length > 1 ? '' : third}`;
-        setRealTitle(real);
-    }, []);
+const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCardProps) => {
 
     return (
-        <Link href={`/articulos/${url}`}>
-            <div className="cursor-pointer relative border-2 border-[#272727] p-4 rounded-2xl rounded-tl-none w-52 mx-8 my-6 group">
-                <h2 className="absolute -left-6 bg-[#272727] rounded-lg rounded-tr-none py-2 px-4 text-white">
-                    {realTitle}
-                </h2>
+        <div className="bg-white w-44 md:w-52 h-80 md:h-96 m-1 md:m-3 group">
+            <Link href={`/articulos/${url}`}>
+                <div
+                    className="flex justify-center items-center bg-accent-dark text-white"
+                    style={{ height: '8%' }}
+                >
+                    {
+                        finan.valor ? (
+                            <p className='text-xs sm:text-sm'>{finan.cuotas} cuotas de {money(finan.valor)}</p>
+                        ) : (
+                            <p className='text-xs sm:text-sm'>Hasta en {finan.cuotas} cuotas</p>
+                        )
+                    }
+                </div>
                 <Image
                     src={image}
                     alt={title}
-                    width={200}
-                    height={200}
-                    className="my-10 rounded-lg transition-transform duration-300 ease-in-out transform group-hover:scale-110"
+                    width={400}
+                    height={400}
+                    className="object-cover object-center p-3 transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    style={{ height: '72%' }}
                 />
-                <div className="relative px-5 ">
-                    <p className="relative bg-white px-4 w-fit z-10 text-sm">
-                        {color}
+                <div
+                    className="border-t flex flex-col justify-evenly items-center"
+                    style={{ height: '20%' }}
+                >
+                    <p className="text-center text-lg md:text-xl text-accent font-bold">
+                        {money(price)}
                     </p>
-                    <div className="absolute left-0 top-1/2 w-full border border-[#272727] z-0" />
+                    <h2 className="px-2 text-center text-[#000000] text-sm md:text-base w-full truncate whitespace-nowrap">
+                        {title}
+                    </h2>
                 </div>
-                <div className="mt-2">
-                    {offer && (
-                        <p className="text-sm text-[#272727] line-through opacity-70 -mb-1">
-                            {money(price)}
-                        </p>
-                    )}
-                    <p className="text-2xl text-[#272727]">
-                        {money(offer ? offer : price)}
-                    </p>
-                </div>
-            </div>
-        </Link>
+            </Link>
+        </div>
     );
 };
 

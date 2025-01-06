@@ -1,28 +1,29 @@
 export interface ItemMedia {
-    id: number;
+    // id: number;
     colorName: string;
     colorHex: string;
     photos: string[];
 }
 
 export interface AttributeValue {
-    id: number;
+    // id: number;
     attributeId: number;
     value: string;
 }
 
 export interface ItemInt {
-    id: number;
+    // id: number;
     name: string;
     publicName: string;
     price: number;
     offer: number | null;
-    stock: number;
+    // stock: number;
     description: string;
     media: ItemMedia[];
-    attributes: AttributeValue[];
+    attributes?: AttributeValue[];
     synonyms: string[];
     zones: string[];
+    finan: { cuotas: number, valor: number };
 }
 
 export interface Attribute {

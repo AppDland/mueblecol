@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-// import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 interface FinderProps {
     defaultValue?: string;
@@ -20,6 +19,9 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
         if (searchTerm.trim()) {
             router.push(`/buscar/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`);
         }
+        //ocultar el teclado
+        const input = document.activeElement as HTMLElement;
+        input.blur();
     };
 
     const handleActive = (focus: boolean) => {
@@ -27,11 +29,10 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
     }
 
     return (
-        <form onSubmit={handleSearch} className={
-            `w-full max-w-xs mx-auto relative flex items-center py-1 border border-neutral-900 rounded-lg overflow-hidden
-            ${isDark ? 'bg-white' : 'bg-white'}`
-
-        }>
+        <form
+            onSubmit={handleSearch}
+            className={"w-full max-w-60 md:max-w-xs relative flex items-center py-1 border border-primary rounded-lg overflow-hidden bg-white"}
+        >
             {/* <div className="relative flex items-center"> */}
             <Slider active={active} />
             <input
@@ -41,7 +42,7 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
                 onFocus={() => handleActive(true)}
                 onBlur={() => handleActive(false)}
                 placeholder="¿Qué deseas buscar?"
-                className={`z-20 w-full px-4 py-2 text-center rounded-lg pr-12 bg-transparent focus:outline-none`}
+                className={`z-20 w-full px-4 py-1 sm:py-2 text-center rounded-lg pr-12 bg-transparent focus:outline-none`}
             />
             <button
                 type="submit"

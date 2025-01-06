@@ -4,13 +4,11 @@ import Items from '@/data/items.json';
 import ImageViewer from '@/components/ImageViewer';
 import { money } from '@/functions/money';
 import { ItemInt, ItemMedia } from '@/interfaces/item';
-import AmountSelector from '@/components/AmountSelector';
 import { useEffect, useState } from 'react';
 import { findSimilarItems } from '@/functions/search';
 import Card from '@/components/Card';
 import ColorPicker from '@/components/ColorPicker';
 import { useRouter } from 'next/navigation';
-import Finder from '@/components/Finder';
 
 const Item = () => {
     const params = useParams();
@@ -38,13 +36,6 @@ const Item = () => {
 
     return (
         <div className='flex flex-col max-w-7xl mx-auto px-4 py-8'>
-            {/* Contenedor para el título o encabezado */}
-            <div className='flex justify-end items-center mb-8'>
-                <div>
-                    <Finder />
-                </div>
-            </div>
-
             {/* Contenido principal */}
             <div className='flex flex-col sm:flex-row h-full'>
                 {photos && photos.length > 0 && (
@@ -70,8 +61,8 @@ const Item = () => {
                 <div className='mt-16'>
                     <h2 className='text-2xl font-bold mb-8'>Similares</h2>
                     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
-                        {similarItems.map((item) => (
-                            <Card key={item.id} item={item} />
+                        {similarItems.map((item, id) => (
+                            <Card key={id} item={item} />
                         ))}
                     </div>
                 </div>
@@ -82,10 +73,13 @@ const Item = () => {
 };
 
 const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selectedColor: ItemMedia, onColorSelect: (color: ItemMedia) => void }) => {
-    const [amount, setAmount] = useState(1);
+    // const [amount, setAmount] = useState(1);
     const router = useRouter();
     const handlePurchase = () => {
         router.push('/gracias');
+        //abrir una nueva ventana que dirige a una ruta de whatsapp
+        const Message = `Hola! Quiero comprar ${item.publicName}`;
+        window.open('https://wa.me/' + process.env.NEXT_PUBLIC_WHATSAPP + '?text=' + Message, '_blank');
     };
 
     return (
