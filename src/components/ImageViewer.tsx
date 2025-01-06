@@ -10,6 +10,18 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
     const [selectedImage, setSelectedImage] = useState(images[0]);
     const isS3Image = selectedImage?.startsWith('https://');
 
+    const currentIndex = images.indexOf(selectedImage);
+
+    const handleNextImage = () => {
+        const nextIndex = (currentIndex + 1) % images.length;
+        setSelectedImage(images[nextIndex]);
+    };
+
+    const handlePrevImage = () => {
+        const prevIndex = (currentIndex - 1 + images.length) % images.length;
+        setSelectedImage(images[prevIndex]);
+    };
+
     if (!isS3Image || !selectedImage) return null;
 
     return (
@@ -23,6 +35,20 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority
                 />
+                <button
+                    onClick={handlePrevImage}
+                    className={`absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === 0 ? 'opacity-50 cursor-default' : 'hover:bg-secondary-light'}`}
+                    disabled={currentIndex === 0}
+                >
+                    &#9664;
+                </button>
+                <button
+                    onClick={handleNextImage}
+                    className={`absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === images.length - 1 ? 'opacity-50 cursor-default' : 'hover:bg-secondary-light'}`}
+                    disabled={currentIndex === images.length - 1}
+                >
+                    &#9654;
+                </button>
             </div>
             {images.length > 1 && (
                 <div>

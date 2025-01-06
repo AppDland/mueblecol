@@ -89,7 +89,7 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
     };
 
     return (
-        <div className='flex flex-col flex-grow justify-between p-4 sm:w-1/2 border border-black'>
+        <div className='flex flex-col flex-grow justify-between p-4 sm:w-1/2 border rounded-lg'>
             <h1 className='text-2xl font-bold'>{item.publicName}</h1>
             <div className='flex flex-col w-full space-y-8'>
                 <p className='text-3xl font-bold text-primary'>{money(item.price)}</p>
