@@ -9,6 +9,7 @@ import { findSimilarItems } from '@/functions/search';
 import Card from '@/components/Card';
 import ColorPicker from '@/components/ColorPicker';
 import { useRouter } from 'next/navigation';
+import FinancingInfo from '@/components/FinancingInfo';
 
 const Item = () => {
     const params = useParams();
@@ -35,7 +36,7 @@ const Item = () => {
 
 
     return (
-        <div className='flex flex-col max-w-7xl mx-auto px-4 py-8'>
+        <div className='flex flex-col max-w-7xl mx-auto px-4 py-8 bg-neutral-100 border border-neutral-200 rounded-lg'>
             {/* Contenido principal */}
             <div className='flex flex-col sm:flex-row h-full'>
                 {photos && photos.length > 0 && (
@@ -83,8 +84,26 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
     };
 
     return (
-        <div className='flex flex-col flex-grow justify-between p-4 sm:w-1/2 border rounded-lg'>
+        <div className='flex flex-col flex-grow justify-between p-4 sm:w-1/2'>
             <h1 className='text-2xl font-bold'>{item.publicName}</h1>
+            <div className='mb-8'>
+                {
+                    item.finan.valor ? (
+                        <FinancingInfo
+                            title='Financiamiento'
+                            valor={item.finan.valor}
+                            cuotas={item.finan.cuotas}
+                            descrip='¿Qué estás esperando? Puedes obtener este artículo hasta en'
+                            moneyFormatter={money}
+                        />
+                    ) : (
+                        <FinancingInfo
+                            title='Financiamiento'
+                            cuotas={item.finan.cuotas}
+                            descrip='¿Qué estás esperando? Puedes obtener este artículo hasta en'
+                        />
+                    )}
+            </div>
             <div className='flex flex-col w-full space-y-8'>
                 <p className='text-3xl font-bold text-primary'>{money(item.price)}</p>
 

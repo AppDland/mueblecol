@@ -31,7 +31,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
 
 
     return (
-        <div className='bg-neutral-100 rounded-lg flex flex-col flex-shrink-0 justify-between p-4 sm:w-2/3'>
+        <div className={'bg-neutral-100 rounded-lg flex flex-col flex-shrink-0 justify-between p-4 sm:w-2/3 border border-neutral-200'}>
             <div className="relative aspect-video w-full" onClick={() => setIsModalOpen(true)}>
 
                 <Image
