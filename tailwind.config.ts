@@ -17,15 +17,15 @@ export default {
         },
         secondary: {
           light: '#006666',
-          DEFAULT: '#005353',
+          DEFAULT: '#177675',
           dark: '#003333'
         },
         third: {
-          DEFAULT: "#2A8C8B"
+          DEFAULT: "#005353"
         },
         accent: {
           light: '#1D8E8C',
-          DEFAULT: '#177675',
+          DEFAULT: '#272727',
           dark: '#0F4847'
         },
         success: {
