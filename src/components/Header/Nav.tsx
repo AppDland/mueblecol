@@ -48,7 +48,7 @@ const BurgerNav = () => {
                 <ul>
                     {
                         routes.map(({ title, href }, index) => (
-                            <li key={index} className='text-white'>
+                            <li key={index} className='text-white border-b border-gray-400 py-2'>
                                 <Link href={href}>
                                     {title}
                                 </Link>

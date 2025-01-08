@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import SimpleModal from './SimpleModal';
 import CircleStatus from './CircleStatus';
 
 interface ImageViewerProps {
@@ -28,9 +27,11 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
 
     if (!isS3Image || !selectedImage) return null;
 
+    // revisar que no se hagan peticiones innecesarias ya sea a amazon o la carpeta
+
     return (
         <>
-            <div className={'bg-neutral-100 rounded-lg flex flex-col flex-shrink-0 justify-between p-4 sm:w-2/3 border border-neutral-200'}>
+            <div className={'bg-neutral-100 rounded-lg flex flex-col flex-shrink-0 justify-between p-4 sm:w-2/3 border border-neutral-200 select-none'}>
                 <div className="relative aspect-video w-full" onClick={() => setIsModalOpen(true)}>
                     <Image
                         src={selectedImage}
@@ -41,15 +42,15 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                         priority
                     />
                     <button
-                        onClick={handlePrevImage}
-                        className={`absolute left-1 sm:left-3 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === 0 ? 'opacity-50 cursor-default' : 'hover:bg-secondary-light'}`}
+                        onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
+                        className={`absolute left-1 sm:left-3 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === 0 ? 'opacity-50 cursor-default' : 'hover:bg-primary-light'}`}
                         disabled={currentIndex === 0}
                     >
                         &#9664;
                     </button>
                     <button
-                        onClick={handleNextImage}
-                        className={`absolute right-1 sm:right-3 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === images.length - 1 ? 'opacity-50 cursor-default' : 'hover:bg-secondary-light'}`}
+                        onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
+                        className={`absolute right-1 sm:right-3 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === images.length - 1 ? 'opacity-50 cursor-default' : 'hover:bg-primary-light'}`}
                         disabled={currentIndex === images.length - 1}
                     >
                         &#9654;
@@ -84,11 +85,10 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                         </div>
                     )
                 }
-
             </div>
             {isModalOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setIsModalOpen(false)}>
-                    <div className="relative w-4/5 h-4/5 bg-black p-4 rounded-lg" onClick={(e) => e.stopPropagation()}>
+                    <div className="relative w-3/5 h-3/5 bg-black p-4 rounded-lg" onClick={(e) => e.stopPropagation()}>
                         <Image
                             src={selectedImage}
                             alt="Imagen ampliada"
@@ -116,79 +116,5 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
         </>
     );
 };
-
-interface ZoomImageProps {
-    selectedImage: string;
-    isModalOpen: boolean;
-    setIsModalOpen: (value: boolean) => void;
-}
-
-const ZoomImage = ({ isModalOpen, selectedImage, setIsModalOpen }: ZoomImageProps) => {
-
-    const [isZoomed, setIsZoomed] = useState(false);
-    const [dragStart, setDragStart] = useState<{ x: number, y: number } | null>(null);
-    const [dragOffset, setDragOffset] = useState<{ x: number, y: number }>({ x: 0, y: 0 });
-
-    const handleZoomToggle = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        setIsZoomed(!isZoomed);
-        setDragOffset({ x: 0, y: 0 });
-    };
-
-    const closeModal = () => {
-        setIsZoomed(false);
-        setDragOffset({ x: 0, y: 0 });
-    };
-
-
-
-    const handleMouseDown = (e: React.MouseEvent) => {
-        if (isZoomed) {
-            setDragStart({ x: e.clientX - dragOffset.x, y: e.clientY - dragOffset.y });
-        }
-    };
-
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (dragStart) {
-            setDragOffset({ x: e.clientX - dragStart.x, y: e.clientY - dragStart.y });
-        }
-    };
-
-    const handleMouseUp = () => {
-        setDragStart(null);
-    };
-
-    return (
-        <SimpleModal
-            isModalOpen={isModalOpen}
-            setIsModalOpen={setIsModalOpen}
-            onClose={closeModal}
-        >
-            <div
-                className={`relative w-full h-96 overflow-hidden ${isZoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'} border border-black`}
-                onClick={handleZoomToggle}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}
-            >
-                <div
-                    className={`absolute inset-0 transition-transform duration-300 ${isZoomed ? 'scale-150' : 'scale-100'} border border-black`}
-                    style={{
-                        transform: `translate(${dragOffset.x}px, ${dragOffset.y}px)`
-                    }}
-                >
-                    <Image
-                        src={selectedImage}
-                        alt="Imagen en detalle"
-                        fill
-                        className="object-contain"
-                        sizes="100vw"
-                    />
-                </div>
-            </div>
-        </SimpleModal>
-    )
-}
 
 export default ImageViewer;
