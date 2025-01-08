@@ -23,7 +23,7 @@ export interface ItemInt {
     attributes?: AttributeValue[];
     synonyms: string[];
     zones: string[];
-    finan: { cuotas: number, valor: number };
+    finan: { cuotas: number, valor?: number };
 }
 
 export interface Attribute {

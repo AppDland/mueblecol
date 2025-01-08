@@ -10,9 +10,9 @@ const Intro = () => {
             >
                 {/* <Decoration /> */}
                 {/* <div className="w-full flex justify-between max-w-5xl z-10"> */}
-                <div className='flex flex-col items-center justify-center w-full'>
-                    <h1 className={'text-3xl text-white'}>Muebles Para El Hogar</h1>
-                    <p className={'text-lg text-white'}>¡Gran Variedad!</p>
+                <div className='flex flex-col items-center justify-center w-full opacity-60'>
+                    <h1 className={'text-2xl sm:text-3xl text-white'}>Muebles Para El Hogar</h1>
+                    <p className={'text-base sm:text-lg text-white'}>¡Gran Variedad!</p>
                 </div>
                 {/* <div className='flex-col items-center justify-center hidden md:flex w-full'>
                         <h2 className={'text-2xl font-bold mt-4 text-secondary'}>Envío Gratis</h2>
@@ -24,18 +24,6 @@ const Intro = () => {
     );
 };
 
-const Decoration = () => (
-    <>
-        <div
-            className='absolute rotate-45 aspect-square bg-secondary hidden md:block'
-            style={{ width: '30vh', left: 'calc(50% + 5vh)' }}
-        />
-        <div
-            className={"absolute bg-secondary w-1/3 -right-4 hidden md:block"}
-            style={{ height: '30vh' }}
-        />
-    </>
-)
 
 const Background = ({ children }: { children: React.ReactNode }) => (
     <div className="relative w-full">

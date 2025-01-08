@@ -111,7 +111,7 @@ export const findSimilarItems = (item: ItemInt): ItemInt[] => {
     const allItems = typedItems.items;
 
     const similarItems = allItems.filter(otherItem => {
-        if (otherItem.id === item.id) return false;
+        if (otherItem.name === item.name) return false;
 
         // Un item es similar si comparte zona y además comparte color o material
         const sameZone = item.zones.some(zone =>
@@ -124,16 +124,19 @@ export const findSimilarItems = (item: ItemInt): ItemInt[] => {
             )
         );
 
-        const sameMaterial = item.attributes.some(attr =>
-            otherItem.attributes.some(otherAttr =>
-                attr.attributeId === otherAttr.attributeId &&
-                attr.value === otherAttr.value
-            )
-        );
+        let sameMaterial = false;
+        if (item.attributes) {
+            sameMaterial = item.attributes.some(attr =>
+                otherItem.attributes && otherItem.attributes.some(otherAttr =>
+                    attr.attributeId === otherAttr.attributeId &&
+                    attr.value === otherAttr.value
+                )
+            );
+        }
 
         return (sameZone && (sharedColors || sameMaterial));
     });
 
     // Limitamos a 3 items similares
-    return similarItems.slice(0, 3);
+    return similarItems.slice(0, 10);
 }; 
