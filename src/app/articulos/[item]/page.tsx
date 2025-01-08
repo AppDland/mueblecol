@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from 'next/navigation';
 import Items from '@/data/items.json';
-import ImageViewer from '@/components/ImageViewer';
+import ImageViewer from '@/components/ImageViewer/ImageViewer';
 import { money } from '@/functions/money';
 import { ItemInt, ItemMedia } from '@/interfaces/item';
 import { useEffect, useState } from 'react';

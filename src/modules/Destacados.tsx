@@ -1,3 +1,4 @@
+'use client'
 import SimpleCard from "@/components/SimpleCard";
 import Items from "@/data/items.json";
 
@@ -10,7 +11,8 @@ const Destacados = () => {
 
             <div className="flex flex-wrap justify-center">
                 {
-                    Items.items.slice(0, 15).map((item, index) => (
+                    // desordenar aleatoreamente y mostrar los 15 primeros
+                    Items.items.sort(() => Math.random() - 0.5).slice(0, 15).map((item, index) => (
                         <SimpleCard
                             title={item.publicName}
                             url={item.name}

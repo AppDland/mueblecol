@@ -13,7 +13,7 @@ const Offers = () => {
         const itemsOnOffer = Items.items.filter((item) => item.price !== item.offer);
 
         // Desordenar aleatoriamente los artículos
-        const shuffledItems = itemsOnOffer.sort(() => 0.5 - Math.random());
+        // const shuffledItems = itemsOnOffer.sort(() => 0.5 - Math.random());
 
         // Guardar un máximo de 10 artículos en el estado
         // setOfferItems(shuffledItems.slice(0, 10));

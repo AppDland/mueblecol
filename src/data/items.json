@@ -300,7 +300,7 @@
                 "escalera"
             ],
             "zones": [
-                "sala"
+                "negocio"
             ]
         },
         {
@@ -1157,6 +1157,366 @@
                 "dormitorio",
                 "sala"
             ]
+        },
+        {
+            "name": "estante-peque",
+            "publicName": "Mueble Estantería con 4 espacios",
+            "price": 157000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 6
+            },
+            "description": "Estantería con 4 espacios amplios de almacenamiento, ideal para libros, accesorios, etc. Medidas 190cm de alto x 60cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/estante-peque/IMG-20241010-WA0023.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "190cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "60cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "estantes",
+                "estanteria",
+                "espacios",
+                "almacenamiento",
+                "libros",
+                "accesorios",
+                "mueble",
+                "mdf",
+                "pequeño",
+                "mueblecito"
+            ],
+            "zones": [
+                "cocina",
+                "sala",
+                "closet",
+                "dormitorio"
+            ]
+        },
+        {
+            "name": "combo-espejo-puff-espaldar",
+            "publicName": "Combo de espejo + puff + espaldar de tela pana dos plazas",
+            "price": 289000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 9
+            },
+            "description": "Super combo, lleva un espejo, un puff y un espaldar, todo en tela pana. Combina tu habitación con este combo. Espaldar de dos plazas",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/combo-espejo-puff-espaldar/IMG-20240530-WA0015.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Tela Pana"
+                }
+            ],
+            "synonyms": [
+                "espejo",
+                "puff",
+                "espaldar",
+                "cama",
+                "habitacion",
+                "tela",
+                "pana"
+            ],
+            "zones": [
+                "dormitorio"
+            ]
+        },
+        {
+            "name": "espaldar-2-plazas-pana",
+            "publicName": "Espaldar/Respaldo de cama de dos plazas en tela pana",
+            "price": 182000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 8
+            },
+            "description": "Espaldar para cama de dos plazas tapizado en tela pana, acabdos de alta calidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/espaldar-2-plazas-pana/20240403_095254.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/espaldar-2-plazas-pana/IMG-20241126-WA0018.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/espaldar-2-plazas-pana/Screenshot_20240116_012448_WhatsApp.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "Tela Pana"
+                }
+            ],
+            "synonyms": [
+                "espaldar",
+                "respaldo",
+                "tela",
+                "pana",
+                "dos plazas",
+                "cama"
+            ],
+            "zones": [
+                "dormitorio"
+            ]
+        },
+        {
+            "name": "mesa-manicure-apoya-manos",
+            "publicName": "Mesa de manucure con apoya manos",
+            "price": 274000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 7
+            },
+            "description": "Mesa para servicio de manicure, diseño comodo de apoya manos para comodidad del cliente.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/mesa-manicure-apoya-manos/IMG-20240404-WA0007.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/mesa-manicure-apoya-manos/IMG-20240404-WA0008.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                }
+            ],
+            "synonyms": [
+                "manicure",
+                "manos",
+                "manicura",
+                "uñas",
+                "vidrio",
+                "apoyador"
+            ],
+            "zones": [
+                "negocio"
+            ]
+        },
+        {
+            "name": "mesa-manicure-sola",
+            "publicName": "Mesa para manicure",
+            "price": 198000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 7
+            },
+            "description": "Mesa para servicio de manicure.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/mesa-manicure-sola/Screenshot_20230504_105403_WhatsApp.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "80cm"
+                }
+            ],
+            "synonyms": [
+                "manicure",
+                "manos",
+                "manicura",
+                "uñas",
+                "vidrio"
+            ],
+            "zones": [
+                "negocio"
+            ]
+        },
+        {
+            "name": "multiuso-con-vidrio",
+            "publicName": "Mueble multiuso con vidrio",
+            "price": 205000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 7
+            },
+            "description": "Mueble multiuso con vidrio, ideal para almacenar objetos, libros, etc. Medidas 190cm de alto x 60cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/multiuso-con-vidrio/IMG-20241107-WA0017.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/multiuso-con-vidrio/IMG-20241114-WA0050.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/multiuso-con-vidrio/Screenshot_20210906-153343_WhatsApp.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/multiuso-con-vidrio/Screenshot_20230724_125237_WhatsApp.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "190cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "60cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "mueble",
+                "mueblecito",
+                "vidrio",
+                "multiuso",
+                "estantes",
+                "puertas"
+            ],
+            "zones": [
+                "cocina",
+                "sala",
+                "negocio"
+            ]
+        },
+        {
+            "name": "peinadora-hollywood-grande",
+            "publicName": "Peinadora Hollywood Grande con focos LED",
+            "price": 400000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 9
+            },
+            "description": "Peinadora grande con focos LED, ideal para maquillaje y peinado. Medidas 175cm de alto x 125cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-hollywood-grande/IMG-20241107-WA0019.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-hollywood-grande/PhotoRoom-20230604_095657.png"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "175cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "125cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "36cm"
+                }
+            ],
+            "synonyms": [
+                "peinadora",
+                "focos",
+                "led",
+                "maquillaje",
+                "hollywood"
+            ],
+            "zones": [
+                "dormitorio",
+                "closet",
+                "negocio"
+            ]
+        },
+        {
+            "name": "ropero-3-puertas",
+            "publicName": "Ropero con 3 puertas",
+            "price": 261000,
+            "offer": 0,
+            "finan": {
+                "cuotas": 9
+            },
+            "description": "Ropero grande con tres puertas y espejo en el medio, ideal para guardar ropa y accesorios. Medidas 190cm de alto x 130cm de ancho x 36cm de profundidad.",
+            "media": [
+                {
+                    "colorName": "",
+                    "colorHex": "",
+                    "photos": [
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/ropero-3-puertas/IMG-20241102-WA0002.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/ropero-3-puertas/Screenshot_20240708_200042_WhatsApp.jpg",
+                        "https://mueblecol.s3.us-east-2.amazonaws.com/ropero-3-puertas/Screenshot_20240708_200050_WhatsApp.jpg"
+                    ]
+                }
+            ],
+            "attributes": [
+                {
+                    "attributeId": 1,
+                    "value": "MDF"
+                },
+                {
+                    "attributeId": 2,
+                    "value": "174cm"
+                },
+                {
+                    "attributeId": 3,
+                    "value": "112cm"
+                },
+                {
+                    "attributeId": 4,
+                    "value": "43cm"
+                }
+            ],
+            "synonyms": [
+                "ropero",
+                "roperito",
+                "3 puertas",
+                "ropero grande",
+                "espejo",
+                "ropa"
+            ],
+            "zones": [
+                "closet",
+                "dormitorio"
+            ]
         }
     ],
     "attributes": [
@@ -1205,6 +1565,10 @@
         {
             "id": 6,
             "name": "cocina"
+        },
+        {
+            "id": 7,
+            "name": "negocio"
         }
     ]
 }
