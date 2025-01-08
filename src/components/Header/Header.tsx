@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <header className={'w-full flex justify-between items-center p-3 sm:p-4 bg-third select-none relative'}>
-            <Link href="/">
+            <Link href="/" >
                 <div className="text-2xl font-bold flex">
                     {
                         isLargeScreen &&

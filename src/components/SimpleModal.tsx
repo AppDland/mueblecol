@@ -29,4 +29,78 @@ const SimpleModal = ({ isModalOpen, setIsModalOpen, children, onClose }: SimpleM
     )
 }
 
+// Esta funcion estaba en el archivo src/components/ImageViewer.tsx
+
+// interface ZoomImageProps {
+//     selectedImage: string;
+//     isModalOpen: boolean;
+//     setIsModalOpen: (value: boolean) => void;
+// }
+
+// const ZoomImage = ({ isModalOpen, selectedImage, setIsModalOpen }: ZoomImageProps) => {
+//     const [isZoomed, setIsZoomed] = useState(false);
+//     const [dragStart, setDragStart] = useState<{ x: number, y: number } | null>(null);
+//     const [dragOffset, setDragOffset] = useState<{ x: number, y: number }>({ x: 0, y: 0 });
+
+//     const handleZoomToggle = (e: React.MouseEvent) => {
+//         e.stopPropagation();
+//         setIsZoomed(!isZoomed);
+//         setDragOffset({ x: 0, y: 0 });
+//     };
+
+//     const closeModal = () => {
+//         setIsZoomed(false);
+//         setDragOffset({ x: 0, y: 0 });
+//         setIsModalOpen(false);
+//     };
+
+//     const handleMouseDown = (e: React.MouseEvent) => {
+//         if (isZoomed) {
+//             setDragStart({ x: e.clientX - dragOffset.x, y: e.clientY - dragOffset.y });
+//         }
+//     };
+
+//     const handleMouseMove = (e: React.MouseEvent) => {
+//         if (dragStart) {
+//             setDragOffset({ x: e.clientX - dragStart.x, y: e.clientY - dragStart.y });
+//         }
+//     };
+
+//     const handleMouseUp = () => {
+//         setDragStart(null);
+//     };
+
+//     return (
+//         <SimpleModal
+//             isModalOpen={isModalOpen}
+//             setIsModalOpen={setIsModalOpen}
+//             onClose={closeModal}
+//         >
+//             <div
+//                 className={`relative w-full h-96 overflow-hidden ${isZoomed ? 'cursor-zoom-out' : 'cursor-zoom-in'} border border-black`}
+//                 onClick={handleZoomToggle}
+//                 onMouseDown={handleMouseDown}
+//                 onMouseMove={handleMouseMove}
+//                 onMouseUp={handleMouseUp}
+//                 onMouseLeave={handleMouseUp}
+//             >
+//                 <div
+//                     className={`absolute inset-0 transition-transform duration-300 ${isZoomed ? 'scale-150' : 'scale-100'} border border-black`}
+//                     style={{
+//                         transform: `translate(${dragOffset.x}px, ${dragOffset.y}px)`
+//                     }}
+//                 >
+//                     <Image
+//                         src={selectedImage}
+//                         alt="Imagen en detalle"
+//                         fill
+//                         className="object-contain"
+//                         sizes="100vw"
+//                     />
+//                 </div>
+//             </div>
+//         </SimpleModal>
+//     );
+// }
+
 export default SimpleModal;
