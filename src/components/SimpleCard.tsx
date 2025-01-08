@@ -22,7 +22,7 @@ interface FinanInt {
 const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCardProps) => {
 
     return (
-        <div className="bg-white w-44 md:w-52 h-80 md:h-96 m-1 md:m-3 group">
+        <div className="bg-white w-44 md:w-52 h-80 md:h-96 m-2 md:m-3 group">
             <Link href={`/articulos/${url}`}>
                 <div
                     className="flex justify-center items-center bg-accent-dark text-white"

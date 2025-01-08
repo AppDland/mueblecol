@@ -8,16 +8,16 @@ interface ColorPickerProps {
     layout?: 'horizontal' | 'vertical';
 }
 
-const ColorPicker: React.FC<ColorPickerProps> = ({ 
-    colors, 
-    onColorSelect, 
+const ColorPicker: React.FC<ColorPickerProps> = ({
+    colors,
+    onColorSelect,
     selectedColor,
     className = '',
     layout = 'horizontal'
 }) => {
     return (
         <div className={`flex flex-wrap ${layout === 'vertical' ? 'flex-col' : ''} gap-2 ${className}`}>
-            {colors.map((color) => (
+            {/* {colors.map((color) => (
                 <label 
                     key={color.id} 
                     className={`flex items-center cursor-pointer ${
@@ -40,7 +40,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
                     />
                     <span className="ml-2">{color.colorName}</span>
                 </label>
-            ))}
+            ))} */}
         </div>
     );
 };
