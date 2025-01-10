@@ -116,7 +116,8 @@
                 "modular",
                 "mueble",
                 "almacenamiento",
-                "estantes"
+                "estantes",
+                "televisor"
             ],
             "zones": [
                 "sala",
@@ -352,7 +353,8 @@
                 "led",
                 "blanca",
                 "estantes",
-                "cajones"
+                "cajones",
+                "joyas"
             ],
             "zones": [
                 "dormitorio",
@@ -517,7 +519,8 @@
                 "almacenamiento",
                 "cajones",
                 "gabetas",
-                "puertas"
+                "puertas",
+                "joyas"
             ],
             "zones": [
                 "dormitorio",

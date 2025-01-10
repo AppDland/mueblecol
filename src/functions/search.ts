@@ -1,5 +1,6 @@
 import { ItemInt, ItemsData } from '@/interfaces/item';
 import Items from '@/data/items.json';
+import Ignoradas from '@/data/ignore.json';
 
 /**
  * Calcula la distancia de Levenshtein entre dos strings
@@ -44,21 +45,26 @@ const areSimilarWords = (word1: string, word2: string): boolean => {
 };
 
 export const searchItems = (searchTerm: string): ItemInt[] => {
+    if (searchTerm.length < 4) return [];
     // Separamos los términos de búsqueda y los convertimos a minúsculas
     const searchWords = searchTerm.toLowerCase().trim().split(' ');
-    const typedItems = Items as unknown as ItemsData;
     const results: ItemInt[] = [];
 
-    typedItems.items.forEach(item => {
+    Items.items.forEach(item => {
         // Creamos un array con todas las palabras relevantes del item
         const itemName = item.publicName.toLowerCase();
         const itemDescription = item.description.toLowerCase();
+
+        //creamos el array ignorando las palabras que tengan menos de 4 letras
+        //por ultimo se excluyen palabras incluidas en la lista de palabras ignoradas
         const allWords = [
             ...itemName.split(' '),
             ...itemDescription.split(' '),
             ...item.synonyms,
             ...item.zones
-        ];
+        ]
+            .filter(word => word.length >= 4)
+            .filter(word => !Ignoradas.includes(word));
 
         // Un item coincide si al menos una palabra de búsqueda coincide con alguna palabra del item
         const matches = searchWords.some(searchWord => {
@@ -111,7 +117,7 @@ export const findSimilarItems = (item: ItemInt): ItemInt[] => {
     const allItems = typedItems.items;
 
     const similarItems = allItems.filter(otherItem => {
-        if (otherItem.id === item.id) return false;
+        if (otherItem.name === item.name) return false;
 
         // Un item es similar si comparte zona y además comparte color o material
         const sameZone = item.zones.some(zone =>
@@ -124,16 +130,19 @@ export const findSimilarItems = (item: ItemInt): ItemInt[] => {
             )
         );
 
-        const sameMaterial = item.attributes.some(attr =>
-            otherItem.attributes.some(otherAttr =>
-                attr.attributeId === otherAttr.attributeId &&
-                attr.value === otherAttr.value
-            )
-        );
+        let sameMaterial = false;
+        if (item.attributes) {
+            sameMaterial = item.attributes.some(attr =>
+                otherItem.attributes && otherItem.attributes.some(otherAttr =>
+                    attr.attributeId === otherAttr.attributeId &&
+                    attr.value === otherAttr.value
+                )
+            );
+        }
 
         return (sameZone && (sharedColors || sameMaterial));
     });
 
     // Limitamos a 3 items similares
-    return similarItems.slice(0, 3);
+    return similarItems.slice(0, 10);
 }; 
