@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import CircleStatus from './CircleStatus';
 
@@ -10,7 +10,6 @@ interface ImageViewerProps {
 const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
     const [selectedImage, setSelectedImage] = useState(images[0]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
     const isS3Image = selectedImage?.startsWith('https://');
 
@@ -26,15 +25,15 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
         setSelectedImage(images[prevIndex]);
     };
 
-    const handleImageLoad = (image: string) => {
-        if (!loadedImages.includes(image)) {
-            setLoadedImages([...loadedImages, image]);
-        }
-    };
+    useEffect(() => {
+        // Preload images
+        images.forEach((image) => {
+            const img = new window.Image();
+            img.src = image;
+        });
+    }, [images]);
 
     if (!isS3Image || !selectedImage) return null;
-
-    // revisar que no se hagan peticiones innecesarias ya sea a amazon o la carpeta
 
     return (
         <>
@@ -47,7 +46,6 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                         className="object-contain"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         priority
-                        onLoad={() => handleImageLoad(selectedImage)}
                     />
                     <button
                         onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
@@ -72,24 +70,21 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                                 <div className="w-full border border-[#272727] opacity-5" />
                             </div>
                             <div className="flex justify-center gap-4">
-                                {
-                                    images.map((image, index) => (
-                                        <div
-                                            key={index}
-                                            className={`relative w-24 h-24 cursor-pointer mb-4 ${selectedImage === image ? 'border border-primary' : ''}`}
-                                            onClick={() => setSelectedImage(image)}
-                                        >
-                                            <Image
-                                                src={image}
-                                                alt={`Vista previa ${index + 1}`}
-                                                fill
-                                                className="object-cover"
-                                                sizes="96px"
-                                                onLoad={() => handleImageLoad(image)}
-                                            />
-                                        </div>
-                                    ))
-                                }
+                                {images.map((image, index) => (
+                                    <div
+                                        key={index}
+                                        className={`relative w-24 h-24 cursor-pointer mb-4 ${selectedImage === image ? 'border border-primary' : ''}`}
+                                        onClick={() => setSelectedImage(image)}
+                                    >
+                                        <Image
+                                            src={image}
+                                            alt={`Vista previa ${index + 1}`}
+                                            fill
+                                            className="object-cover"
+                                            sizes="96px"
+                                        />
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     )
@@ -104,7 +99,6 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                             fill
                             className="object-contain"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            onLoad={() => handleImageLoad(selectedImage)}
                         />
                         <button
                             onClick={handlePrevImage}
