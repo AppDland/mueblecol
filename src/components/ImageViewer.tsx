@@ -10,6 +10,7 @@ interface ImageViewerProps {
 const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
     const [selectedImage, setSelectedImage] = useState(images[0]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
     const isS3Image = selectedImage?.startsWith('https://');
 
@@ -23,6 +24,12 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
     const handlePrevImage = () => {
         const prevIndex = (currentIndex - 1 + images.length) % images.length;
         setSelectedImage(images[prevIndex]);
+    };
+
+    const handleImageLoad = (image: string) => {
+        if (!loadedImages.includes(image)) {
+            setLoadedImages([...loadedImages, image]);
+        }
     };
 
     if (!isS3Image || !selectedImage) return null;
@@ -40,6 +47,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                         className="object-contain"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         priority
+                        onLoad={() => handleImageLoad(selectedImage)}
                     />
                     <button
                         onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
@@ -77,6 +85,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                                                 fill
                                                 className="object-cover"
                                                 sizes="96px"
+                                                onLoad={() => handleImageLoad(image)}
                                             />
                                         </div>
                                     ))
@@ -95,6 +104,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ images }) => {
                             fill
                             className="object-contain"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            onLoad={() => handleImageLoad(selectedImage)}
                         />
                         <button
                             onClick={handlePrevImage}
