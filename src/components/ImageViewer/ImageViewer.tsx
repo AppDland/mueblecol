@@ -1,9 +1,10 @@
 'use client';
-import { useEffect, useState } from 'react';
-import Image, { getImageProps } from 'next/image';
+import { useState } from 'react';
+import Image from 'next/image';
 import CircleStatus from '../CircleStatus';
 import SmallView from './SmallView';
 import { ImageCacheProvider, useImageCache } from './ImageCache';
+import classNames from 'classnames';
 
 const ImageViewer = ({ images }: ImageViewerProps) => (
     <ImageCacheProvider imageUrls={images}>
@@ -15,33 +16,39 @@ interface ImageViewerProps {
     images: string[];
 }
 
-const ImageViewerComponent: React.FC<ImageViewerProps> = ({ images }) => {
-    const [selectedImage, setSelectedImage] = useState(images[0]);
+const ImageViewerComponent = ({ images }: ImageViewerProps) => {
+    const [selectedImage, setSelectedImage] = useState<string>();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
     const cachedImages = useImageCache();
 
     const handleNextImage = () => {
-        const nextIndex = (currentIndex + 1) % images.length;
-        setSelectedImage(images[nextIndex]);
+        if (cachedImages) {
+            const array = Object.values(cachedImages);
+            const currIndex = selectedImage ? array.indexOf(selectedImage) : 0;
+            const nextIndex = (currIndex + 1) % array.length;
+            setSelectedImage(array[nextIndex]);
+            setCurrentIndex(currIndex + 1);
+        }
     };
 
     const handlePrevImage = () => {
-        const prevIndex = (currentIndex - 1 + images.length) % images.length;
-        setSelectedImage(images[prevIndex]);
+        if (cachedImages) {
+            const array = Object.values(cachedImages);
+            const currIndex = selectedImage ? array.indexOf(selectedImage) : 0;
+            const prevIndex = (currIndex - 1 + array.length) % array.length;
+            console.log(currIndex, prevIndex)
+            setSelectedImage(array[prevIndex]);
+            setCurrentIndex(currIndex - 1);
+        }
     };
-
-    useEffect(() => setCurrentIndex(images.indexOf(selectedImage)), [selectedImage]);
-
-
-    // revisar que no se hagan peticiones innecesarias ya sea a amazon o la carpeta
 
     return (
         <>
-            <div className={'bg-neutral-100 rounded-lg flex flex-col flex-shrink-0 justify-between p-4 sm:w-2/3 border border-neutral-200 select-none'}>
-                <div className="relative aspect-video w-full" onClick={() => setIsModalOpen(true)}>
-                    {
-                        cachedImages && (
+            <div className={'bg-neutral-100 flex flex-col flex-shrink-0 justify-between p-4 sm:w-2/3 border-r-2 border-neutral-200 select-none'}>
+                {
+                    cachedImages && selectedImage ? (
+                        <div className="relative aspect-video w-full" onClick={() => setIsModalOpen(true)}>
                             <Image
                                 src={selectedImage}
                                 alt="Imagen principal"
@@ -51,32 +58,28 @@ const ImageViewerComponent: React.FC<ImageViewerProps> = ({ images }) => {
                                 blurDataURL='/images/fallback.png'
                                 priority
                             />
-                        )
-                    }
-
-                    <button
-                        onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
-                        className={`absolute left-1 sm:left-3 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === 0 ? 'opacity-50 cursor-default' : 'hover:bg-primary-light'}`}
-                        disabled={currentIndex === 0}
-                    >
-                        &#9664;
-                    </button>
-                    <button
-                        onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
-                        className={`absolute right-1 sm:right-3 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === images.length - 1 ? 'opacity-50 cursor-default' : 'hover:bg-primary-light'}`}
-                        disabled={currentIndex === images.length - 1}
-                    >
-                        &#9654;
-                    </button>
-                </div>
-                <CircleStatus />
-                {
-                    cachedImages && <SmallView images={Object.values(cachedImages)} selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
+                            <ArrowButton
+                                onClick={handlePrevImage}
+                                canClick={currentIndex !== 0}
+                                side='left'
+                            />
+                            <ArrowButton
+                                onClick={handleNextImage}
+                                canClick={currentIndex !== Object.values(cachedImages).length - 1}
+                                side='right'
+                            />
+                        </div>
+                    ) : <div className='skeleton w-full h-96' />
                 }
-
+                <CircleStatus />
+                <SmallView
+                    images={images}
+                    selectedImage={selectedImage}
+                    setSelectedImage={setSelectedImage}
+                />
             </div>
             {
-                isModalOpen && (
+                isModalOpen && selectedImage && cachedImages && (
                     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setIsModalOpen(false)}>
                         <div className="relative w-3/5 h-3/5 bg-black p-4 rounded-lg" onClick={(e) => e.stopPropagation()}>
                             <Image
@@ -86,20 +89,16 @@ const ImageViewerComponent: React.FC<ImageViewerProps> = ({ images }) => {
                                 className="object-contain"
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
-                            <button
+                            <ArrowButton
                                 onClick={handlePrevImage}
-                                className={`absolute left-3 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === 0 ? 'opacity-50 cursor-default' : 'hover:bg-secondary-light'}`}
-                                disabled={currentIndex === 0}
-                            >
-                                &#9664;
-                            </button>
-                            <button
+                                canClick={currentIndex !== 0}
+                                side='left'
+                            />
+                            <ArrowButton
                                 onClick={handleNextImage}
-                                className={`absolute right-3 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md ${currentIndex === images.length - 1 ? 'opacity-50 cursor-default' : 'hover:bg-secondary-light'}`}
-                                disabled={currentIndex === images.length - 1}
-                            >
-                                &#9654;
-                            </button>
+                                canClick={currentIndex !== Object.values(cachedImages).length - 1}
+                                side='right'
+                            />
                         </div>
                     </div>
                 )
@@ -107,5 +106,35 @@ const ImageViewerComponent: React.FC<ImageViewerProps> = ({ images }) => {
         </>
     );
 };
+
+interface ArrowButtonProps {
+    onClick: () => void;
+    canClick: boolean;
+    side: 'left' | 'right';
+}
+
+const ArrowButton = ({ onClick, canClick, side }: ArrowButtonProps) => (
+    <button
+        onClick={(e) => { e.stopPropagation(); onClick() }}
+        className={classNames(
+            'absolute transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md',
+            canClick
+                ? 'hover:bg-primary'
+                : 'opacity-50 cursor-default',
+            side === 'right'
+                ? 'right-3 top-1/2'
+                : 'left-3 top-1/2'
+        )}
+        disabled={!canClick}
+    >
+        {
+            side === 'left' ? (
+                <>&#9664;</>
+            ) : (
+                <>&#9654;</>
+            )
+        }
+    </button>
+)
 
 export default ImageViewer;

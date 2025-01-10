@@ -3,81 +3,87 @@ import { useParams } from 'next/navigation';
 import Items from '@/data/items.json';
 import ImageViewer from '@/components/ImageViewer/ImageViewer';
 import { money } from '@/functions/money';
-import { ItemInt, ItemMedia } from '@/interfaces/item';
-import { useEffect, useState } from 'react';
+import { ItemInt } from '@/interfaces/item';
+import { use, useEffect, useState } from 'react';
 import { findSimilarItems } from '@/functions/search';
 import Card from '@/components/Card';
-import ColorPicker from '@/components/ColorPicker';
+// import ColorPicker from '@/components/ColorPicker';
 import { useRouter } from 'next/navigation';
 import FinancingInfo from '@/components/FinancingInfo';
 
 const Item = () => {
     const params = useParams();
     const { item } = params;
+    const [currentItem, setCurrentItem] = useState<ItemInt>();
+    const [similarItems, setSimilarItems] = useState<ItemInt[]>([]);
 
-    const [selectedColor, setSelectedColor] = useState<ItemMedia>();
-    const typedItems = Items as unknown as { items: ItemInt[] };
-    const currentItem = item && typeof item === "string"
-        ? typedItems.items.find(i => i.name.replaceAll(' ', '-') === item)
-        : undefined;
+
+    useEffect(() => {
+        const foundItem = item && typeof item === "string"
+            ? Items.items.find(i => i.name.replaceAll(' ', '-') === item)
+            : undefined;
+
+        setCurrentItem(foundItem);
+        if (foundItem) setSimilarItems(findSimilarItems(foundItem));
+        // if (currentItem) {
+        //     setSelectedColor(currentItem.media[0]);
+        // }
+    }, [item]);
 
     useEffect(() => {
         if (currentItem) {
-            setSelectedColor(currentItem.media[0]);
+
+            console.log(currentItem.media[0].photos)
         }
-    }, [currentItem]);
-
-    if (!currentItem) {
-        return <p>No se ha encontrado el artículo</p>;
-    }
-
-    const similarItems = findSimilarItems(currentItem);
-    const photos = selectedColor?.photos.filter(photo => photo.startsWith('https://'));
-
+    }, [currentItem])
 
     return (
-        <div className='flex flex-col max-w-7xl mx-auto px-4 py-8 bg-neutral-100 border border-neutral-200 rounded-lg'>
-            {/* Contenido principal */}
-            <div className='flex flex-col sm:flex-row h-full'>
-                {photos && photos.length > 0 && (
-                    <ImageViewer images={photos} />
-                )}
-                {selectedColor && (
+        currentItem ? (
+            <div className='flex flex-col max-w-7xl mx-auto px-4 py-8 bg-neutral-100 border border-neutral-200 rounded-lg'>
+                {/* Contenido principal */}
+                <div className='flex flex-col sm:flex-row h-full'>
+                    {/* {photos && photos.length > 0 && ( */}
+                    <ImageViewer images={currentItem.media[0].photos} />
+                    {/* )} */}
+                    {/* {selectedColor && ( */}
                     <ItemInfo
                         item={currentItem}
-                        selectedColor={selectedColor}
-                        onColorSelect={setSelectedColor}
+                    // selectedColor={selectedColor}
+                    // onColorSelect={setSelectedColor}
                     />
-                )}
-            </div>
+                    {/* )} */}
+                </div>
 
-            {/* Descripción del artículo */}
-            <div className='my-2 p-2'>
-                <p className='font-bold mb-2'>Acerca de este artículo</p>
-                <p className='text-gray-600'>{currentItem.description}</p>
-            </div>
+                {/* Descripción del artículo */}
+                <div className='my-2 p-2'>
+                    <p className='font-bold mb-2'>Acerca de este artículo</p>
+                    <p className='text-gray-600'>{currentItem.description}</p>
+                </div>
 
-            {/* Items similares */}
-            {
-                similarItems.length > 0 && (
-                    <div className='mt-16'>
-                        <h2 className='text-2xl font-bold mb-8'>Similares</h2>
-                        <div className='flex flex-wrap'>
-                            {
-                                similarItems.map((item, id) => (
-                                    <Card key={id} item={item} />
-                                ))
-                            }
+                {/* Items similares */}
+                {
+                    similarItems.length > 0 && (
+                        <div className='mt-16'>
+                            <h2 className='text-2xl font-bold mb-8'>Similares</h2>
+                            <div className='flex flex-wrap'>
+                                {
+                                    similarItems.map((item, id) => (
+                                        <Card key={id} item={item} />
+                                    ))
+                                }
+                            </div>
                         </div>
-                    </div>
-                )
-            }
-        </div>
-    );
+                    )
+                }
+            </div>
 
+        ) : (
+            <p>No se ha encontrado el artículo</p>
+        )
+    )
 };
 
-const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selectedColor: ItemMedia, onColorSelect: (color: ItemMedia) => void }) => {
+const ItemInfo = ({ item, }: { item: ItemInt }) => {
     // const [amount, setAmount] = useState(1);
     const router = useRouter();
     const handlePurchase = () => {
