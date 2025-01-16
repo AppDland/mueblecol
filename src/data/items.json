@@ -34,7 +34,8 @@
                 "ropa",
                 "cajones",
                 "gabetas",
-                "candado"
+                "candado",
+                "desmontable"
             ],
             "zones": [
                 "dormitorio",
@@ -1544,31 +1545,38 @@
     "zones": [
         {
             "id": 1,
-            "name": "sala"
+            "name": "sala",
+            "image": "https://mueblecol.s3.us-east-2.amazonaws.com/living-completo/IMG-20240304-WA0004.jpg"
         },
         {
             "id": 2,
-            "name": "dormitorio"
+            "name": "dormitorio",
+            "image": "https://mueblecol.s3.us-east-2.amazonaws.com/combo-espejo-puff-espaldar/IMG-20240530-WA0015.jpg"
         },
         {
             "id": 3,
-            "name": "comedor"
+            "name": "comedor",
+            "image": "https://mueblecol.s3.us-east-2.amazonaws.com/comedor-4-puestos-cuerina/20240314_095912.jpg"
         },
         {
             "id": 4,
-            "name": "closet"
+            "name": "closet",
+            "image": "https://mueblecol.s3.us-east-2.amazonaws.com/peinadora-peque/IMG-20240522-WA0060.jpg"
         },
         {
             "id": 5,
-            "name": "exteriores"
+            "name": "exteriores",
+            "image": "https://mueblecol.s3.us-east-2.amazonaws.com/silleta/Screenshot_20221129_104323_WhatsApp.jpg"
         },
         {
             "id": 6,
-            "name": "cocina"
+            "name": "cocina",
+            "image": "https://mueblecol.s3.us-east-2.amazonaws.com/alacena-grande/20230927_195903.jpg"
         },
         {
             "id": 7,
-            "name": "negocio"
+            "name": "negocio",
+            "image": "https://mueblecol.s3.us-east-2.amazonaws.com/camilla-masajes-completa/IMG-20240307-WA0046.jpg"
         }
     ]
 }

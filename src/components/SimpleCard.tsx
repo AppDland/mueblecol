@@ -25,7 +25,7 @@ const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCar
         <div className="bg-white w-44 md:w-52 h-80 md:h-96 m-2 md:m-3 group">
             <Link href={`/articulos/${url}`}>
                 <div
-                    className="flex justify-center items-center bg-accent-dark text-white"
+                    className="flex justify-center items-center bg-accent-dark text-white group-hover:bg-primary"
                     style={{ height: '8%' }}
                 >
                     {
@@ -45,13 +45,13 @@ const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCar
                     style={{ height: '72%' }}
                 />
                 <div
-                    className="border-t flex flex-col justify-evenly items-center"
+                    className="border-t flex flex-col justify-evenly items-center "
                     style={{ height: '20%' }}
                 >
-                    <p className="text-center text-lg md:text-xl text-accent font-bold">
+                    <p className="text-center text-lg md:text-xl text-accent font-bold group-hover:text-primary">
                         {money(price)}
                     </p>
-                    <h2 className="px-2 text-center text-[#000000] text-sm md:text-base w-full truncate whitespace-nowrap">
+                    <h2 className="px-2 text-center text-[#000000] text-sm md:text-base w-full truncate whitespace-nowrap group-hover:text-primary">
                         {title}
                     </h2>
                 </div>
