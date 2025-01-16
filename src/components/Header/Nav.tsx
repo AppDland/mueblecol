@@ -3,6 +3,9 @@ import Burger from "./Burger";
 import classNames from "classnames";
 import useLargeScreen from "@/custom/useLargeScreen";
 import Link from "next/link";
+import { LiaCartPlusSolid } from "react-icons/lia";
+import { title } from "process";
+import { BsFillCartPlusFill } from "react-icons/bs";
 
 const routes = [
     {
@@ -12,6 +15,11 @@ const routes = [
     {
         title: "Contacto",
         href: "/contacto"
+    },
+    {
+        title: "Carrito",
+        icon: <BsFillCartPlusFill />,
+        href: "/kart"
     }
 ];
 
@@ -69,9 +77,9 @@ const NormalNav = () => {
             <ul className="flex space-x-4">
                 {
                     routes.map(({ title, href }, index) => (
-                        <li key={index} className='text-white'>
+                        <li key={index} className='text-white px-2'>
                             <Link href={href}>
-                                {title}
+                                {title === 'Carrito' ? <BsFillCartPlusFill /> : title}
                             </Link>
                         </li>
                     ))
