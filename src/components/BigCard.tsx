@@ -9,8 +9,11 @@ const BigCard = (item: ItemInt) => {
 
     return (
         <div
-            className="flex place-self-center w-11/12 rounded-lg shadow-lg bg-gray-100 m-8 overflow-hidden"
-            style={{ maxWidth: '500px' }}
+            className="flex place-self-center w-11/12 rounded-lg bg-gray-100 m-8 overflow-hidden"
+            style={{
+                maxWidth: '500px',
+                boxShadow: '0px 0px 15px 2px rgba(0,0,0,0.1)'
+            }}
         >
             <div className="w-2/5 h-56 sm:h-72 relative">
                 <Image

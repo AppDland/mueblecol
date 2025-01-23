@@ -9,7 +9,12 @@ const Footer = () => {
     ]
 
     return (
-        <footer className="flex flex-col py-14 items-center">
+        <footer
+            className="flex flex-col py-14 items-center"
+            style={{
+                background: 'linear-gradient(to bottom, #f3f4f6, white)',
+            }}
+        >
             <div className="flex justify-evenly w-full max-w-96 mb-6">
                 {
                     social.map((item, index) => (

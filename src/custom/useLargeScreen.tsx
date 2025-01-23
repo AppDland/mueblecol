@@ -1,11 +1,16 @@
 'use client';
+import { useLoading } from "@/context/Loading.context";
 import { useEffect, useState } from "react";
 
 const useLargeScreen = (maxWidth: number) => {
-    const [isLargeScreen, setIsLargeScreen] = useState(false);
+    const [isLargeScreen, setIsLargeScreen] = useState<boolean>();
+    const { setLoading } = useLoading();
 
     useEffect(() => {
+        setLoading(true);
+
         const handleResize = () => {
+            console.log('rezise', window.innerWidth, maxWidth)
             setIsLargeScreen(window.innerWidth > maxWidth);
         };
 
@@ -16,6 +21,12 @@ const useLargeScreen = (maxWidth: number) => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    useEffect(() => {
+        if (isLargeScreen !== undefined) {
+            setLoading(false);
+        }
+    }, [isLargeScreen]);
 
     return isLargeScreen;
 }

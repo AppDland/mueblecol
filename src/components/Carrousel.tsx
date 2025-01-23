@@ -24,7 +24,6 @@ const Carrousel = ({ children, autoSlide }: CarrouselInt) => {
     const [interval, setInterval] = useState<NodeJS.Timeout>();
     const isLargeScreen = useLargeScreen(640);
 
-
     const updateButtonsVisibility = () => {
         if (carrouselRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } = carrouselRef.current;

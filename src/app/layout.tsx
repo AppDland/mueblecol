@@ -4,8 +4,8 @@ import ThemeToggle from '@/components/ThemeToggle';
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from '@/components/Header/Header';
-import Imperdible from '@/modules/Imperdible';
 import Footer from '@/components/Footer';
+import { LoadingProvider } from '@/context/Loading.context';
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -34,20 +34,23 @@ export default function RootLayout({
         document.documentElement.setAttribute('data-theme', 'light');
     }, []);
 
+
     return (
         <html lang="es" suppressHydrationWarning>
             <head>
                 <title>Mueblecol</title>
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable} ${cookieRegular.variable} antialiased min-h-screen bg-base-100 text-base-content`}>
-                <Header />
-                <div className="fixed top-4 right-4 z-50">
-                    <ThemeToggle />
-                </div>
-                <main>
-                    {children}
-                </main>
-                <Footer />
+                <LoadingProvider>
+                    <Header />
+                    <div className="fixed top-4 right-4 z-50">
+                        <ThemeToggle />
+                    </div>
+                    <main>
+                        {children}
+                    </main>
+                    <Footer />
+                </LoadingProvider>
             </body>
         </html>
     );

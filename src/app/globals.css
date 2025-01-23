@@ -4,54 +4,108 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: theme('colors.white');
-    --foreground: theme('colors.gray.900');
-  }
+    :root {
+        --background: theme('colors.white');
+        --foreground: theme('colors.gray.900');
+    }
 
-  [data-theme='dark'] {
-    --background: theme('colors.gray.900');
-    --foreground: theme('colors.gray.100');
-  }
+    [data-theme='dark'] {
+        --background: theme('colors.gray.900');
+        --foreground: theme('colors.gray.100');
+    }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-geist-sans);
+    color: var(--foreground);
+    background: var(--background);
+    font-family: var(--font-geist-sans);
 }
 
 img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 /* Ocultar las barras de desplazamiento de manera visible pero mantener su funcionalidad */
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-} 
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
 
 .font-cookie {
     font-family: var(--font-cookie);
 }
 
 @layer components {
-  .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white transition-colors;
-  }
-  
-  .btn-secondary {
-    @apply bg-secondary hover:bg-secondary-dark text-white transition-colors;
-  }
-  
-  .card {
-    @apply bg-base-100 border border-base-300 rounded-lg shadow-sm hover:shadow-md transition-shadow;
-  }
+    .btn-primary {
+        @apply bg-primary hover:bg-primary-dark text-white transition-colors;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary hover:bg-secondary-dark text-white transition-colors;
+    }
+
+    .card {
+        @apply bg-base-100 border border-base-300 rounded-lg shadow-sm hover:shadow-md transition-shadow;
+    }
+}
+
+@layer utilities {
+    .intro-class-for-animation {
+        animation: none;
+        opacity: 0.6;
+    }
+
+    .intro-out-animation {
+        animation: intro-out-animation 1s ease-in-out;
+    }
+
+    .intro-out-animation-second {
+        animation: intro-out-animation-second 1s ease-in-out;
+    }
+
+    @media (min-width: 768px) {
+        .md\:intro-class-for-animation {
+            /* animation: intro-animation 1s ease-in-out; */
+            opacity: 0.8;
+        }
+    }
+
+    @keyframes intro-animation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0.6;
+        }
+    }
+
+    @keyframes intro-out-animation {
+        0% {
+            opacity: 0.6;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes intro-out-animation-second {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
 }

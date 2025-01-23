@@ -1,11 +1,14 @@
 import CategoryButton from '@/components/CategoryButton';
 import Items from '../data/items.json';
 import Carrousel from '@/components/Carrousel';
+import Title from '@/components/Title';
+import Section from '@/components/Section';
 
 const Categories = () => {
 
     return (
-        <div className="w-full my-4">
+        <Section className='bg-white'>
+            <Title>Nuestras Categorías</Title>
             <Carrousel autoSlide={{ interval: 5000 }} >
                 {
                     Items.zones.map((cat, index) => (
@@ -18,9 +21,8 @@ const Categories = () => {
                 }
             </Carrousel>
             <br />
-            <br />
-            <p className='text-center max-w-80 sm:max-w-full place-self-center'>Encuentra el mueble ideal para cada zona de tu hogar</p>
-        </div>
+            <p className='text-center max-w-80 sm:max-w-full place-self-center text-sm sm:text-base'>Encuentra el mueble ideal para cada zona de tu hogar</p>
+        </Section>
     )
 }
 

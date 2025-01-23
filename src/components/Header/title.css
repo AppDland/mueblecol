@@ -1,24 +1,29 @@
-.mueblecol-header-title-0{
+.mueblecol-header-title-0 {
     scale: 0;
-    animation: title-0 15s infinite;
+    animation: title-0 10s infinite;
 }
 
-.mueblecol-header-title-1{
+.mueblecol-header-title-1 {
     width: 0px;
     overflow: hidden;
-    animation: title-1 15s infinite;
+    animation: title-1 10s infinite;
 }
 
 @keyframes title-0 {
-    0% {
+
+    0%,
+    3% {
         scale: 0;
     }
-    4% {
+
+    8% {
         scale: 1;
     }
-    95%{
+
+    95% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
         scale: 1;
@@ -26,16 +31,19 @@
 }
 
 @keyframes title-1 {
-    5% {
+    9% {
         width: 0;
     }
-    15% {
+
+    20% {
         width: 100%;
     }
+
     95% {
         width: 100%;
         opacity: 1;
     }
+
     100% {
         width: 100%;
         opacity: 0;

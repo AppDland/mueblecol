@@ -1,4 +1,5 @@
 import BoxContent from "@/components/BoxContent";
+import Section from "@/components/Section";
 import SimpleCard from "@/components/SimpleCard";
 import Title from "@/components/Title";
 import Items from "@/data/items.json";
@@ -6,11 +7,11 @@ import Items from "@/data/items.json";
 const Destacados = () => {
 
     return (
-        <div className="py-5 my-8 bg-gray-200">
+        <Section className="bg-gray-200">
             <Title>Productos Destacados</Title>
             <BoxContent>
                 {
-                    Items.items.sort(() => Math.random() - 0.5).slice(0, 20).map((item, index) => (
+                    Items.items.sort(() => Math.random() - 0.5).slice(0, 15).map((item, index) => (
                         <SimpleCard
                             title={item.publicName}
                             url={item.name}
@@ -24,7 +25,7 @@ const Destacados = () => {
                     ))
                 }
             </BoxContent>
-        </div>
+        </Section>
     )
 }
 

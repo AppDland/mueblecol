@@ -8,14 +8,14 @@ import Zones from "@/modules/Zones";
 const Home = () => {
 
     return (
-        <>
+        <div className="bg-gray-100">
             <Intro />
             <Categories />
             <Destacados />
             <Best />
             <Zones />
             <Imperdible />
-        </>
+        </div>
     )
 }
 
