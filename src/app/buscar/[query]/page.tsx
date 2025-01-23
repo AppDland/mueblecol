@@ -4,6 +4,7 @@ import Card from '@/components/Card';
 import { ItemInt } from '@/interfaces/item';
 import Filters from '@/components/filters/Filters';
 import { useParams } from 'next/navigation';
+import classNames from 'classnames';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -17,38 +18,54 @@ export default function SearchResults() {
     // const paginatedResults = results.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
     return (
-        <main className="min-h-screen pt-5">
-            <div className="flex flex-col relative w-full max-w-7xl mx-auto px-4">
-                <div className="flex gap-8">
-                    <Filters
-                        results={results}
-                        setResults={setResults}
-                        setCurrentPage={setCurrentPage}
-                    />
+        <div className='grid grid-cols-[auto_1fr_1fr] grid-rows-[auto_1fr] gap-3 max-w-7xl place-self-center'>
+            <div
+                className={classNames(
+                    'col-span-1',
+                    'row-span-1 md:row-span-2',
+                    'order-2 md:order-none'
+                )}
+            >
+                <Filters
+                    results={results}
+                    setResults={setResults}
+                    setCurrentPage={setCurrentPage}
+                />
+            </div>
+            <p className={classNames(
+                'text-lg mb-2',
+                'col-span-3 md:col-span-2',
+                'row-span-1',
+                'order-1 md:order-none',
+            )}
+            >
+                {results.length} resultados para
+                <b> {query.replaceAll('-', ' ')}</b>
+            </p>
+            <div className={classNames(
+                "col-span-3 md:col-span-2",
+                "row-span-1",
+                "order-3 md:order-none",
+            )}>
+                <div className={classNames(
+                    'flex flex-nowrap md:flex-wrap flex-col md:flex-row w-fit gap-2'
+                )}>
+                    {
+                        results.map((item: ItemInt, index) => (
+                            <Card item={item} key={index} />
+                        ))
+                    }
+                </div>
 
-                    <div className="flex-1">
-                        <p className='text-lg mb-2'>
-                            {results.length} resultados para
-                            <b> {query.replaceAll('-', ' ')}</b>
+                {
+                    results.length === 0 && (
+                        <p className="text-center text-gray-500 my-8">
+                            No se encontraron resultados para tu búsqueda
                         </p>
+                    )
+                }
 
-                        <div className="flex flex-wrap">
-                            {
-                                results.map((item: ItemInt, index) => (
-                                    <Card item={item} key={index} />
-                                ))
-                            }
-                        </div>
-
-                        {
-                            results.length === 0 && (
-                                <p className="text-center text-gray-500 my-8">
-                                    No se encontraron resultados para tu búsqueda
-                                </p>
-                            )
-                        }
-
-                        {/* {
+                {/* {
                             totalPages > 1 && (
                                 <div className="flex justify-center gap-2 my-8">
                                     {
@@ -68,9 +85,7 @@ export default function SearchResults() {
                                 </div>
                             )
                         } */}
-                    </div>
-                </div>
             </div>
-        </main>
+        </div>
     );
 }

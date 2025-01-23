@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ItemInt } from '@/interfaces/item';
 import Image from 'next/image';
 import { money } from '@/functions/money';
+import classNames from 'classnames';
 
 interface CardProps {
     item: ItemInt;
@@ -11,65 +12,56 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ item }) => {
     const itemSlug = item.name.replaceAll(' ', '-');
     const mainImage = item.media[0]?.photos[0];
-    const isS3Image = mainImage?.startsWith('https://');
     // const availableColors = item.media.length;
 
     if (!mainImage) return null;
 
     return (
-        <Link
-            href={`/articulos/${itemSlug}`}
-            className="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow relative border border-[#272727] w-44 sm:w-52 m-1 sm:m-3"
-        >
-
-            {/* Product Name Header */}
-            <div className="bg-gray-900 text-white p-3">
-                <h3 className="font-medium text-sm truncate">
-                    {item.publicName}
-                </h3>
-            </div>
-
-            {/* Product Image */}
-            <div className="relative pb-[100%]">
-                {
-                    isS3Image && (
-                        <Image
-                            src={mainImage}
-                            alt={item.publicName}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            blurDataURL='/images/fallback.png'
-                        />
-                    )
-                }
-            </div>
-            {/* Price and Colors Section */}
-            <div className="p-3 space-y-2">
-                {/* <div className="mt-2"> */}
-                {/* {item.offer && (
-                        <p className="text-sm text-[#272727] line-through opacity-70 -mb-1">
-                            {money(item.price)}
-                        </p>
-                    )} */}
-                {
-                    item.finan && (
-                        item.finan.valor ? (
-                            <p className='text-sm sm:text-base'>{item.finan.cuotas} cuotas de {money(item.finan.valor)}</p>
-                        ) : (
-                            <p className='text-sm sm:text-base'>Hasta en {item.finan.cuotas} cuotas</p>
+        <div className='border-b md:border-none md:rounded-lg border-gray-200'>
+            <Link
+                href={`/articulos/${itemSlug}`}
+                className={classNames(
+                    "bg-white flex px-5 sm:flex sm:flex-col py-6",
+                    "w-full md:w-64",
+                    "h-40 sm:h-80",
+                )}
+            >
+                <div className={classNames(
+                    "overflow-hidden relative rounded-lg",
+                    "w-2/5 sm:w-full",
+                    "sm:h-3/5"
+                )}>
+                    <Image
+                        src={mainImage}
+                        alt={item.publicName}
+                        fill
+                        className="object-cover"
+                        blurDataURL='/images/fallback.png'
+                    />
+                </div>
+                <div className={classNames(
+                    'px-3',
+                    'w-3/5 sm:w-full',
+                    'sm:h-2/5',
+                )}>
+                    <h3 className="font-medium text-sm truncate-2-lines mb-3 md:mt-3">
+                        {item.publicName}
+                    </h3>
+                    {
+                        item.finan && (
+                            item.finan.valor ? (
+                                <p className='text-xs sm:text-sm italic'>{item.finan.cuotas} cuotas de {money(item.finan.valor)}</p>
+                            ) : (
+                                <p className='text-xs sm:text-sm italic'>Hasta en {item.finan.cuotas} cuotas</p>
+                            )
                         )
-                    )
-                }
-                <p className="text-lg sm:text-xl">
-                    {money(item.offer ? item.offer : item.price)}
-                </p>
-                {/* </div> */}
-                {/* <div className="text-sm text-gray-600">
-                    {availableColors} {availableColors === 1 ? 'Color Disponible' : 'Colores Disponibles'}
-                </div> */}
-            </div>
-        </Link>
+                    }
+                    <p className="text-lg sm:text-xl my-3">
+                        {money(item.offer ? item.offer : item.price)}
+                    </p>
+                </div>
+            </Link>
+        </div>
     );
 };
 

@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Title from "@/components/Title";
 import Items from "@/data/items.json";
 // import { ItemInt } from "@/interfaces/item";
 // import SimpleCard from "@/components/SimpleCard";
@@ -22,7 +21,6 @@ const Offers = () => {
     return (
         <section className="p-5">
             <div className="bg-[#F8F8F8] rounded-xl p-5 w-full max-w-7xl box-border">
-                <Title title="Ofertas" />
                 <div className="flex flex-wrap">
                     {/* {offerItems.map((item, index) => (
                         <SimpleCard

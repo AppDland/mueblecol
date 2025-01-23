@@ -4,7 +4,7 @@ import Items from '@/data/items.json';
 import ImageViewer from '@/components/ImageViewer/ImageViewer';
 import { money } from '@/functions/money';
 import { ItemInt } from '@/interfaces/item';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { findSimilarItems } from '@/functions/search';
 import Card from '@/components/Card';
 // import ColorPicker from '@/components/ColorPicker';
@@ -29,13 +29,6 @@ const Item = () => {
         //     setSelectedColor(currentItem.media[0]);
         // }
     }, [item]);
-
-    useEffect(() => {
-        if (currentItem) {
-
-            console.log(currentItem.media[0].photos)
-        }
-    }, [currentItem])
 
     return (
         currentItem ? (

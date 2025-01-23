@@ -10,7 +10,6 @@ const useLargeScreen = (maxWidth: number) => {
         setLoading(true);
 
         const handleResize = () => {
-            console.log('rezise', window.innerWidth, maxWidth)
             setIsLargeScreen(window.innerWidth > maxWidth);
         };
 

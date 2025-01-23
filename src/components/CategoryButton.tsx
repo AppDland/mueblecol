@@ -18,10 +18,10 @@ const CategoryButton = ({ name, imagePath }: CategoryButtonProps) => {
             <Image
                 src={imagePath}
                 alt={name}
-                layout="fill"
-                objectFit="cover"
-                className="absolute inset-0 duration-200 group-hover:scale-150 "
+                className="absolute inset-0 duration-200 group-hover:scale-150 object-cover"
+                sizes='100%'
                 style={{ filter: 'blur(0.5px)' }}
+                fill
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 mix-blend-multiply"></div>
             <h3 className="relative z-10 text-center text-white  sm:text-3xl font-cookie font-extralight">

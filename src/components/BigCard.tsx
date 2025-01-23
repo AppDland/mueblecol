@@ -21,6 +21,7 @@ const BigCard = (item: ItemInt) => {
                     fill
                     alt={item.publicName}
                     className="object-cover"
+                    sizes="100%"
                 />
             </div>
             <div className="w-3/5 p-4 flex justify-center flex-col">

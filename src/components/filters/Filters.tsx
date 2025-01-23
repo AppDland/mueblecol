@@ -11,6 +11,7 @@ import { ItemInt } from '@/interfaces/item';
 import { useParams } from 'next/navigation';
 import useLargeScreen from '@/custom/useLargeScreen';
 import classNames from 'classnames';
+import FilterIcon from '../FilterIcon';
 
 
 interface FiltersProps {
@@ -100,8 +101,6 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage }
         }
     }, [results, filters.materials]);
 
-    const isLargeScreen = useLargeScreen(1024);
-
     const [showFilters, setShowFilters] = useState(false);
 
     const filterRef = useRef<HTMLDivElement>(null);
@@ -127,20 +126,22 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage }
     }, []);
     return (
         <>
-            {
-                !isLargeScreen && (
-                    <div
-                        ref={buttonRef}
-                        onClick={() => setShowFilters(!showFilters)}
-                        className='absolute top-0 right-0 p-2 bg-white border rounded-lg cursor-pointer mx-3'
-                    >
-                        {showFilters ? 'close Filter' : 'open Filter'}
-                    </div>
-                )
-            }
+            <div
+                ref={buttonRef}
+                onClick={() => setShowFilters(!showFilters)}
+                className={classNames(
+                    'p-2 cursor-pointer mx-3',
+                    'block md:hidden',
+                )}
+            >
+                <FilterIcon />
+            </div>
             <div
                 ref={filterRef}
-                className={classNames("w-80 lg:w-64 p-4 bg-white border rounded-lg z-10", isLargeScreen || showFilters ? 'block' : 'hidden', showFilters && !isLargeScreen ? 'absolute top-14 right-3' : 'relative')}
+                className={classNames(
+                    "w-56 lg:w-64 p-4 bg-white border rounded-lg z-10",
+                    showFilters ? 'absolute top-14 right-3' : 'relative hidden md:block'
+                )}
             >
                 <SortFilter currentFilters={filters} onFilterChange={setFilters} />
                 <RoomFilter currentFilters={filters} onFilterChange={setFilters} />

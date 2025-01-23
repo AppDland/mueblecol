@@ -44,6 +44,16 @@ img {
     font-family: var(--font-cookie);
 }
 
+.truncate-2-lines {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 @layer components {
     .btn-primary {
         @apply bg-primary hover:bg-primary-dark text-white transition-colors;
@@ -55,57 +65,5 @@ img {
 
     .card {
         @apply bg-base-100 border border-base-300 rounded-lg shadow-sm hover:shadow-md transition-shadow;
-    }
-}
-
-@layer utilities {
-    .intro-class-for-animation {
-        animation: none;
-        opacity: 0.6;
-    }
-
-    .intro-out-animation {
-        animation: intro-out-animation 1s ease-in-out;
-    }
-
-    .intro-out-animation-second {
-        animation: intro-out-animation-second 1s ease-in-out;
-    }
-
-    @media (min-width: 768px) {
-        .md\:intro-class-for-animation {
-            /* animation: intro-animation 1s ease-in-out; */
-            opacity: 0.8;
-        }
-    }
-
-    @keyframes intro-animation {
-        0% {
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 0.6;
-        }
-    }
-
-    @keyframes intro-out-animation {
-        0% {
-            opacity: 0.6;
-        }
-
-        100% {
-            opacity: 0;
-        }
-    }
-
-    @keyframes intro-out-animation-second {
-        0% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 0;
-        }
     }
 }
