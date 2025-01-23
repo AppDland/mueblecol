@@ -8,6 +8,7 @@ export default function ZoneLayout({
     return (
         <div>
             {children}
+            <h3 className="text-center mt-16 text-lg font-bold">Encuentra más zonas</h3>
             <Categories />
         </div>
     );

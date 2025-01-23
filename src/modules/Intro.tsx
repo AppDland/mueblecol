@@ -13,7 +13,7 @@ const Background = ({ children }: { children: React.ReactNode }) => (
     <div
         className="relative w-full flex items-center justify-center select-none justify-self-center"
         style={{
-            background: 'linear-gradient(to bottom, #005353, #2E9896, #005353)',
+            background: 'linear-gradient(to bottom, #005353, #2E9896)',
             height: '20vh'
         }}
     >

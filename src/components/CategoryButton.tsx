@@ -13,7 +13,7 @@ const CategoryButton = ({ name, imagePath }: CategoryButtonProps) => {
     return (
         <Link
             href={`/zonas/${name}`}
-            className='relative place-self-center flex justify-center m-1 md:m-5 items-center cursor-pointer select-none w-28 sm:w-48 md:w-60 h-36 sm:h-48 rounded-xl overflow-hidden group bg-accent'
+            className='relative place-self-center flex justify-center m-2 sm:m-5 items-center cursor-pointer select-none w-28 sm:w-48 h-36 sm:h-52 rounded-xl overflow-hidden group bg-accent'
         >
             <Image
                 src={imagePath}

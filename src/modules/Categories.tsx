@@ -6,7 +6,7 @@ const Categories = () => {
 
     return (
         <div className="w-full my-4">
-            <Carrousel>
+            <Carrousel autoSlide={{ interval: 5000 }} >
                 {
                     Items.zones.map((cat, index) => (
                         <CategoryButton

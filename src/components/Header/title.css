@@ -1,0 +1,43 @@
+.mueblecol-header-title-0{
+    scale: 0;
+    animation: title-0 15s infinite;
+}
+
+.mueblecol-header-title-1{
+    width: 0px;
+    overflow: hidden;
+    animation: title-1 15s infinite;
+}
+
+@keyframes title-0 {
+    0% {
+        scale: 0;
+    }
+    4% {
+        scale: 1;
+    }
+    95%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        scale: 1;
+    }
+}
+
+@keyframes title-1 {
+    5% {
+        width: 0;
+    }
+    15% {
+        width: 100%;
+    }
+    95% {
+        width: 100%;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}

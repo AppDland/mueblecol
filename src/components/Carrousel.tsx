@@ -1,6 +1,6 @@
 'use client';
 import classNames from 'classnames';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Arrow from './Arrow';
 import "./styles/arrowbutton.css";
 import useLargeScreen from '@/custom/useLargeScreen';
@@ -13,43 +13,35 @@ interface AutoSlideInt {
 interface CarrouselInt {
     children: React.ReactNode[];
     autoSlide?: AutoSlideInt;
-    itemsPerPage?: number;
-    unlimitedItems?: boolean;
 }
 
-const Carrousel = ({ children, autoSlide, itemsPerPage = 3, unlimitedItems = false }: CarrouselInt) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+const Carrousel = ({ children, autoSlide }: CarrouselInt) => {
+    const carrouselRef = useRef<HTMLDivElement>(null);
     const [showLeftButton, setShowLeftButton] = useState(false);
     const [showRightButton, setShowRightButton] = useState(true);
+
     const [canAutoSlide, setCanAutoSlide] = useState(true);
     const [interval, setInterval] = useState<NodeJS.Timeout>();
+    const isLargeScreen = useLargeScreen(640);
+
+
+    const updateButtonsVisibility = () => {
+        if (carrouselRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = carrouselRef.current;
+            setShowLeftButton(scrollLeft > 0);
+            setShowRightButton(scrollLeft + clientWidth < scrollWidth);
+        }
+    };
 
     const next = () => {
-        const nextNumber = currentIndex + itemsPerPage;
-        const rest = children.length - nextNumber;
-        const nextIndex = rest < itemsPerPage ? currentIndex + rest : nextNumber;
-        const canNextIndex = nextIndex > children.length - 1;
-        const canNextButton = nextIndex + itemsPerPage > children.length - 1;
-        if (!canNextIndex) {
-            setCurrentIndex(nextIndex);
-            setShowLeftButton(true);
-        }
-        if (canNextButton) {
-            setShowRightButton(false);
+        if (carrouselRef.current) {
+            carrouselRef.current.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
         }
     };
 
     const prev = () => {
-        const prevNumber = currentIndex - itemsPerPage;
-        const prevIndex = prevNumber < 0 ? 0 : prevNumber;
-        const canPrevIndex = prevIndex + 1 < 0;
-        const canPrevButton = prevIndex - 1 < 0;
-        if (!canPrevIndex) {
-            setCurrentIndex(prevIndex);
-            setShowRightButton(true);
-        }
-        if (canPrevButton) {
-            setShowLeftButton(false);
+        if (carrouselRef.current) {
+            carrouselRef.current.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
         }
     };
 
@@ -69,38 +61,48 @@ const Carrousel = ({ children, autoSlide, itemsPerPage = 3, unlimitedItems = fal
     }, [canAutoSlide, interval]);
 
     useEffect(() => {
-        clearTimeout(interval);
-    }, [itemsPerPage]);
+        updateButtonsVisibility();
+        if (carrouselRef.current) {
+            carrouselRef.current.addEventListener('scroll', updateButtonsVisibility);
+        }
+        return () => {
+            if (carrouselRef.current) {
+                carrouselRef.current.removeEventListener('scroll', updateButtonsVisibility);
+            }
+        };
+    }, []);
 
     return (
-        <Swipe
-            onLeftSwipe={() => { setCanAutoSlide(false); next() }}
-            onRightSwipe={() => { setCanAutoSlide(false); prev() }}
-        >
-            <div
-                className="relative p-4 flex items-center place-self-center sm:overflow-hidden w-full"
-                onMouseDown={e => e.preventDefault()}
-            >
-                {
-                    showLeftButton && <CarrouselButton onClick={() => { setCanAutoSlide(false); prev() }} />
-                }
+        <div className='relative flex items-center'>
+            {
+                showLeftButton && isLargeScreen &&
+                <CarrouselButton
+                    onClick={() => { setCanAutoSlide(false); prev() }}
+                />
+            }
+
+            <Swipe className='p-4 flex mx-0 sm:mx-8' ref={carrouselRef}>
                 <div
                     className="flex transition-transform duration-500 ease-in-out w-full"
-                    style={{ transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` }}
                 >
                     {
                         children.map((item, index) => (
-                            <div key={index} className="flex-none" >
+                            <div key={index} className="flex-none">
                                 {item}
                             </div>
                         ))
                     }
                 </div>
-                {
-                    showRightButton && <CarrouselButton onClick={() => { setCanAutoSlide(false); next() }} right />
-                }
-            </div>
-        </Swipe>
+            </Swipe>
+            {
+                showRightButton && isLargeScreen &&
+                <CarrouselButton
+                    onClick={() => { setCanAutoSlide(false); next() }}
+                    right
+                />
+            }
+
+        </div>
     );
 };
 
@@ -108,16 +110,17 @@ const CarrouselButton = ({ onClick, right }: { onClick: () => void, right?: bool
     <div
         onMouseDown={e => e.preventDefault()}
         onClick={onClick}
-        className={classNames("absolute bg-white mx-2 w-10 sm:w-14 h-10 sm:h-14 z-10 cursor-pointer", right ? "right-0" : "left-0", right && "rotate-180", "arrow-button-shadow")}
-        style={{ borderRadius: "100%" }}
+        className={classNames("absolute bg-white bg-opacity-70 backdrop-blur-md mx-2 w-10 sm:w-14 h-10 sm:h-14 z-20 group cursor-pointer", right ? "right-0" : "left-0", right && "rotate-180", "arrow-button-shadow")}
         typeof='button'
+        style={{ borderRadius: "100%" }}
     >
         <div
-            className='w-fit absolute'
+            className='w-fit absolute group-hover:scale-110'
             style={{ top: '50%', left: 'calc(50% - 2px)', transform: 'translate(-50%, -50%)' }}
         >
             <Arrow />
         </div>
+
     </div>
 );
 
