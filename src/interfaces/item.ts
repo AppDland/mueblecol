@@ -12,12 +12,12 @@ export interface AttributeValue {
 }
 
 export interface ItemInt {
-    // id: number;
+    id: number;
     name: string;
     publicName: string;
     price: number;
     offer: number | null;
-    // stock: number;
+    stock: number;
     description: string;
     media: ItemMedia[];
     attributes?: AttributeValue[];

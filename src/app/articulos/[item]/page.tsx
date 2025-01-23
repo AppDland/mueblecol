@@ -10,6 +10,9 @@ import Card from '@/components/Card';
 import ColorPicker from '@/components/ColorPicker';
 import { useRouter } from 'next/navigation';
 import FinancingInfo from '@/components/FinancingInfo';
+import { KartProvider } from '@/context/kart.context';
+import addToKart from '@/custom/useKart';
+
 
 const Item = () => {
     const params = useParams();
@@ -33,7 +36,6 @@ const Item = () => {
 
     const similarItems = findSimilarItems(currentItem);
     const photos = selectedColor?.photos.filter(photo => photo.startsWith('https://'));
-
 
     return (
         <div className='flex flex-col max-w-7xl mx-auto px-4 py-8 bg-neutral-100 border border-neutral-200 rounded-lg'>
@@ -74,7 +76,6 @@ const Item = () => {
             }
         </div>
     );
-
 };
 
 const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selectedColor: ItemMedia, onColorSelect: (color: ItemMedia) => void }) => {
@@ -85,6 +86,11 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
         //abrir una nueva ventana que dirige a una ruta de whatsapp
         const Message = `Hola! Quiero comprar ${item.publicName}`;
         window.open('https://wa.me/' + process.env.NEXT_PUBLIC_WHATSAPP + '?text=' + Message, '_blank');
+    };
+
+    const handleAddToCart = () => {
+        addToKart(item);
+        console.log('Añadido al carrito');
     };
 
     return (
@@ -133,9 +139,16 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
                 <div>
                     <button
                         onClick={handlePurchase}
-                        className="w-full bg-secondary hover:bg-secondary-focus text-secondary-content font-bold py-4 rounded-lg transition-all duration-200"
+                        className="w-full my-2 bg-secondary hover:bg-secondary-focus text-secondary-content font-bold py-4 rounded-lg transition-all duration-200"
                     >
                         Comprar
+                    </button>
+                    {/* agrega un articulo seleccionado al carrito */}
+                    <button
+                        onClick={() => handleAddToCart()}
+                        className="w-full my-2 bg-secondary hover:bg-secondary-focus text-secondary-content font-bold py-4 rounded-lg transition-all duration-200"
+                    >
+                        Agregar al carrito
                     </button>
                 </div>
             </div>
