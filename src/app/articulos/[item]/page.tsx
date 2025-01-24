@@ -10,8 +10,7 @@ import Card from '@/components/Card';
 import ColorPicker from '@/components/ColorPicker';
 import { useRouter } from 'next/navigation';
 import FinancingInfo from '@/components/FinancingInfo';
-import { KartProvider } from '@/context/kart.context';
-import addToKart from '@/custom/useKart';
+import { useKart } from '@/app/context/KartContext';
 
 
 const Item = () => {
@@ -80,6 +79,7 @@ const Item = () => {
 
 const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selectedColor: ItemMedia, onColorSelect: (color: ItemMedia) => void }) => {
     // const [amount, setAmount] = useState(1);
+    const { kart, setKart } = useKart();
     const router = useRouter();
     const handlePurchase = () => {
         router.push('/gracias');
@@ -88,8 +88,8 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
         window.open('https://wa.me/' + process.env.NEXT_PUBLIC_WHATSAPP + '?text=' + Message, '_blank');
     };
 
-    const handleAddToCart = () => {
-        addToKart(item);
+    const handleAddToKart = () => {
+        setKart([...kart, item]);
         console.log('Añadido al carrito');
     };
 
@@ -145,7 +145,7 @@ const ItemInfo = ({ item, selectedColor, onColorSelect }: { item: ItemInt, selec
                     </button>
                     {/* agrega un articulo seleccionado al carrito */}
                     <button
-                        onClick={() => handleAddToCart()}
+                        onClick={() => handleAddToKart()}
                         className="w-full my-2 bg-secondary hover:bg-secondary-focus text-secondary-content font-bold py-4 rounded-lg transition-all duration-200"
                     >
                         Agregar al carrito

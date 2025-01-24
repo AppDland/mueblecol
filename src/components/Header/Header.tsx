@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Finder from '../Finder';
 import useLargeScreen from '@/custom/useLargeScreen';
 import Nav from './Nav';
+import { BsFillCartPlusFill } from 'react-icons/bs';
 
 const Header = () => {
 
@@ -23,6 +24,11 @@ const Header = () => {
             </Link>
             <Finder />
             <Nav />
+            <Link href="/kart">
+                <button className='absolute px-1 right-4 top-4 text-3xl text-white'>
+                    <BsFillCartPlusFill />
+                </button>
+            </Link>
         </header>
     );
 };

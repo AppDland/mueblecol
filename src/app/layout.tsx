@@ -4,9 +4,8 @@ import ThemeToggle from '@/components/ThemeToggle';
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from '@/components/Header/Header';
-import Imperdible from '@/modules/Imperdible';
 import Footer from '@/components/Footer';
-import { KartProvider } from '@/context/kart.context';
+import { KartProvider } from './context/KartContext';
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",

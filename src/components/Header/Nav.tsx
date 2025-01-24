@@ -79,7 +79,14 @@ const NormalNav = () => {
                     routes.map(({ title, href }, index) => (
                         <li key={index} className='text-white px-2'>
                             <Link href={href}>
-                                {title === 'Carrito' ? <BsFillCartPlusFill /> : title}
+                                {title === 'Carrito' ?
+                                    <Link href="/kart">
+                                        <button className='text-2xl text-white'>
+                                            <BsFillCartPlusFill />
+                                        </button>
+                                    </Link> :
+                                    title
+                                }
                             </Link>
                         </li>
                     ))

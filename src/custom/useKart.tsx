@@ -1,11 +1,25 @@
 import { ItemInt } from "@/interfaces/item";
 import { useState } from "react";
 
-const addToKart = (product: ItemInt) => {
+const useCartHook = (item: ItemInt) => {
 
     const [kart, setKart] = useState<ItemInt[]>([]);
 
-    setKart([...kart, product]);
+    const addItem = () => {
+
+        const index = kart.findIndex((i) => i.id === item.id);
+
+        if (index === -1) {
+            setKart([...kart, item]);
+        } else {
+            const newKart = [...kart];
+            newKart[index].stock += 1;
+            setKart(newKart);
+        }
+    };
+
+    return { kart, addItem };
+
 };
 
-export default addToKart;
+export default useCartHook;
