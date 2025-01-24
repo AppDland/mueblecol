@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
                 href={`/articulos/${itemSlug}`}
                 className={classNames(
                     "bg-white flex px-5 sm:flex sm:flex-col py-6",
-                    "w-full sm:w-60",
+                    "w-full sm:w-48",
                     "h-40 sm:h-80",
                 )}
             >
@@ -50,9 +50,9 @@ const Card: React.FC<CardProps> = ({ item }) => {
                     {
                         item.finan && (
                             item.finan.valor ? (
-                                <p className='text-xs sm:text-sm italic'>{item.finan.cuotas} cuotas de {money(item.finan.valor)}</p>
+                                <p className='text-xs sm:text-sm italic truncate'>{item.finan.cuotas} cuotas de {money(item.finan.valor)}</p>
                             ) : (
-                                <p className='text-xs sm:text-sm italic'>Hasta en {item.finan.cuotas} cuotas</p>
+                                <p className='text-xs sm:text-sm italic truncate'>Hasta en {item.finan.cuotas} cuotas</p>
                             )
                         )
                     }

@@ -30,6 +30,8 @@ export default function SearchResults() {
                     results={results}
                     setResults={setResults}
                     setCurrentPage={setCurrentPage}
+                    basedOn='search'
+                    searchWord={query}
                 />
             </div>
             <p className={classNames(

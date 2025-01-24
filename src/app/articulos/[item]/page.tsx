@@ -6,7 +6,6 @@ import { money } from '@/functions/money';
 import { ItemInt } from '@/interfaces/item';
 import { useEffect, useState } from 'react';
 import { findSimilarItems } from '@/functions/search';
-import Card from '@/components/Card';
 // import ColorPicker from '@/components/ColorPicker';
 import { useRouter } from 'next/navigation';
 import FinancingInfo from '@/components/FinancingInfo';

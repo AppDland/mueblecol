@@ -39,6 +39,7 @@ export default function RootLayout({
         <html lang="es" suppressHydrationWarning>
             <head>
                 <title>Mueblecol</title>
+                <meta name="description" content="Gran variedad de muebles calidad-precio, financiación propia para facilita..." />
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable} ${cookieRegular.variable} antialiased min-h-screen bg-base-100 text-base-content`}>
                 <LoadingProvider>

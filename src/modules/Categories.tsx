@@ -4,11 +4,11 @@ import Carrousel from '@/components/Carrousel';
 import Title from '@/components/Title';
 import Section from '@/components/Section';
 
-const Categories = () => {
+const Categories = ({ showTitle = true }: { showTitle?: boolean }) => {
 
     return (
         <Section className='bg-white'>
-            <Title>Categorías</Title>
+            {showTitle && <Title>Categorías</Title>}
             <Carrousel>
                 {
                     Items.zones.map((cat, index) => (

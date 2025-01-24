@@ -1,6 +1,5 @@
 .intro-class-for-animation {
     animation: none;
-    opacity: 0;
 }
 
 .intro-out-animation-second {
@@ -9,6 +8,7 @@
 
 @media (max-width: 768px) {
     .intro-class-for-animation {
+        opacity: 0;
         animation: intro-animation 6s ease-in-out;
     }
 }

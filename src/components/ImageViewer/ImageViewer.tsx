@@ -37,7 +37,6 @@ const ImageViewerComponent = ({ images }: ImageViewerProps) => {
             const array = Object.values(cachedImages);
             const currIndex = selectedImage ? array.indexOf(selectedImage) : 0;
             const prevIndex = (currIndex - 1 + array.length) % array.length;
-            console.log(currIndex, prevIndex)
             setSelectedImage(array[prevIndex]);
             setCurrentIndex(currIndex - 1);
         }

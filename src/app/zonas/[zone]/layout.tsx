@@ -6,10 +6,12 @@ export default function ZoneLayout({
     children: React.ReactNode
 }) {
     return (
-        <div>
-            {children}
+        <>
+            <div className="min-h-screen bg-gray-100 p-4 pt-8">
+                {children}
+            </div>
             <h3 className="text-center mt-16 text-lg font-bold">Encuentra más zonas</h3>
-            <Categories />
-        </div>
+            <Categories showTitle={false} />
+        </>
     );
 } 

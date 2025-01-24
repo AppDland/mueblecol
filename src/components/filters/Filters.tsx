@@ -13,15 +13,20 @@ import classNames from 'classnames';
 import FilterIcon from '../FilterIcon';
 import Backdrop from '../Backdrop';
 import Button from '../Button';
+import Items from '@/data/items.json';
 
 
 interface FiltersProps {
     results: ItemInt[];
     setResults: React.Dispatch<React.SetStateAction<ItemInt[]>>;
     setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+    basedOn?: 'zone' | 'search';
+    zone?: string;
+    searchWord?: string;
+    showRoomFilter?: boolean;
 }
 
-const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage }) => {
+const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, zone, searchWord, basedOn = 'search', showRoomFilter = true }) => {
 
     const params = useParams();
     const query = params.query as string;
@@ -36,7 +41,12 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage }
     const [materials, setMaterials] = useState<string[]>([]);
 
     useEffect(() => {
-        const searchResults = searchItems(query.replaceAll('-', ' '));
+        const searchResults: ItemInt[] = [];
+        if (basedOn === 'search' && searchWord) {
+            searchResults.push(...searchItems(searchWord.replaceAll('-', ' ').toLowerCase()));
+        } else if (basedOn === 'zone' && zone) {
+            searchResults.push(...Items.items.filter(item => item.zones.map(zone => zone.toLowerCase()).includes(zone.toLowerCase())));
+        }
         let filteredResults = [...searchResults];
         if (searchResults.length > 0) {
             // Aplicar filtros
@@ -148,7 +158,7 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage }
                 style={{ zIndex: 41 }}
             >
                 <SortFilter currentFilters={filters} onFilterChange={setFilters} />
-                <RoomFilter currentFilters={filters} onFilterChange={setFilters} />
+                {showRoomFilter && <RoomFilter currentFilters={filters} onFilterChange={setFilters} />}
                 <PriceFilter currentFilters={filters} onFilterChange={setFilters} />
                 {/* <ColorFilter currentFilters={filters} onFilterChange={setFilters} /> */}
                 {
