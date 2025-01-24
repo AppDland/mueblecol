@@ -10,6 +10,9 @@ import Card from '@/components/Card';
 // import ColorPicker from '@/components/ColorPicker';
 import { useRouter } from 'next/navigation';
 import FinancingInfo from '@/components/FinancingInfo';
+import Carrousel from '@/components/Carrousel';
+import SimpleCard from '@/components/SimpleCard';
+import classNames from 'classnames';
 
 const Item = () => {
     const params = useParams();
@@ -32,7 +35,7 @@ const Item = () => {
 
     return (
         currentItem ? (
-            <div className='flex flex-col max-w-7xl mx-auto px-4 py-8 bg-neutral-100 border border-neutral-200 rounded-lg'>
+            <div className='flex flex-col max-w-7xl mx-auto px-4 py-8 bg-neutral-100 rounded-lg'>
                 {/* Contenido principal */}
                 <div className='flex flex-col sm:flex-row h-full'>
                     {/* {photos && photos.length > 0 && ( */}
@@ -53,18 +56,29 @@ const Item = () => {
                     <p className='text-gray-600'>{currentItem.description}</p>
                 </div>
 
+                {/* ATRIBUTOS */}
+                {currentItem.attributes && <Attributes attributes={currentItem.attributes} />}
+
                 {/* Items similares */}
                 {
                     similarItems.length > 0 && (
                         <div className='mt-16'>
                             <h2 className='text-2xl font-bold mb-8'>Similares</h2>
-                            <div className='flex flex-wrap'>
+                            <Carrousel>
                                 {
                                     similarItems.map((item, id) => (
-                                        <Card key={id} item={item} />
+                                        <SimpleCard
+                                            key={id}
+                                            color='white'
+                                            finan={item.finan}
+                                            image={item.media[0].photos[0]}
+                                            price={item.price}
+                                            title={item.publicName}
+                                            url={item.name}
+                                        />
                                     ))
                                 }
-                            </div>
+                            </Carrousel>
                         </div>
                     )
                 }
@@ -141,5 +155,29 @@ const ItemInfo = ({ item, }: { item: ItemInt }) => {
         </div>
     );
 }
+
+interface attributesInt {
+    attributeId: number;
+    value: string;
+}
+
+const Attributes = ({ attributes }: { attributes: attributesInt[] }) => (
+    <div className='my-2 p-2 w-full max-w-2xl'>
+        <h4 className='font-bold'>Características</h4>
+        <div className='border mt-3'>
+            {
+                attributes.map((attr, id) => (
+                    <span key={id} className={classNames(
+                        'grid grid-cols-2 gap-2 p-2',
+                        id % 2 === 0 ? 'bg-neutral-200' : 'bg-neutral-100'
+                    )}>
+                        <p className='opacity-80'>{Items.attributes[attr.attributeId - 1].name}</p>
+                        <p className='font-semibold'>{attr.value}</p>
+                    </span>
+                ))
+            }
+        </div>
+    </div>
+)
 
 export default Item;

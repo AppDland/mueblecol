@@ -17,12 +17,12 @@ const Card: React.FC<CardProps> = ({ item }) => {
     if (!mainImage) return null;
 
     return (
-        <div className='border-b md:border-none md:rounded-lg border-gray-200'>
+        <div className='border-b sm:border-none sm:rounded-lg border-gray-200'>
             <Link
                 href={`/articulos/${itemSlug}`}
                 className={classNames(
                     "bg-white flex px-5 sm:flex sm:flex-col py-6",
-                    "w-full md:w-64",
+                    "w-full sm:w-60",
                     "h-40 sm:h-80",
                 )}
             >
@@ -44,7 +44,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
                     'w-3/5 sm:w-full',
                     'sm:h-2/5',
                 )}>
-                    <h3 className="font-medium text-sm truncate-2-lines mb-3 md:mt-3">
+                    <h3 className="font-medium text-sm truncate-2-lines mb-3 sm:mt-3">
                         {item.publicName}
                     </h3>
                     {

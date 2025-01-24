@@ -39,11 +39,10 @@ const Intro = () => {
             <div className={classNames(
                 'flex flex-col items-center justify-center w-fit',
                 showTitle ? 'hidden md:flex' : 'flex',
-                out && 'intro-out-animation',
                 "intro-class-for-animation"
             )}>
-                <h1 className={'text-2xl sm:text-4xl text-white'}>Muebles Para El Hogar</h1>
-                <p className={'text-base sm:text-lg text-white'}>¡Gran Variedad!</p>
+                <h1 className={'text-2xl sm:text-4xl text-third font-light'}>Muebles Para El Hogar</h1>
+                <p className={'text-base sm:text-lg text-third italic'}>¡Gran Variedad!</p>
             </div>
             <div
                 className={classNames(
@@ -61,7 +60,8 @@ const Background = ({ children }: { children: React.ReactNode }) => (
     <div
         className="relative w-full flex items-center justify-center select-none justify-self-center"
         style={{
-            background: 'linear-gradient(to bottom, #005353, #2E9896)',
+            // background: 'linear-gradient(to bottom, #005353, #177675)',
+            background: 'white',
             height: '15vh'
         }}
     >

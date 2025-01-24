@@ -1,8 +1,8 @@
 'use client';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 interface FinderProps {
     defaultValue?: string;
@@ -12,7 +12,18 @@ interface FinderProps {
 const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) => {
     const [searchTerm, setSearchTerm] = useState(defaultValue);
     const [active, setActive] = useState(false);
+    const params = useParams();
     const router = useRouter();
+
+    useEffect(() => {
+        if (params.query && typeof params.query === 'string') {
+            setSearchTerm(params.query.trim().replaceAll('-', ' ').toLowerCase());
+            setActive(true);
+        } else {
+            setSearchTerm('');
+            setActive(false);
+        }
+    }, [params]);
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
@@ -31,9 +42,8 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
     return (
         <form
             onSubmit={handleSearch}
-            className={"w-full max-w-60 md:max-w-xs relative flex items-center py-1 border border-primary rounded-lg overflow-hidden bg-white"}
+            className={"w-full max-w-60 md:max-w-64 relative flex items-center py-1 rounded-lg overflow-hidden bg-white border border-accent"}
         >
-            {/* <div className="relative flex items-center"> */}
             <Slider active={active} />
             <input
                 type="text"
@@ -42,11 +52,11 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
                 onFocus={() => handleActive(true)}
                 onBlur={() => handleActive(false)}
                 placeholder="¿Qué deseas buscar?"
-                className={`z-20 w-full px-4 py-1 sm:py-2 text-center rounded-lg pr-12 bg-transparent focus:outline-none`}
+                className={`z-10 w-full px-4 py-1 sm:py-2 text-center rounded-lg pr-12 bg-transparent focus:outline-none`}
             />
             <button
                 type="submit"
-                className={`z-20 absolute right-0 p-3 h-full rounded-r-lg ${isDark
+                className={`z-10 absolute right-0 p-3 h-full rounded-r-lg ${isDark
                     ? 'text-white'
                     : 'bg-neutral-900 text-white'
                     }`}
@@ -58,9 +68,7 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
                     width={16}
                     height={16}
                 />
-                {/* <MagnifyingGlassIcon className="w-5 h-5" /> */}
             </button>
-            {/* </div> */}
         </form>
     );
 };

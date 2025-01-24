@@ -46,7 +46,7 @@ export default function RootLayout({
                     <div className="fixed top-4 right-4 z-50">
                         <ThemeToggle />
                     </div>
-                    <main>
+                    <main className='mt-16 sm:mt-20 md:mt-0'>
                         {children}
                     </main>
                     <Footer />

@@ -9,9 +9,10 @@ import RoomFilter from './RoomFilter';
 import { searchItems } from '@/functions/search';
 import { ItemInt } from '@/interfaces/item';
 import { useParams } from 'next/navigation';
-import useLargeScreen from '@/custom/useLargeScreen';
 import classNames from 'classnames';
 import FilterIcon from '../FilterIcon';
+import Backdrop from '../Backdrop';
+import Button from '../Button';
 
 
 interface FiltersProps {
@@ -124,6 +125,8 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage }
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, []);
+
+
     return (
         <>
             <div
@@ -139,9 +142,10 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage }
             <div
                 ref={filterRef}
                 className={classNames(
-                    "w-56 lg:w-64 p-4 bg-white border rounded-lg z-10",
+                    "w-4/5 max-w-96 md:w-60 lg:w-64 p-4 bg-white border rounded-lg",
                     showFilters ? 'absolute top-14 right-3' : 'relative hidden md:block'
                 )}
+                style={{ zIndex: 41 }}
             >
                 <SortFilter currentFilters={filters} onFilterChange={setFilters} />
                 <RoomFilter currentFilters={filters} onFilterChange={setFilters} />
@@ -152,7 +156,17 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage }
                         <MaterialFilter currentFilters={filters} onFilterChange={setFilters} materials={materials} />
                     )
                 }
+                <Button
+                    text='Listo'
+                    className='border place-self-center mt-4 px-5 py-2 rounded-lg bg-primary text-white md:hidden'
+                    onClick={() => setShowFilters(false)}
+                />
             </div>
+            <Backdrop
+                show={showFilters}
+                onClick={() => setShowFilters(false)}
+                className='z-40'
+            />
         </>
     );
 };

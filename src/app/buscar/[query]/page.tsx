@@ -18,7 +18,7 @@ export default function SearchResults() {
     // const paginatedResults = results.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
     return (
-        <div className='grid grid-cols-[auto_1fr_1fr] grid-rows-[auto_1fr] gap-3 max-w-7xl place-self-center'>
+        <div className='grid grid-cols-[auto_1fr_1fr] grid-rows-[auto_1fr] gap-3 w-full max-w-7xl place-self-center'>
             <div
                 className={classNames(
                     'col-span-1',
@@ -43,20 +43,16 @@ export default function SearchResults() {
                 <b> {query.replaceAll('-', ' ')}</b>
             </p>
             <div className={classNames(
-                "col-span-3 md:col-span-2",
+                "flex flex-nowrap sm:flex-wrap flex-col sm:flex-row sm:gap-2",
+                "col-span-4 md:col-span-2",
                 "row-span-1",
                 "order-3 md:order-none",
             )}>
-                <div className={classNames(
-                    'flex flex-nowrap md:flex-wrap flex-col md:flex-row w-fit gap-2'
-                )}>
-                    {
-                        results.map((item: ItemInt, index) => (
-                            <Card item={item} key={index} />
-                        ))
-                    }
-                </div>
-
+                {
+                    results.map((item: ItemInt, index) => (
+                        <Card item={item} key={index} />
+                    ))
+                }
                 {
                     results.length === 0 && (
                         <p className="text-center text-gray-500 my-8">

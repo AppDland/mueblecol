@@ -6,8 +6,8 @@ const FilterIcon = () => {
             <path d="M29.3625 41.2791H30.7625V44.0791H33.5625V45.4791H30.7625V48.2791H29.3625V45.4791H26.5625V44.0791H29.3625V41.2791Z" fill="#005353" />
             <defs>
                 <linearGradient id="paint0_linear_341_354" x1="11.5625" y1="25.7791" x2="52.0625" y2="66.2791" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#2E9896" />
-                    <stop offset="1" stop-color="#0F3231" />
+                    <stop stopColor="#2E9896" />
+                    <stop offset="1" stopColor="#0F3231" />
                 </linearGradient>
             </defs>
         </svg>

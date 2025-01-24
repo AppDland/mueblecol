@@ -45,7 +45,11 @@ const ImageViewerComponent = ({ images }: ImageViewerProps) => {
 
     return (
         <>
-            <div className={'bg-neutral-100 flex flex-col flex-shrink-0 justify-between p-4 sm:w-2/3 border-r-2 border-neutral-200 select-none'}>
+            <div className={classNames(
+                'bg-neutral-100 flex flex-col flex-shrink-0 justify-between p-4 sm:w-2/3 select-none',
+                'border-b-2 sm:border-b-0 sm:border-r-2 border-neutral-200'
+            )}
+            >
                 {
                     cachedImages && selectedImage ? (
                         <div className="relative aspect-video w-full" onClick={() => setIsModalOpen(true)}>

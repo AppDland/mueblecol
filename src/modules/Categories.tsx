@@ -8,8 +8,8 @@ const Categories = () => {
 
     return (
         <Section className='bg-white'>
-            <Title>Nuestras Categorías</Title>
-            <Carrousel autoSlide={{ interval: 5000 }} >
+            <Title>Categorías</Title>
+            <Carrousel>
                 {
                     Items.zones.map((cat, index) => (
                         <CategoryButton

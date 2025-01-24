@@ -1,6 +1,7 @@
 import Link from "next/link";
 import classNames from "classnames";
 import "./title.css";
+import Image from "next/image";
 
 const Title = () => {
 
@@ -12,7 +13,14 @@ const Title = () => {
 }
 
 export const TitleAnimated = ({ dark }: { dark?: boolean }) => (
-    <div className="text-2xl font-bold flex w-32">
+    <div className="text-2xl font-bold flex w-40">
+        <Image
+            src="/images/logo.svg"
+            alt="Mueblecol"
+            width={25}
+            height={25}
+            className="mr-1 icon-header-title"
+        />
         {
             [{ title: "Mueble", color: dark ? "text-third" : "text-secondary" }, { title: "col", color: "text-primary" }].map(({ title, color }, index) => (
                 <span key={index} className={classNames(color, `mueblecol-header-title-${index}`)}>
@@ -23,4 +31,4 @@ export const TitleAnimated = ({ dark }: { dark?: boolean }) => (
     </div>
 )
 
-export default Title;
+export default Title;   

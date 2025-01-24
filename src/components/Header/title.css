@@ -9,6 +9,32 @@
     animation: title-1 10s infinite;
 }
 
+.icon-header-title {
+    scale: 0;
+    animation: icon 10s infinite;
+}
+
+@keyframes icon {
+
+    0%,
+    5% {
+        scale: 0;
+    }
+
+    10% {
+        scale: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        scale: 1;
+    }
+}
+
 @keyframes title-0 {
 
     0%,
