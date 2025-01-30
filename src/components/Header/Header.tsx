@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import Nav from './Nav';
 import Title from './Title';
 import { Finder } from '../finder/Finder';
@@ -7,22 +7,21 @@ import { Finder } from '../finder/Finder';
 export function Header() {
     const headerRef = useRef<HTMLDivElement>(null);
 
-    // comentado para verificar el hydratation
 
-    // useLayoutEffect(() => {
-    //     const handleScroll = () => {
-    //         const scrollY = window.scrollY;
+    useLayoutEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
 
-    //         // Ajusta la intensidad de la sombra según la posición
-    //         if (headerRef.current) {
-    //             const shadowLevel = Math.min(scrollY / 100, 2) * 2; // Máximo de 4 niveles
-    //             headerRef.current.style.boxShadow = `0 2px ${shadowLevel}px rgba(0, 0, 0, ${shadowLevel / 30})`;
-    //         }
-    //     };
+            // Ajusta la intensidad de la sombra según la posición
+            if (headerRef.current) {
+                const shadowLevel = Math.min(scrollY / 100, 2) * 2; // Máximo de 4 niveles
+                headerRef.current.style.boxShadow = `0 2px ${shadowLevel}px rgba(0, 0, 0, ${shadowLevel / 20})`;
+            }
+        };
 
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // }, []);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     return (
         <header
@@ -31,7 +30,9 @@ export function Header() {
         >
             <div className='max-w-7xl w-full flex justify-between items-center p-3 sm:p-4 place-self-center relative'>
                 <Title />
-                <Finder />
+                <div className='hidden sm:block'>
+                    <Finder />
+                </div>
                 <Nav />
             </div>
         </header>

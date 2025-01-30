@@ -4,11 +4,6 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-interface FinderProps {
-    defaultValue?: string;
-    isDark?: boolean;
-}
-
 export function Finder({ defaultValue = '', isDark = false }) {
     const [searchTerm, setSearchTerm] = useState(defaultValue);
     const [active, setActive] = useState(false);
@@ -36,7 +31,7 @@ export function Finder({ defaultValue = '', isDark = false }) {
         >
             <Slider active={active} />
             <input
-                type="text"
+                type="search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onFocus={() => handleActive(true)}

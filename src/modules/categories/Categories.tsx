@@ -24,7 +24,7 @@ export function Categories({ showTitle = true }: { showTitle?: boolean }) {
                 }
             </Carrousel>
             <br />
-            <p className='text-center max-w-80 sm:max-w-full place-self-center text-sm sm:text-base'>Encuentra el mueble ideal para cada zona de tu hogar</p>
+            <p className='text-center text-sm sm:text-base px-20'>Encuentra el mueble ideal para cada zona de tu hogar</p>
         </Section>
     )
 }

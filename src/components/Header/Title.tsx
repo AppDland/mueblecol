@@ -6,7 +6,7 @@ import Image from "next/image";
 const Title = () => {
 
     return (
-        <Link href="/" className="hidden sm:block">
+        <Link href="/">
             <TitleAnimated />
         </Link>
     )

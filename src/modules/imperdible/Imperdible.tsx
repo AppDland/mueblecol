@@ -11,4 +11,4 @@ const Imperdible = () => {
     )
 }
 
-export default Imperdible;
+export { Imperdible };
