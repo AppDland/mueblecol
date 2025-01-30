@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Button from "./Button";
 import { ItemInt } from "@/interfaces/item";
 import Link from "next/link";
 
@@ -28,10 +27,9 @@ const BigCard = (item: ItemInt) => {
                 <p className="text-secondary my-2">De los más comprados</p>
                 <h3 className="text-third font-bold text-xl my-2">{item.publicName}</h3>
                 <Link href={`/articulos/${item.name}`} scroll>
-                    <Button
-                        className="bg-primary hover:bg-secondary text-white py-2 px-8 rounded-full my-2 w-fit"
-                        text="¡Lo quiero ahora!"
-                    />
+                    <button className="btn-primary">
+                        ¡Lo quiero ahora!
+                    </button>
                 </Link>
             </div>
         </div>

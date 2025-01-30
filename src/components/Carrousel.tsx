@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import Arrow from './Arrow';
 import "./styles/arrowbutton.css";
 import useLargeScreen from '@/custom/useLargeScreen';
-import Swipe from './Swipe';
 
 interface AutoSlideInt {
     interval: number;
@@ -80,7 +79,7 @@ const Carrousel = ({ children, autoSlide }: CarrouselInt) => {
                 />
             }
 
-            <Swipe className='p-4 flex mx-0 sm:mx-8' ref={carrouselRef}>
+            <div className='overflow-x-auto scrollbar-hide p-4 flex mx-0 sm:mx-8' ref={carrouselRef}>
                 <div
                     className="flex transition-transform duration-500 ease-in-out w-full"
                 >
@@ -92,7 +91,7 @@ const Carrousel = ({ children, autoSlide }: CarrouselInt) => {
                         ))
                     }
                 </div>
-            </Swipe>
+            </div>
             {
                 showRightButton && isLargeScreen &&
                 <CarrouselButton

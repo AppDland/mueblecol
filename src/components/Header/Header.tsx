@@ -1,26 +1,29 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import Finder from '../Finder';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import Nav from './Nav';
 import Title from './Title';
+import { Finder } from '../finder/Finder';
 
-const Header = () => {
+export function Header() {
     const headerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
+    // comentado para verificar el hydratation
 
-            // Ajusta la intensidad de la sombra según la posición
-            if (headerRef.current) {
-                const shadowLevel = Math.min(scrollY / 100, 2) * 2; // Máximo de 4 niveles
-                headerRef.current.style.boxShadow = `0 2px ${shadowLevel}px rgba(0, 0, 0, ${shadowLevel / 30})`;
-            }
-        };
+    // useLayoutEffect(() => {
+    //     const handleScroll = () => {
+    //         const scrollY = window.scrollY;
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    //         // Ajusta la intensidad de la sombra según la posición
+    //         if (headerRef.current) {
+    //             const shadowLevel = Math.min(scrollY / 100, 2) * 2; // Máximo de 4 niveles
+    //             headerRef.current.style.boxShadow = `0 2px ${shadowLevel}px rgba(0, 0, 0, ${shadowLevel / 30})`;
+    //         }
+    //     };
+
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
+
     return (
         <header
             ref={headerRef}
@@ -34,8 +37,3 @@ const Header = () => {
         </header>
     );
 };
-
-
-
-
-export default Header;

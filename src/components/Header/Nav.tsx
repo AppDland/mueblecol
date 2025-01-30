@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+'use client'
+import { useState } from "react";
 import Burger from "./Burger";
 import classNames from "classnames";
 import Link from "next/link";
-import Backdrop from "../Backdrop";
 
 const routes = [
     {
@@ -17,28 +17,13 @@ const routes = [
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
-    // const navRef = useRef<HTMLDivElement>(null);
-
-    // useEffect(() => {
-    //     const handleClose = (e: any) => {
-    //         if (navRef.current && !navRef.current.contains(e.target)) {
-    //             console.log('close');
-    //             setIsOpen(false);
-    //         } else {
-    //             console.log('open');
-    //         }
-    //     }
-
-    //     document.addEventListener('click', handleClose);
-
-    //     return () => {
-    //         document.removeEventListener('click', handleClose);
-    //     }
-    // }, []);
 
     const handleGesture = () => {
         setIsOpen(false);
-        window.navigator.vibrate(10);
+
+        // comentado por hydratation
+        // falta logica para ios 
+        // window.navigator.vibrate(10);
     }
 
     return (
@@ -81,10 +66,9 @@ const Nav = () => {
                     }
                 </ul>
             </nav>
-            <Backdrop
-                className={'md:hidden'}
+            <div
+                className={classNames("backdrop-custom", isOpen ? 'block' : 'hidden')}
                 onClick={() => setIsOpen(false)}
-                show={isOpen}
             />
         </>
     )

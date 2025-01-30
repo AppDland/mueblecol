@@ -31,4 +31,4 @@ export const TitleAnimated = ({ dark }: { dark?: boolean }) => (
     </div>
 )
 
-export default Title;   
+export default Title;

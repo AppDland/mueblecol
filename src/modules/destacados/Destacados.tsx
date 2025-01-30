@@ -1,14 +1,13 @@
 import BoxContent from "@/components/BoxContent";
 import Section from "@/components/Section";
 import SimpleCard from "@/components/SimpleCard";
-import Title from "@/components/Title";
 import Items from "@/data/items.json";
 
-const Destacados = () => {
+export function Destacados() {
 
     return (
         <Section className="bg-gray-200">
-            <Title>Productos Destacados</Title>
+            <h2 className="h2">Productos Destacados</h2>
             <BoxContent>
                 {
                     Items.items.sort(() => Math.random() - 0.5).slice(0, 15).map((item, index) => (
@@ -28,5 +27,3 @@ const Destacados = () => {
         </Section>
     )
 }
-
-export default Destacados;

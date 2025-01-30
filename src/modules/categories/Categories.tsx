@@ -1,14 +1,17 @@
 import CategoryButton from '@/components/CategoryButton';
-import Items from '../data/items.json';
+import Items from '../../data/items.json';
 import Carrousel from '@/components/Carrousel';
-import Title from '@/components/Title';
 import Section from '@/components/Section';
 
-const Categories = ({ showTitle = true }: { showTitle?: boolean }) => {
+export function Categories({ showTitle = true }: { showTitle?: boolean }) {
 
     return (
         <Section className='bg-white'>
-            {showTitle && <Title>Categorías</Title>}
+            {
+                showTitle && (
+                    <h2 className='h2'>Categorías</h2>
+                )
+            }
             <Carrousel>
                 {
                     Items.zones.map((cat, index) => (
@@ -25,5 +28,3 @@ const Categories = ({ showTitle = true }: { showTitle?: boolean }) => {
         </Section>
     )
 }
-
-export default Categories;

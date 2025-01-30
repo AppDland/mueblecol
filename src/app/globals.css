@@ -55,6 +55,18 @@ img {
 
 
 @layer components {
+    .h1 {
+        @apply text-4xl font-bold text-accent;
+    }
+
+    .h2 {
+        @apply text-2xl font-bold text-accent;
+    }
+
+    .backdrop-custom {
+        @apply absolute bg-black bg-opacity-30 z-20 top-0 left-0 backdrop-blur-sm duration-100 h-screen w-screen;
+    }
+
     .btn-primary {
         @apply bg-primary hover:bg-primary-dark text-white transition-colors;
     }

@@ -11,8 +11,6 @@ import { ItemInt } from '@/interfaces/item';
 import { useParams } from 'next/navigation';
 import classNames from 'classnames';
 import FilterIcon from '../FilterIcon';
-import Backdrop from '../Backdrop';
-import Button from '../Button';
 import Items from '@/data/items.json';
 
 
@@ -166,16 +164,17 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, 
                         <MaterialFilter currentFilters={filters} onFilterChange={setFilters} materials={materials} />
                     )
                 }
-                <Button
+                {/* <Button
                     text='Listo'
                     className='border place-self-center mt-4 px-5 py-2 rounded-lg bg-primary text-white md:hidden'
                     onClick={() => setShowFilters(false)}
-                />
+                /> */}
             </div>
-            <Backdrop
-                show={showFilters}
+            <div
+                className={classNames(
+                    'backdrop-custom z-40'
+                )}
                 onClick={() => setShowFilters(false)}
-                className='z-40'
             />
         </>
     );

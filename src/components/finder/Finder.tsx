@@ -1,7 +1,7 @@
 'use client';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 interface FinderProps {
@@ -9,11 +9,10 @@ interface FinderProps {
     isDark?: boolean;
 }
 
-const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) => {
+export function Finder({ defaultValue = '', isDark = false }) {
     const [searchTerm, setSearchTerm] = useState(defaultValue);
     const [active, setActive] = useState(false);
     const params = useParams();
-    const router = useRouter();
 
     useEffect(() => {
         if (params.query && typeof params.query === 'string') {
@@ -25,15 +24,6 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
         }
     }, [params]);
 
-    const handleSearch = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (searchTerm.trim()) {
-            router.push(`/buscar/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`);
-        }
-        //ocultar el teclado
-        const input = document.activeElement as HTMLElement;
-        input.blur();
-    };
 
     const handleActive = (focus: boolean) => {
         setActive(focus ? focus : searchTerm.length > 0);
@@ -41,7 +31,7 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
 
     return (
         <form
-            onSubmit={handleSearch}
+            action={`/buscar/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`}
             className={"w-full max-w-60 md:max-w-64 relative flex items-center py-1 rounded-lg overflow-hidden bg-white border border-accent"}
         >
             <Slider active={active} />
@@ -76,5 +66,3 @@ const Finder: React.FC<FinderProps> = ({ defaultValue = '', isDark = false }) =>
 const Slider = ({ active }: { active: boolean }) => (
     <div className={classNames('absolute bg-neutral-900 h-full z-10 duration-100 right-0', active ? 'w-10' : 'w-full')} />
 )
-
-export default Finder;

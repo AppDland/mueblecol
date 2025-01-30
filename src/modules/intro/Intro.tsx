@@ -1,10 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { TitleAnimated } from '@/components/Header/Title';
+import { TitleAnimated } from '@/components/header/Title';
 import "./intro.css";
 
-const Intro = () => {
+export function Intro() {
     const [showTitle, setShowTitle] = useState(false);
     const [out, setOut] = useState(false);
 
@@ -68,5 +68,3 @@ const Background = ({ children }: { children: React.ReactNode }) => (
         {children}
     </div>
 )
-
-export default Intro;
