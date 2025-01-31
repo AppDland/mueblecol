@@ -1,7 +1,6 @@
 'use client';
 
 import useLargeScreen from "@/custom/useLargeScreen";
-import Carrousel from "./Carrousel";
 
 interface BoxContentInt {
     children: React.ReactNode[];
@@ -36,4 +35,4 @@ const Box = ({ children }: BoxContentInt) => {
     )
 }
 
-export default BoxContent;
+// export default BoxContent;

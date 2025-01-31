@@ -29,7 +29,6 @@ export default function SearchResults() {
                 <Filters
                     results={results}
                     setResults={setResults}
-                    setCurrentPage={setCurrentPage}
                     basedOn='search'
                     searchWord={query}
                 />

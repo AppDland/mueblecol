@@ -1,1 +1,1 @@
-export const money = (value: number, decimals = 0) => "$ " + Intl.NumberFormat('es-MX', { minimumFractionDigits: decimals, maximumFractionDigits: 2 }).format(value)
+export const money = (value: number, decimals = 0) => "$ " + Intl.NumberFormat('es-AR', { minimumFractionDigits: decimals, maximumFractionDigits: 2 }).format(value)

@@ -18,7 +18,7 @@
 body {
     color: var(--foreground);
     background: var(--background);
-    font-family: var(--font-geist-sans);
+    font-family: var(--font-inter);
 }
 
 img {
@@ -53,6 +53,13 @@ img {
     text-overflow: ellipsis;
 }
 
+h1 {
+    font-family: var(--font-athiti);
+}
+
+h2 {
+    font-family: var(--font-athiti);
+}
 
 @layer components {
     .h1 {
@@ -60,7 +67,7 @@ img {
     }
 
     .h2 {
-        @apply text-xl font-bold text-accent px-4;
+        @apply text-lg text-accent px-4 mb-4;
     }
 
     .backdrop-custom {
@@ -77,5 +84,9 @@ img {
 
     .card {
         @apply bg-base-100 border border-base-300 rounded-lg shadow-sm hover:shadow-md transition-shadow;
+    }
+
+    .section {
+        @apply w-full my-0 xl:my-8 py-5 sm:py-8 max-w-7xl place-self-center rounded-none xl:rounded-lg;
     }
 }

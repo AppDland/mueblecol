@@ -9,9 +9,8 @@ import { findSimilarItems } from '@/functions/search';
 // import ColorPicker from '@/components/ColorPicker';
 import { useRouter } from 'next/navigation';
 import FinancingInfo from '@/components/FinancingInfo';
-import Carrousel from '@/components/Carrousel';
-import SimpleCard from '@/components/SimpleCard';
 import classNames from 'classnames';
+import { Carrousel, SimpleCard } from '@/components';
 
 const Item = () => {
     const params = useParams();

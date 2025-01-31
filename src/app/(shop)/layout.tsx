@@ -1,15 +1,18 @@
 'use client';
-import { Header } from "@/components";
-import Footer from "@/components/Footer";
-import { sideBarState } from "@/store";
+import { Footer, Header } from "@/components";
+import { FilterState, sideBarState } from "@/store";
 import classNames from "classnames";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 
     const { isOpen } = sideBarState();
+    const { showFilters } = FilterState();
 
     return (
-        <main className={classNames(isOpen && 'h-screen overflow-hidden')}>
+        <main className={classNames(
+            'bg-white',
+            isOpen || showFilters ? 'h-screen overflow-hidden' : 'overflow-x-hidden'
+        )}>
             <Header />
             {children}
             <Footer />

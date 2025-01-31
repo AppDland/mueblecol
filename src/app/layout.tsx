@@ -1,5 +1,4 @@
-import { Inter } from 'next/font/google'
-import { Roboto_Mono } from 'next/font/google'
+import { Inter, Roboto_Mono, Cookie, Athiti } from 'next/font/google';
 import classNames from 'classnames';
 import "./globals.css";
 
@@ -8,13 +7,25 @@ const inter = Inter({
     subsets: ['latin'],
     weight: ['400', '700'],
     variable: '--font-inter' // CSS variable for use in Tailwind
-})
+});
 
 const robotoMono = Roboto_Mono({
     subsets: ['latin'],
     weight: ['400', '700'],
     variable: '--font-roboto-mono'
-})
+});
+
+const cookie = Cookie({
+    subsets: ['latin'],
+    weight: ['400'],
+    variable: '--font-cookie'
+});
+
+const h2Font = Athiti({
+    subsets: ['latin'],
+    weight: ['400'],
+    variable: '--font-athiti'
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     // useEffect(() => {
@@ -34,6 +45,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={classNames(
                 inter.variable,
                 robotoMono.variable,
+                cookie.variable,
+                h2Font.variable,
                 'antialiased min-h-screen bg-base-100 text-base-content'
             )}>
                 {children}

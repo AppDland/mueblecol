@@ -4,3 +4,4 @@ export * from './destacados/Destacados';
 export * from './best/Best';
 export * from './zones/Zones';
 export * from './imperdible/Imperdible';
+export * from './envios/Envios';

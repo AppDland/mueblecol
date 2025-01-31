@@ -12,19 +12,19 @@ import { useParams } from 'next/navigation';
 import classNames from 'classnames';
 import FilterIcon from '../FilterIcon';
 import Items from '@/data/items.json';
+import { FilterState } from '@/store';
 
 
 interface FiltersProps {
     results: ItemInt[];
     setResults: React.Dispatch<React.SetStateAction<ItemInt[]>>;
-    setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
     basedOn?: 'zone' | 'search';
     zone?: string;
     searchWord?: string;
     showRoomFilter?: boolean;
 }
 
-const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, zone, searchWord, basedOn = 'search', showRoomFilter = true }) => {
+const Filters: React.FC<FiltersProps> = ({ results, setResults, zone, searchWord, basedOn = 'search', showRoomFilter = true }) => {
 
     const params = useParams();
     const query = params.query as string;
@@ -89,7 +89,6 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, 
             }
 
             setResults(filteredResults);
-            setCurrentPage(1);
         } else {
             setResults([]);
         }
@@ -110,7 +109,7 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, 
         }
     }, [results, filters.materials]);
 
-    const [showFilters, setShowFilters] = useState(false);
+    const { showFilters, closeFilters, toggleFilters } = FilterState();
 
     const filterRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLDivElement>(null);
@@ -123,7 +122,7 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, 
                 buttonRef.current &&
                 !buttonRef.current.contains(e.target as Node)
             ) {
-                setShowFilters(false);
+                closeFilters();
             }
         };
 
@@ -139,7 +138,7 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, 
         <>
             <div
                 ref={buttonRef}
-                onClick={() => setShowFilters(!showFilters)}
+                onClick={toggleFilters}
                 className={classNames(
                     'p-2 cursor-pointer mx-3',
                     'block md:hidden',
@@ -150,7 +149,7 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, 
             <div
                 ref={filterRef}
                 className={classNames(
-                    "w-4/5 max-w-96 md:w-60 lg:w-64 p-4 bg-white border rounded-lg",
+                    "w-4/5 max-w-96 md:w-60 lg:w-64 p-4 bg-white rounded-lg",
                     showFilters ? 'absolute top-14 right-3' : 'relative hidden md:block'
                 )}
                 style={{ zIndex: 41 }}
@@ -164,17 +163,19 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, setCurrentPage, 
                         <MaterialFilter currentFilters={filters} onFilterChange={setFilters} materials={materials} />
                     )
                 }
-                {/* <Button
-                    text='Listo'
-                    className='border place-self-center mt-4 px-5 py-2 rounded-lg bg-primary text-white md:hidden'
-                    onClick={() => setShowFilters(false)}
-                /> */}
+                <button
+                    className='btn-primary w-full md:hidden'
+                    onClick={closeFilters}
+                >
+                    Listo
+                </button>
             </div>
             <div
                 className={classNames(
-                    'backdrop-custom z-40'
+                    'backdrop-custom z-40',
+                    showFilters ? 'block md:hidden' : 'hidden'
                 )}
-                onClick={() => setShowFilters(false)}
+                onClick={closeFilters}
             />
         </>
     );

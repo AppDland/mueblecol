@@ -1,14 +1,17 @@
-import BigCard from "@/components/BigCard";
+import { BigCard } from "@/components";
 import Items from "@/data/items.json";
 
-const items = [Items.items[0], Items.items[4]];
+const items = {
+    items1: [Items.items[0], Items.items[4]],
+    items2: [Items.items[3], Items.items[15]],
+}
 
-export function Best() {
+export function Best({ itemsKey = 'items1' }: { itemsKey?: 'items1' | 'items2' }) {
 
     return (
         <div className="flex flex-wrap justify-center">
             {
-                items.map((item, index) => (
+                items[itemsKey].map((item, index) => (
                     <BigCard
                         {...item}
                         key={index}

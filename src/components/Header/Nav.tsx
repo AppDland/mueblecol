@@ -1,9 +1,9 @@
 'use client'
-import { useState } from "react";
 import Burger from "./Burger";
 import classNames from "classnames";
 import Link from "next/link";
 import { sideBarState } from "@/store";
+import vibrate from "@/functions/vibrate";
 
 const routes = [
     {
@@ -22,10 +22,7 @@ const Nav = () => {
 
     const handleGesture = () => {
         close();
-
-        // comentado por hydratation
-        // falta logica para ios 
-        // window.navigator.vibrate(10);
+        vibrate();
     }
 
     return (
@@ -41,10 +38,10 @@ const Nav = () => {
             <nav
                 className={classNames(
                     'z-30 top-0 duration-200',
-                    animated ? 'right-0' : '-right-96',
+                    animated ? 'left-0 md:left-auto md:right-0' : '-left-[400px] md:left-auto md:-right-[400px]',
                     'pt-16 sm:pt-20 p-4',
                     'absolute',
-                    'w-2/5 min-w-60',
+                    'w-2/5 min-w-60 max-w-[400px]',
                     'h-screen',
                     'bg-secondary',
                     'shadow-xl md:shadow-none'
