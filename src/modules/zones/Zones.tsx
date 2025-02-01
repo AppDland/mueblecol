@@ -7,7 +7,7 @@ interface ZonesProps {
 }
 
 const Zones = ({ defaultZone = 'negocio' }: ZonesProps) => (
-    <section className="section bg-gray-200">
+    <section className="section bg-gray-200 px-1 sm:px-2">
         <h2 className="h2">Todo para tu {defaultZone}</h2>
         <div className="px-1 sm:px-2">
             <Carrousel>

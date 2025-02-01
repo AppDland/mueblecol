@@ -3,21 +3,14 @@ import { useState } from 'react';
 import { ItemInt } from '@/interfaces/item';
 import Filters from '@/components/filters/Filters';
 import { useParams } from 'next/navigation';
-import classNames from 'classnames';
 import { Card, Pagination } from '@/components';
 import { PaginationContainer } from '@/components/pagination/PaginationContainer';
 
-const ITEMS_PER_PAGE = 6;
 
 export default function SearchResults() {
     const params = useParams();
     const query = params.query as string;
     const [results, setResults] = useState<ItemInt[]>([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    // const totalPages = Math.ceil(results.length / ITEMS_PER_PAGE);
-    // const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    // const paginatedResults = results.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-    const [paginatedResults, setPaginatedResults] = useState<ItemInt[]>([]);
 
     return (
         <div className='items-screen'>

@@ -8,7 +8,7 @@ const BigCard = (item: ItemInt) => {
 
     return (
         <div
-            className="flex place-self-center w-11/12 rounded-lg m-8 overflow-hidden"
+            className="flex place-self-center w-11/12 rounded-lg my-8 sm:mx-6 overflow-hidden"
             style={{
                 maxWidth: '500px',
                 boxShadow: '0px 0px 15px 2px rgba(0,0,0,0.2)'

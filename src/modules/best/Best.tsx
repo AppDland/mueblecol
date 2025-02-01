@@ -9,7 +9,7 @@ const items = {
 export function Best({ itemsKey = 'items1' }: { itemsKey?: 'items1' | 'items2' }) {
 
     return (
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center my-6">
             {
                 items[itemsKey].map((item, index) => (
                     <BigCard

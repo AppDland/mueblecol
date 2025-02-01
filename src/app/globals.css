@@ -80,7 +80,7 @@ h2 {
     }
 
     .btn-primary {
-        @apply bg-primary hover:bg-primary text-white transition-colors rounded-lg py-2 px-5;
+        @apply bg-primary hover:bg-secondary text-white transition-colors rounded-lg py-2 px-5;
     }
 
     .btn-secondary {
