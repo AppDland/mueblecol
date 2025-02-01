@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 robotoMono.variable,
                 cookie.variable,
                 h2Font.variable,
-                'antialiased min-h-screen bg-base-100 text-base-content'
+                'antialiased min-h-screen text-base-content'
             )}>
                 {children}
             </body>

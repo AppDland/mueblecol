@@ -1,158 +1,67 @@
-"use client";
-import { useParams } from 'next/navigation';
 import Items from '@/data/items.json';
-import ImageViewer from '@/components/ImageViewer/ImageViewer';
 import { money } from '@/functions/money';
-import { ItemInt } from '@/interfaces/item';
-import { useEffect, useState } from 'react';
-import { findSimilarItems } from '@/functions/search';
-// import ColorPicker from '@/components/ColorPicker';
-import { useRouter } from 'next/navigation';
-import FinancingInfo from '@/components/FinancingInfo';
 import classNames from 'classnames';
-import { Carrousel, SimpleCard } from '@/components';
+import { BuyButton, ImageSlider } from '@/components';
+import { MobileImageSlider } from '@/components/image-slider/MobileImageSlider';
+import { notFound } from 'next/navigation';
 
-const Item = () => {
-    const params = useParams();
-    const { item } = params;
-    const [currentItem, setCurrentItem] = useState<ItemInt>();
-    const [similarItems, setSimilarItems] = useState<ItemInt[]>([]);
+const Item = async ({ params }: { params: Promise<{ item: string }> }) => {
+    const itemSlug = (await params).item;
+    const currentItem = Items.items.find(i => i.name.replaceAll(' ', '-') === itemSlug);
 
-
-    useEffect(() => {
-        const foundItem = item && typeof item === "string"
-            ? Items.items.find(i => i.name.replaceAll(' ', '-') === item)
-            : undefined;
-
-        setCurrentItem(foundItem);
-        if (foundItem) setSimilarItems(findSimilarItems(foundItem));
-        // if (currentItem) {
-        //     setSelectedColor(currentItem.media[0]);
-        // }
-    }, [item]);
+    if (!currentItem) {
+        notFound();
+    }
 
     return (
-        currentItem ? (
-            <div className='flex flex-col max-w-7xl mx-auto px-4 py-8 bg-neutral-100 rounded-lg'>
-                {/* Contenido principal */}
-                <div className='flex flex-col sm:flex-row h-full'>
-                    {/* {photos && photos.length > 0 && ( */}
-                    <ImageViewer images={currentItem.media[0].photos} />
-                    {/* )} */}
-                    {/* {selectedColor && ( */}
-                    <ItemInfo
-                        item={currentItem}
-                    // selectedColor={selectedColor}
-                    // onColorSelect={setSelectedColor}
-                    />
-                    {/* )} */}
+        <section className='section'>
+
+            {/* Contenido principal */}
+            <div className='grid grid-cols-5 gap-4 md:px-8 place-self-center'>
+                <MobileImageSlider
+                    images={currentItem.media[0].photos}
+                    article={currentItem.publicName}
+                    className='col-span-5 block md:hidden max-w-2xl'
+                />
+                <ImageSlider
+                    images={currentItem.media[0].photos}
+                    article={currentItem.publicName}
+                    className='xl:place-self-center col-span-3 max-w-2xl hidden md:block h-[500px]'
+                />
+                <div
+                    className={classNames(
+                        'col-span-5 md:col-span-2 max-w-2xl',
+                        'grid grid-rows-[auto_1fr_auto] gap-4 p-4'
+                    )}
+                >
+                    <h1 className='h1'>{currentItem.publicName}</h1>
+                    <div className='content-center'>
+                        <h2 className='h2 px-0'>Financiamiento</h2>
+                        <p>
+                            ¿Qué estás esperando? Puedes obtener este artículo hasta en {currentItem.finan.cuotas} cuotas
+                            {currentItem.finan.valor && ` de ${money(currentItem.finan.valor)}`}
+                        </p>
+                    </div>
+                    <div>
+                        <p className='text-3xl font-bold text-primary my-5'>{money(currentItem.price)}</p>
+                        <BuyButton articleSlug={itemSlug} />
+                    </div>
                 </div>
-
-                {/* Descripción del artículo */}
-                <div className='my-2 p-2'>
-                    <p className='font-bold mb-2'>Acerca de este artículo</p>
-                    <p className='text-gray-600'>{currentItem.description}</p>
-                </div>
-
-                {/* ATRIBUTOS */}
-                {currentItem.attributes && <Attributes attributes={currentItem.attributes} />}
-
-                {/* Items similares */}
-                {
-                    similarItems.length > 0 && (
-                        <div className='mt-16'>
-                            <h2 className='text-2xl font-bold mb-8'>Similares</h2>
-                            <Carrousel>
-                                {
-                                    similarItems.map((item, id) => (
-                                        <SimpleCard
-                                            key={id}
-                                            color='white'
-                                            finan={item.finan}
-                                            image={item.media[0].photos[0]}
-                                            price={item.price}
-                                            title={item.publicName}
-                                            url={item.name}
-                                        />
-                                    ))
-                                }
-                            </Carrousel>
-                        </div>
-                    )
-                }
             </div>
 
-        ) : (
-            <p>No se ha encontrado el artículo</p>
-        )
+            {/* Descripción del artículo */}
+            <div className='my-10 px-6'>
+                <h2 className='h2 px-0'>Acerca de este artículo</h2>
+                <p>{currentItem.description}</p>
+            </div>
+
+            {/* ATRIBUTOS */}
+            {currentItem.attributes && <Attributes attributes={currentItem.attributes} />}
+
+
+        </section>
     )
 };
-
-const ItemInfo = ({ item, }: { item: ItemInt }) => {
-    // const [amount, setAmount] = useState(1);
-    const router = useRouter();
-    const handlePurchase = () => {
-        router.push('/gracias');
-        //abrir una nueva ventana que dirige a una ruta de whatsapp
-        const Message = `Hola! Quiero comprar ${item.publicName}`;
-        window.open('https://wa.me/' + process.env.NEXT_PUBLIC_WHATSAPP + '?text=' + Message, '_blank');
-    };
-
-    return (
-        <div className='flex flex-col flex-grow justify-between p-4 sm:w-1/2'>
-            <h1 className='text-2xl font-bold'>{item.publicName}</h1>
-            <div className='mb-8'>
-                {
-                    item.finan.valor ? (
-                        <FinancingInfo
-                            title='Financiamiento'
-                            valor={item.finan.valor}
-                            cuotas={item.finan.cuotas}
-                            descrip='¿Qué estás esperando? Puedes obtener este artículo hasta en'
-                            moneyFormatter={money}
-                        />
-                    ) : (
-                        <FinancingInfo
-                            title='Financiamiento'
-                            cuotas={item.finan.cuotas}
-                            descrip='¿Qué estás esperando? Puedes obtener este artículo hasta en'
-                        />
-                    )}
-            </div>
-            <div className='flex flex-col w-full space-y-8'>
-                <p className='text-3xl font-bold text-primary'>{money(item.price)}</p>
-
-                {/* {item.media.length > 1 && (
-                    <div>
-                        <p className='text-gray-600 mb-2'>Color</p>
-                        <ColorPicker
-                            colors={item.media}
-                            onColorSelect={onColorSelect}
-                            selectedColor={selectedColor}
-                            layout='vertical'
-                        />
-                    </div>
-                )} */}
-
-                {/* <div className='py-4'>
-                <p className='text-gray-600 mb-2'>Cantidad:</p>
-                <AmountSelector
-                    value={amount}
-                    onChange={setAmount}
-                />
-            </div> */}
-                <div>
-                    <button
-                        onClick={handlePurchase}
-                        className="w-full bg-secondary hover:bg-secondary-focus text-secondary-content font-bold py-4 rounded-lg transition-all duration-200"
-                    >
-                        Comprar
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
-}
 
 interface attributesInt {
     attributeId: number;
@@ -160,9 +69,9 @@ interface attributesInt {
 }
 
 const Attributes = ({ attributes }: { attributes: attributesInt[] }) => (
-    <div className='my-2 p-2 w-full max-w-2xl'>
-        <h4 className='font-bold'>Características</h4>
-        <div className='border mt-3'>
+    <div className='my-10 px-6 w-full max-w-2xl'>
+        <h2 className='h2 px-0'>Características</h2>
+        <div>
             {
                 attributes.map((attr, id) => (
                     <span key={id} className={classNames(

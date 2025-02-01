@@ -6,25 +6,19 @@ import Card from '@/components/Card';
 import classNames from 'classnames';
 import Filters from '@/components/filters/Filters';
 import { Pagination } from '@/components';
+import { upperFirst } from '../../../../functions/upperFirst';
 
-const titles = [
-    "Todo lo que necesitas para tu",
-    "Encuentra el mueble ideal para tu",
-    "Descubre los mejores muebles para tu",
-    "Los mejores muebles para tu",
-    "Encuentra los mejores muebles para tu"
-]
+
 
 export default function Page() {
     const params = useParams();
     const zoneSlug = params.zone as string;
-    const customTitle = zoneSlug === "exteriores" ? "Muebles para Exteriores" : titles[Math.floor(Math.random() * titles.length)] + " " + zoneSlug;
     const [results, setResults] = useState<ItemInt[]>([]);
     const [paginatedResults, setPaginatedResults] = useState<ItemInt[]>([]);
 
     return (
         <div>
-            <h1 className="text-xl sm:text-2xl font-bold text-center mb-6">{customTitle}</h1>
+            <h1 className="h1 text-center mb-4">{upperFirst(zoneSlug)}</h1>
             <div className='grid grid-cols-[auto_1fr_1fr] grid-rows-[auto_1fr] gap-3 w-full max-w-7xl place-self-center'>
                 <div
                     className={classNames(
@@ -48,7 +42,7 @@ export default function Page() {
                     'order-1 md:order-none',
                 )}
                 >
-                    mostrando {results.length} resultados para ti
+                    mostrando {results.length} resultados para {zoneSlug}
                 </p>
                 <Pagination
                     results={results}

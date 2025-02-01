@@ -11,37 +11,25 @@ export default {
         extend: {
             colors: {
                 primary: {
-                    light: '#3AACA9',
                     DEFAULT: '#2E9896',
-                    dark: '#1B5B5A'
                 },
                 secondary: {
-                    light: '#006666',
                     DEFAULT: '#177675',
-                    dark: '#003333'
                 },
                 third: {
                     DEFAULT: "#005353"
                 },
                 accent: {
-                    light: '#1D8E8C',
                     DEFAULT: '#272727',
-                    dark: '#0F4847'
                 },
                 success: {
-                    light: '#4CAF50',
                     DEFAULT: '#2E7D32',
-                    dark: '#1B5E20'
                 },
                 warning: {
-                    light: '#FFB74D',
                     DEFAULT: '#F57C00',
-                    dark: '#E65100'
                 },
                 error: {
-                    light: '#EF5350',
                     DEFAULT: '#D32F2F',
-                    dark: '#C62828'
                 },
                 neutral: {
                     50: '#fafafa',
@@ -89,34 +77,6 @@ export default {
                     "error": "#D32F2F",
 
                     "info": "#0288D1"
-                },
-                dark: {
-                    "primary": "#3AACA9",
-                    "primary-focus": "#2E9896",
-                    "primary-content": "#ffffff",
-
-                    "secondary": "#006666",
-                    "secondary-focus": "#005353",
-                    "secondary-content": "#ffffff",
-
-                    "accent": "#272727",
-                    "accent-focus": "#177675",
-                    "accent-content": "#ffffff",
-
-                    "neutral": "#525252",
-                    "neutral-focus": "#404040",
-                    "neutral-content": "#ffffff",
-
-                    "base-100": "#171717",
-                    "base-200": "#262626",
-                    "base-300": "#404040",
-                    "base-content": "#fafafa",
-
-                    "success": "#4CAF50",
-                    "warning": "#FFB74D",
-                    "error": "#EF5350",
-
-                    "info": "#29B6F6"
                 }
             }
         ]

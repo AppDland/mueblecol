@@ -7,3 +7,5 @@ export * from './simple-card/SimpleCard';
 export * from './big-card/BigCard';
 export * from './footer/Footer';
 export * from './pagination/Pagination';
+export * from './image-slider/ImageSlider';
+export * from './buy-button/BuyButton';

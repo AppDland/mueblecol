@@ -20,6 +20,7 @@ export const ImageCacheProvider = ({ children, imageUrls }: ImageCacheProviderPr
         const preloadImages = async () => {
             const loadedImages: ImageCacheContextType = {};
             for (const url of imageUrls) {
+                console.log(url);
                 const response = await fetch(url);
                 const blob = await response.blob();
                 loadedImages[url] = URL.createObjectURL(blob); // Convertimos en Blob URL

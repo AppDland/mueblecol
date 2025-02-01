@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
     return (
         <main className={classNames(
-            'bg-white',
+            'bg-white mt-[73px] md:mt-[81px]',
             isOpen || showFilters ? 'h-screen overflow-hidden' : 'overflow-x-hidden'
         )}>
             <Header />

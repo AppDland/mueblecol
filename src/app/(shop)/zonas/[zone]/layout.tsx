@@ -14,7 +14,7 @@ export default async function ZoneLayout({ children, params }: ZoneLayoutProps) 
 
     return (
         <>
-            <div className="min-h-screen bg-gray-100 p-4 pt-28">
+            <div className="min-h-screen bg-gray-100 p-4">
                 {children}
             </div>
             <h3 className="text-center mt-16 text-lg font-bold">Encuentra más zonas</h3>

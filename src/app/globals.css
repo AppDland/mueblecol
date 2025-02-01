@@ -11,9 +11,10 @@
 
     [data-theme='dark'] {
         --background: theme('colors.gray.900');
-        --foreground: theme('colors.gray.100');
+        --foreground: theme('colors.gray.900');
     }
 }
+
 
 body {
     color: var(--foreground);
@@ -61,6 +62,10 @@ h2 {
     font-family: var(--font-athiti);
 }
 
+/* p {
+    color: black
+} */
+
 @layer components {
     .h1 {
         @apply text-3xl font-bold text-accent;
@@ -75,11 +80,11 @@ h2 {
     }
 
     .btn-primary {
-        @apply bg-primary hover:bg-primary-dark text-white transition-colors rounded-lg py-2 px-5;
+        @apply bg-primary hover:bg-primary text-white transition-colors rounded-lg py-2 px-5;
     }
 
     .btn-secondary {
-        @apply bg-secondary hover:bg-secondary-dark text-white transition-colors;
+        @apply bg-secondary hover:bg-secondary text-white transition-colors;
     }
 
     .card {

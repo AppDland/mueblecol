@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Items from "@/data/items.json";
 import { notFound } from "next/navigation";
+import { findSimilarItems } from "@/functions/search";
+import { Carrousel, SimpleCard } from "@/components";
 
 interface ItemLayoutProps {
     children: React.ReactNode;
@@ -15,6 +17,7 @@ export default async function Layout({ children, params }: ItemLayoutProps) {
     if (!product) {
         notFound();
     }
+    const similarItems = findSimilarItems(product)
 
     return (
         <>
@@ -54,6 +57,29 @@ export default async function Layout({ children, params }: ItemLayoutProps) {
                 </script>
             </Head>
             {children}
+            {/* Items similares */}
+            {
+                similarItems.length > 0 && (
+                    <div className='my-16 px-1 md:px-2'>
+                        <h2 className='h2'>Similares</h2>
+                        <Carrousel>
+                            {
+                                similarItems.map((item, id) => (
+                                    <SimpleCard
+                                        key={id}
+                                        color='white'
+                                        finan={item.finan}
+                                        image={item.media[0].photos[0]}
+                                        price={item.price}
+                                        title={item.publicName}
+                                        url={item.name}
+                                    />
+                                ))
+                            }
+                        </Carrousel>
+                    </div>
+                )
+            }
         </>
     )
 }
