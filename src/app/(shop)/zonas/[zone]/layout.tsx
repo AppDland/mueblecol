@@ -1,5 +1,6 @@
 import { Categories } from "@/modules";
 import { notFound } from "next/navigation";
+import Items from "@/data/items.json";
 
 interface ZoneLayoutProps {
     children: React.ReactNode;
@@ -8,7 +9,10 @@ interface ZoneLayoutProps {
 
 export default async function ZoneLayout({ children, params }: ZoneLayoutProps) {
     const zoneSlug = (await params).zone;
-    if (!zoneSlug) {
+
+    const zoneItems = Items.items.filter((item) => item.zones.includes(zoneSlug));
+
+    if (zoneItems.length < 1) {
         notFound();
     }
 

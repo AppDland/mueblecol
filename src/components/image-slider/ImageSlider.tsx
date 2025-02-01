@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Import Swiper React components
 import { Swiper as SwiperType } from 'swiper';
@@ -26,15 +26,18 @@ interface ImageSliderProps {
 const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
 
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType>();
+    const swiperRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className={className}>
+        <div className={className} ref={swiperRef}>
             <Swiper
                 style={{
                     '--swiper-navigation-color': '#fff',
                     '--swiper-pagination-color': '#fff',
                 } as React.CSSProperties}
-                loop={className?.includes('hidden') ? false : true}
+                loop
+                observer
+                observeParents
                 spaceBetween={10}
                 navigation
                 thumbs={{ swiper: thumbsSwiper }}
@@ -58,7 +61,7 @@ const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
             </Swiper>
             <Swiper
                 onSwiper={setThumbsSwiper}
-                loop={className?.includes('hidden') ? false : true}
+                loop
                 spaceBetween={10}
                 slidesPerView={4}
                 freeMode={true}

@@ -109,7 +109,7 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, zone, searchWord
         }
     }, [results, filters.materials]);
 
-    const { showFilters, closeFilters, toggleFilters } = FilterState();
+    const { isOpen, animated, closeFilters, toggleFilters } = FilterState();
 
     const filterRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLDivElement>(null);
@@ -150,9 +150,9 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, zone, searchWord
                 ref={filterRef}
                 className={classNames(
                     "w-4/5 max-w-96 md:w-60 lg:w-64 p-4 bg-white rounded-lg",
-                    showFilters ? 'absolute top-14 right-3' : 'relative hidden md:block'
+                    animated ? 'absolute top-14 right-3' : 'relative hidden md:block',
+                    "z-[41] md:z-0"
                 )}
-                style={{ zIndex: 41 }}
             >
                 <SortFilter currentFilters={filters} onFilterChange={setFilters} />
                 {showRoomFilter && <RoomFilter currentFilters={filters} onFilterChange={setFilters} />}
@@ -173,7 +173,8 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, zone, searchWord
             <div
                 className={classNames(
                     'backdrop-custom z-40',
-                    showFilters ? 'block md:hidden' : 'hidden'
+                    isOpen ? 'block md:hidden' : 'hidden',
+                    animated ? 'opacity-1' : 'opacity-0'
                 )}
                 onClick={closeFilters}
             />

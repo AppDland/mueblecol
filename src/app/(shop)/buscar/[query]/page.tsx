@@ -1,10 +1,11 @@
 'use client';
 import { useState } from 'react';
-import Card from '@/components/Card';
 import { ItemInt } from '@/interfaces/item';
 import Filters from '@/components/filters/Filters';
 import { useParams } from 'next/navigation';
 import classNames from 'classnames';
+import { Card, Pagination } from '@/components';
+import { PaginationContainer } from '@/components/pagination/PaginationContainer';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -16,16 +17,11 @@ export default function SearchResults() {
     // const totalPages = Math.ceil(results.length / ITEMS_PER_PAGE);
     // const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     // const paginatedResults = results.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const [paginatedResults, setPaginatedResults] = useState<ItemInt[]>([]);
 
     return (
-        <div className='grid grid-cols-[auto_1fr_1fr] grid-rows-[auto_1fr] gap-3 w-full max-w-7xl place-self-center'>
-            <div
-                className={classNames(
-                    'col-span-1',
-                    'row-span-1 md:row-span-2',
-                    'order-2 md:order-none'
-                )}
-            >
+        <div className='items-screen'>
+            <div className={'items-screen-section-1'}>
                 <Filters
                     results={results}
                     setResults={setResults}
@@ -33,27 +29,18 @@ export default function SearchResults() {
                     searchWord={query}
                 />
             </div>
-            <p className={classNames(
-                'text-lg mb-2',
-                'col-span-3 md:col-span-2',
-                'row-span-1',
-                'order-1 md:order-none',
-            )}
-            >
+            <p className='items-screen-section-2 text-lg mb-2 px-6 sm:px-0'>
                 {results.length} resultados para
                 <b> {query.replaceAll('-', ' ')}</b>
             </p>
-            <div className={classNames(
-                "flex flex-nowrap sm:flex-wrap flex-col sm:flex-row sm:gap-2",
-                "col-span-4 md:col-span-2",
-                "row-span-1",
-                "order-3 md:order-none",
-            )}>
-                {
-                    results.map((item: ItemInt, index) => (
-                        <Card item={item} key={index} />
-                    ))
-                }
+            <div className="items-screen-section-3">
+                <PaginationContainer>
+                    {
+                        results.map((item: ItemInt, index) => (
+                            <Card item={item} key={index} />
+                        ))
+                    }
+                </PaginationContainer>
                 {
                     results.length === 0 && (
                         <p className="text-center text-gray-500 my-8">
@@ -61,27 +48,9 @@ export default function SearchResults() {
                         </p>
                     )
                 }
-
-                {/* {
-                            totalPages > 1 && (
-                                <div className="flex justify-center gap-2 my-8">
-                                    {
-                                        Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                                            <button
-                                                key={page}
-                                                onClick={() => setCurrentPage(page)}
-                                                className={`px-4 py-2 rounded ${currentPage === page
-                                                    ? 'bg-primary text-white'
-                                                    : 'bg-gray-200 hover:bg-gray-300'
-                                                    }`}
-                                            >
-                                                {page}
-                                            </button>
-                                        ))
-                                    }
-                                </div>
-                            )
-                        } */}
+            </div>
+            <div className='items-screen-section-4'>
+                <Pagination />
             </div>
         </div>
     );

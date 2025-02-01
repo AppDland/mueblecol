@@ -197,7 +197,8 @@
                 "resistente",
                 "nylon",
                 "madera",
-                "tejida"
+                "tejida",
+                "butaca"
             ],
             "zones": [
                 "exteriores",
@@ -573,7 +574,8 @@
                 "cuatro",
                 "4",
                 "comedor",
-                "tapizado"
+                "tapizado",
+                "butaca"
             ],
             "zones": [
                 "sala",
@@ -625,7 +627,8 @@
                 "cuatro",
                 "4",
                 "comedor",
-                "tapizado"
+                "tapizado",
+                "butaca"
             ],
             "zones": [
                 "sala",
@@ -677,7 +680,8 @@
                 "cuatro",
                 "4",
                 "comedor",
-                "tapizado"
+                "tapizado",
+                "butaca"
             ],
             "zones": [
                 "sala",
@@ -1018,7 +1022,8 @@
                 "desayunar",
                 "comedor",
                 "mesa",
-                "sillas"
+                "sillas",
+                "butaca"
             ],
             "zones": [
                 "cocina",

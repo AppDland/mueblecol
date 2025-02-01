@@ -94,4 +94,24 @@ h2 {
     .section {
         @apply w-full my-0 xl:my-8 py-5 sm:py-8 max-w-7xl place-self-center rounded-none xl:rounded-lg;
     }
+
+    .items-screen {
+        @apply grid grid-cols-[auto_1fr_1fr] grid-rows-[auto_1fr_auto] gap-4 w-full max-w-7xl place-self-center;
+    }
+
+    .items-screen-section-1 {
+        @apply col-span-1 row-span-1 md:row-span-2 order-2 md:order-none;
+    }
+
+    .items-screen-section-2 {
+        @apply col-span-3 md:col-span-2 row-span-1 order-1 md:order-none;
+    }
+
+    .items-screen-section-3 {
+        @apply col-span-4 md:col-span-2 row-span-1 order-3 md:order-none;
+    }
+
+    .items-screen-section-4 {
+        @apply col-start-1 md:col-start-2 col-span-4 md:col-span-3 row-span-1 order-4 md:order-none;
+    }
 }

@@ -31,7 +31,7 @@ const MobileImageSlider = ({ images, className, article }: ImageSliderProps) => 
                     '--swiper-pagination-color': '#2E9896',
                     height: '400px'
                 } as React.CSSProperties}
-                loop={className?.includes('hidden') ? false : true}
+                loop
                 pagination
                 modules={[FreeMode, Pagination]}
             >

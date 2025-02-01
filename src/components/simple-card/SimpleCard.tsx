@@ -38,7 +38,7 @@ const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCar
                 <div
                     className={classNames(
                         "flex justify-center items-center",
-                        "md:bg-accent-dark md:group-hover:bg-primary md:text-white",
+                        "md:bg-accent md:group-hover:bg-primary md:text-white",
                         "order-1 md:order-none",
                         "py-1 md:py-2"
                     )}

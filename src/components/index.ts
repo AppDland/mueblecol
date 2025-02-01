@@ -9,3 +9,4 @@ export * from './footer/Footer';
 export * from './pagination/Pagination';
 export * from './image-slider/ImageSlider';
 export * from './buy-button/BuyButton';
+export * from './card/Card';

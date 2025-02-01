@@ -1,28 +1,22 @@
-import React from 'react';
-import Link from 'next/link';
-import { ItemInt } from '@/interfaces/item';
-import Image from 'next/image';
-import { money } from '@/functions/money';
-import classNames from 'classnames';
+import { money } from "@/functions/money";
+import { ItemInt } from "@/interfaces/item";
+import classNames from "classnames";
+import Image from "next/image";
+import Link from "next/link";
 
 interface CardProps {
     item: ItemInt;
 }
 
-const Card: React.FC<CardProps> = ({ item }) => {
-    const itemSlug = item.name.replaceAll(' ', '-');
-    const mainImage = item.media[0]?.photos[0];
-    // const availableColors = item.media.length;
-
-    if (!mainImage) return null;
+const Card = ({ item }: CardProps) => {
 
     return (
-        <div className='border-b sm:border-none sm:rounded-lg border-gray-200'>
+        <div className='border-b sm:border-none sm:rounded-lg border-gray-200 min-w-44'>
             <Link
-                href={`/articulos/${itemSlug}`}
+                href={`/articulos/${item.name}`}
                 className={classNames(
                     "bg-white flex px-5 sm:flex sm:flex-col py-6",
-                    "w-full sm:w-48",
+                    // "w-full sm:w-48",
                     "h-40 sm:h-80",
                 )}
             >
@@ -32,7 +26,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
                     "sm:h-3/5"
                 )}>
                     <Image
-                        src={mainImage}
+                        src={item.media[0].photos[0]}
                         alt={item.publicName}
                         fill
                         className="object-cover"
@@ -63,6 +57,6 @@ const Card: React.FC<CardProps> = ({ item }) => {
             </Link>
         </div>
     );
-};
+}
 
-export default Card;
+export { Card };
