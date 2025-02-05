@@ -3,10 +3,10 @@
         {
             "name": "closet-grande-maletero-espejo",
             "publicName": "Closet Grande Maletero y Espejo",
-            "price": 462000,
+            "price": 520000,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 10
             },
             "description": "Closet grande con maletero y espejo. Ideal para guardar ropa y accesorios. Las puertas del maletero son deslisables. Cuenta con 4 gabetas y 4 puertas, una de las puertas tiene espejo y cerradura para mayor seguridad.",
             "media": [
@@ -45,10 +45,10 @@
         {
             "name": "living-completo",
             "publicName": "Juego de Living Completo con Mesa ratona y Puff",
-            "price": 510000,
+            "price": 633000,
             "offer": 0,
             "finan": {
-                "cuotas": 9
+                "cuotas": 10
             },
             "description": "Sofá de 2 cuerpos, 2 puff y una mesa ratona. El material es en tela e inlcuye almohadones grandes y pequeños",
             "media": [
@@ -89,10 +89,10 @@
         {
             "name": "modular-tv-modulo-superior",
             "publicName": "Modular TV con Modulo Superior para TV de 50 pulgadas",
-            "price": 252000,
+            "price": 290000,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 9
             },
             "description": "Mesa/Rack para TV con estantes en la parte superior y varios espacios de almacenamiento.",
             "media": [
@@ -127,11 +127,11 @@
         {
             "name": "sillon-peque",
             "publicName": "Sillon Pequeño",
-            "price": 75000,
+            "price": 86000,
             "offer": 0,
             "finan": {
-                "cuotas": 5,
-                "valor": 15000
+                "cuotas": 4,
+                "valor": 21500
             },
             "description": "Silloncitos con tematicas para los mas peques de tu casa",
             "media": [
@@ -208,10 +208,10 @@
         {
             "name": "mostrador-vidrio",
             "publicName": "Mostrador con Vidrio",
-            "price": 244000,
+            "price": 290000,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 9
             },
             "description": "Mostrador/Exhibidor con estantes de vidrio. Ideal para exhibir productos. Cuenta con almacenamiento oculto en la parte posterior, medidas 94cm de alto x 116cm de ancho x 36cm de profundidad.",
             "media": [
@@ -261,10 +261,10 @@
         {
             "name": "camilla-masajes-completa",
             "publicName": "Camilla de Masajes con Mesa de Apoyo y Escalera",
-            "price": 322000,
+            "price": 378500,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 9
             },
             "description": "Camilla para hacer masajes con mesa de apoyo y escalera. Ideal para spa, centro de masajes, esteticas, etc. Medidas 80cm alto x 64cm ancho x 176cm largo.",
             "media": [
@@ -307,7 +307,7 @@
         {
             "name": "peinadora-peque",
             "publicName": "Peinadora Hollywood Pequeña con Luces",
-            "price": 336000,
+            "price": 378500,
             "offer": 0,
             "finan": {
                 "cuotas": 9
@@ -365,7 +365,7 @@
         {
             "name": "closet-peque-maletero-espejo",
             "publicName": "Closet pequeño con Maletero y Espejo",
-            "price": 336000,
+            "price": 378500,
             "offer": 0,
             "finan": {
                 "cuotas": 9
@@ -420,10 +420,10 @@
         {
             "name": "zapatero-espejo",
             "publicName": "Zapatero con Espejo",
-            "price": 244000,
+            "price": 300000,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 9
             },
             "description": "Mueble zapatero con espejo vertical, cuenta con 12 espacios para almacenar zapatos. Medidas 179cm de alto x 75cm de ancho x 32cm de profundidad.",
             "media": [
@@ -473,10 +473,10 @@
         {
             "name": "peinadora-puerta-corrediza",
             "publicName": "Peinadora con Puerta Corrediza, Espejo y Focos LED",
-            "price": 400000,
+            "price": 457000,
             "offer": 0,
             "finan": {
-                "cuotas": 9
+                "cuotas": 10
             },
             "description": "Peinadora/Tocadora con puerta corrediza, espejo y cajones. Cuenta con focos LED en la puerta, Ideal para maquillaje y peinado. Medidas 173cm de alto x 88cm de ancho x 36cm de profundidad.",
             "media": [
@@ -531,11 +531,11 @@
         {
             "name": "4-sillas-cuerina",
             "publicName": "4 sillas con tapizado de cuerina",
-            "price": 192000,
+            "price": 180000,
             "offer": 0,
             "finan": {
-                "cuotas": 6,
-                "valor": 32000
+                "cuotas": 5,
+                "valor": 36000
             },
             "description": "Cuatro sillas solas con tapizado de cuerina, ideal para comedor o sala de estar. medidas 100cm de alto x 40cm de ancho x 40cm de profundidad.",
             "media": [
@@ -585,10 +585,10 @@
         {
             "name": "6-sillas-cuerina",
             "publicName": "6 sillas con tapizado de cuerina",
-            "price": 285000,
+            "price": 302000,
             "offer": 0,
             "finan": {
-                "cuotas": 7
+                "cuotas": 8
             },
             "description": "Seis sillas solas con tapizado de cuerina, ideal para comedor o sala de estar. medidas 100cm de alto x 40cm de ancho x 40cm de profundidad.",
             "media": [
@@ -638,7 +638,7 @@
         {
             "name": "8-sillas-cuerina",
             "publicName": "8 sillas con tapizado de cuerina",
-            "price": 378000,
+            "price": 390000,
             "offer": 0,
             "finan": {
                 "cuotas": 9
@@ -691,10 +691,10 @@
         {
             "name": "alacena-grande",
             "publicName": "Alacena iglesia 190cm de Alto",
-            "price": 252000,
+            "price": 272000,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 9
             },
             "description": "Alacena grande de 190cm de alto, ideal para cocina, hogares, oficinas, etc. Cuenta con 3 puertas superiores e inferiores, cuatro gabetas y estantes.",
             "media": [
@@ -746,10 +746,10 @@
         {
             "name": "comedor-4-puestos-cuerina",
             "publicName": "Comedor de 4 puestos con tapizado en cuerina",
-            "price": 238000,
+            "price": 270000,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 9
             },
             "description": "Juego de comedor completo con cuatro sillas tapizadas en cuerina.",
             "media": [
@@ -794,7 +794,7 @@
         {
             "name": "comedor-6-puestos-cuerina",
             "publicName": "Comedor de 6 puestos con tapizado en cuerina",
-            "price": 336000,
+            "price": 378500,
             "offer": 0,
             "finan": {
                 "cuotas": 9
@@ -840,10 +840,10 @@
         {
             "name": "comedor-4-puestos-tela",
             "publicName": "Comedor de 4 puestos con sillas tapizadas en tela",
-            "price": 252000,
+            "price": 290000,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 9
             },
             "description": "Juego de comedor completo con cuatro sillas tapizadas en tela.",
             "media": [
@@ -884,7 +884,7 @@
         {
             "name": "comedor-6-puestos-tela",
             "publicName": "Comedor de 6 puestos con sillas tapizadas en tela",
-            "price": 378000,
+            "price": 425000,
             "offer": 0,
             "finan": {
                 "cuotas": 9
@@ -929,10 +929,10 @@
         {
             "name": "cajonera-doble",
             "publicName": "Cajonera doble con 8 cajones en diferentes colores",
-            "price": 205000,
+            "price": 237000,
             "offer": 0,
             "finan": {
-                "cuotas": 7
+                "cuotas": 8
             },
             "description": "Cajonera doble con 8 cajones en diferentes colores. Ideal para guardar ropa y accesorios. Medidas 90cm de alto x 110cm de ancho x 36cm de profundidad.",
             "media": [
@@ -982,11 +982,10 @@
         {
             "name": "desayunador",
             "publicName": "Desayunador completo con 2 sillas",
-            "price": 140000,
+            "price": 156000,
             "offer": 0,
             "finan": {
-                "cuotas": 7,
-                "valor": 20000
+                "cuotas": 7
             },
             "description": "Desayunar nunca fue tan comodo, desayunador completo con 2 sillas. Medidas 102cm de alto x 90cm de ancho x 35cm de profundidad.",
             "media": [
@@ -1034,10 +1033,10 @@
         {
             "name": "espejo-con-puff",
             "publicName": "Espejo con puff",
-            "price": 176000,
+            "price": 212000,
             "offer": 0,
             "finan": {
-                "cuotas": 6
+                "cuotas": 7
             },
             "description": "Espejo con puff, ideal para maquillaje y peinado.",
             "media": [
@@ -1067,10 +1066,10 @@
         {
             "name": "estante-2-percheros",
             "publicName": "Mueble ropero estante con 2 percheros",
-            "price": 214000,
+            "price": 251000,
             "offer": 0,
             "finan": {
-                "cuotas": 7
+                "cuotas": 8
             },
             "description": "Mueble ropero con dos percheros, ideal para guardar ropa y accesorios. Cuenta con multiples estantes. Medidas 190cm de alto x 130cm de ancho x 36cm de profundidad.",
             "media": [
@@ -1117,10 +1116,10 @@
         {
             "name": "estante-16-cubos",
             "publicName": "Mueble estante con 16 cubos de alamacenamiento",
-            "price": 225000,
+            "price": 288000,
             "offer": 0,
             "finan": {
-                "cuotas": 7
+                "cuotas": 9
             },
             "description": "Mueble con 16 estantes de almacenamiento, ideal para guardar ropa, accesorios, libros, etc. Medidas 190cm de alto x 130cm de ancho x 36cm de profundidad.",
             "media": [
@@ -1166,10 +1165,10 @@
         {
             "name": "estante-peque",
             "publicName": "Mueble Estantería con 4 espacios",
-            "price": 157000,
+            "price": 172000,
             "offer": 0,
             "finan": {
-                "cuotas": 6
+                "cuotas": 7
             },
             "description": "Estantería con 4 espacios amplios de almacenamiento, ideal para libros, accesorios, etc. Medidas 190cm de alto x 60cm de ancho x 36cm de profundidad.",
             "media": [
@@ -1258,10 +1257,10 @@
         {
             "name": "espaldar-2-plazas-pana",
             "publicName": "Espaldar/Respaldo de cama de dos plazas en tela pana",
-            "price": 182000,
+            "price": 212000,
             "offer": 0,
             "finan": {
-                "cuotas": 8
+                "cuotas": 7
             },
             "description": "Espaldar para cama de dos plazas tapizado en tela pana, acabdos de alta calidad.",
             "media": [
@@ -1296,10 +1295,10 @@
         {
             "name": "mesa-manicure-apoya-manos",
             "publicName": "Mesa de manucure con apoya manos",
-            "price": 274000,
+            "price": 251000,
             "offer": 0,
             "finan": {
-                "cuotas": 7
+                "cuotas": 8
             },
             "description": "Mesa para servicio de manicure, diseño comodo de apoya manos para comodidad del cliente.",
             "media": [
@@ -1333,10 +1332,10 @@
         {
             "name": "mesa-manicure-sola",
             "publicName": "Mesa para manicure",
-            "price": 198000,
+            "price": 235000,
             "offer": 0,
             "finan": {
-                "cuotas": 7
+                "cuotas": 8
             },
             "description": "Mesa para servicio de manicure.",
             "media": [
@@ -1372,10 +1371,10 @@
         {
             "name": "multiuso-con-vidrio",
             "publicName": "Mueble multiuso con vidrio",
-            "price": 205000,
+            "price": 235000,
             "offer": 0,
             "finan": {
-                "cuotas": 7
+                "cuotas": 8
             },
             "description": "Mueble multiuso con vidrio, ideal para almacenar objetos, libros, etc. Medidas 190cm de alto x 60cm de ancho x 36cm de profundidad.",
             "media": [
@@ -1425,10 +1424,10 @@
         {
             "name": "peinadora-hollywood-grande",
             "publicName": "Peinadora Hollywood Grande con focos LED",
-            "price": 400000,
+            "price": 457000,
             "offer": 0,
             "finan": {
-                "cuotas": 9
+                "cuotas": 10
             },
             "description": "Peinadora grande con focos LED, ideal para maquillaje y peinado. Medidas 175cm de alto x 125cm de ancho x 36cm de profundidad.",
             "media": [
@@ -1475,12 +1474,12 @@
         {
             "name": "ropero-3-puertas",
             "publicName": "Ropero con 3 puertas",
-            "price": 261000,
+            "price": 290000,
             "offer": 0,
             "finan": {
                 "cuotas": 9
             },
-            "description": "Ropero grande con tres puertas y espejo en el medio, ideal para guardar ropa y accesorios. Medidas 190cm de alto x 130cm de ancho x 36cm de profundidad.",
+            "description": "Ropero grande con tres puertas y espejo en el medio, ideal para guardar ropa y accesorios. Medidas 174cm de alto x 112cm de ancho x 43cm de profundidad.",
             "media": [
                 {
                     "colorName": "",
