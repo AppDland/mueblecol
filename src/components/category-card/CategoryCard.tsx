@@ -11,7 +11,7 @@ const CategoryCard = ({ name, imagePath }: CategoryButtonProps) => {
 
     return (
         <Link
-            href={`/zonas/${name}`}
+            href={`/zonas/${name}?page=1`}
             className='relative flex justify-center items-center m-2 sm:m-3 cursor-pointer select-none w-24 sm:w-40 h-32 sm:h-48 rounded-lg overflow-hidden group bg-accent'
         >
             <Image

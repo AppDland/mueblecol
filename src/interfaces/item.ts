@@ -9,20 +9,21 @@ export interface AttributeValue {
     value: string;
 }
 
-export interface ItemInt {
+export interface ProductBaseProps {
     id: string;
     slug: string;
     productName: string;
-    description: string;
     offerPrice: number | null;
     financialPrice: number;
-    firstPayment: number;
-    mountOfPayments: number;
     monthPayment: number;
-    synonyms: string[];
+    mountOfPayments: number;
+    firstPayment: number;
     ProductPhotos: ItemMedia[];
+}
+
+export interface ProductProps extends ProductBaseProps {
+    description: string;
     attributes?: AttributeValue[];
-    zones: string[];
 }
 
 export interface Attribute {
@@ -32,7 +33,7 @@ export interface Attribute {
 }
 
 export interface ItemsData {
-    items: ItemInt[];
+    items: ProductBaseProps[];
     attributes: Attribute[];
     zones: {
         id: number;

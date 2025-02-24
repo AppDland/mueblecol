@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 const PaginationContainer = ({ children }: { children: React.ReactNode[] }) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const { setTotalPages, currentPage } = PaginationState();
+    const { currentPage } = PaginationState();
     const [containerHeigth, setContainerHeight] = useState(688);
     const [itemsPerPage, setItemsPerPage] = useState(0);
     const rows = 3;
@@ -26,7 +26,6 @@ const PaginationContainer = ({ children }: { children: React.ReactNode[] }) => {
                 if (firstRow) {
                     const rowHeight = firstRow.getBoundingClientRect().height;
                     const gap = 8 * (columnCount - 1); // 8px de espacio entre columnas
-                    console.log(rowHeight, gap);
                     setContainerHeight(rowHeight * (window.innerWidth < 640 ? 10 : rows) + gap); // Altura de dos filas
                 }
             }
@@ -38,12 +37,6 @@ const PaginationContainer = ({ children }: { children: React.ReactNode[] }) => {
 
         return () => observer.disconnect(); // Cleanup
     }, []);
-
-    useEffect(() => {
-        if (itemsPerPage > 0) {
-            setTotalPages(Math.ceil(children.length / itemsPerPage));
-        }
-    }, [itemsPerPage, children]);
 
     return (
         <div

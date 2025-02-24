@@ -7,7 +7,7 @@ import PriceFilter from './PriceFilter';
 import MaterialFilter from './MaterialFilter';
 import RoomFilter from './RoomFilter';
 import { searchItems } from '@/functions/search';
-import { ItemInt } from '@/interfaces/item';
+import { ProductBaseProps } from '@/interfaces/item';
 import { useParams } from 'next/navigation';
 import classNames from 'classnames';
 import FilterIcon from '../FilterIcon';
@@ -16,15 +16,10 @@ import { FilterState } from '@/store';
 
 
 interface FiltersProps {
-    results: ItemInt[];
-    setResults: React.Dispatch<React.SetStateAction<ItemInt[]>>;
-    basedOn?: 'zone' | 'search';
-    zone?: string;
-    searchWord?: string;
     showRoomFilter?: boolean;
 }
 
-const Filters: React.FC<FiltersProps> = ({ results, setResults, zone, searchWord, basedOn = 'search', showRoomFilter = true }) => {
+const Filters: React.FC<FiltersProps> = ({ showRoomFilter = true }) => {
 
     const params = useParams();
     const query = params.query as string;
@@ -39,20 +34,20 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, zone, searchWord
     const [materials, setMaterials] = useState<string[]>([]);
 
     useEffect(() => {
-        const searchResults: ItemInt[] = [];
-        if (basedOn === 'search' && searchWord) {
-            searchResults.push(...searchItems(searchWord.replaceAll('-', ' ').toLowerCase()));
-        } else if (basedOn === 'zone' && zone) {
-            searchResults.push(...Items.items.filter(item => item.zones.map(zone => zone.toLowerCase()).includes(zone.toLowerCase())));
-        }
+        const searchResults: ProductBaseProps[] = [];
+        // if (basedOn === 'search' && searchWord) {
+        //     searchResults.push(...searchItems(searchWord.replaceAll('-', ' ').toLowerCase()));
+        // } else if (basedOn === 'zone' && zone) {
+        //     // searchResults.push(...Items.items.filter(item => item.zones.map(zone => zone.toLowerCase()).includes(zone.toLowerCase())));
+        // }
         let filteredResults = [...searchResults];
         if (searchResults.length > 0) {
             // Aplicar filtros
             if (filters.minPrice) {
-                filteredResults = filteredResults.filter(item => item.price >= filters.minPrice!);
+                // filteredResults = filteredResults.filter(item => item.price >= filters.minPrice!);
             }
             if (filters.maxPrice) {
-                filteredResults = filteredResults.filter(item => item.price <= filters.maxPrice!);
+                // filteredResults = filteredResults.filter(item => item.price <= filters.maxPrice!);
             }
             // if (filters.colors.length > 0) {
             //     filteredResults = filteredResults.filter(item =>
@@ -62,52 +57,52 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, zone, searchWord
             //     );
             // }
             if (filters.materials.length > 0) {
-                filteredResults = filteredResults.filter(item =>
-                    item.attributes && item.attributes.some(attr =>
-                        attr.attributeId === 1 &&
-                        filters.materials.includes(attr.value.toLowerCase())
-                    )
-                );
+                // filteredResults = filteredResults.filter(item =>
+                //     item.attributes && item.attributes.some(attr =>
+                //         attr.attributeId === 1 &&
+                //         filters.materials.includes(attr.value.toLowerCase())
+                //     )
+                // );
             }
             if (filters.zones && filters.zones.length > 0) {
-                filteredResults = filteredResults.filter(item =>
-                    item.zones.some(zone => filters.zones?.includes(zone))
-                );
+                // filteredResults = filteredResults.filter(item =>
+                //     item.zones.some(zone => filters.zones?.includes(zone))
+                // );
             }
 
             // Aplicar ordenamiento
-            switch (filters.sort) {
-                case 'precio-asc':
-                    filteredResults.sort((a, b) => a.price - b.price);
-                    break;
-                case 'precio-desc':
-                    filteredResults.sort((a, b) => b.price - a.price);
-                    break;
-                case 'oferta':
-                    filteredResults.sort((a, b) => (b.offer || b.price) - (a.offer || a.price));
-                    break;
-            }
+            // switch (filters.sort) {
+            //     case 'precio-asc':
+            //         filteredResults.sort((a, b) => a.price - b.price);
+            //         break;
+            //     case 'precio-desc':
+            //         filteredResults.sort((a, b) => b.price - a.price);
+            //         break;
+            //     case 'oferta':
+            //         filteredResults.sort((a, b) => (b.offer || b.price) - (a.offer || a.price));
+            //         break;
+            // }
 
-            setResults(filteredResults);
+            // setResults(filteredResults);
         } else {
-            setResults([]);
+            // setResults([]);
         }
 
     }, [query, filters]);
 
-    useEffect(() => {
-        if (results.length > 0 && filters.materials.length === 0) {
-            setMaterials(
-                results.reduce<string[]>((acc, item) => {
-                    const material = item.attributes?.find(attr => attr.attributeId === 1)?.value;
-                    if (material && !acc.includes(material)) {
-                        acc.push(material);
-                    }
-                    return acc;
-                }, [])
-            );
-        }
-    }, [results, filters.materials]);
+    // useEffect(() => {
+    //     if (results.length > 0 && filters.materials.length === 0) {
+    //         setMaterials(
+    //             results.reduce<string[]>((acc, item) => {
+    //                 const material = item.attributes?.find(attr => attr.attributeId === 1)?.value;
+    //                 if (material && !acc.includes(material)) {
+    //                     acc.push(material);
+    //                 }
+    //                 return acc;
+    //             }, [])
+    //         );
+    //     }
+    // }, [results, filters.materials]);
 
     const { isOpen, animated, closeFilters, toggleFilters } = FilterState();
 
@@ -154,9 +149,9 @@ const Filters: React.FC<FiltersProps> = ({ results, setResults, zone, searchWord
                     "z-[41] md:z-0"
                 )}
             >
-                <SortFilter currentFilters={filters} onFilterChange={setFilters} />
+                <SortFilter />
                 {showRoomFilter && <RoomFilter currentFilters={filters} onFilterChange={setFilters} />}
-                <PriceFilter currentFilters={filters} onFilterChange={setFilters} />
+                <PriceFilter />
                 {/* <ColorFilter currentFilters={filters} onFilterChange={setFilters} /> */}
                 {
                     materials.length > 0 && (

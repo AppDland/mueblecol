@@ -16,6 +16,7 @@ const PaginationState = create<PaginationStateProps>((set) => ({
     },
 
     setTotalPages: (pages: number) => {
+        console.log(pages);
         set({ totalPages: pages });
     },
 }));

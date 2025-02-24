@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { ItemInt } from '@/interfaces/item';
+import { ProductBaseProps } from '@/interfaces/item';
 import Filters from '@/components/filters/Filters';
 import { useParams } from 'next/navigation';
 import { Card, Pagination } from '@/components';
@@ -10,7 +10,7 @@ import { PaginationContainer } from '@/components/pagination/PaginationContainer
 export default function SearchResults() {
     const params = useParams();
     const query = params.query as string;
-    const [results, setResults] = useState<ItemInt[]>([]);
+    const [results, setResults] = useState<ProductBaseProps[]>([]);
 
     return (
         <div className='items-screen'>
@@ -29,7 +29,7 @@ export default function SearchResults() {
             <div className="items-screen-section-3">
                 <PaginationContainer>
                     {
-                        results.map((item: ItemInt, index) => (
+                        results.map((item: ProductBaseProps, index) => (
                             <Card item={item} key={index} />
                         ))
                     }

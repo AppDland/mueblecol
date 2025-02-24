@@ -1,4 +1,4 @@
-import { ItemInt, ItemsData } from '@/interfaces/item';
+import { ProductBaseProps, ItemsData } from '@/interfaces/item';
 import Items from '@/data/items.json';
 import Ignoradas from '@/data/ignore.json';
 
@@ -44,11 +44,11 @@ const areSimilarWords = (word1: string, word2: string): boolean => {
     return distance <= maxDistance;
 };
 
-export const searchItems = (searchTerm: string): ItemInt[] => {
+export const searchItems = (searchTerm: string): ProductBaseProps[] => {
     if (searchTerm.length < 4) return [];
     // Separamos los términos de búsqueda y los convertimos a minúsculas
     const searchWords = searchTerm.toLowerCase().trim().split(' ');
-    const results: ItemInt[] = [];
+    const results: ProductBaseProps[] = [];
 
     Items.items.forEach(item => {
         // Creamos un array con todas las palabras relevantes del item
@@ -112,7 +112,7 @@ export const searchItems = (searchTerm: string): ItemInt[] => {
 /**
  * Encuentra items similares basándose en zonas compartidas, colores y materiales
  */
-export const findSimilarItems = (item: ItemInt): ItemInt[] => {
+export const findSimilarItems = (item: ProductBaseProps): ProductBaseProps[] => {
     const typedItems = Items as unknown as ItemsData;
     const allItems = typedItems.items;
 

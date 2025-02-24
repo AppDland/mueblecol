@@ -1,27 +1,55 @@
 'use client';
 
-import { PaginationState } from "@/store";
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import classNames from "classnames";
 
-const Pagination = () => {
+import NProgress from 'nprogress';
+import { useEffect } from 'react';
+import 'nprogress/nprogress.css';
 
-    const { totalPages, setCurrentPage, currentPage } = PaginationState();
+NProgress.configure({
+    showSpinner: false,
+    trickleSpeed: 200,
+    minimum: 0.3
+});
+
+const Pagination = ({ totalPages: totalPagesProp }: { totalPages: number }) => {
+    const searchParams = useSearchParams();
+
+    const createPageURL = (pageNumber: number) => {
+        const params = new URLSearchParams(searchParams);
+        params.set('page', (pageNumber + 1).toString());
+        return `?${params.toString()}`;
+    };
+
+    // Obtener la página actual de la URL (1-based) y convertirla a 0-based para el componente
+    const currentPage = parseInt(searchParams.get('page') || '1') - 1;
+
+    useEffect(() => {
+        NProgress.done();
+    }, [currentPage]);
+
+    const handleClick = () => {
+        NProgress.start();
+    };
 
     return (
-        totalPages > 1 && (
+        totalPagesProp > 1 && (
             <div className={classNames(
                 "flex justify-center gap-2 my-8 w-full",
             )}>
                 {
-                    Array.from({ length: totalPages }, (_, i) => (
-                        <button
+                    Array.from({ length: totalPagesProp }, (_, i) => (
+                        <Link
                             key={i}
-                            onClick={() => { setCurrentPage(i); document.body.scrollIntoView({ block: 'start', behavior: 'smooth' }) }}
+                            href={createPageURL(i)}
+                            onClick={handleClick}
                             className={`px-4 py-2 rounded ${currentPage === i ? "bg-primary text-white" : "bg-gray-300 hover:bg-gray-400"
                                 }`}
                         >
                             {i + 1}
-                        </button>
+                        </Link>
                     ))
                 }
             </div>

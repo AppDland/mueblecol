@@ -1,6 +1,6 @@
 'use server';
 
-import { ItemInt } from '@/interfaces/item';
+import { ProductBaseProps } from '@/interfaces/item';
 import { NextResponse } from 'next/server';
 
 export async function GET(

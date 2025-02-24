@@ -1,17 +1,17 @@
 import { money } from "@/functions/money";
-import { ItemInt } from "@/interfaces/item";
+import { ProductBaseProps } from "@/interfaces/item";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 
 interface CardProps {
-    item: ItemInt;
+    item: ProductBaseProps;
 }
 
 const Card = ({ item }: CardProps) => {
 
     return (
-        <div className='border-b sm:border-none sm:rounded-lg border-gray-200 min-w-44'>
+        <div className='border-b sm:border-none sm:rounded-lg border-gray-200 min-w-44 max-w-60'>
             <Link
                 href={`/articulos/${item.slug}`}
                 className={classNames(
@@ -29,8 +29,10 @@ const Card = ({ item }: CardProps) => {
                         src={item.ProductPhotos.length > 0 ? item.ProductPhotos[0].cloudUrl : '/images/fallback.png'}
                         alt={item.productName}
                         fill
+                        sizes="200px"
                         className="object-cover"
                         blurDataURL='/images/fallback.png'
+                        priority
                     />
                 </div>
                 <div className={classNames(

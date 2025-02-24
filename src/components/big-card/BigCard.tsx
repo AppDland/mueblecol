@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { ItemInt } from "@/interfaces/item";
+import { ProductBaseProps } from "@/interfaces/item";
 import Link from "next/link";
 
 
-const BigCard = (item: ItemInt) => {
+const BigCard = (item: ProductBaseProps) => {
 
 
     return (
