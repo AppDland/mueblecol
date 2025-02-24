@@ -1,8 +1,6 @@
 export interface ItemMedia {
     // id: number;
-    colorName: string;
-    colorHex: string;
-    photos: string[];
+    cloudUrl: string;
 }
 
 export interface AttributeValue {
@@ -12,18 +10,19 @@ export interface AttributeValue {
 }
 
 export interface ItemInt {
-    // id: number;
-    name: string;
-    publicName: string;
-    price: number;
-    offer: number | null;
-    // stock: number;
+    id: string;
+    slug: string;
+    productName: string;
     description: string;
-    media: ItemMedia[];
-    attributes?: AttributeValue[];
+    offerPrice: number | null;
+    financialPrice: number;
+    firstPayment: number;
+    mountOfPayments: number;
+    monthPayment: number;
     synonyms: string[];
+    ProductPhotos: ItemMedia[];
+    attributes?: AttributeValue[];
     zones: string[];
-    finan: { cuotas: number, valor?: number };
 }
 
 export interface Attribute {

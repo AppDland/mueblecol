@@ -1,6 +1,7 @@
 import { Inter, Roboto_Mono, Cookie, Athiti } from 'next/font/google';
 import classNames from 'classnames';
 import "./globals.css";
+import Scroll from '@/components/scroll/Scroll';
 
 // Configure font weights and subsets
 const inter = Inter({
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <meta name="description" content="Gran variedad de muebles calidad-precio, financiación propia para facilita..." />
                 <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
             </head>
+            <Scroll />
             <body className={classNames(
                 inter.variable,
                 robotoMono.variable,

@@ -1,7 +1,11 @@
-import Items from '../../data/items.json';
+import { getZones } from '@/services/zones.service';
 import { Carrousel, CategoryCard } from '@/components';
 
-export function Categories({ showTitle = true }: { showTitle?: boolean }) {
+export async function Categories({ showTitle = true }: { showTitle?: boolean }) {
+
+    const zones = await getZones();
+
+    if (!zones) return null;
 
     return (
         <section className='section bg-white'>
@@ -13,11 +17,11 @@ export function Categories({ showTitle = true }: { showTitle?: boolean }) {
             <div className='px-2'>
                 <Carrousel>
                     {
-                        Items.zones.map((cat, index) => (
+                        zones.map((cat, index) => (
                             <CategoryCard
                                 key={index}
                                 name={cat.name}
-                                imagePath={cat.image}
+                                imagePath={cat.imageUrl}
                             />
                         ))
                     }

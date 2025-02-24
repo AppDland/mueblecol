@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import { upperFirst } from '@/functions/upperFirst';
 import Image from 'next/image';

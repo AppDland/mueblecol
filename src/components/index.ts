@@ -1,5 +1,4 @@
-export * from './header/Header';
-export * from './header/Title';
+export * from './Header/Header';
 export * from './carrousel/Carrousel';
 export * from './category-card/CategoryCard';
 export * from './modern-card/ModernCard';
@@ -10,3 +9,4 @@ export * from './pagination/Pagination';
 export * from './image-slider/ImageSlider';
 export * from './buy-button/BuyButton';
 export * from './card/Card';
+export * from './scroll/Scroll';
