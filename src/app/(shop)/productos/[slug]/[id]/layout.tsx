@@ -11,17 +11,17 @@ interface ItemLayoutProps {
 
 export default async function Layout({ children, params }: ItemLayoutProps) {
 
-    const itemSlug = (await params).item;
-    const product = Items.items.find(item => item.name === itemSlug);
+    // const itemSlug = (await params).item;
+    // const product = Items.items.find(item => item.name === itemSlug);
 
-    if (!product) {
-        notFound();
-    }
-    const similarItems = findSimilarItems(product)
+    // if (!product) {
+    //     notFound();
+    // }
+    // const similarItems = findSimilarItems(product)
 
     return (
         <>
-            <Head>
+            {/* <Head>
                 <script type="application/ld+json">
                     {`
                         {
@@ -55,10 +55,10 @@ export default async function Layout({ children, params }: ItemLayoutProps) {
                         }
                     `}
                 </script>
-            </Head>
+            </Head> */}
             {children}
             {/* Items similares */}
-            {
+            {/* {
                 similarItems.length > 0 && (
                     <div className='my-16 px-1 md:px-2'>
                         <h2 className='h2'>Similares</h2>
@@ -79,7 +79,7 @@ export default async function Layout({ children, params }: ItemLayoutProps) {
                         </Carrousel>
                     </div>
                 )
-            }
+            } */}
         </>
     )
 }

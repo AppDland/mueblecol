@@ -13,7 +13,7 @@ const Card = ({ item }: CardProps) => {
     return (
         <div className='border-b sm:border-none sm:rounded-lg border-gray-200 min-w-44 max-w-60'>
             <Link
-                href={`/articulos/${item.slug}`}
+                href={`/productos/${item.slug}/${item.id}`}
                 className={classNames(
                     "bg-white flex px-5 sm:flex sm:flex-col py-6",
                     // "w-full sm:w-48",

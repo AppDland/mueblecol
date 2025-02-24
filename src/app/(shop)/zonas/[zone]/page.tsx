@@ -1,6 +1,5 @@
 import { Card, Pagination } from '@/components';
 import { upperFirst } from '../../../../functions/upperFirst';
-import { PaginationContainer } from '@/components/pagination/PaginationContainer';
 import { notFound } from 'next/navigation';
 import { getProductsByZone } from '@/services/zones.service';
 import classNames from 'classnames';
