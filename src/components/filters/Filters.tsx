@@ -4,14 +4,14 @@ import { FilterOptions } from '../../interfaces/filter';
 import SortFilter from './SortFilter';
 import PriceFilter from './PriceFilter';
 // import ColorFilter from './ColorFilter';
-import MaterialFilter from './MaterialFilter';
-import RoomFilter from './RoomFilter';
-import { searchItems } from '@/functions/search';
-import { ProductBaseProps } from '@/interfaces/item';
-import { useParams } from 'next/navigation';
+// import MaterialFilter from './MaterialFilter';
+// import RoomFilter from './RoomFilter';
+// import { searchItems } from '@/functions/search';
+// import { ProductBaseProps } from '@/interfaces/item';
+// import { useParams } from 'next/navigation';
 import classNames from 'classnames';
 import FilterIcon from '../FilterIcon';
-import Items from '@/data/items.json';
+// import Items from '@/data/items.json';
 import { FilterState } from '@/store';
 
 
@@ -21,8 +21,8 @@ interface FiltersProps {
 
 const Filters: React.FC<FiltersProps> = ({ showRoomFilter = true }) => {
 
-    const params = useParams();
-    const query = params.query as string;
+    // const params = useParams();
+    // const query = params.query as string;
 
     const [filters, setFilters] = useState<FilterOptions>({
         sort: 'destacados',
@@ -31,64 +31,64 @@ const Filters: React.FC<FiltersProps> = ({ showRoomFilter = true }) => {
         zones: []
     });
 
-    const [materials, setMaterials] = useState<string[]>([]);
+    // const [materials, setMaterials] = useState<string[]>([]);
 
-    useEffect(() => {
-        const searchResults: ProductBaseProps[] = [];
-        // if (basedOn === 'search' && searchWord) {
-        //     searchResults.push(...searchItems(searchWord.replaceAll('-', ' ').toLowerCase()));
-        // } else if (basedOn === 'zone' && zone) {
-        //     // searchResults.push(...Items.items.filter(item => item.zones.map(zone => zone.toLowerCase()).includes(zone.toLowerCase())));
-        // }
-        let filteredResults = [...searchResults];
-        if (searchResults.length > 0) {
-            // Aplicar filtros
-            if (filters.minPrice) {
-                // filteredResults = filteredResults.filter(item => item.price >= filters.minPrice!);
-            }
-            if (filters.maxPrice) {
-                // filteredResults = filteredResults.filter(item => item.price <= filters.maxPrice!);
-            }
-            // if (filters.colors.length > 0) {
-            //     filteredResults = filteredResults.filter(item =>
-            //         item.media.some(media =>
-            //             filters.colors.includes(media.colorName)
-            //         )
-            //     );
-            // }
-            if (filters.materials.length > 0) {
-                // filteredResults = filteredResults.filter(item =>
-                //     item.attributes && item.attributes.some(attr =>
-                //         attr.attributeId === 1 &&
-                //         filters.materials.includes(attr.value.toLowerCase())
-                //     )
-                // );
-            }
-            if (filters.zones && filters.zones.length > 0) {
-                // filteredResults = filteredResults.filter(item =>
-                //     item.zones.some(zone => filters.zones?.includes(zone))
-                // );
-            }
+    // useEffect(() => {
+    //     const searchResults: ProductBaseProps[] = [];
+    //     // if (basedOn === 'search' && searchWord) {
+    //     //     searchResults.push(...searchItems(searchWord.replaceAll('-', ' ').toLowerCase()));
+    //     // } else if (basedOn === 'zone' && zone) {
+    //     //     // searchResults.push(...Items.items.filter(item => item.zones.map(zone => zone.toLowerCase()).includes(zone.toLowerCase())));
+    //     // }
+    //     let filteredResults = [...searchResults];
+    //     if (searchResults.length > 0) {
+    //         // Aplicar filtros
+    //         if (filters.minPrice) {
+    //             // filteredResults = filteredResults.filter(item => item.price >= filters.minPrice!);
+    //         }
+    //         if (filters.maxPrice) {
+    //             // filteredResults = filteredResults.filter(item => item.price <= filters.maxPrice!);
+    //         }
+    //         // if (filters.colors.length > 0) {
+    //         //     filteredResults = filteredResults.filter(item =>
+    //         //         item.media.some(media =>
+    //         //             filters.colors.includes(media.colorName)
+    //         //         )
+    //         //     );
+    //         // }
+    //         if (filters.materials.length > 0) {
+    //             // filteredResults = filteredResults.filter(item =>
+    //             //     item.attributes && item.attributes.some(attr =>
+    //             //         attr.attributeId === 1 &&
+    //             //         filters.materials.includes(attr.value.toLowerCase())
+    //             //     )
+    //             // );
+    //         }
+    //         if (filters.zones && filters.zones.length > 0) {
+    //             // filteredResults = filteredResults.filter(item =>
+    //             //     item.zones.some(zone => filters.zones?.includes(zone))
+    //             // );
+    //         }
 
-            // Aplicar ordenamiento
-            // switch (filters.sort) {
-            //     case 'precio-asc':
-            //         filteredResults.sort((a, b) => a.price - b.price);
-            //         break;
-            //     case 'precio-desc':
-            //         filteredResults.sort((a, b) => b.price - a.price);
-            //         break;
-            //     case 'oferta':
-            //         filteredResults.sort((a, b) => (b.offer || b.price) - (a.offer || a.price));
-            //         break;
-            // }
+    //         // Aplicar ordenamiento
+    //         // switch (filters.sort) {
+    //         //     case 'precio-asc':
+    //         //         filteredResults.sort((a, b) => a.price - b.price);
+    //         //         break;
+    //         //     case 'precio-desc':
+    //         //         filteredResults.sort((a, b) => b.price - a.price);
+    //         //         break;
+    //         //     case 'oferta':
+    //         //         filteredResults.sort((a, b) => (b.offer || b.price) - (a.offer || a.price));
+    //         //         break;
+    //         // }
 
-            // setResults(filteredResults);
-        } else {
-            // setResults([]);
-        }
+    //         // setResults(filteredResults);
+    //     } else {
+    //         // setResults([]);
+    //     }
 
-    }, [query, filters]);
+    // }, [query, filters]);
 
     // useEffect(() => {
     //     if (results.length > 0 && filters.materials.length === 0) {
@@ -150,14 +150,14 @@ const Filters: React.FC<FiltersProps> = ({ showRoomFilter = true }) => {
                 )}
             >
                 <SortFilter />
-                {showRoomFilter && <RoomFilter currentFilters={filters} onFilterChange={setFilters} />}
+                {/* {showRoomFilter && <RoomFilter currentFilters={filters} onFilterChange={setFilters} />} */}
                 <PriceFilter />
                 {/* <ColorFilter currentFilters={filters} onFilterChange={setFilters} /> */}
-                {
+                {/* {
                     materials.length > 0 && (
                         <MaterialFilter currentFilters={filters} onFilterChange={setFilters} materials={materials} />
                     )
-                }
+                } */}
                 <button
                     className='btn-primary w-full md:hidden'
                     onClick={closeFilters}

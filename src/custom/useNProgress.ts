@@ -1,9 +1,10 @@
 'use client';
 
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import NProgress from "nprogress";
 import 'nprogress/nprogress.css';
+import './NProgress.css';
 
 NProgress.configure({
     showSpinner: false,
@@ -13,10 +14,15 @@ NProgress.configure({
 
 export const useNProgress = () => {
     const searchParams = useSearchParams();
+    const pathname = usePathname();
 
     useEffect(() => {
         NProgress.done();
-    }, [searchParams]);
+
+        return () => {
+            NProgress.done();
+        }
+    }, [searchParams, pathname]);
 
     return {
         start: () => NProgress.start(),

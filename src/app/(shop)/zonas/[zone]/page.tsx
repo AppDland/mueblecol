@@ -40,7 +40,7 @@ export default async function Page({
         maxPrice: maxPrice ? Number(maxPrice) : undefined
     });
 
-    if (!productsResponse) notFound();
+    if (!productsResponse || productsResponse.data.length === 0) notFound();
 
     const { data: products, meta } = productsResponse;
 

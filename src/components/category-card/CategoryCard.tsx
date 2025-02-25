@@ -1,6 +1,8 @@
+
 import Link from 'next/link';
 import { upperFirst } from '@/functions/upperFirst';
 import Image from 'next/image';
+import { Navigate } from '@/components';
 
 interface CategoryButtonProps {
     name: string;
@@ -9,8 +11,9 @@ interface CategoryButtonProps {
 
 const CategoryCard = ({ name, imagePath }: CategoryButtonProps) => {
 
+
     return (
-        <Link
+        <Navigate
             href={`/zonas/${name}?page=1`}
             className='relative flex justify-center items-center m-2 sm:m-3 cursor-pointer select-none w-24 sm:w-40 h-32 sm:h-48 rounded-lg overflow-hidden group bg-accent'
         >
@@ -26,7 +29,7 @@ const CategoryCard = ({ name, imagePath }: CategoryButtonProps) => {
             <h3 className="relative z-10 text-center text-white text-2xl sm:text-3xl font-cookie font-extralight">
                 {upperFirst(name)}
             </h3>
-        </Link>
+        </Navigate>
     );
 };
 

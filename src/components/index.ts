@@ -9,4 +9,6 @@ export * from './pagination/Pagination';
 export * from './image-slider/ImageSlider';
 export * from './buy-button/BuyButton';
 export * from './card/Card';
+export * from './Navigate/Navigate';
 export * from './scroll/Scroll';
+export * from './loading/Loading';

@@ -37,13 +37,16 @@ const MobileImageSlider = ({ images, className, article }: ImageSliderProps) => 
             >
                 {
                     images.map(image => (
-                        <SwiperSlide key={image}>
+                        <SwiperSlide
+                            key={image}
+                            style={{ backgroundColor: 'rgba(0, 0, 0, 0.04)' }}
+                        >
                             <Image
                                 src={image}
                                 alt={article}
                                 width={300}
                                 height={300}
-                                className='object-fill'
+                                className='object-contain'
                                 priority
                             />
                         </SwiperSlide>

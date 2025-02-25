@@ -16,6 +16,7 @@ import './imageslider.css';
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import Image from 'next/image';
+import classNames from 'classnames';
 
 interface ImageSliderProps {
     images: string[];
@@ -29,7 +30,10 @@ const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
     const swiperRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div className={className} ref={swiperRef}>
+        <div
+            className={classNames(className, 'select-none h-[600px]')}
+            ref={swiperRef}
+        >
             <Swiper
                 style={{
                     '--swiper-navigation-color': '#fff',
@@ -46,13 +50,17 @@ const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
             >
                 {
                     images.map(image => (
-                        <SwiperSlide key={image}>
+                        <SwiperSlide
+                            key={image}
+                            className='overflow-hidden rounded-lg'
+                            style={{ backgroundColor: 'rgba(0, 0, 0, 0.04)' }}
+                        >
                             <Image
                                 src={image}
                                 alt={article}
                                 width={500}
                                 height={500}
-                                className='rounded-lg object-fill border'
+                                className='object-contain'
                                 priority
                             />
                         </SwiperSlide>
@@ -77,7 +85,7 @@ const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
                                 alt={article}
                                 width={100}
                                 height={100}
-                                className='rounded-lg object-fill border'
+                                className='rounded-lg object-fill'
                             />
                         </SwiperSlide>
                     ))

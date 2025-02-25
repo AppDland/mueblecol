@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { TitleAnimated } from '@/components/header/Title';
+import { TitleAnimated } from '@/components/Header/Title';
 import "./intro.css";
 
 export function Intro() {

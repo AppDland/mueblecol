@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useNProgress } from "@/custom/useNProgress";
+// import { useNProgress } from "@/custom/useNProgress";
+
 const PriceFilter = () => {
     const searchParams = useSearchParams();
     const router = useRouter();
-    const { start } = useNProgress();
+    // const { start } = useNProgress();
 
     const minPriceProp = searchParams.get('minPrice') as string | null;
     const maxPriceProp = searchParams.get('maxPrice') as string | null;
@@ -15,7 +16,7 @@ const PriceFilter = () => {
     const [localMax, setLocalMax] = useState(maxPriceProp || '');
 
     const handleBlur = () => {
-        start();
+        // start();
         const params = new URLSearchParams(searchParams);
         if (localMin.length > 0) {
             params.set('minPrice', localMin);
@@ -43,6 +44,7 @@ const PriceFilter = () => {
                     onBlur={handleBlur}
                 />
                 <input
+                    name="maxPrice"
                     type="number"
                     placeholder="Máximo"
                     className="w-1/2 p-2 border rounded"

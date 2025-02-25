@@ -4,8 +4,7 @@ export interface ItemMedia {
 }
 
 export interface AttributeValue {
-    // id: number;
-    attributeId: number;
+    name: string;
     value: string;
 }
 
@@ -15,15 +14,16 @@ export interface ProductBaseProps {
     productName: string;
     offerPrice: number | null;
     financialPrice: number;
-    monthPayment: number;
-    mountOfPayments: number;
     firstPayment: number;
+    mountOfPayments: number;
+    monthPayment: number;
     ProductPhotos: ItemMedia[];
 }
 
 export interface ProductProps extends ProductBaseProps {
     description: string;
-    attributes?: AttributeValue[];
+    ZoneItem: string[];
+    AttributeValue?: AttributeValue[];
 }
 
 export interface Attribute {

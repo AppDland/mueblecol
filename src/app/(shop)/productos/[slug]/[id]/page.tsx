@@ -5,19 +5,21 @@ import { BuyButton, ImageSlider } from '@/components';
 import { MobileImageSlider } from '@/components/image-slider/MobileImageSlider';
 import { notFound, redirect } from 'next/navigation';
 import { getProduct } from '@/services/product.service';
+import Fallback from './fallback';
 
 
 
 interface Props {
-    params: {
+    params: Promise<{
         slug: string;
         id: string;
-    }
+    }>
 }
 
 async function ProductPage({ params }: Props) {
     // Obtenemos el producto usando el ID
-    const product = await getProduct(params.id);
+    const { id, slug } = await params;
+    const product = await getProduct(id);
 
     // Si no existe el producto, redirigimos a 404
     if (!product) {
@@ -25,14 +27,14 @@ async function ProductPage({ params }: Props) {
     }
 
     // Verificamos que el slug en la URL coincida con el del producto
-    if (product.slug !== params.slug) {
+    if (product.slug !== slug) {
         // Si no coincide, redirigimos a la URL correcta
         redirect(`/productos/${product.slug}/${product.id}`);
     }
 
     return (
         <section className='section'>
-
+            {/* <Fallback /> */}
             {/* Contenido principal */}
             <div className='grid grid-cols-5 gap-4 md:px-8 place-self-center'>
                 <MobileImageSlider
@@ -43,7 +45,7 @@ async function ProductPage({ params }: Props) {
                 <ImageSlider
                     images={product.ProductPhotos.map(photo => photo.cloudUrl)}
                     article={product.productName}
-                    className='xl:place-self-center col-span-3 max-w-2xl hidden md:block h-[500px]'
+                    className='xl:place-self-center col-span-3 max-w-2xl hidden md:block'
                 />
                 <div
                     className={classNames(
@@ -54,10 +56,10 @@ async function ProductPage({ params }: Props) {
                     <h1 className='h1'>{product.productName}</h1>
                     <div className='content-center'>
                         <h2 className='h2 px-0'>Financiamiento</h2>
-                        {/* <p>
-                            ¿Qué estás esperando? Puedes obtener este artículo hasta en {product.finan.cuotas} cuotas
-                            {product.finan.valor && ` de ${money(product.finan.valor)}`}
-                        </p> */}
+                        <p>
+                            ¿Qué estás esperando? Puedes obtener este artículo hasta en {product.mountOfPayments} cuotas
+                            {product.firstPayment === product.monthPayment && ` de ${money(product.monthPayment)}`}
+                        </p>
                     </div>
                     <div>
                         <p className='text-3xl font-bold text-primary my-5'>{money(product.financialPrice)}</p>
@@ -73,7 +75,7 @@ async function ProductPage({ params }: Props) {
             </div>
 
             {/* ATRIBUTOS */}
-            {product.attributes && <Attributes attributes={product.attributes} />}
+            {product.AttributeValue && <Attributes attributes={product.AttributeValue} />}
 
 
         </section>
@@ -81,7 +83,7 @@ async function ProductPage({ params }: Props) {
 };
 
 interface attributesInt {
-    attributeId: number;
+    name: string;
     value: string;
 }
 
@@ -95,7 +97,7 @@ const Attributes = ({ attributes }: { attributes: attributesInt[] }) => (
                         'grid grid-cols-2 gap-2 p-2',
                         id % 2 === 0 ? 'bg-neutral-200' : 'bg-neutral-100'
                     )}>
-                        <p className='opacity-80'>{Items.attributes[attr.attributeId - 1].name}</p>
+                        <p className='opacity-80'>{attr.name}</p>
                         <p className='font-semibold'>{attr.value}</p>
                     </span>
                 ))

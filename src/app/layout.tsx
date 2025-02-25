@@ -1,7 +1,8 @@
 import { Inter, Roboto_Mono, Cookie, Athiti } from 'next/font/google';
 import classNames from 'classnames';
 import "./globals.css";
-import Scroll from '@/components/scroll/Scroll';
+import { Metadata } from 'next';
+import { Scroll } from '@/components';
 
 // Configure font weights and subsets
 const inter = Inter({
@@ -28,6 +29,11 @@ const h2Font = Athiti({
     variable: '--font-athiti'
 });
 
+export const metadata: Metadata = {
+    title: 'Mueblecol',
+    description: 'Gran variedad de muebles calidad-precio, financiación propia para facilita...'
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     // useEffect(() => {
     // const savedTheme = localStorage.getItem('theme') || 'light';
@@ -38,11 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     return (
         <html lang="es">
-            <head>
-                <title>Mueblecol</title>
-                <meta name="description" content="Gran variedad de muebles calidad-precio, financiación propia para facilita..." />
-                <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
-            </head>
             <Scroll />
             <body className={classNames(
                 inter.variable,

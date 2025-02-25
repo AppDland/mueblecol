@@ -10,5 +10,6 @@ export default async function ProductosPage({ params }: { params: Promise<{ slug
 
     if (!product) notFound();
 
+
     redirect(`/productos/${product.slug}/${id}`);
 }
