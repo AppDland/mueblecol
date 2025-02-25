@@ -1,7 +1,7 @@
 import React from 'react';
 import { colorMap, FilterProps } from '../../interfaces/filter';
 import ColorPicker from '../ColorPicker';
-import { ItemMedia } from '@/interfaces/item';
+import { ItemMedia } from '@/interfaces/product';
 
 const ColorFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) => {
     const colorOptions: ItemMedia[] = Object.entries(colorMap).map(([_, value], index) => ({
@@ -16,7 +16,7 @@ const ColorFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) 
         const updatedColors = isSelected
             ? currentFilters.colors.filter(c => c !== color.colorName)
             : [...currentFilters.colors, color.colorName];
-        
+
         onFilterChange({
             ...currentFilters,
             colors: updatedColors

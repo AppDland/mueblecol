@@ -1,4 +1,5 @@
 'use client';
+import { useNProgress } from '@/custom/useNProgress';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
@@ -7,6 +8,7 @@ import { useEffect, useState } from 'react';
 export function Finder({ defaultValue = '', isDark = false }) {
     const [searchTerm, setSearchTerm] = useState(defaultValue);
     const [active, setActive] = useState(false);
+    const { start } = useNProgress();
     const params = useParams();
 
     useEffect(() => {
@@ -28,6 +30,7 @@ export function Finder({ defaultValue = '', isDark = false }) {
         <form
             action={`/buscar/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`}
             className={"w-full max-w-60 md:max-w-64 relative flex items-center py-1 rounded-lg overflow-hidden bg-white border border-accent"}
+            onSubmit={() => start()}
         >
             <Slider active={active} />
             <input

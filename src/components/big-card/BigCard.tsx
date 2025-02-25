@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ProductBaseProps } from "@/interfaces/item";
+import { ProductBaseProps } from "@/interfaces/product";
 import Link from "next/link";
 
 

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getProductsByZone } from '@/services/zones.service';
 import classNames from 'classnames';
 import Filters from '@/components/filters/Filters';
+import { FilterProductsParams } from '@/interfaces/product';
 
 export const dynamicParams = true;
 
@@ -11,19 +12,12 @@ interface Params {
     zone: string;
 }
 
-interface SearchParams {
-    page?: string;
-    orderBy?: 'asc' | 'desc';
-    minPrice?: string;
-    maxPrice?: string;
-}
-
 export default async function Page({
     params,
     searchParams
 }: {
     params: Promise<Params>;
-    searchParams: Promise<SearchParams>;
+    searchParams: Promise<FilterProductsParams>;
 }) {
     const { zone: zoneSlug } = await params;
     const page = (await searchParams).page || '1';

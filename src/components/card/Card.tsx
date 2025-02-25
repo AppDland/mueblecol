@@ -1,5 +1,5 @@
 import { money } from "@/functions/money";
-import { ProductBaseProps } from "@/interfaces/item";
+import { ProductBaseProps } from "@/interfaces/product";
 import classNames from "classnames";
 import Image from "next/image";
 import { Navigate } from "../Navigate/Navigate";

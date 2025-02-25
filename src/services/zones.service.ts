@@ -1,4 +1,5 @@
-import { ProductBaseProps } from "@/interfaces/item";
+import { ProductBaseProps } from "@/interfaces/product";
+import { MetaRequest, MetaResponse, metaBuilder } from "./meta";
 
 interface Zone {
     id: number;
@@ -6,20 +7,6 @@ interface Zone {
     imageUrl: string;
 }
 
-interface MetaRequest {
-    page?: number;
-    limit?: number;
-    orderBy?: 'asc' | 'desc';
-    minPrice?: number;
-    maxPrice?: number;
-    material?: string;
-}
-
-interface MetaResponse extends MetaRequest {
-    finalPage: number;
-    total: number;
-    materialList: string[];
-}
 
 interface ProductResponse {
     data: ProductBaseProps[];
@@ -46,10 +33,4 @@ export const getProductsByZone = async (zone: string, meta: MetaRequest) => {
     }
 }
 
-const metaBuilder = (meta: MetaRequest) => {
-    const metaString = Object.entries(meta)
-        .filter(([key, value]) => value !== undefined)
-        .map(([key, value]) => `${key}=${value}`)
-        .join('&');
-    return metaString;
-}
+

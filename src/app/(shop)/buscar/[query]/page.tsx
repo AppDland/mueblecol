@@ -1,49 +1,71 @@
-'use client';
-import { useState } from 'react';
-import { ProductBaseProps } from '@/interfaces/item';
-import Filters from '@/components/filters/Filters';
-import { useParams } from 'next/navigation';
+import { FilterProductsParams } from '@/interfaces/product';
 import { Card, Pagination } from '@/components';
-import { PaginationContainer } from '@/components/pagination/PaginationContainer';
+import { searchProducts } from '@/services/product.service';
+import { notFound } from 'next/navigation';
+import classNames from 'classnames';
+import Filters from '@/components/filters/Filters';
 
+interface Params {
+    query: string;
+}
+interface SearchParams {
+    params: Promise<Params>;
+    searchParams: Promise<FilterProductsParams>;
+}
 
-export default function SearchResults() {
-    const params = useParams();
-    const query = params.query as string;
-    const [results, setResults] = useState<ProductBaseProps[]>([]);
+export default async function SearchResults({ params, searchParams }: SearchParams) {
+    const query = (await params).query;
+    const searchParamsProp = (await searchParams);
+
+    const { page, orderBy, minPrice, maxPrice } = searchParamsProp;
+
+    const results = await searchProducts(query, {
+        limit: 10,
+        page: page ? parseInt(page) : 1,
+        orderBy,
+        minPrice: minPrice ? Number(minPrice) : undefined,
+        maxPrice: maxPrice ? Number(maxPrice) : undefined
+    });
+
+    if (!results || results.data.length === 0) notFound();
+
+    const { data: products, meta } = results;
 
     return (
         <div className='items-screen'>
             <div className={'items-screen-section-1'}>
-                <Filters
-                    results={results}
-                    setResults={setResults}
-                    basedOn='search'
-                    searchWord={query}
-                />
+                <Filters />
             </div>
             <p className='items-screen-section-2 text-lg mb-2 px-6 sm:px-0'>
-                {results.length} resultados para
-                <b> {query.replaceAll('-', ' ')}</b>
+                {meta.total} resultados para
+                <b> {meta.query}</b>
             </p>
             <div className="items-screen-section-3">
-                <PaginationContainer>
-                    {
-                        results.map((item: ProductBaseProps, index) => (
-                            <Card item={item} key={index} />
-                        ))
-                    }
-                </PaginationContainer>
-                {
+                <div
+                    className={classNames(
+                        "relative overflow-y-hidden",
+                    )}
+                >
+                    <div
+                        className="grid grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(190px,1fr))] sm:gap-2"
+                    >
+                        {
+                            products.map((item, index) => (
+                                <Card item={item} key={index} />
+                            ))
+                        }
+                    </div>
+                </div>
+                {/* {
                     results.length === 0 && (
                         <p className="text-center text-gray-500 my-8">
                             No se encontraron resultados para tu búsqueda
                         </p>
                     )
-                }
+                } */}
             </div>
             <div className='items-screen-section-4'>
-                <Pagination />
+                <Pagination totalPages={meta.finalPage} />
             </div>
         </div>
     );

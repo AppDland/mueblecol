@@ -40,3 +40,10 @@ export interface ItemsData {
         name: string;
     }[];
 }
+
+export interface FilterProductsParams {
+    page?: string;
+    orderBy?: 'asc' | 'desc';
+    minPrice?: string;
+    maxPrice?: string;
+}

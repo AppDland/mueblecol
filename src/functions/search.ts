@@ -1,4 +1,4 @@
-import { ProductBaseProps, ItemsData } from '@/interfaces/item';
+import { ProductBaseProps, ItemsData } from '@/interfaces/product';
 import Items from '@/data/items.json';
 import Ignoradas from '@/data/ignore.json';
 
