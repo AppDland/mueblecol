@@ -13,9 +13,9 @@ export default function NotFound() {
                 'sm:border-r sm:border-secondary',
                 'text-center sm:text-left'
             )}>
-                <h2 className='h2 mb-5 sm:mb-2'>Oops</h2>
-                <p>No se ha encontrado el artículo que buscas</p>
-                <p>Pero puedes <Link href="/" className='underline text-blue-500'>volver al inicio</Link></p>
+                <h2 className='h2 mb-5 sm:mb-2 text-2xl font-bold'>Oops!</h2>
+                <p>No se ha encontrado el mueble que buscas</p>
+                <p>Puedes <Link href="/" className='underline text-blue-500'>volver al inicio</Link></p>
             </div>
 
             <Image

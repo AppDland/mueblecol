@@ -1,6 +1,6 @@
 import { Categories } from "@/modules";
 import { Suspense } from "react";
-
+import Fallback from "./fallback";
 interface ZoneLayoutProps {
     children: React.ReactNode;
 }
@@ -9,7 +9,7 @@ export default function ZoneLayout({ children }: ZoneLayoutProps) {
     return (
         <>
             <div className=" bg-gray-100 p-4">
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Fallback />}>
                     {children}
                 </Suspense>
             </div>
