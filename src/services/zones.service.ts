@@ -1,5 +1,6 @@
 import { ProductBaseProps } from "@/interfaces/product";
 import { MetaRequest, MetaResponse, metaBuilder } from "./meta";
+import axios from "axios";
 
 interface Zone {
     id: number;
@@ -25,9 +26,8 @@ export const getZones = async () => {
 
 export const getProductsByZone = async (zone: string, meta: MetaRequest) => {
     try {
-        const response = await fetch(`${process.env.API_URL}/products/zone/${zone}?${metaBuilder(meta)}`);
-        const data = await response.json();
-        return data as ProductResponse;
+        const response = await axios.get(`${process.env.API_URL}/products/zone/${zone}?${metaBuilder(meta)}`);
+        return response.data as ProductResponse;
     } catch (error) {
         return null;
     }

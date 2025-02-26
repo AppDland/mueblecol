@@ -1,7 +1,11 @@
 import { Carrousel, SimpleCard } from "@/components";
-import Items from "@/data/items.json";
+import { getHighlightsProducts } from "@/services/product.service";
 
-export function Destacados() {
+export async function Destacados() {
+
+    const products = await getHighlightsProducts();
+
+    if (!products) return null;
 
     return (
         <section className="section bg-gray-200 px-1 sm:px-2">
@@ -9,16 +13,10 @@ export function Destacados() {
             <div className="px-1 sm:px-2">
                 <Carrousel>
                     {
-                        Items.items.sort(() => Math.random() - 0.5).slice(0, 15).map((item, index) => (
+                        products.sort(() => Math.random() - 0.5).map(product => (
                             <SimpleCard
-                                title={item.publicName}
-                                url={item.name}
-                                color={item.media[0].colorName}
-                                image={item.media[0].photos[0]}
-                                price={item.price}
-                                offer={item.offer}
-                                finan={item.finan}
-                                key={index}
+                                product={product}
+                                key={product.id}
                             />
                         ))
                     }

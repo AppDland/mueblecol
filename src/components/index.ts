@@ -12,3 +12,5 @@ export * from './card/Card';
 export * from './Navigate/Navigate';
 export * from './scroll/Scroll';
 export * from './loading/Loading';
+export * from './fallback/search-fallback';
+export * from './fallback/product-fallback';

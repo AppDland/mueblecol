@@ -1,5 +1,5 @@
 
-export default function Fallback() {
+const SearchFallback = () => {
     return (
         <div>
             <h1 className="skeleton h-10 w-40 place-self-center mb-4" />
@@ -11,5 +11,7 @@ export default function Fallback() {
                 <div className="items-screen-section-3 skeleton" />
             </div>
         </div>
-    )
-}
+    );
+};
+
+export { SearchFallback };

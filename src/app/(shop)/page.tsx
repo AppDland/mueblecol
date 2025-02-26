@@ -9,7 +9,7 @@ export default function Home() {
             <Destacados />
             <Best />
             <Zones />
-            <Best itemsKey="items2" />
+            {/* <Best itemsKey="items2" /> */}
             <Imperdible />
             <Zones defaultZone="dormitorio" />
             <Envios />

@@ -1,5 +1,6 @@
-import { ProductProps } from "@/interfaces/product";
 import axios from "axios";
+
+import { ProductBaseProps, ProductProps } from "@/interfaces/product";
 import { MetaRequest, MetaResponse, metaBuilder } from "./meta";
 
 interface SearchResponse {
@@ -25,3 +26,21 @@ export const searchProducts = async (query: string, meta: MetaRequest) => {
     }
 }
 
+export const getHighlightsProducts = async (limit = 15) => {
+    try {
+        const res = await axios.get(`${process.env.API_URL}/products/highlights?limit=${limit}`);
+        return res.data as ProductBaseProps[];
+    } catch (error) {
+        return null;
+    }
+}
+
+
+export const getBestSellersProducts = async (limit = 2) => {
+    try {
+        const res = await axios.get(`${process.env.API_URL}/products/best-sellers?limit=${limit}`);
+        return res.data as ProductBaseProps[];
+    } catch (error) {
+        return null;
+    }
+}

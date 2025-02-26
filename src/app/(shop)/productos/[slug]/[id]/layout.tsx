@@ -2,9 +2,8 @@ import Head from "next/head";
 import Items from "@/data/items.json";
 import { notFound } from "next/navigation";
 import { findSimilarItems } from "@/functions/search";
-import { Carrousel, SimpleCard } from "@/components";
+import { Carrousel, ProductFallback, SimpleCard } from "@/components";
 import { Suspense } from "react";
-import Fallback from "./fallback";
 
 interface ItemLayoutProps {
     children: React.ReactNode;
@@ -58,7 +57,7 @@ export default async function Layout({ children, params }: ItemLayoutProps) {
                     `}
                 </script>
             </Head> */}
-            <Suspense fallback={<Fallback />}>
+            <Suspense fallback={<ProductFallback />}>
                 {children}
             </Suspense>
             {/* Items similares */}

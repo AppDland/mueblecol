@@ -1,5 +1,5 @@
 
-export default function Fallback() {
+const ProductFallback = () => {
     return (
         <section className='section'>
             <div className="grid grid-cols-5 gap-4 md:px-8 place-self-center w-full max-w-7xl">
@@ -17,7 +17,7 @@ export default function Fallback() {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-
+export { ProductFallback };

@@ -1,26 +1,14 @@
-// 'use client';
 import Image from "next/image";
 import { money } from "../../functions/money";
-import Link from "next/link";
 import classNames from "classnames";
-// import { useEffect, useState } from "react";
+import { ProductBaseProps } from "@/interfaces/product";
+import { Navigate } from "../Navigate/Navigate";
 
 interface SimpleCardProps {
-    image: string;
-    title: string;
-    color: string;
-    price: number;
-    url: string;
-    offer?: number | null;
-    finan: FinanInt;
+    product: ProductBaseProps;
 }
 
-interface FinanInt {
-    cuotas: number;
-    valor?: number;
-}
-
-const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCardProps) => {
+const SimpleCard = ({ product }: SimpleCardProps) => {
 
     return (
         <div className={classNames(
@@ -30,10 +18,12 @@ const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCar
             "md:m-3"
         )}
         >
-            <Link href={`/articulos/${url}`} className={classNames(
-                "grid  grid-cols-1 h-full",
-                "grid-rows-[1fr_auto_auto] md:grid-rows-[auto_1fr_auto_auto]"
-            )}
+            <Navigate
+                href={`/productos/${product.slug}/${product.id}`}
+                className={classNames(
+                    "grid  grid-cols-1 h-full",
+                    "grid-rows-[1fr_auto_auto] md:grid-rows-[auto_1fr_auto_auto]"
+                )}
             >
                 <div
                     className={classNames(
@@ -44,10 +34,10 @@ const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCar
                     )}
                 >
                     {
-                        finan.valor ? (
-                            <p className='text-xs sm:text-sm'>{finan.cuotas} cuotas de {money(finan.valor)}</p>
+                        product.monthPayment === product.firstPayment ? (
+                            <p className='text-xs sm:text-sm'>{product.mountOfPayments} cuotas de {money(product.monthPayment)}</p>
                         ) : (
-                            <p className='text-xs sm:text-sm'>Hasta en {finan.cuotas} cuotas</p>
+                            <p className='text-xs sm:text-sm'>Hasta en {product.mountOfPayments} cuotas</p>
                         )
                     }
                 </div>
@@ -56,9 +46,10 @@ const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCar
                     "md:order-none"
                 )}>
                     <Image
-                        src={image}
-                        alt={title}
+                        src={product.ProductPhotos.length > 0 ? product.ProductPhotos[0].cloudUrl : '/images/fallback.png'}
+                        alt={product.productName}
                         fill
+                        sizes="200px"
                         className="object-cover object-center p-0"
                     />
                 </div>
@@ -67,16 +58,16 @@ const SimpleCard = ({ image, title, color, price, url, offer, finan }: SimpleCar
                     "md:border-t",
                     "text-sm md:text-base"
                 )}>
-                    {title}
+                    {product.productName}
                 </p>
                 <p className={classNames(
                     "text-center py-1 md:py-2 text-accent font-bold md:group-hover:text-primary",
                     "text-base md:text-xl"
                 )}
                 >
-                    {money(price)}
+                    {money(product.financialPrice)}
                 </p>
-            </Link>
+            </Navigate>
         </div>
     );
 };
