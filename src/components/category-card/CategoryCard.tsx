@@ -20,12 +20,12 @@ const CategoryCard = ({ name, imagePath }: CategoryButtonProps) => {
             <Image
                 src={imagePath}
                 alt={name}
-                className="absolute inset-0 duration-200 sm:group-hover:scale-150 object-cover"
+                className="absolute inset-0 duration-200 sm:group-hover:scale-125 object-cover"
                 sizes='100%'
                 style={{ filter: 'blur(0.5px)' }}
                 fill
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 mix-blend-multiply backdrop-blur-sm sm:group-hover:backdrop-blur-0"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-30 mix-blend-multiply backdrop-blur-sm sm:group-hover:backdrop-blur-0 transition-all duration-200"></div>
             <h3 className="relative z-10 text-center text-white text-2xl sm:text-3xl font-cookie font-extralight">
                 {upperFirst(name)}
             </h3>

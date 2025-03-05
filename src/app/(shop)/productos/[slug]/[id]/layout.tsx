@@ -4,21 +4,18 @@ import { notFound } from "next/navigation";
 import { findSimilarItems } from "@/functions/search";
 import { Carrousel, ProductFallback, SimpleCard } from "@/components";
 import { Suspense } from "react";
+import { getSimilarProducts } from "@/services/product.service";
 
 interface ItemLayoutProps {
     children: React.ReactNode;
-    params: Promise<{ item: string }>;
+    params: Promise<{ id: string }>;
 }
 
 export default async function Layout({ children, params }: ItemLayoutProps) {
 
-    // const itemSlug = (await params).item;
-    // const product = Items.items.find(item => item.name === itemSlug);
+    const productId = (await params).id;
 
-    // if (!product) {
-    //     notFound();
-    // }
-    // const similarItems = findSimilarItems(product)
+    const similarItems = await getSimilarProducts(productId);
 
     return (
         <>
@@ -61,28 +58,23 @@ export default async function Layout({ children, params }: ItemLayoutProps) {
                 {children}
             </Suspense>
             {/* Items similares */}
-            {/* {
-                similarItems.length > 0 && (
+            {
+                similarItems && similarItems.length > 0 && (
                     <div className='my-16 px-1 md:px-2'>
                         <h2 className='h2'>Similares</h2>
                         <Carrousel>
                             {
-                                similarItems.map((item, id) => (
+                                similarItems.map(product => (
                                     <SimpleCard
-                                        key={id}
-                                        color='white'
-                                        finan={item.finan}
-                                        image={item.media[0].photos[0]}
-                                        price={item.price}
-                                        title={item.publicName}
-                                        url={item.name}
+                                        key={product.id}
+                                        product={product}
                                     />
                                 ))
                             }
                         </Carrousel>
                     </div>
                 )
-            } */}
+            }
         </>
     )
 }

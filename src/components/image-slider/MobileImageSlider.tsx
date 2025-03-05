@@ -44,9 +44,9 @@ const MobileImageSlider = ({ images, className, article }: ImageSliderProps) => 
                             <Image
                                 src={image}
                                 alt={article}
-                                width={300}
-                                height={300}
-                                className='object-contain'
+                                width={700}
+                                height={700}
+                                className='object-cover'
                                 priority
                             />
                         </SwiperSlide>

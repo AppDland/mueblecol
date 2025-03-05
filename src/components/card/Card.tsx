@@ -28,7 +28,7 @@ const Card = ({ item }: CardProps) => {
                         src={item.ProductPhotos.length > 0 ? item.ProductPhotos[0].cloudUrl : '/images/fallback.png'}
                         alt={item.productName}
                         fill
-                        sizes="200px"
+                        sizes="500px"
                         className="object-cover"
                         blurDataURL='/images/fallback.png'
                         priority

@@ -8,10 +8,10 @@ const BigCard = ({ product }: { product: ProductBaseProps }) => {
 
     return (
         <div
-            className="flex place-self-center w-11/12 rounded-lg my-8 sm:mx-6 overflow-hidden"
+            className="flex place-self-center w-11/12 rounded-lg my-8 sm:mx-6 overflow-hidden shadow"
             style={{
                 maxWidth: '500px',
-                boxShadow: '0px 0px 15px 2px rgba(0,0,0,0.2)'
+                // boxShadow: '0px 0px 15px 2px rgba(0,0,0,0.2)'
             }}
         >
             <div className="w-2/5 h-56 sm:h-72 relative">

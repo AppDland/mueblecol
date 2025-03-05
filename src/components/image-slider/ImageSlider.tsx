@@ -14,7 +14,7 @@ import 'swiper/css/thumbs';
 import './imageslider.css';
 
 // import required modules
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { FreeMode, Pagination, Navigation, Thumbs } from 'swiper/modules';
 import Image from 'next/image';
 import classNames from 'classnames';
 
@@ -31,7 +31,7 @@ const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
 
     return (
         <div
-            className={classNames(className, 'select-none h-[600px]')}
+            className={classNames(className, 'select-none h-[550px]')}
             ref={swiperRef}
         >
             <Swiper
@@ -43,28 +43,45 @@ const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
                 observer
                 observeParents
                 spaceBetween={10}
-                navigation
+                pagination
                 thumbs={{ swiper: thumbsSwiper }}
-                modules={[FreeMode, Navigation, Thumbs]}
+                modules={[FreeMode, Pagination, Thumbs]}
                 className='mySwiper2'
             >
                 {
-                    images.map(image => (
+                    images.length > 0
+
+                        ? images.map(image => (
+                            <SwiperSlide
+                                key={image}
+                                className='overflow-hidden rounded-lg'
+                                style={{ backgroundColor: 'rgba(0, 0, 0, 0.04)' }}
+                            >
+                                <Image
+                                    src={image}
+                                    alt={article}
+                                    width={700}
+                                    height={700}
+                                    className='object-cover'
+                                    priority
+                                />
+                            </SwiperSlide>
+                        ))
+
+                        :
                         <SwiperSlide
-                            key={image}
                             className='overflow-hidden rounded-lg'
                             style={{ backgroundColor: 'rgba(0, 0, 0, 0.04)' }}
                         >
                             <Image
-                                src={image}
+                                src="/images/fallback.png"
                                 alt={article}
-                                width={500}
-                                height={500}
+                                width={700}
+                                height={700}
                                 className='object-contain'
                                 priority
                             />
                         </SwiperSlide>
-                    ))
                 }
             </Swiper>
             <Swiper
@@ -76,6 +93,8 @@ const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper"
+                observer={true}
+                observeParents={true}
             >
                 {
                     images.map(image => (
@@ -83,9 +102,9 @@ const ImageSlider = ({ images, className, article }: ImageSliderProps) => {
                             <Image
                                 src={image}
                                 alt={article}
-                                width={100}
-                                height={100}
-                                className='rounded-lg object-fill'
+                                width={300}
+                                height={300}
+                                className='rounded-lg object-cover'
                             />
                         </SwiperSlide>
                     ))

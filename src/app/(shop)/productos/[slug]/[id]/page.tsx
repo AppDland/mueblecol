@@ -1,11 +1,9 @@
-import Items from '@/data/items.json';
 import { money } from '@/functions/money';
 import classNames from 'classnames';
 import { BuyButton, ImageSlider } from '@/components';
 import { MobileImageSlider } from '@/components/image-slider/MobileImageSlider';
 import { notFound, redirect } from 'next/navigation';
 import { getProduct } from '@/services/product.service';
-import Fallback from './fallback';
 
 
 
@@ -34,7 +32,6 @@ async function ProductPage({ params }: Props) {
 
     return (
         <section className='section'>
-            {/* <Fallback /> */}
             {/* Contenido principal */}
             <div className='grid grid-cols-5 gap-4 md:px-8 place-self-center'>
                 <MobileImageSlider
@@ -54,11 +51,16 @@ async function ProductPage({ params }: Props) {
                     )}
                 >
                     <h1 className='h1'>{product.productName}</h1>
-                    <div className='content-center'>
+                    <div className='content-center grid gap-2'>
                         <h2 className='h2 px-0'>Financiamiento</h2>
                         <p>
-                            ¿Qué estás esperando? Puedes obtener este artículo hasta en {product.mountOfPayments} cuotas
-                            {product.firstPayment === product.monthPayment && ` de ${money(product.monthPayment)}`}
+                            ¿Qué estás esperando? Puedes obtener este artículo con una financiación muy flexible.
+                        </p>
+                        <p>
+                            Puedes llevarlo pagando <span className='font-bold'>{money(product.firstPayment)}</span> como pago inicial
+                        </p>
+                        <p>
+                            Después pagarías <span className='font-bold'>{product.mountOfPayments} cuotas de {money(product.monthPayment)}</span>
                         </p>
                     </div>
                     <div>

@@ -2,7 +2,7 @@
 import { useNProgress } from '@/custom/useNProgress';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export function Finder({ defaultValue = '', isDark = false }) {
@@ -10,6 +10,7 @@ export function Finder({ defaultValue = '', isDark = false }) {
     const [active, setActive] = useState(false);
     const { start } = useNProgress();
     const params = useParams();
+    const router = useRouter();
 
     useEffect(() => {
         if (params.query && typeof params.query === 'string') {
@@ -26,11 +27,16 @@ export function Finder({ defaultValue = '', isDark = false }) {
         setActive(focus ? focus : searchTerm.length > 0);
     }
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        start();
+        router.push(`/buscar/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`);
+    }
+
     return (
         <form
-            action={`/buscar/${searchTerm.trim().replaceAll(' ', '-').toLowerCase()}`}
             className={"w-full max-w-60 md:max-w-64 relative flex items-center py-1 rounded-lg overflow-hidden bg-white border border-accent"}
-            onSubmit={() => start()}
+            onSubmit={handleSubmit}
         >
             <Slider active={active} />
             <input

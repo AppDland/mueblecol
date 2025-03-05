@@ -49,7 +49,7 @@ const SimpleCard = ({ product }: SimpleCardProps) => {
                         src={product.ProductPhotos.length > 0 ? product.ProductPhotos[0].cloudUrl : '/images/fallback.png'}
                         alt={product.productName}
                         fill
-                        sizes="200px"
+                        sizes="500px"
                         className="object-cover object-center p-0"
                     />
                 </div>

@@ -1,9 +1,9 @@
 'use client'
 import Burger from "./Burger";
 import classNames from "classnames";
-import Link from "next/link";
 import { sideBarState } from "@/store";
 import vibrate from "@/functions/vibrate";
+import { Navigate } from "../Navigate/Navigate";
 
 const routes = [
     {
@@ -50,7 +50,7 @@ const Nav = () => {
                 <ul>
                     {
                         routes.map(({ title, href }, index) => (
-                            <Link href={href} key={index} onClick={handleGesture}>
+                            <Navigate href={href} key={index} onClick={handleGesture}>
                                 <li key={index} className={classNames(
                                     'text-white',
                                     'border-b border-gray-100',
@@ -59,7 +59,7 @@ const Nav = () => {
                                 )}>
                                     {title}
                                 </li>
-                            </Link>
+                            </Navigate>
                         ))
                     }
                 </ul>

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import "./globals.css";
 import { Metadata } from 'next';
 import { Scroll } from '@/components';
-
+import { Suspense } from 'react';
 // Configure font weights and subsets
 const inter = Inter({
     subsets: ['latin'],
@@ -52,7 +52,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 h2Font.variable,
                 'antialiased min-h-screen text-base-content'
             )}>
-                {children}
+                <Suspense fallback={<div>Cargando...</div>}>
+                    {children}
+                </Suspense>
             </body>
         </html>
     );
