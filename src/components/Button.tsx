@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 
@@ -48,7 +49,7 @@ const Button: React.FC<ButtonProps> = ({
                     style={{ filter: `invert(${iconColor})` }}
                 />
             )}
-            <span>{text}</span>
+            <p className='text-center w-full text-sm sm:text-base'>{text}</p>
             {iconSrc && iconPosition === 'right' && (
                 <Image
                     src={iconSrc}
@@ -63,4 +64,4 @@ const Button: React.FC<ButtonProps> = ({
     );
 };
 
-export default Button;
+// export default Button;

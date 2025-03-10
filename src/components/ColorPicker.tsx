@@ -1,4 +1,4 @@
-import { ItemMedia } from '@/interfaces/item';
+import { ItemMedia } from '@/interfaces/product';
 
 interface ColorPickerProps {
     colors: ItemMedia[];

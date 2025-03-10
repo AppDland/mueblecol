@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+'use client'
 import Burger from "./Burger";
 import classNames from "classnames";
-import useLargeScreen from "@/custom/useLargeScreen";
-import Link from "next/link";
+import { sideBarState } from "@/store";
+import vibrate from "@/functions/vibrate";
+import { Navigate } from "../Navigate/Navigate";
 
 const routes = [
     {
@@ -15,75 +16,56 @@ const routes = [
     }
 ];
 
-const BurgerNav = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const navRef = useRef<HTMLDivElement>(null);
+const Nav = () => {
 
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }, [isOpen]);
+    const { isOpen, close, animated } = sideBarState();
 
-    useEffect(() => {
-        const handleClose = (e: any) => {
-            if (navRef.current && !navRef.current.contains(e.target)) {
-                setIsOpen(false);
-            }
-        }
-
-        document.addEventListener('click', handleClose);
-
-        return () => {
-            document.removeEventListener('click', handleClose);
-        }
-    }, []);
+    const handleGesture = () => {
+        close();
+        vibrate();
+    }
 
     return (
-        <div className='absolute z-50 left-0 h-full' ref={navRef}>
-            <Burger isOpen={isOpen} setIsopen={setIsOpen} />
-            <nav className={classNames('absolute top-full mr-2 duration-200 w-52 p-4 bg-secondary', isOpen ? 'left-0' : '-left-56')} style={{ height: '100vh' }}>
+        <div className='z-30 left-0 h-full -m-3'>
+            <Burger />
+            <div
+                className={classNames("backdrop-custom",
+                    isOpen ? 'block' : 'hidden',
+                    animated ? 'opacity-100' : 'opacity-0',
+                )}
+                onClick={close}
+            />
+            <nav
+                className={classNames(
+                    'z-30 top-0 duration-200',
+                    animated ? 'left-0 md:left-auto md:right-0' : '-left-[400px] md:left-auto md:-right-[400px]',
+                    'pt-16 sm:pt-20 p-4',
+                    'absolute',
+                    'w-2/5 min-w-60 max-w-[400px]',
+                    'h-screen',
+                    'bg-secondary',
+                    'shadow-xl md:shadow-none'
+                )}
+            >
                 <ul>
                     {
                         routes.map(({ title, href }, index) => (
-                            <li key={index} className='text-white border-b border-gray-400 py-2'>
-                                <Link href={href}>
+                            <Navigate href={href} key={index} onClick={handleGesture}>
+                                <li key={index} className={classNames(
+                                    'text-white',
+                                    'border-b border-gray-100',
+                                    'py-2 pl-3',
+                                    'my-5',
+                                )}>
                                     {title}
-                                </Link>
-                            </li>
+                                </li>
+                            </Navigate>
                         ))
                     }
                 </ul>
             </nav>
         </div>
     )
-}
-
-const NormalNav = () => {
-
-
-    return (
-        <nav>
-            <ul className="flex space-x-4">
-                {
-                    routes.map(({ title, href }, index) => (
-                        <li key={index} className='text-white'>
-                            <Link href={href}>
-                                {title}
-                            </Link>
-                        </li>
-                    ))
-                }
-            </ul>
-        </nav>
-    )
-}
-
-const Nav = () => {
-    const isLargeScreen = useLargeScreen(768);
-    return isLargeScreen ? <NormalNav /> : <BurgerNav />
 }
 
 export default Nav;

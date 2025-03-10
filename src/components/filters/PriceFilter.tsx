@@ -1,9 +1,35 @@
-import React from 'react';
-import { FilterProps } from '../../interfaces/filter';
+'use client';
 
-const PriceFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) => {
-    const [localMin, setLocalMin] = React.useState(currentFilters.minPrice?.toString() || '');
-    const [localMax, setLocalMax] = React.useState(currentFilters.maxPrice?.toString() || '');
+import { useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+// import { useNProgress } from "@/custom/useNProgress";
+
+const PriceFilter = () => {
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    // const { start } = useNProgress();
+
+    const minPriceProp = searchParams.get('minPrice') as string | null;
+    const maxPriceProp = searchParams.get('maxPrice') as string | null;
+
+    const [localMin, setLocalMin] = useState(minPriceProp || '');
+    const [localMax, setLocalMax] = useState(maxPriceProp || '');
+
+    const handleBlur = () => {
+        // start();
+        const params = new URLSearchParams(searchParams);
+        if (localMin.length > 0) {
+            params.set('minPrice', localMin);
+        } else {
+            params.delete('minPrice');
+        }
+        if (localMax.length > 0) {
+            params.set('maxPrice', localMax);
+        } else {
+            params.delete('maxPrice');
+        }
+        router.push(`?${params.toString()}`);
+    }
 
     return (
         <div className="mb-6">
@@ -15,21 +41,16 @@ const PriceFilter: React.FC<FilterProps> = ({ currentFilters, onFilterChange }) 
                     className="w-1/2 p-2 border rounded"
                     value={localMin}
                     onChange={(e) => setLocalMin(e.target.value)}
-                    onBlur={(e) => onFilterChange({ 
-                        ...currentFilters, 
-                        minPrice: e.target.value ? Number(e.target.value) : undefined 
-                    })}
+                    onBlur={handleBlur}
                 />
                 <input
+                    name="maxPrice"
                     type="number"
                     placeholder="Máximo"
                     className="w-1/2 p-2 border rounded"
                     value={localMax}
                     onChange={(e) => setLocalMax(e.target.value)}
-                    onBlur={(e) => onFilterChange({ 
-                        ...currentFilters, 
-                        maxPrice: e.target.value ? Number(e.target.value) : undefined 
-                    })}
+                    onBlur={handleBlur}
                 />
             </div>
         </div>

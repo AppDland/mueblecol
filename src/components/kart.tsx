@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Button from './Button';
 
 interface Product {
     id: number;
@@ -40,12 +39,9 @@ const Kart: React.FC = () => {
                 </div>
                 <div className='flex text-3xl my-4 text-green-600 space-x-56  align-text-bottom' > <p>Total</p> <p>$ {total}</p> </div>
                 <div className='flex border-t-2 w-11/12 border-gray-300 justify-center'>
-                    <Button
-
-                        text='Confimar Compra'
-                        className='bg-red-800 text-white min-w-56 h-8 px-4 rounded-md justify-center mt-6 mb-4 '
-
-                    />
+                    <button className='btn-primary'>
+                        Confirmar Compra
+                    </button>
                 </div>
             </div>
         </div>

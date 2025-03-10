@@ -1,4 +1,4 @@
-import { ItemInt, ItemsData } from '@/interfaces/item';
+import { ProductBaseProps, ItemsData } from '@/interfaces/product';
 import Items from '@/data/items.json';
 import Ignoradas from '@/data/ignore.json';
 
@@ -44,11 +44,11 @@ const areSimilarWords = (word1: string, word2: string): boolean => {
     return distance <= maxDistance;
 };
 
-export const searchItems = (searchTerm: string): ItemInt[] => {
+export const searchItems = (searchTerm: string) => {
     if (searchTerm.length < 4) return [];
     // Separamos los términos de búsqueda y los convertimos a minúsculas
     const searchWords = searchTerm.toLowerCase().trim().split(' ');
-    const results: ItemInt[] = [];
+    const results: ProductBaseProps[] = [];
 
     Items.items.forEach(item => {
         // Creamos un array con todas las palabras relevantes del item
@@ -77,72 +77,72 @@ export const searchItems = (searchTerm: string): ItemInt[] => {
         });
 
         if (matches) {
-            results.push(item);
+            // results.push(item);
         }
     });
 
     // Ordenamos los resultados por relevancia
-    return results.sort((a, b) => {
-        // Primero los que coinciden exactamente con el nombre
-        const aNameMatch = a.publicName.toLowerCase().includes(searchTerm.toLowerCase());
-        const bNameMatch = b.publicName.toLowerCase().includes(searchTerm.toLowerCase());
+    // return results.sort((a, b) => {
+    //     // Primero los que coinciden exactamente con el nombre
+    //     const aNameMatch = a.publicName.toLowerCase().includes(searchTerm.toLowerCase());
+    //     const bNameMatch = b.publicName.toLowerCase().includes(searchTerm.toLowerCase());
 
-        if (aNameMatch && !bNameMatch) return -1;
-        if (!aNameMatch && bNameMatch) return 1;
+    //     if (aNameMatch && !bNameMatch) return -1;
+    //     if (!aNameMatch && bNameMatch) return 1;
 
-        // Luego por relevancia de sinónimos
-        const aRelevance = a.synonyms.some(syn =>
-            syn.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            searchTerm.toLowerCase().includes(syn.toLowerCase()) ||
-            areSimilarWords(syn.toLowerCase(), searchTerm.toLowerCase())
-        );
-        const bRelevance = b.synonyms.some(syn =>
-            syn.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            searchTerm.toLowerCase().includes(syn.toLowerCase()) ||
-            areSimilarWords(syn.toLowerCase(), searchTerm.toLowerCase())
-        );
+    //     // Luego por relevancia de sinónimos
+    //     const aRelevance = a.synonyms.some(syn =>
+    //         syn.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //         searchTerm.toLowerCase().includes(syn.toLowerCase()) ||
+    //         areSimilarWords(syn.toLowerCase(), searchTerm.toLowerCase())
+    //     );
+    //     const bRelevance = b.synonyms.some(syn =>
+    //         syn.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //         searchTerm.toLowerCase().includes(syn.toLowerCase()) ||
+    //         areSimilarWords(syn.toLowerCase(), searchTerm.toLowerCase())
+    //     );
 
-        if (aRelevance && !bRelevance) return -1;
-        if (!aRelevance && bRelevance) return 1;
+    //     if (aRelevance && !bRelevance) return -1;
+    //     if (!aRelevance && bRelevance) return 1;
 
-        return 0;
-    });
+    //     return 0;
+    // });
 };
 
 /**
  * Encuentra items similares basándose en zonas compartidas, colores y materiales
  */
-export const findSimilarItems = (item: ItemInt): ItemInt[] => {
+export const findSimilarItems = (item: ProductBaseProps) => {
     const typedItems = Items as unknown as ItemsData;
     const allItems = typedItems.items;
 
-    const similarItems = allItems.filter(otherItem => {
-        if (otherItem.name === item.name) return false;
+    // const similarItems = allItems.filter(otherItem => {
+    //     if (otherItem.name === item.name) return false;
 
-        // Un item es similar si comparte zona y además comparte color o material
-        const sameZone = item.zones.some(zone =>
-            otherItem.zones.includes(zone)
-        );
+    //     // Un item es similar si comparte zona y además comparte color o material
+    //     const sameZone = item.zones.some(zone =>
+    //         otherItem.zones.includes(zone)
+    //     );
 
-        const sharedColors = item.media.some(media =>
-            otherItem.media.some(otherMedia =>
-                media.colorHex === otherMedia.colorHex
-            )
-        );
+    //     const sharedColors = item.media.some(media =>
+    //         otherItem.media.some(otherMedia =>
+    //             media.colorHex === otherMedia.colorHex
+    //         )
+    //     );
 
-        let sameMaterial = false;
-        if (item.attributes) {
-            sameMaterial = item.attributes.some(attr =>
-                otherItem.attributes && otherItem.attributes.some(otherAttr =>
-                    attr.attributeId === otherAttr.attributeId &&
-                    attr.value === otherAttr.value
-                )
-            );
-        }
+    //     let sameMaterial = false;
+    //     if (item.attributes) {
+    //         sameMaterial = item.attributes.some(attr =>
+    //             otherItem.attributes && otherItem.attributes.some(otherAttr =>
+    //                 attr.attributeId === otherAttr.attributeId &&
+    //                 attr.value === otherAttr.value
+    //             )
+    //         );
+    //     }
 
-        return (sameZone && (sharedColors || sameMaterial));
-    });
+    //     return (sameZone && (sharedColors || sameMaterial));
+    // });
 
     // Limitamos a 3 items similares
-    return similarItems.slice(0, 10);
+    // return similarItems.slice(0, 10);
 }; 

@@ -1,0 +1,53 @@
+.intro-class-for-animation {
+    animation: none;
+}
+
+.intro-out-animation-second {
+    animation: intro-out-animation-second 1.1s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .intro-class-for-animation {
+        opacity: 0;
+        animation: intro-animation 6s ease-in-out;
+    }
+}
+
+@keyframes intro-animation {
+
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes intro-out-animation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes intro-out-animation-second {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -19,7 +19,8 @@ const SimpleModal = ({ isModalOpen, setIsModalOpen, children, onClose }: SimpleM
                         className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
                         onClick={closeModal}
                     >
-                        &times;
+                        {/* &times; */}
+                        hola
                     </button>
                     {children}
                 </div>
