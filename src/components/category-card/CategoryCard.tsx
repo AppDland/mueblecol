@@ -25,7 +25,7 @@ const CategoryCard = ({ name, imagePath }: CategoryButtonProps) => {
                 style={{ filter: 'blur(0.5px)' }}
                 fill
             />
-            <div className="absolute inset-0 bg-black bg-opacity-30 mix-blend-multiply backdrop-blur-sm sm:group-hover:backdrop-blur-0 transition-all duration-200"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-40 sm:bg-opacity-30 mix-blend-multiply sm:backdrop-blur-sm sm:group-hover:backdrop-blur-0 transition-all duration-200"></div>
             <h3 className="relative z-10 text-center text-white text-2xl sm:text-3xl font-cookie font-extralight">
                 {upperFirst(name)}
             </h3>

@@ -65,7 +65,7 @@ async function ProductPage({ params }: Props) {
                     </div>
                     <div>
                         <p className='text-3xl font-bold text-primary my-5'>{money(product.financialPrice)}</p>
-                        <BuyButton articleSlug={product.slug} />
+                        <BuyButton productPath={`${product.slug}/${product.id}`} />
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@ async function ProductPage({ params }: Props) {
             </div>
 
             {/* ATRIBUTOS */}
-            {product.AttributeValue && <Attributes attributes={product.AttributeValue} />}
+            {product.AttributeValue && product.AttributeValue.length > 0 && <Attributes attributes={product.AttributeValue} />}
 
 
         </section>

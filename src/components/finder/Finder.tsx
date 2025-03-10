@@ -35,7 +35,7 @@ export function Finder({ defaultValue = '', isDark = false }) {
 
     return (
         <form
-            className={"w-full max-w-60 md:max-w-64 relative flex items-center py-1 rounded-lg overflow-hidden bg-white border border-accent"}
+            className={"w-full max-w-64 md:max-w-72 relative flex items-center py-1 rounded-lg overflow-hidden bg-white border border-accent"}
             onSubmit={handleSubmit}
         >
             <Slider active={active} />

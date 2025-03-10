@@ -8,9 +8,9 @@ export async function Destacados() {
     if (!products) return null;
 
     return (
-        <section className="section bg-gray-200 px-1 sm:px-2">
+        <section className="section bg-gray-100 px-1 sm:px-2">
             <h2 className="h2 mb-3">Productos Destacados</h2>
-            <div className="px-1 sm:px-2">
+            <div>
                 <Carrousel>
                     {
                         products.sort(() => Math.random() - 0.5).map(product => (

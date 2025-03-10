@@ -35,9 +35,9 @@ const SimpleCard = ({ product }: SimpleCardProps) => {
                 >
                     {
                         product.monthPayment === product.firstPayment ? (
-                            <p className='text-xs sm:text-sm'>{product.mountOfPayments} cuotas de {money(product.monthPayment)}</p>
+                            <p className='text-xs sm:text-sm'>{product.mountOfPayments + 1} cuotas de {money(product.monthPayment)}</p>
                         ) : (
-                            <p className='text-xs sm:text-sm'>Hasta en {product.mountOfPayments} cuotas</p>
+                            <p className='text-xs sm:text-sm'>Hasta en {product.mountOfPayments + 1} cuotas</p>
                         )
                     }
                 </div>

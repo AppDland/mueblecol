@@ -14,7 +14,7 @@ export async function Zones({ defaultZone = 'negocio' }: ZonesProps) {
     const { data: products } = response;
 
     return (
-        <section className="section bg-gray-200 px-1 sm:px-2">
+        <section className="section bg-gray-100 px-1 sm:px-2">
             <h2 className="h2">Todo para tu {defaultZone}</h2>
             <div className="px-1 sm:px-2">
                 <Carrousel>
