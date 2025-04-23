@@ -4,6 +4,7 @@ import { BuyButton, ImageSlider } from '@/components';
 import { MobileImageSlider } from '@/components/image-slider/MobileImageSlider';
 import { notFound, redirect } from 'next/navigation';
 import { getProduct } from '@/services/product.service';
+import AddToCartButton from '@/components/AddToCartButton';
 
 
 
@@ -63,8 +64,9 @@ async function ProductPage({ params }: Props) {
                             Después pagarías <span className='font-bold'>{product.mountOfPayments} cuotas de {money(product.monthPayment)}</span>
                         </p>
                     </div>
-                    <div>
+                    <div className='grid gap-4'>
                         <p className='text-3xl font-bold text-primary my-5'>{money(product.financialPrice)}</p>
+                        <AddToCartButton productId={product.id} />
                         <BuyButton productPath={`${product.slug}/${product.id}`} />
                     </div>
                 </div>

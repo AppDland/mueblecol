@@ -41,7 +41,7 @@ const Footer = () => {
             </div>
             <p>mueblecol.com</p>
             <p className="text-center text-xs opacity-70 mb-6">todos los derechos reservados ©</p>
-            <p className="text-xs text-secondary mt-1 opacity-50 absolute bottom-2">By AppDland</p>
+            <p className="text-xs text-secondary mt-1 opacity-70 absolute bottom-2">By AppDland</p>
         </footer>
     )
 }

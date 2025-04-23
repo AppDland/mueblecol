@@ -3,6 +3,7 @@ import { useLayoutEffect, useRef } from 'react';
 import Nav from './Nav';
 import { Finder } from '../finder/Finder';
 import { Title } from './Title';
+import Kart from '../kart';
 
 export function Header() {
     const headerRef = useRef<HTMLDivElement>(null);
@@ -26,16 +27,22 @@ export function Header() {
     return (
         <header
             ref={headerRef}
-            className={'w-full select-none fixed z-40 top-0 bg-white transition-shadow duration-75 flex justify-between items-center p-3 py-4 sm:p-4 xl:px-10'}
+            className={'w-full select-none fixed z-40 top-0 bg-white transition-shadow duration-75 grid grid-cols-[1fr_4fr_1fr] items-center p-3 py-4 sm:p-4 xl:px-10'}
         >
-            <div className='w-1/5 hidden md:block'>
+            <div className='hidden md:block'>
                 <Title />
             </div>
-            <div className='w-4/5 flex justify-end md:justify-center'>
+            <div className='flex justify-center md:justify-center'>
                 <Finder />
             </div>
-            <div className='w-fit md:w-1/5 flex sm:justify-end -order-1 md:order-1'>
+            <div className='flex md:justify-end -order-1 md:order-1 items-center gap-4'>
+                <div className='hidden md:block'>
+                    <Kart />
+                </div>
                 <Nav />
+            </div>
+            <div className='md:hidden flex justify-end'>
+                <Kart />
             </div>
         </header>
     );

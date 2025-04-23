@@ -1,0 +1,4 @@
+- implementar carrito
+- Pagina de acerca de nosotros
+- log en home que se imprima en el proceso de next (para saber cuando una persona solicita la pagina)
+- crear proceso de compra que incluya logs, notificaciones, 

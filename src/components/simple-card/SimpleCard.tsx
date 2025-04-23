@@ -51,6 +51,8 @@ const SimpleCard = ({ product }: SimpleCardProps) => {
                         fill
                         sizes="500px"
                         className="object-cover object-center p-0"
+                        blurDataURL='/images/fallback.png'
+                        priority
                     />
                 </div>
                 <p className={classNames(
